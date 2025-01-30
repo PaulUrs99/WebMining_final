@@ -1,0 +1,478 @@
+{
+    "playerstats": {
+        "steamID": "76561198971239828",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 13
+            },
+            {
+                "name": "arrow_fired",
+                "value": 13
+            },
+            {
+                "name": "item_drop",
+                "value": 35
+            },
+            {
+                "name": "death_suicide",
+                "value": 1
+            },
+            {
+                "name": "kill_player",
+                "value": 1
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 6
+            },
+            {
+                "name": "bullet_hit_entity",
+                "value": 1
+            },
+            {
+                "name": "arrow_hit_building",
+                "value": 1
+            },
+            {
+                "name": "kill_chicken",
+                "value": 1
+            },
+            {
+                "name": "headshot",
+                "value": 6
+            },
+            {
+                "name": "arrow_hit_player",
+                "value": 10
+            },
+            {
+                "name": "death_entity",
+                "value": 2
+            },
+            {
+                "name": "wounded",
+                "value": 6
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 456
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 17
+            },
+            {
+                "name": "harvested_wood",
+                "value": 800
+            },
+            {
+                "name": "harvested_stones",
+                "value": 200
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 233
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 5
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 3
+            },
+            {
+                "name": "comfort_duration",
+                "value": 2728.0322265625
+            },
+            {
+                "name": "calories_consumed",
+                "value": 1532.166748046875
+            },
+            {
+                "name": "water_consumed",
+                "value": 1009.9679565429688
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 153.049072265625
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 2044.64306640625
+            },
+            {
+                "name": "hot_exposure_duration",
+                "value": 3.84716796875
+            },
+            {
+                "name": "melee_strikes",
+                "value": 939
+            },
+            {
+                "name": "melee_thrown",
+                "value": 14
+            },
+            {
+                "name": "placed_blocks",
+                "value": 5
+            },
+            {
+                "name": "upgraded_blocks",
+                "value": 5
+            },
+            {
+                "name": "arrows_shot",
+                "value": 20
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 29.867977142333984
+            },
+            {
+                "name": "harvested_cloth",
+                "value": 80
+            },
+            {
+                "name": "harvested_leather",
+                "value": 10
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 50
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 2294
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 65
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 650
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 25
+            },
+            {
+                "name": "InstrumentNotesPlayed",
+                "value": 3809
+            },
+            {
+                "name": "InstrumentFullKeyboardMode",
+                "value": 9
+            }
+        ],
+        "achievements": [
+            {
+                "name": "PLACE_CAMPFIRE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_CAMPFIRE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_100_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_STONE_HATCHET",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_200_STONE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_STONE_PICKAXE",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_SLEEPINGBAG",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_700_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_SPEAR",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_SLEEPINGBAG",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_30_CLOTH",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_BUILDING_PLAN",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_HAMMER",
+                "achieved": 1
+            },
+            {
+                "name": "CONSTRUCT_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "UPGRADE_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_WOODEN_DOOR",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_LOCK",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_WOODEN_DOOR",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_LOCK",
+                "achieved": 1
+            },
+            {
+                "name": "LOCK_LOCK",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_TOOL_CUPBOARD",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_TOOL_CUPBOARD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_50_CLOTH",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_HUNTING_BOW",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_ARROWS",
+                "achieved": 1
+            },
+            {
+                "name": "KILL_ANIMAL",
+                "achieved": 1
+            },
+            {
+                "name": "SKIN_ANIMAL",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_BURLAP_HEADWRAP",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_BURLAP_SHIRT",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_BURLAP_PANTS",
+                "achieved": 1
+            },
+            {
+                "name": "EQUIP_CLOTHING",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_WOODEN_BOX",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_WOODEN_BOX",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_FURNACE",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_FURNACE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_MACHETE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_65_SCRAP",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_WORKBENCH",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_WORKBENCH",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_NAILGUN",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_NAILGUN_NAILS",
+                "achieved": 1
+            },
+            {
+                "name": "RESEARCH_ITEM",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_RESEARCH_TABLE",
+                "achieved": 1
+            },
+            {
+                "name": "PLACE_RESEARCH_TABLE",
+                "achieved": 1
+            },
+            {
+                "name": "GLUTTON",
+                "achieved": 1
+            },
+            {
+                "name": "SEALBREAKER",
+                "achieved": 1
+            },
+            {
+                "name": "PLAY_INSTRUMENT",
+                "achieved": 1
+            },
+            {
+                "name": "PLAY_ALL_INSTRUMENTS",
+                "achieved": 1
+            },
+            {
+                "name": "TEAM_INSTRUMENTS",
+                "achieved": 1
+            },
+            {
+                "name": "SUMMER_INFLATABLE",
+                "achieved": 1
+            },
+            {
+                "name": "SUMMER_PAPARAZZI",
+                "achieved": 1
+            },
+            {
+                "name": "SUMMER_SUNGLASSES",
+                "achieved": 1
+            },
+            {
+                "name": "SUMMER_RADICAL",
+                "achieved": 1
+            },
+            {
+                "name": "SUMMER_SOAKED",
+                "achieved": 1
+            },
+            {
+                "name": "SUMMER_LIQUIDATOR",
+                "achieved": 1
+            },
+            {
+                "name": "SUMMER_NO_PRESSURE",
+                "achieved": 1
+            },
+            {
+                "name": "VOICEPROPS_PARTYBOAT",
+                "achieved": 1
+            },
+            {
+                "name": "VOICEPROPS_BADNEIGHBOUR",
+                "achieved": 1
+            },
+            {
+                "name": "VOICEPROPS_ONRECORD",
+                "achieved": 1
+            },
+            {
+                "name": "VOICEPROPS_NOBODYSWATCHING",
+                "achieved": 1
+            },
+            {
+                "name": "VOICEPROPS_NOLONGERSEE",
+                "achieved": 1
+            },
+            {
+                "name": "VOICEPROPS_BUYSOUNDTRACK",
+                "achieved": 1
+            },
+            {
+                "name": "VOICEPROPS_FULLCOLLECTION",
+                "achieved": 1
+            },
+            {
+                "name": "BUCKLE_UP",
+                "achieved": 1
+            },
+            {
+                "name": "HONEST_WORK",
+                "achieved": 1
+            },
+            {
+                "name": "PRO_ANGLER",
+                "achieved": 1
+            },
+            {
+                "name": "SUBMARINE_MOONPOOL",
+                "achieved": 1
+            },
+            {
+                "name": "THREAD_NEEDLE",
+                "achieved": 1
+            },
+            {
+                "name": "BIG_BROTHER",
+                "achieved": 1
+            },
+            {
+                "name": "RUST_AIR",
+                "achieved": 1
+            },
+            {
+                "name": "BATTLE_BUS",
+                "achieved": 1
+            },
+            {
+                "name": "DRIVE_SNOWMOBILE",
+                "achieved": 1
+            }
+        ]
+    }
+}

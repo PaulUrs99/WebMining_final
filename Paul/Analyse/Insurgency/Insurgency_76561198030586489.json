@@ -1,0 +1,94 @@
+{
+    "playerstats": {
+        "steamID": "76561198030586489",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_GENERAL_KILL_100",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_FIRST_BLOOD",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_FIRST_BLOOD_COOP",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_GENERAL_KILL_COOP_100",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_10",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_WAR_HERO_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_HNT_CONTACT",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_LEVEL_OUTPOST_1",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKills",
+                "value": 100
+            },
+            {
+                "name": "TotalCaptures",
+                "value": 2
+            },
+            {
+                "name": "TotalKillsCoop",
+                "value": 209
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 11
+            },
+            {
+                "name": "TotalMVPs",
+                "value": 2
+            },
+            {
+                "name": "TotalMVPsCoop",
+                "value": 3
+            },
+            {
+                "name": "TotalHeroCapturesCoop",
+                "value": 1
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 309
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 13
+            },
+            {
+                "name": "TotalMVPsAll",
+                "value": 5
+            },
+            {
+                "name": "TotalHeroCapturesAll",
+                "value": 1
+            }
+        ]
+    }
+}

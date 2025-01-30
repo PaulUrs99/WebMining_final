@@ -1,0 +1,58 @@
+{
+    "playerstats": {
+        "steamID": "76561198160606627",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_FIRST_BLOOD",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_FIRST_BLOOD_KNIFE",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_FIRST_BLOOD_COOP",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_FIRST_BLOOD_KNIFE_COOP",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_HERO_CAP_1",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKills",
+                "value": 1
+            },
+            {
+                "name": "TotalCaptures",
+                "value": 3
+            },
+            {
+                "name": "TotalHeroCaptures",
+                "value": 2
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 1
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 3
+            },
+            {
+                "name": "TotalHeroCapturesAll",
+                "value": 2
+            }
+        ]
+    }
+}

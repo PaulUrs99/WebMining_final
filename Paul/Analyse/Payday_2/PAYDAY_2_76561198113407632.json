@@ -1,0 +1,526 @@
+{
+    "playerstats": {
+        "steamID": "76561198113407632",
+        "gameName": "PAYDAY 2",
+        "achievements": [
+            {
+                "name": "hot_wheels",
+                "achieved": 1
+            },
+            {
+                "name": "fish_ai",
+                "achieved": 1
+            },
+            {
+                "name": "f_in_chemistry",
+                "achieved": 1
+            },
+            {
+                "name": "doctor_fantastic",
+                "achieved": 1
+            },
+            {
+                "name": "diamonds_are_forever",
+                "achieved": 1
+            },
+            {
+                "name": "yeah_hes_a_gold_digger",
+                "achieved": 1
+            },
+            {
+                "name": "lord_of_war",
+                "achieved": 1
+            },
+            {
+                "name": "the_first_line",
+                "achieved": 1
+            },
+            {
+                "name": "tip_the_scales",
+                "achieved": 1
+            },
+            {
+                "name": "how_do_you_like_me_now",
+                "achieved": 1
+            },
+            {
+                "name": "armed_to_the_teeth",
+                "achieved": 1
+            },
+            {
+                "name": "would_you_like_your_receipt",
+                "achieved": 1
+            },
+            {
+                "name": "no_one_cared_who_i_was",
+                "achieved": 1
+            },
+            {
+                "name": "murphys_laws",
+                "achieved": 1
+            },
+            {
+                "name": "no_turning_back",
+                "achieved": 1
+            },
+            {
+                "name": "spend_money_to_make_money",
+                "achieved": 1
+            },
+            {
+                "name": "going_places",
+                "achieved": 1
+            },
+            {
+                "name": "you_gotta_start_somewhere",
+                "achieved": 1
+            },
+            {
+                "name": "guilty_of_crime",
+                "achieved": 1
+            },
+            {
+                "name": "gone_in_30_seconds",
+                "achieved": 1
+            },
+            {
+                "name": "armed_and_dangerous",
+                "achieved": 1
+            },
+            {
+                "name": "gage2_8",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "player_time",
+                "value": 8
+            },
+            {
+                "name": "player_time_0h",
+                "value": 0
+            },
+            {
+                "name": "player_time_10h",
+                "value": 1
+            },
+            {
+                "name": "player_level",
+                "value": 59
+            },
+            {
+                "name": "player_level_0",
+                "value": 0
+            },
+            {
+                "name": "player_level_10",
+                "value": 0
+            },
+            {
+                "name": "player_level_20",
+                "value": 0
+            },
+            {
+                "name": "player_level_30",
+                "value": 0
+            },
+            {
+                "name": "player_level_40",
+                "value": 0
+            },
+            {
+                "name": "player_level_50",
+                "value": 1
+            },
+            {
+                "name": "player_cash",
+                "value": 13856600
+            },
+            {
+                "name": "player_cash_1k",
+                "value": 0
+            },
+            {
+                "name": "player_cash_100k",
+                "value": 0
+            },
+            {
+                "name": "player_cash_1000k",
+                "value": 0
+            },
+            {
+                "name": "player_cash_10000k",
+                "value": 1
+            },
+            {
+                "name": "heist_failed",
+                "value": 18
+            },
+            {
+                "name": "heist_success",
+                "value": 67
+            },
+            {
+                "name": "skill_mastermind_0",
+                "value": 1
+            },
+            {
+                "name": "skill_enforcer",
+                "value": 4
+            },
+            {
+                "name": "skill_enforcer_0",
+                "value": 0
+            },
+            {
+                "name": "skill_enforcer_5",
+                "value": 1
+            },
+            {
+                "name": "skill_technician",
+                "value": 17
+            },
+            {
+                "name": "skill_technician_5",
+                "value": 0
+            },
+            {
+                "name": "skill_technician_10",
+                "value": 0
+            },
+            {
+                "name": "skill_technician_15",
+                "value": 0
+            },
+            {
+                "name": "skill_technician_20",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_0",
+                "value": 1
+            },
+            {
+                "name": "skill_enforcer_oppressor",
+                "value": 1
+            },
+            {
+                "name": "skill_enforcer_oppressor_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_enforcer_pack_mule",
+                "value": 1
+            },
+            {
+                "name": "skill_enforcer_pack_mule_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_rifleman",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_rifleman_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_trip_miner",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_trip_miner_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_discipline",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_trip_mine_expert",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_trip_mine_expert_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_hardware_expert",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_hardware_expert_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_drill_expert",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_drill_expert_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_blast_radius",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_blast_radius_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_silent_drilling",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_silent_drilling_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_shaped_charge",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_shaped_charge_ace",
+                "value": 1
+            },
+            {
+                "name": "weapon_used_amcar",
+                "value": 3
+            },
+            {
+                "name": "weapon_used_ak74",
+                "value": 21
+            },
+            {
+                "name": "weapon_used_g36",
+                "value": 75
+            },
+            {
+                "name": "weapon_used_new_mp5",
+                "value": 17
+            },
+            {
+                "name": "weapon_used_glock_17",
+                "value": 75
+            },
+            {
+                "name": "gadget_used_trip_mine",
+                "value": 173
+            },
+            {
+                "name": "mask_used_alienware",
+                "value": 99
+            },
+            {
+                "name": "mask_used_character_locked",
+                "value": 18
+            },
+            {
+                "name": "difficulty_normal",
+                "value": 4
+            },
+            {
+                "name": "difficulty_hard",
+                "value": 17
+            },
+            {
+                "name": "difficulty_overkill",
+                "value": 36
+            },
+            {
+                "name": "difficulty_overkill_145",
+                "value": 70
+            },
+            {
+                "name": "level_jewelry_store",
+                "value": 3
+            },
+            {
+                "name": "level_four_stores",
+                "value": 2
+            },
+            {
+                "name": "level_nightclub",
+                "value": 3
+            },
+            {
+                "name": "level_mallcrasher",
+                "value": 1
+            },
+            {
+                "name": "level_ukrainian_job",
+                "value": 4
+            },
+            {
+                "name": "level_framing_frame_1",
+                "value": 2
+            },
+            {
+                "name": "level_framing_frame_2",
+                "value": 1
+            },
+            {
+                "name": "level_alex_1",
+                "value": 6
+            },
+            {
+                "name": "level_alex_2",
+                "value": 5
+            },
+            {
+                "name": "level_alex_3",
+                "value": 5
+            },
+            {
+                "name": "level_watchdogs_1",
+                "value": 3
+            },
+            {
+                "name": "level_watchdogs_2",
+                "value": 2
+            },
+            {
+                "name": "level_firestarter_1",
+                "value": 2
+            },
+            {
+                "name": "level_firestarter_2",
+                "value": 3
+            },
+            {
+                "name": "level_firestarter_3",
+                "value": 3
+            },
+            {
+                "name": "level_welcome_to_the_jungle_1",
+                "value": 2
+            },
+            {
+                "name": "level_welcome_to_the_jungle_2",
+                "value": 2
+            },
+            {
+                "name": "level_escape_cafe_day",
+                "value": 1
+            },
+            {
+                "name": "level_escape_park_day",
+                "value": 2
+            },
+            {
+                "name": "level_escape_cafe",
+                "value": 1
+            },
+            {
+                "name": "level_escape_park",
+                "value": 1
+            },
+            {
+                "name": "level_escape_garage",
+                "value": 2
+            },
+            {
+                "name": "level_arm_hcm",
+                "value": 1
+            },
+            {
+                "name": "level_arm_par",
+                "value": 1
+            },
+            {
+                "name": "level_branchbank",
+                "value": 7
+            },
+            {
+                "name": "job_four_stores",
+                "value": 2
+            },
+            {
+                "name": "job_nightclub",
+                "value": 4
+            },
+            {
+                "name": "job_mallcrasher",
+                "value": 1
+            },
+            {
+                "name": "job_ukrainian_job_prof",
+                "value": 5
+            },
+            {
+                "name": "job_branchbank_deposit",
+                "value": 2
+            },
+            {
+                "name": "job_branchbank_cash",
+                "value": 4
+            },
+            {
+                "name": "job_branchbank_gold_prof",
+                "value": 1
+            },
+            {
+                "name": "job_branchbank_prof",
+                "value": 2
+            },
+            {
+                "name": "job_framing_frame_prof",
+                "value": 4
+            },
+            {
+                "name": "job_alex_prof",
+                "value": 21
+            },
+            {
+                "name": "job_watchdogs",
+                "value": 1
+            },
+            {
+                "name": "job_watchdogs_prof",
+                "value": 4
+            },
+            {
+                "name": "job_firestarter",
+                "value": 5
+            },
+            {
+                "name": "job_firestarter_prof",
+                "value": 3
+            },
+            {
+                "name": "job_welcome_to_the_jungle_prof",
+                "value": 4
+            },
+            {
+                "name": "job_arm_par",
+                "value": 1
+            },
+            {
+                "name": "job_arm_hcm",
+                "value": 1
+            },
+            {
+                "name": "job_jewelry_store",
+                "value": 3
+            },
+            {
+                "name": "mask_used_kawaii",
+                "value": 15
+            },
+            {
+                "name": "gage_9_stats",
+                "value": 5
+            },
+            {
+                "name": "difficulty_overkill_290",
+                "value": 5
+            },
+            {
+                "name": "player_rank_0",
+                "value": 1
+            }
+        ]
+    }
+}

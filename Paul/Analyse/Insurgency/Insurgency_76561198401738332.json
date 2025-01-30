@@ -1,0 +1,42 @@
+{
+    "playerstats": {
+        "steamID": "76561198401738332",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_CAPTURE_POINT_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKills",
+                "value": 1
+            },
+            {
+                "name": "TotalCaptures",
+                "value": 1
+            },
+            {
+                "name": "TotalKillsCoop",
+                "value": 14
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 4
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 15
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 5
+            }
+        ]
+    }
+}

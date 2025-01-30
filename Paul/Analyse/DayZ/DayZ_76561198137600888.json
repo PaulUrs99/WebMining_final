@@ -1,0 +1,90 @@
+{
+    "playerstats": {
+        "steamID": "76561198137600888",
+        "gameName": "DayZ",
+        "stats": [
+            {
+                "name": "STAT_ACTION_EAT",
+                "value": 247
+            },
+            {
+                "name": "STAT_ACTION_DRINK",
+                "value": 69
+            },
+            {
+                "name": "STAT_ACTION_EQUIP_GEAR",
+                "value": 1049
+            },
+            {
+                "name": "STAT_ACTION_COOK_STEAK",
+                "value": 12
+            },
+            {
+                "name": "STAT_ACTION_IGNITE_FIRE_MATCHBOX",
+                "value": 2
+            },
+            {
+                "name": "STAT_ACTION_IGNITE_FIRE_HAND_DRILL",
+                "value": 4
+            },
+            {
+                "name": "STAT_ACTION_APPLY_MEDS_ON_SURVIVOR",
+                "value": 10
+            },
+            {
+                "name": "STAT_INFECTED_KILL_COUNT",
+                "value": 499
+            },
+            {
+                "name": "STAT_SURVIVOR_KILL_MAX_DIST",
+                "value": 333.356201171875
+            },
+            {
+                "name": "STAT_INFECTED_SOLDIER_KILL_COUNT",
+                "value": 109
+            },
+            {
+                "name": "STAT_SURVIVOR_MELEE_KILL_COUNT",
+                "value": 1
+            },
+            {
+                "name": "STAT_INFECTED_HEADSHOT_COUNT",
+                "value": 108
+            },
+            {
+                "name": "STAT_HEADSHOT_COUNT",
+                "value": 108
+            }
+        ],
+        "achievements": [
+            {
+                "name": "ACH_BodilyNeeds",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_Geared",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_ActOfMercy",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_FieldCook",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_Marksman",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_Pacify",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_Lobotomy",
+                "achieved": 1
+            }
+        ]
+    }
+}

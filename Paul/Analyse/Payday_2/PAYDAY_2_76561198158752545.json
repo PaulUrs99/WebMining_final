@@ -1,0 +1,5206 @@
+[
+    {
+        "name": "player_time_0h",
+        "value": 0
+    },
+    {
+        "name": "player_time_10h",
+        "value": 0
+    },
+    {
+        "name": "player_time_20h",
+        "value": 0
+    },
+    {
+        "name": "player_time_40h",
+        "value": 0
+    },
+    {
+        "name": "player_time_80h",
+        "value": 0
+    },
+    {
+        "name": "player_time_100h",
+        "value": 0
+    },
+    {
+        "name": "player_time_150h",
+        "value": 0
+    },
+    {
+        "name": "player_time_200h",
+        "value": 0
+    },
+    {
+        "name": "player_time_250h",
+        "value": 1
+    },
+    {
+        "name": "player_level",
+        "value": 100
+    },
+    {
+        "name": "player_level_0",
+        "value": 0
+    },
+    {
+        "name": "player_level_10",
+        "value": 0
+    },
+    {
+        "name": "player_level_20",
+        "value": 0
+    },
+    {
+        "name": "player_level_30",
+        "value": 0
+    },
+    {
+        "name": "player_level_40",
+        "value": 0
+    },
+    {
+        "name": "player_level_50",
+        "value": 0
+    },
+    {
+        "name": "player_level_60",
+        "value": 0
+    },
+    {
+        "name": "player_level_70",
+        "value": 0
+    },
+    {
+        "name": "player_level_80",
+        "value": 0
+    },
+    {
+        "name": "player_level_90",
+        "value": 0
+    },
+    {
+        "name": "player_level_100",
+        "value": 1
+    },
+    {
+        "name": "player_cash_1k",
+        "value": 0
+    },
+    {
+        "name": "player_cash_10k",
+        "value": 0
+    },
+    {
+        "name": "player_cash_100k",
+        "value": 0
+    },
+    {
+        "name": "player_cash_1000k",
+        "value": 0
+    },
+    {
+        "name": "player_cash_10000k",
+        "value": 0
+    },
+    {
+        "name": "player_cash_100000k",
+        "value": 0
+    },
+    {
+        "name": "player_cash_1000000k",
+        "value": 1
+    },
+    {
+        "name": "heist_failed",
+        "value": 209
+    },
+    {
+        "name": "heist_success",
+        "value": 624
+    },
+    {
+        "name": "skill_mastermind",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_0",
+        "value": 1
+    },
+    {
+        "name": "skill_mastermind_5",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_10",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_0",
+        "value": 1
+    },
+    {
+        "name": "skill_enforcer_5",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_10",
+        "value": 0
+    },
+    {
+        "name": "skill_technician",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_0",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_5",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_10",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_0",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_5",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_10",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_cable_guy",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_cable_guy_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_combat_medic",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_combat_medic_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_triathlete",
+        "value": 1
+    },
+    {
+        "name": "skill_mastermind_triathlete_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_fast_learner",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_fast_learner_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_stockholm_syndrome",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_stockholm_syndrome_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_medic_2x",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_medic_2x_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_joker",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_joker_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_black_marketeer",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_black_marketeer_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_control_freak",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_control_freak_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_inspire",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_inspire_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_oppressor",
+        "value": 1
+    },
+    {
+        "name": "skill_enforcer_oppressor_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_ammo_reservoir",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_ammo_reservoir_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_pack_mule",
+        "value": 1
+    },
+    {
+        "name": "skill_enforcer_pack_mule_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_show_of_force",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_show_of_force_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_underdog",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_underdog_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_shotgun_impact",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_shotgun_impact_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_shotgun_cqb",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_shotgun_cqb_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_ammo_2x",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_ammo_2x_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_bandoliers",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_bandoliers_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_portable_saw",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_overkill",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_overkill_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_juggernaut",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_juggernaut_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_carbon_blade",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_carbon_blade_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_rifleman",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_trip_miner",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_hardware_expert",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_hardware_expert_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_drill_expert",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_drill_expert_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_scavenger",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_scavenger_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_sprinter",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_sprinter_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_cat_burglar",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_chameleon",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_chameleon_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_cleaner",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_cleaner_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_ecm_2x",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_ecm_2x_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_hitman",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_hitman_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_ecm_booster",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_ecm_booster_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_silence_expert",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_silence_expert_ace",
+        "value": 0
+    },
+    {
+        "name": "weapon_used_new_m4",
+        "value": 88
+    },
+    {
+        "name": "weapon_used_glock_18c",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_amcar",
+        "value": 14
+    },
+    {
+        "name": "weapon_used_m16",
+        "value": 5
+    },
+    {
+        "name": "weapon_used_ak74",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_akm",
+        "value": 42
+    },
+    {
+        "name": "weapon_used_akmsu",
+        "value": 13
+    },
+    {
+        "name": "weapon_used_saiga",
+        "value": 39
+    },
+    {
+        "name": "weapon_used_g36",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_p90",
+        "value": 11
+    },
+    {
+        "name": "weapon_used_new_m14",
+        "value": 152
+    },
+    {
+        "name": "weapon_used_deagle",
+        "value": 16
+    },
+    {
+        "name": "weapon_used_new_mp5",
+        "value": 10
+    },
+    {
+        "name": "weapon_used_colt_1911",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_serbu",
+        "value": 41
+    },
+    {
+        "name": "weapon_used_glock_17",
+        "value": 23
+    },
+    {
+        "name": "weapon_used_b92fs",
+        "value": 4
+    },
+    {
+        "name": "weapon_used_huntsman",
+        "value": 22
+    },
+    {
+        "name": "weapon_used_new_raging_bull",
+        "value": 50
+    },
+    {
+        "name": "weapon_used_saw",
+        "value": 35
+    },
+    {
+        "name": "gadget_used_ammo_bag",
+        "value": 384
+    },
+    {
+        "name": "gadget_used_doctor_bag",
+        "value": 224
+    },
+    {
+        "name": "gadget_used_trip_mine",
+        "value": 373
+    },
+    {
+        "name": "gadget_used_sentry_gun",
+        "value": 17
+    },
+    {
+        "name": "gadget_used_ecm_jammer",
+        "value": 371
+    },
+    {
+        "name": "mask_used_gagball",
+        "value": 6
+    },
+    {
+        "name": "mask_used_dallas_clean",
+        "value": 24
+    },
+    {
+        "name": "mask_used_anonymous",
+        "value": 21
+    },
+    {
+        "name": "mask_used_grin",
+        "value": 2
+    },
+    {
+        "name": "mask_used_hockey",
+        "value": 17
+    },
+    {
+        "name": "mask_used_biglips",
+        "value": 3
+    },
+    {
+        "name": "mask_used_character_locked",
+        "value": 16
+    },
+    {
+        "name": "difficulty_normal",
+        "value": 27
+    },
+    {
+        "name": "difficulty_hard",
+        "value": 18
+    },
+    {
+        "name": "difficulty_overkill",
+        "value": 9
+    },
+    {
+        "name": "difficulty_overkill_145",
+        "value": 192
+    },
+    {
+        "name": "halloween_4_stats",
+        "value": 50
+    },
+    {
+        "name": "halloween_5_stats",
+        "value": 25
+    },
+    {
+        "name": "halloween_6_stats",
+        "value": 668
+    },
+    {
+        "name": "halloween_7_stats",
+        "value": 50
+    },
+    {
+        "name": "halloween_8_stats",
+        "value": 838
+    },
+    {
+        "name": "halloween_10_stats",
+        "value": 25
+    },
+    {
+        "name": "armored_4_stat",
+        "value": 15
+    },
+    {
+        "name": "armored_5_stat",
+        "value": 735
+    },
+    {
+        "name": "armored_7_stat",
+        "value": 69
+    },
+    {
+        "name": "armored_8_stat",
+        "value": 7
+    },
+    {
+        "name": "armored_9_stat",
+        "value": 95
+    },
+    {
+        "name": "armored_10_stat",
+        "value": 61
+    },
+    {
+        "name": "level_safehouse",
+        "value": 1
+    },
+    {
+        "name": "level_jewelry_store",
+        "value": 23
+    },
+    {
+        "name": "level_four_stores",
+        "value": 9
+    },
+    {
+        "name": "level_nightclub",
+        "value": 7
+    },
+    {
+        "name": "level_mallcrasher",
+        "value": 10
+    },
+    {
+        "name": "level_ukrainian_job",
+        "value": 42
+    },
+    {
+        "name": "level_framing_frame_1",
+        "value": 21
+    },
+    {
+        "name": "level_framing_frame_2",
+        "value": 19
+    },
+    {
+        "name": "level_framing_frame_3",
+        "value": 12
+    },
+    {
+        "name": "level_alex_1",
+        "value": 22
+    },
+    {
+        "name": "level_alex_2",
+        "value": 17
+    },
+    {
+        "name": "level_alex_3",
+        "value": 17
+    },
+    {
+        "name": "level_watchdogs_1",
+        "value": 8
+    },
+    {
+        "name": "level_watchdogs_2",
+        "value": 5
+    },
+    {
+        "name": "level_firestarter_1",
+        "value": 28
+    },
+    {
+        "name": "level_firestarter_2",
+        "value": 23
+    },
+    {
+        "name": "level_firestarter_3",
+        "value": 16
+    },
+    {
+        "name": "level_welcome_to_the_jungle_1",
+        "value": 4
+    },
+    {
+        "name": "level_welcome_to_the_jungle_2",
+        "value": 8
+    },
+    {
+        "name": "level_escape_cafe_day",
+        "value": 6
+    },
+    {
+        "name": "level_escape_park_day",
+        "value": 1
+    },
+    {
+        "name": "level_escape_park",
+        "value": 2
+    },
+    {
+        "name": "level_escape_street",
+        "value": 9
+    },
+    {
+        "name": "level_escape_garage",
+        "value": 7
+    },
+    {
+        "name": "level_family",
+        "value": 11
+    },
+    {
+        "name": "level_arm_cro",
+        "value": 2
+    },
+    {
+        "name": "level_arm_und",
+        "value": 3
+    },
+    {
+        "name": "level_arm_hcm",
+        "value": 2
+    },
+    {
+        "name": "level_arm_par",
+        "value": 10
+    },
+    {
+        "name": "level_arm_fac",
+        "value": 3
+    },
+    {
+        "name": "level_arm_for",
+        "value": 15
+    },
+    {
+        "name": "level_branchbank",
+        "value": 51
+    },
+    {
+        "name": "job_four_stores",
+        "value": 31
+    },
+    {
+        "name": "job_nightclub",
+        "value": 15
+    },
+    {
+        "name": "job_mallcrasher",
+        "value": 18
+    },
+    {
+        "name": "job_ukrainian_job_prof",
+        "value": 72
+    },
+    {
+        "name": "job_branchbank_deposit",
+        "value": 22
+    },
+    {
+        "name": "job_branchbank_cash",
+        "value": 15
+    },
+    {
+        "name": "job_branchbank_gold_prof",
+        "value": 41
+    },
+    {
+        "name": "job_branchbank_prof",
+        "value": 9
+    },
+    {
+        "name": "job_framing_frame",
+        "value": 156
+    },
+    {
+        "name": "job_alex",
+        "value": 73
+    },
+    {
+        "name": "job_alex_prof",
+        "value": 5
+    },
+    {
+        "name": "job_watchdogs",
+        "value": 10
+    },
+    {
+        "name": "job_firestarter",
+        "value": 123
+    },
+    {
+        "name": "job_firestarter_prof",
+        "value": 5
+    },
+    {
+        "name": "job_welcome_to_the_jungle_prof",
+        "value": 27
+    },
+    {
+        "name": "job_family",
+        "value": 31
+    },
+    {
+        "name": "job_arm_fac",
+        "value": 5
+    },
+    {
+        "name": "job_arm_par",
+        "value": 12
+    },
+    {
+        "name": "job_arm_hcm",
+        "value": 2
+    },
+    {
+        "name": "job_arm_und",
+        "value": 5
+    },
+    {
+        "name": "job_arm_cro",
+        "value": 3
+    },
+    {
+        "name": "job_jewelry_store",
+        "value": 40
+    },
+    {
+        "name": "mask_used_pumpkin_king",
+        "value": 1
+    },
+    {
+        "name": "mask_used_heat",
+        "value": 34
+    },
+    {
+        "name": "mask_used_obama",
+        "value": 8
+    },
+    {
+        "name": "weapon_used_m45",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_ppk",
+        "value": 38
+    },
+    {
+        "name": "weapon_used_usp",
+        "value": 77
+    },
+    {
+        "name": "gage_1_stats",
+        "value": 100
+    },
+    {
+        "name": "gage_2_stats",
+        "value": 100
+    },
+    {
+        "name": "gage_3_stats",
+        "value": 100
+    },
+    {
+        "name": "gage_4_stats",
+        "value": 100
+    },
+    {
+        "name": "gage_5_stats",
+        "value": 137
+    },
+    {
+        "name": "gage_6_stats",
+        "value": 219
+    },
+    {
+        "name": "gage_9_stats",
+        "value": 1022
+    },
+    {
+        "name": "gage_10_stats",
+        "value": 620
+    },
+    {
+        "name": "gage_7_stats",
+        "value": 180
+    },
+    {
+        "name": "gage2_3_stats",
+        "value": 50
+    },
+    {
+        "name": "gage2_9_stats",
+        "value": 27
+    },
+    {
+        "name": "mask_used_panda",
+        "value": 5
+    },
+    {
+        "name": "mask_used_aviator",
+        "value": 43
+    },
+    {
+        "name": "mask_used_ghost",
+        "value": 9
+    },
+    {
+        "name": "mask_used_welder",
+        "value": 1
+    },
+    {
+        "name": "mask_used_plague",
+        "value": 28
+    },
+    {
+        "name": "mask_used_smoker",
+        "value": 26
+    },
+    {
+        "name": "mask_used_cloth_commander",
+        "value": 19
+    },
+    {
+        "name": "mask_used_gage_deltaforce",
+        "value": 12
+    },
+    {
+        "name": "mask_used_skullhard",
+        "value": 10
+    },
+    {
+        "name": "mask_used_skulloverkill",
+        "value": 1
+    },
+    {
+        "name": "mask_used_skulloverkillplus",
+        "value": 93
+    },
+    {
+        "name": "weapon_used_scar",
+        "value": 4
+    },
+    {
+        "name": "weapon_used_p226",
+        "value": 18
+    },
+    {
+        "name": "weapon_used_m249",
+        "value": 10
+    },
+    {
+        "name": "weapon_used_g22c",
+        "value": 12
+    },
+    {
+        "name": "stats_election_day_s",
+        "value": 9
+    },
+    {
+        "name": "stats_election_day_n",
+        "value": 1
+    },
+    {
+        "name": "level_election_day_1",
+        "value": 19
+    },
+    {
+        "name": "level_election_day_2",
+        "value": 10
+    },
+    {
+        "name": "level_election_day_3_skip2",
+        "value": 1
+    },
+    {
+        "name": "level_roberts",
+        "value": 14
+    },
+    {
+        "name": "job_election_day",
+        "value": 76
+    },
+    {
+        "name": "job_election_day_prof",
+        "value": 4
+    },
+    {
+        "name": "job_roberts",
+        "value": 45
+    },
+    {
+        "name": "difficulty_overkill_290",
+        "value": 409
+    },
+    {
+        "name": "player_rank_0",
+        "value": 0
+    },
+    {
+        "name": "player_rank_1",
+        "value": 0
+    },
+    {
+        "name": "player_rank_2",
+        "value": 0
+    },
+    {
+        "name": "player_rank_3",
+        "value": 0
+    },
+    {
+        "name": "player_rank_4",
+        "value": 0
+    },
+    {
+        "name": "player_rank_5",
+        "value": 0
+    },
+    {
+        "name": "gmod_1_stats",
+        "value": 241
+    },
+    {
+        "name": "gmod_2_stats",
+        "value": 304
+    },
+    {
+        "name": "gmod_3_stats",
+        "value": 378
+    },
+    {
+        "name": "gmod_4_stats",
+        "value": 360
+    },
+    {
+        "name": "gmod_5_stats",
+        "value": 328
+    },
+    {
+        "name": "gage3_2_stats",
+        "value": 6
+    },
+    {
+        "name": "gage3_3_stats",
+        "value": 1086
+    },
+    {
+        "name": "gage3_4_stats",
+        "value": 1086
+    },
+    {
+        "name": "gage3_5_stats",
+        "value": 1086
+    },
+    {
+        "name": "gage3_6_stats",
+        "value": 1109
+    },
+    {
+        "name": "gage3_7_stats",
+        "value": 47
+    },
+    {
+        "name": "gage3_10_stats",
+        "value": 10
+    },
+    {
+        "name": "gage3_11_stats",
+        "value": 18
+    },
+    {
+        "name": "gage3_13_stats",
+        "value": 10
+    },
+    {
+        "name": "gage3_14_stats",
+        "value": 25
+    },
+    {
+        "name": "gage3_15_stats",
+        "value": 25
+    },
+    {
+        "name": "gage3_16_stats",
+        "value": 25
+    },
+    {
+        "name": "gage3_17_stats",
+        "value": 250
+    },
+    {
+        "name": "gage3_12_stats",
+        "value": 111
+    },
+    {
+        "name": "weapon_used_m95",
+        "value": 41
+    },
+    {
+        "name": "weapon_used_msr",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_r93",
+        "value": 1
+    },
+    {
+        "name": "level_kosugi",
+        "value": 73
+    },
+    {
+        "name": "level_big",
+        "value": 16
+    },
+    {
+        "name": "job_kosugi",
+        "value": 243
+    },
+    {
+        "name": "job_big",
+        "value": 64
+    },
+    {
+        "name": "mask_used_samurai",
+        "value": 14
+    },
+    {
+        "name": "mask_used_lincoln",
+        "value": 1
+    },
+    {
+        "name": "gage4_6_stats",
+        "value": 50
+    },
+    {
+        "name": "gage4_7_stats",
+        "value": 25
+    },
+    {
+        "name": "gage4_8_stats",
+        "value": 10
+    },
+    {
+        "name": "gage4_10_stats",
+        "value": 405
+    },
+    {
+        "name": "weapon_used_benelli",
+        "value": 7
+    },
+    {
+        "name": "weapon_used_striker",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_ksg",
+        "value": 43
+    },
+    {
+        "name": "melee_used_weapon",
+        "value": 48
+    },
+    {
+        "name": "melee_used_fists",
+        "value": 10
+    },
+    {
+        "name": "melee_used_kabar",
+        "value": 10
+    },
+    {
+        "name": "melee_used_rambo",
+        "value": 7
+    },
+    {
+        "name": "melee_used_gerber",
+        "value": 8
+    },
+    {
+        "name": "melee_used_brass_knuckles",
+        "value": 1
+    },
+    {
+        "name": "melee_used_tomahawk",
+        "value": 1
+    },
+    {
+        "name": "melee_used_baton",
+        "value": 8
+    },
+    {
+        "name": "armor_used_level_1",
+        "value": 647
+    },
+    {
+        "name": "armor_used_level_2",
+        "value": 18
+    },
+    {
+        "name": "armor_used_level_3",
+        "value": 2
+    },
+    {
+        "name": "armor_used_level_4",
+        "value": 2
+    },
+    {
+        "name": "armor_used_level_6",
+        "value": 84
+    },
+    {
+        "name": "armor_used_level_7",
+        "value": 327
+    },
+    {
+        "name": "weapon_kills_akm",
+        "value": 762
+    },
+    {
+        "name": "weapon_kills_akmsu",
+        "value": 281
+    },
+    {
+        "name": "weapon_kills_amcar",
+        "value": 93
+    },
+    {
+        "name": "weapon_kills_b92fs",
+        "value": 36
+    },
+    {
+        "name": "weapon_kills_colt_1911",
+        "value": 43
+    },
+    {
+        "name": "weapon_kills_deagle",
+        "value": 650
+    },
+    {
+        "name": "weapon_kills_g22c",
+        "value": 232
+    },
+    {
+        "name": "weapon_kills_g36",
+        "value": 78
+    },
+    {
+        "name": "weapon_kills_glock_17",
+        "value": 82
+    },
+    {
+        "name": "weapon_kills_glock_18c",
+        "value": 53
+    },
+    {
+        "name": "weapon_kills_huntsman",
+        "value": 477
+    },
+    {
+        "name": "weapon_kills_m16",
+        "value": 114
+    },
+    {
+        "name": "weapon_kills_new_m14",
+        "value": 7529
+    },
+    {
+        "name": "weapon_kills_new_m4",
+        "value": 6442
+    },
+    {
+        "name": "weapon_kills_new_mp5",
+        "value": 311
+    },
+    {
+        "name": "weapon_kills_new_raging_bull",
+        "value": 1220
+    },
+    {
+        "name": "weapon_kills_p90",
+        "value": 183
+    },
+    {
+        "name": "weapon_kills_saiga",
+        "value": 10395
+    },
+    {
+        "name": "weapon_kills_saw",
+        "value": 10
+    },
+    {
+        "name": "weapon_kills_serbu",
+        "value": 2425
+    },
+    {
+        "name": "weapon_kills_usp",
+        "value": 1170
+    },
+    {
+        "name": "weapon_kills_m45",
+        "value": 28
+    },
+    {
+        "name": "weapon_kills_ppk",
+        "value": 469
+    },
+    {
+        "name": "weapon_kills_mp7",
+        "value": 18
+    },
+    {
+        "name": "weapon_kills_scar",
+        "value": 98
+    },
+    {
+        "name": "weapon_kills_p226",
+        "value": 227
+    },
+    {
+        "name": "weapon_kills_m249",
+        "value": 790
+    },
+    {
+        "name": "weapon_kills_rpk",
+        "value": 61
+    },
+    {
+        "name": "weapon_kills_m95",
+        "value": 1476
+    },
+    {
+        "name": "weapon_kills_msr",
+        "value": 2
+    },
+    {
+        "name": "weapon_kills_r93",
+        "value": 11
+    },
+    {
+        "name": "weapon_kills_benelli",
+        "value": 435
+    },
+    {
+        "name": "weapon_kills_striker",
+        "value": 26
+    },
+    {
+        "name": "weapon_kills_ksg",
+        "value": 562
+    },
+    {
+        "name": "enemy_kills_cop",
+        "value": 1196
+    },
+    {
+        "name": "enemy_kills_fbi",
+        "value": 430
+    },
+    {
+        "name": "enemy_kills_fbi_swat",
+        "value": 6020
+    },
+    {
+        "name": "enemy_kills_fbi_heavy_swat",
+        "value": 15504
+    },
+    {
+        "name": "enemy_kills_swat",
+        "value": 1658
+    },
+    {
+        "name": "enemy_kills_heavy_swat",
+        "value": 2477
+    },
+    {
+        "name": "enemy_kills_city_swat",
+        "value": 11730
+    },
+    {
+        "name": "enemy_kills_security",
+        "value": 3399
+    },
+    {
+        "name": "enemy_kills_gensec",
+        "value": 86
+    },
+    {
+        "name": "enemy_kills_gangster",
+        "value": 1154
+    },
+    {
+        "name": "enemy_kills_sniper",
+        "value": 1596
+    },
+    {
+        "name": "enemy_kills_shield",
+        "value": 4555
+    },
+    {
+        "name": "enemy_kills_spooc",
+        "value": 1690
+    },
+    {
+        "name": "enemy_kills_taser",
+        "value": 3571
+    },
+    {
+        "name": "contract_jewelry_store_win",
+        "value": 23
+    },
+    {
+        "name": "contract_four_stores_win",
+        "value": 8
+    },
+    {
+        "name": "contract_four_stores_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_nightclub_win",
+        "value": 7
+    },
+    {
+        "name": "contract_mallcrasher_win",
+        "value": 9
+    },
+    {
+        "name": "contract_mallcrasher_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_ukrainian_job_prof_win",
+        "value": 39
+    },
+    {
+        "name": "contract_ukrainian_job_prof_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_branchbank_deposit_win",
+        "value": 7
+    },
+    {
+        "name": "contract_branchbank_deposit_fail",
+        "value": 2
+    },
+    {
+        "name": "contract_branchbank_cash_win",
+        "value": 6
+    },
+    {
+        "name": "contract_branchbank_gold_prof_win",
+        "value": 24
+    },
+    {
+        "name": "contract_branchbank_gold_prof_win_dropin",
+        "value": 2
+    },
+    {
+        "name": "contract_branchbank_gold_prof_fail",
+        "value": 2
+    },
+    {
+        "name": "contract_branchbank_prof_win",
+        "value": 4
+    },
+    {
+        "name": "contract_branchbank_prof_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_framing_frame_win",
+        "value": 11
+    },
+    {
+        "name": "contract_alex_win",
+        "value": 16
+    },
+    {
+        "name": "contract_alex_fail",
+        "value": 3
+    },
+    {
+        "name": "contract_alex_prof_win",
+        "value": 1
+    },
+    {
+        "name": "contract_alex_prof_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_watchdogs_win",
+        "value": 3
+    },
+    {
+        "name": "contract_watchdogs_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_firestarter_win",
+        "value": 14
+    },
+    {
+        "name": "contract_firestarter_win_dropin",
+        "value": 1
+    },
+    {
+        "name": "contract_firestarter_fail",
+        "value": 4
+    },
+    {
+        "name": "contract_firestarter_prof_win",
+        "value": 1
+    },
+    {
+        "name": "contract_firestarter_prof_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_welcome_to_the_jungle_prof_win",
+        "value": 2
+    },
+    {
+        "name": "contract_welcome_to_the_jungle_prof_fail",
+        "value": 2
+    },
+    {
+        "name": "contract_family_win",
+        "value": 11
+    },
+    {
+        "name": "contract_arm_fac_win",
+        "value": 2
+    },
+    {
+        "name": "contract_arm_fac_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_arm_par_win",
+        "value": 4
+    },
+    {
+        "name": "contract_arm_par_fail",
+        "value": 5
+    },
+    {
+        "name": "contract_arm_hcm_win",
+        "value": 2
+    },
+    {
+        "name": "contract_arm_und_win",
+        "value": 3
+    },
+    {
+        "name": "contract_arm_cro_win",
+        "value": 2
+    },
+    {
+        "name": "contract_roberts_win",
+        "value": 6
+    },
+    {
+        "name": "contract_roberts_win_dropin",
+        "value": 1
+    },
+    {
+        "name": "contract_roberts_fail",
+        "value": 6
+    },
+    {
+        "name": "contract_election_day_win",
+        "value": 8
+    },
+    {
+        "name": "contract_election_day_fail",
+        "value": 2
+    },
+    {
+        "name": "contract_election_day_prof_win",
+        "value": 2
+    },
+    {
+        "name": "contract_kosugi_win",
+        "value": 65
+    },
+    {
+        "name": "contract_kosugi_win_dropin",
+        "value": 2
+    },
+    {
+        "name": "contract_kosugi_fail",
+        "value": 2
+    },
+    {
+        "name": "contract_big_win",
+        "value": 9
+    },
+    {
+        "name": "contract_big_win_dropin",
+        "value": 1
+    },
+    {
+        "name": "contract_big_fail",
+        "value": 3
+    },
+    {
+        "name": "melee_kills_weapon",
+        "value": 33
+    },
+    {
+        "name": "melee_kills_kabar",
+        "value": 3
+    },
+    {
+        "name": "melee_kills_rambo",
+        "value": 7
+    },
+    {
+        "name": "melee_kills_gerber",
+        "value": 10
+    },
+    {
+        "name": "melee_kills_brass_knuckles",
+        "value": 14
+    },
+    {
+        "name": "melee_kills_tomahawk",
+        "value": 2
+    },
+    {
+        "name": "melee_kills_baton",
+        "value": 9
+    },
+    {
+        "name": "melee_kills_becker",
+        "value": 2
+    },
+    {
+        "name": "skill_mastermind_unlocked",
+        "value": 1
+    },
+    {
+        "name": "skill_enforcer_unlocked",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_unlocked",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_unlocked",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_judge",
+        "value": 264
+    },
+    {
+        "name": "weapon_kills_judge",
+        "value": 5040
+    },
+    {
+        "name": "melee_used_moneybundle",
+        "value": 12
+    },
+    {
+        "name": "melee_kills_moneybundle",
+        "value": 3
+    },
+    {
+        "name": "stat_version",
+        "value": 2
+    },
+    {
+        "name": "mask_used_unicorn",
+        "value": 12
+    },
+    {
+        "name": "gage5_1_stats",
+        "value": 25
+    },
+    {
+        "name": "gage5_5_stats",
+        "value": 25
+    },
+    {
+        "name": "gage5_8_stats",
+        "value": 25
+    },
+    {
+        "name": "gage5_9_stats",
+        "value": 10
+    },
+    {
+        "name": "gage5_10_stats",
+        "value": 200
+    },
+    {
+        "name": "weapon_used_gre_m79",
+        "value": 18
+    },
+    {
+        "name": "weapon_kills_gre_m79",
+        "value": 489
+    },
+    {
+        "name": "melee_used_x46",
+        "value": 29
+    },
+    {
+        "name": "melee_kills_x46",
+        "value": 34
+    },
+    {
+        "name": "melee_used_bayonet",
+        "value": 4
+    },
+    {
+        "name": "melee_kills_bayonet",
+        "value": 1
+    },
+    {
+        "name": "melee_used_bullseye",
+        "value": 1
+    },
+    {
+        "name": "melee_kills_bullseye",
+        "value": 5
+    },
+    {
+        "name": "pig_3_stats",
+        "value": 30
+    },
+    {
+        "name": "weapon_used_scorpion",
+        "value": 5
+    },
+    {
+        "name": "weapon_kills_scorpion",
+        "value": 123
+    },
+    {
+        "name": "weapon_used_tec9",
+        "value": 4
+    },
+    {
+        "name": "weapon_kills_tec9",
+        "value": 77
+    },
+    {
+        "name": "weapon_used_uzi",
+        "value": 2
+    },
+    {
+        "name": "weapon_kills_uzi",
+        "value": 59
+    },
+    {
+        "name": "melee_used_cleaver",
+        "value": 1
+    },
+    {
+        "name": "melee_kills_cleaver",
+        "value": 1
+    },
+    {
+        "name": "melee_used_fireaxe",
+        "value": 1
+    },
+    {
+        "name": "melee_kills_fireaxe",
+        "value": 5
+    },
+    {
+        "name": "melee_used_briefcase",
+        "value": 3
+    },
+    {
+        "name": "enemy_kills_mobster",
+        "value": 236
+    },
+    {
+        "name": "enemy_kills_mobster_boss",
+        "value": 6
+    },
+    {
+        "name": "level_mia_1",
+        "value": 16
+    },
+    {
+        "name": "level_mia_2",
+        "value": 13
+    },
+    {
+        "name": "job_mia",
+        "value": 34
+    },
+    {
+        "name": "contract_mia_win",
+        "value": 12
+    },
+    {
+        "name": "contract_mia_fail",
+        "value": 1
+    },
+    {
+        "name": "character_used_russian",
+        "value": 9
+    },
+    {
+        "name": "character_used_german",
+        "value": 28
+    },
+    {
+        "name": "character_used_spanish",
+        "value": 4
+    },
+    {
+        "name": "character_used_american",
+        "value": 4
+    },
+    {
+        "name": "character_used_jowi",
+        "value": 9
+    },
+    {
+        "name": "character_used_old_hoxton",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_jowi",
+        "value": 7
+    },
+    {
+        "name": "weapon_kills_jowi",
+        "value": 20
+    },
+    {
+        "name": "weapon_used_x_b92fs",
+        "value": 39
+    },
+    {
+        "name": "weapon_kills_x_b92fs",
+        "value": 148
+    },
+    {
+        "name": "weapon_used_x_deagle",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_x_deagle",
+        "value": 7
+    },
+    {
+        "name": "melee_used_kabartanto",
+        "value": 3
+    },
+    {
+        "name": "melee_kills_kabartanto",
+        "value": 2
+    },
+    {
+        "name": "mask_used_old_hoxton",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_spas12",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_spas12",
+        "value": 23
+    },
+    {
+        "name": "melee_used_toothbrush",
+        "value": 52
+    },
+    {
+        "name": "melee_kills_toothbrush",
+        "value": 15
+    },
+    {
+        "name": "level_watchdogs_1_night",
+        "value": 6
+    },
+    {
+        "name": "level_watchdogs_2_day",
+        "value": 2
+    },
+    {
+        "name": "level_welcome_to_the_jungle_1_night",
+        "value": 7
+    },
+    {
+        "name": "level_gallery",
+        "value": 9
+    },
+    {
+        "name": "job_gallery",
+        "value": 25
+    },
+    {
+        "name": "contract_gallery_win",
+        "value": 9
+    },
+    {
+        "name": "level_hox_1",
+        "value": 55
+    },
+    {
+        "name": "level_hox_2",
+        "value": 19
+    },
+    {
+        "name": "job_hox",
+        "value": 77
+    },
+    {
+        "name": "job_hox_prof",
+        "value": 4
+    },
+    {
+        "name": "contract_hox_win",
+        "value": 14
+    },
+    {
+        "name": "contract_hox_fail",
+        "value": 31
+    },
+    {
+        "name": "contract_hox_prof_win",
+        "value": 1
+    },
+    {
+        "name": "contract_hox_prof_fail",
+        "value": 2
+    },
+    {
+        "name": "enemy_kills_civilian",
+        "value": 2019
+    },
+    {
+        "name": "enemy_kills_civilian_female",
+        "value": 777
+    },
+    {
+        "name": "level_haunted",
+        "value": 4
+    },
+    {
+        "name": "job_haunted",
+        "value": 7
+    },
+    {
+        "name": "contract_haunted_win",
+        "value": 2
+    },
+    {
+        "name": "contract_haunted_fail",
+        "value": 2
+    },
+    {
+        "name": "enemy_kills_tank_hw",
+        "value": 36
+    },
+    {
+        "name": "skill_hoxton",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_0",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_5",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_10",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_perseverance",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_perseverance_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_trigger_happy",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_trigger_happy_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_drop_soap",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_drop_soap_ace",
+        "value": 0
+    },
+    {
+        "name": "melee_used_chef",
+        "value": 13
+    },
+    {
+        "name": "melee_kills_chef",
+        "value": 19
+    },
+    {
+        "name": "eagle_1_stats",
+        "value": 25
+    },
+    {
+        "name": "eagle_2_stats",
+        "value": 27
+    },
+    {
+        "name": "weapon_used_c96",
+        "value": 6
+    },
+    {
+        "name": "weapon_kills_c96",
+        "value": 82
+    },
+    {
+        "name": "weapon_used_sterling",
+        "value": 5
+    },
+    {
+        "name": "weapon_kills_sterling",
+        "value": 39
+    },
+    {
+        "name": "weapon_used_mosin",
+        "value": 6
+    },
+    {
+        "name": "weapon_kills_mosin",
+        "value": 253
+    },
+    {
+        "name": "melee_used_fairbair",
+        "value": 11
+    },
+    {
+        "name": "melee_kills_fairbair",
+        "value": 1
+    },
+    {
+        "name": "melee_used_freedom",
+        "value": 2
+    },
+    {
+        "name": "melee_used_model24",
+        "value": 2
+    },
+    {
+        "name": "character_used_female_1",
+        "value": 179
+    },
+    {
+        "name": "gadget_used_first_aid",
+        "value": 476
+    },
+    {
+        "name": "gadget_used_body_bag",
+        "value": 449
+    },
+    {
+        "name": "gadget_used_armor_bag",
+        "value": 7
+    },
+    {
+        "name": "option_decide_host",
+        "value": 552
+    },
+    {
+        "name": "info_playing_win_host",
+        "value": 552
+    },
+    {
+        "name": "info_playing_win_client",
+        "value": 51
+    },
+    {
+        "name": "info_playing_win_client_dropin",
+        "value": 14
+    },
+    {
+        "name": "info_playing_fail_host",
+        "value": 193
+    },
+    {
+        "name": "info_playing_fail_client",
+        "value": 8
+    },
+    {
+        "name": "mask_used_krampus",
+        "value": 23
+    },
+    {
+        "name": "mask_used_strinch",
+        "value": 7
+    },
+    {
+        "name": "mask_used_almirs_beard",
+        "value": 21
+    },
+    {
+        "name": "level_pines",
+        "value": 7
+    },
+    {
+        "name": "job_pines",
+        "value": 14
+    },
+    {
+        "name": "contract_pines_win",
+        "value": 4
+    },
+    {
+        "name": "contract_pines_fail",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_m1928",
+        "value": 17
+    },
+    {
+        "name": "weapon_kills_m1928",
+        "value": 265
+    },
+    {
+        "name": "level_mus",
+        "value": 9
+    },
+    {
+        "name": "job_mus",
+        "value": 38
+    },
+    {
+        "name": "contract_mus_win",
+        "value": 6
+    },
+    {
+        "name": "contract_mus_fail",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_l85a2",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_l85a2",
+        "value": 63
+    },
+    {
+        "name": "melee_used_shillelagh",
+        "value": 7
+    },
+    {
+        "name": "melee_kills_shillelagh",
+        "value": 2
+    },
+    {
+        "name": "contract_watchdogs_night_win",
+        "value": 3
+    },
+    {
+        "name": "contract_watchdogs_night_fail",
+        "value": 2
+    },
+    {
+        "name": "contract_watchdogs_night_prof_win",
+        "value": 1
+    },
+    {
+        "name": "contract_welcome_to_the_jungle_night_prof_win",
+        "value": 4
+    },
+    {
+        "name": "contract_welcome_to_the_jungle_night_prof_fail",
+        "value": 2
+    },
+    {
+        "name": "job_watchdogs_night",
+        "value": 9
+    },
+    {
+        "name": "job_watchdogs_night_prof",
+        "value": 2
+    },
+    {
+        "name": "job_welcome_to_the_jungle_night_prof",
+        "value": 38
+    },
+    {
+        "name": "melee_used_boxing_gloves",
+        "value": 20
+    },
+    {
+        "name": "melee_kills_boxing_gloves",
+        "value": 9
+    },
+    {
+        "name": "character_used_dragan",
+        "value": 96
+    },
+    {
+        "name": "melee_used_meat_cleaver",
+        "value": 3
+    },
+    {
+        "name": "mask_used_doctor",
+        "value": 1
+    },
+    {
+        "name": "ameno_08_stats",
+        "value": 18617
+    },
+    {
+        "name": "mask_used_the_overkill_mask",
+        "value": 5
+    },
+    {
+        "name": "weapon_used_m134",
+        "value": 3
+    },
+    {
+        "name": "weapon_kills_m134",
+        "value": 23
+    },
+    {
+        "name": "weapon_used_rpg7",
+        "value": 2
+    },
+    {
+        "name": "weapon_kills_rpg7",
+        "value": 132
+    },
+    {
+        "name": "level_rat",
+        "value": 35
+    },
+    {
+        "name": "job_rat",
+        "value": 43
+    },
+    {
+        "name": "job_arm_for",
+        "value": 57
+    },
+    {
+        "name": "contract_rat_win",
+        "value": 15
+    },
+    {
+        "name": "contract_rat_win_dropin",
+        "value": 1
+    },
+    {
+        "name": "contract_rat_fail",
+        "value": 18
+    },
+    {
+        "name": "contract_arm_for_win",
+        "value": 12
+    },
+    {
+        "name": "contract_arm_for_fail",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_b682",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_b682",
+        "value": 157
+    },
+    {
+        "name": "melee_used_whiskey",
+        "value": 5
+    },
+    {
+        "name": "melee_kills_whiskey",
+        "value": 3
+    },
+    {
+        "name": "player_rank_6",
+        "value": 0
+    },
+    {
+        "name": "player_rank_7",
+        "value": 0
+    },
+    {
+        "name": "player_rank_8",
+        "value": 0
+    },
+    {
+        "name": "player_rank_9",
+        "value": 0
+    },
+    {
+        "name": "player_rank_10",
+        "value": 0
+    },
+    {
+        "name": "player_rank_11",
+        "value": 0
+    },
+    {
+        "name": "player_rank_12",
+        "value": 0
+    },
+    {
+        "name": "player_rank_13",
+        "value": 0
+    },
+    {
+        "name": "player_rank_14",
+        "value": 0
+    },
+    {
+        "name": "player_rank_15",
+        "value": 0
+    },
+    {
+        "name": "player_rank_16",
+        "value": 0
+    },
+    {
+        "name": "player_rank_17",
+        "value": 0
+    },
+    {
+        "name": "player_rank_18",
+        "value": 0
+    },
+    {
+        "name": "player_rank_19",
+        "value": 0
+    },
+    {
+        "name": "player_rank_20",
+        "value": 1
+    },
+    {
+        "name": "level_cage",
+        "value": 7
+    },
+    {
+        "name": "job_cage",
+        "value": 20
+    },
+    {
+        "name": "contract_cage_win",
+        "value": 2
+    },
+    {
+        "name": "contract_cage_fail",
+        "value": 5
+    },
+    {
+        "name": "player_specialization_1",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_2",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_3",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_4",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_5",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_6",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_7",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_8",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_10",
+        "value": 9
+    },
+    {
+        "name": "specialization_used_1",
+        "value": 52
+    },
+    {
+        "name": "specialization_used_2",
+        "value": 86
+    },
+    {
+        "name": "specialization_used_3",
+        "value": 173
+    },
+    {
+        "name": "specialization_used_4",
+        "value": 81
+    },
+    {
+        "name": "specialization_used_5",
+        "value": 38
+    },
+    {
+        "name": "specialization_used_7",
+        "value": 371
+    },
+    {
+        "name": "mask_used_hectors_helmet",
+        "value": 18
+    },
+    {
+        "name": "level_hox_3",
+        "value": 16
+    },
+    {
+        "name": "job_hox_3",
+        "value": 80
+    },
+    {
+        "name": "contract_hox_3_win",
+        "value": 15
+    },
+    {
+        "name": "contract_hox_3_fail",
+        "value": 1
+    },
+    {
+        "name": "enemy_kills_hector_boss",
+        "value": 2
+    },
+    {
+        "name": "enemy_kills_hector_boss_no_armor",
+        "value": 13
+    },
+    {
+        "name": "player_specialization_active",
+        "value": 15
+    },
+    {
+        "name": "weapon_used_flamethrower_mk2",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_m32",
+        "value": 11
+    },
+    {
+        "name": "melee_used_poker",
+        "value": 1
+    },
+    {
+        "name": "melee_used_tenderizer",
+        "value": 6
+    },
+    {
+        "name": "mask_used_firedemon",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_flamethrower_mk2",
+        "value": 15
+    },
+    {
+        "name": "scorpion_1_stats",
+        "value": 775
+    },
+    {
+        "name": "weapon_used_peacemaker",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_winchester1874",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_plainsrider",
+        "value": 11
+    },
+    {
+        "name": "melee_used_scalper",
+        "value": 1
+    },
+    {
+        "name": "melee_used_mining_pick",
+        "value": 2
+    },
+    {
+        "name": "melee_used_branding_iron",
+        "value": 1
+    },
+    {
+        "name": "melee_used_bowie",
+        "value": 2
+    },
+    {
+        "name": "grenade_used_frag",
+        "value": 237
+    },
+    {
+        "name": "grenade_used_molotov",
+        "value": 33
+    },
+    {
+        "name": "grenade_used_dynamite",
+        "value": 5
+    },
+    {
+        "name": "mask_used_bandit",
+        "value": 19
+    },
+    {
+        "name": "mask_used_lone",
+        "value": 2
+    },
+    {
+        "name": "weapon_kills_peacemaker",
+        "value": 26
+    },
+    {
+        "name": "weapon_kills_winchester1874",
+        "value": 132
+    },
+    {
+        "name": "weapon_kills_plainsrider",
+        "value": 311
+    },
+    {
+        "name": "grenade_kills_frag",
+        "value": 484
+    },
+    {
+        "name": "grenade_kills_dynamite",
+        "value": 19
+    },
+    {
+        "name": "mask_used_grendel",
+        "value": 38
+    },
+    {
+        "name": "level_shoutout_raid",
+        "value": 17
+    },
+    {
+        "name": "job_shoutout_raid",
+        "value": 23
+    },
+    {
+        "name": "contract_shoutout_raid_win",
+        "value": 15
+    },
+    {
+        "name": "contract_shoutout_raid_fail",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_asval",
+        "value": 61
+    },
+    {
+        "name": "weapon_used_sub2000",
+        "value": 3
+    },
+    {
+        "name": "melee_used_hockey",
+        "value": 4
+    },
+    {
+        "name": "melee_used_taser",
+        "value": 110
+    },
+    {
+        "name": "melee_used_croupier_rake",
+        "value": 2
+    },
+    {
+        "name": "mask_used_croupier_hat",
+        "value": 1
+    },
+    {
+        "name": "mask_used_the_king_mask",
+        "value": 2
+    },
+    {
+        "name": "character_used_sokol",
+        "value": 85
+    },
+    {
+        "name": "weapon_kills_asval",
+        "value": 1010
+    },
+    {
+        "name": "weapon_kills_sub2000",
+        "value": 21
+    },
+    {
+        "name": "melee_kills_taser",
+        "value": 491
+    },
+    {
+        "name": "level_arena",
+        "value": 3
+    },
+    {
+        "name": "level_kenaz",
+        "value": 5
+    },
+    {
+        "name": "job_arena",
+        "value": 15
+    },
+    {
+        "name": "job_kenaz",
+        "value": 23
+    },
+    {
+        "name": "contract_arena_win",
+        "value": 3
+    },
+    {
+        "name": "contract_kenaz_win",
+        "value": 5
+    },
+    {
+        "name": "player_specialization_11",
+        "value": 9
+    },
+    {
+        "name": "specialization_used_11",
+        "value": 18
+    },
+    {
+        "name": "weapon_used_hunter",
+        "value": 9
+    },
+    {
+        "name": "melee_used_fight",
+        "value": 2
+    },
+    {
+        "name": "melee_used_cqc",
+        "value": 74
+    },
+    {
+        "name": "grenade_used_wpn_prj_four",
+        "value": 69
+    },
+    {
+        "name": "mask_used_destroyer",
+        "value": 2
+    },
+    {
+        "name": "mask_used_infamy_hood",
+        "value": 5
+    },
+    {
+        "name": "mask_used_balaclava",
+        "value": 13
+    },
+    {
+        "name": "mask_used_shirai",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_hunter",
+        "value": 131
+    },
+    {
+        "name": "melee_kills_cqc",
+        "value": 4
+    },
+    {
+        "name": "grenade_kills_wpn_prj_four",
+        "value": 36
+    },
+    {
+        "name": "player_specialization_12",
+        "value": 9
+    },
+    {
+        "name": "specialization_used_12",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_arblast",
+        "value": 33
+    },
+    {
+        "name": "weapon_used_long",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_frankish",
+        "value": 65
+    },
+    {
+        "name": "weapon_used_baka",
+        "value": 15
+    },
+    {
+        "name": "melee_used_sandsteel",
+        "value": 143
+    },
+    {
+        "name": "melee_used_buck",
+        "value": 1
+    },
+    {
+        "name": "melee_used_beardy",
+        "value": 2
+    },
+    {
+        "name": "melee_used_great",
+        "value": 6
+    },
+    {
+        "name": "melee_used_morning",
+        "value": 2
+    },
+    {
+        "name": "grenade_used_wpn_prj_ace",
+        "value": 112
+    },
+    {
+        "name": "grenade_used_wpn_prj_jav",
+        "value": 201
+    },
+    {
+        "name": "character_used_dragon",
+        "value": 133
+    },
+    {
+        "name": "weapon_kills_arblast",
+        "value": 574
+    },
+    {
+        "name": "weapon_kills_long",
+        "value": 26
+    },
+    {
+        "name": "weapon_kills_frankish",
+        "value": 1403
+    },
+    {
+        "name": "weapon_kills_baka",
+        "value": 286
+    },
+    {
+        "name": "melee_kills_sandsteel",
+        "value": 441
+    },
+    {
+        "name": "grenade_kills_wpn_prj_ace",
+        "value": 44
+    },
+    {
+        "name": "grenade_kills_wpn_prj_jav",
+        "value": 1247
+    },
+    {
+        "name": "option_resolution_1920x1080",
+        "value": 1
+    },
+    {
+        "name": "option_resolution_1024x768",
+        "value": 0
+    },
+    {
+        "name": "option_resolution_other",
+        "value": 0
+    },
+    {
+        "name": "equipped_mask",
+        "value": 523
+    },
+    {
+        "name": "equipped_primary",
+        "value": 28
+    },
+    {
+        "name": "equipped_secondary",
+        "value": 146
+    },
+    {
+        "name": "equipped_melee",
+        "value": 92
+    },
+    {
+        "name": "equipped_grenade",
+        "value": 6
+    },
+    {
+        "name": "equipped_armor",
+        "value": 1
+    },
+    {
+        "name": "equipped_character",
+        "value": 15
+    },
+    {
+        "name": "equipped_deployable",
+        "value": 1
+    },
+    {
+        "name": "enemy_kills_tank_green",
+        "value": 882
+    },
+    {
+        "name": "enemy_kills_tank_black",
+        "value": 617
+    },
+    {
+        "name": "enemy_kills_tank_skull",
+        "value": 379
+    },
+    {
+        "name": "weapon_shots_ak74",
+        "value": 163
+    },
+    {
+        "name": "weapon_shots_akm",
+        "value": 10580
+    },
+    {
+        "name": "weapon_shots_akmsu",
+        "value": 2990
+    },
+    {
+        "name": "weapon_shots_amcar",
+        "value": 797
+    },
+    {
+        "name": "weapon_shots_b92fs",
+        "value": 349
+    },
+    {
+        "name": "weapon_shots_colt_1911",
+        "value": 88
+    },
+    {
+        "name": "weapon_shots_deagle",
+        "value": 1733
+    },
+    {
+        "name": "weapon_shots_g22c",
+        "value": 1643
+    },
+    {
+        "name": "weapon_shots_g36",
+        "value": 1242
+    },
+    {
+        "name": "weapon_shots_glock_17",
+        "value": 374
+    },
+    {
+        "name": "weapon_shots_glock_18c",
+        "value": 265
+    },
+    {
+        "name": "weapon_shots_huntsman",
+        "value": 859
+    },
+    {
+        "name": "weapon_shots_m16",
+        "value": 1628
+    },
+    {
+        "name": "weapon_shots_new_m14",
+        "value": 38065
+    },
+    {
+        "name": "weapon_shots_new_m4",
+        "value": 29507
+    },
+    {
+        "name": "weapon_shots_new_mp5",
+        "value": 3818
+    },
+    {
+        "name": "weapon_shots_new_raging_bull",
+        "value": 4794
+    },
+    {
+        "name": "weapon_shots_p90",
+        "value": 3457
+    },
+    {
+        "name": "weapon_shots_saiga",
+        "value": 32968
+    },
+    {
+        "name": "weapon_shots_saw",
+        "value": 2192
+    },
+    {
+        "name": "weapon_shots_serbu",
+        "value": 4813
+    },
+    {
+        "name": "weapon_shots_usp",
+        "value": 2430
+    },
+    {
+        "name": "weapon_shots_m45",
+        "value": 257
+    },
+    {
+        "name": "weapon_shots_ppk",
+        "value": 1886
+    },
+    {
+        "name": "weapon_shots_scar",
+        "value": 584
+    },
+    {
+        "name": "weapon_shots_p226",
+        "value": 876
+    },
+    {
+        "name": "weapon_shots_m249",
+        "value": 16176
+    },
+    {
+        "name": "weapon_shots_m95",
+        "value": 1521
+    },
+    {
+        "name": "weapon_shots_msr",
+        "value": 33
+    },
+    {
+        "name": "weapon_shots_r93",
+        "value": 32
+    },
+    {
+        "name": "weapon_shots_benelli",
+        "value": 918
+    },
+    {
+        "name": "weapon_shots_striker",
+        "value": 144
+    },
+    {
+        "name": "weapon_shots_ksg",
+        "value": 3349
+    },
+    {
+        "name": "weapon_shots_judge",
+        "value": 17863
+    },
+    {
+        "name": "weapon_shots_gre_m79",
+        "value": 454
+    },
+    {
+        "name": "weapon_shots_scorpion",
+        "value": 1231
+    },
+    {
+        "name": "weapon_shots_tec9",
+        "value": 1299
+    },
+    {
+        "name": "weapon_shots_uzi",
+        "value": 1155
+    },
+    {
+        "name": "weapon_shots_jowi",
+        "value": 616
+    },
+    {
+        "name": "weapon_shots_x_b92fs",
+        "value": 3454
+    },
+    {
+        "name": "weapon_shots_x_deagle",
+        "value": 76
+    },
+    {
+        "name": "weapon_shots_spas12",
+        "value": 67
+    },
+    {
+        "name": "weapon_shots_c96",
+        "value": 228
+    },
+    {
+        "name": "weapon_shots_sterling",
+        "value": 613
+    },
+    {
+        "name": "weapon_shots_mosin",
+        "value": 503
+    },
+    {
+        "name": "weapon_shots_m1928",
+        "value": 4386
+    },
+    {
+        "name": "weapon_shots_l85a2",
+        "value": 571
+    },
+    {
+        "name": "weapon_shots_m134",
+        "value": 575
+    },
+    {
+        "name": "weapon_shots_rpg7",
+        "value": 26
+    },
+    {
+        "name": "weapon_shots_b682",
+        "value": 384
+    },
+    {
+        "name": "weapon_shots_flamethrower_mk2",
+        "value": 2355
+    },
+    {
+        "name": "weapon_shots_m32",
+        "value": 305
+    },
+    {
+        "name": "weapon_shots_peacemaker",
+        "value": 104
+    },
+    {
+        "name": "weapon_shots_winchester1874",
+        "value": 470
+    },
+    {
+        "name": "weapon_shots_plainsrider",
+        "value": 497
+    },
+    {
+        "name": "weapon_shots_asval",
+        "value": 5829
+    },
+    {
+        "name": "weapon_shots_sub2000",
+        "value": 117
+    },
+    {
+        "name": "weapon_shots_hunter",
+        "value": 292
+    },
+    {
+        "name": "weapon_shots_arblast",
+        "value": 763
+    },
+    {
+        "name": "weapon_shots_long",
+        "value": 52
+    },
+    {
+        "name": "weapon_shots_frankish",
+        "value": 2541
+    },
+    {
+        "name": "weapon_shots_baka",
+        "value": 6926
+    },
+    {
+        "name": "weapon_hits_ak74",
+        "value": 11
+    },
+    {
+        "name": "weapon_hits_akm",
+        "value": 3483
+    },
+    {
+        "name": "weapon_hits_akmsu",
+        "value": 890
+    },
+    {
+        "name": "weapon_hits_amcar",
+        "value": 157
+    },
+    {
+        "name": "weapon_hits_b92fs",
+        "value": 136
+    },
+    {
+        "name": "weapon_hits_colt_1911",
+        "value": 25
+    },
+    {
+        "name": "weapon_hits_deagle",
+        "value": 884
+    },
+    {
+        "name": "weapon_hits_g22c",
+        "value": 519
+    },
+    {
+        "name": "weapon_hits_g36",
+        "value": 431
+    },
+    {
+        "name": "weapon_hits_glock_17",
+        "value": 63
+    },
+    {
+        "name": "weapon_hits_glock_18c",
+        "value": 36
+    },
+    {
+        "name": "weapon_hits_huntsman",
+        "value": 732
+    },
+    {
+        "name": "weapon_hits_m16",
+        "value": 427
+    },
+    {
+        "name": "weapon_hits_new_m14",
+        "value": 14308
+    },
+    {
+        "name": "weapon_hits_new_m4",
+        "value": 12109
+    },
+    {
+        "name": "weapon_hits_new_mp5",
+        "value": 816
+    },
+    {
+        "name": "weapon_hits_new_raging_bull",
+        "value": 2080
+    },
+    {
+        "name": "weapon_hits_p90",
+        "value": 946
+    },
+    {
+        "name": "weapon_hits_saiga",
+        "value": 33679
+    },
+    {
+        "name": "weapon_hits_saw",
+        "value": 2192
+    },
+    {
+        "name": "weapon_hits_serbu",
+        "value": 4059
+    },
+    {
+        "name": "weapon_hits_usp",
+        "value": 734
+    },
+    {
+        "name": "weapon_hits_m45",
+        "value": 104
+    },
+    {
+        "name": "weapon_hits_ppk",
+        "value": 420
+    },
+    {
+        "name": "weapon_hits_scar",
+        "value": 162
+    },
+    {
+        "name": "weapon_hits_p226",
+        "value": 352
+    },
+    {
+        "name": "weapon_hits_m249",
+        "value": 4603
+    },
+    {
+        "name": "weapon_hits_m95",
+        "value": 1249
+    },
+    {
+        "name": "weapon_hits_msr",
+        "value": 13
+    },
+    {
+        "name": "weapon_hits_r93",
+        "value": 16
+    },
+    {
+        "name": "weapon_hits_benelli",
+        "value": 832
+    },
+    {
+        "name": "weapon_hits_striker",
+        "value": 114
+    },
+    {
+        "name": "weapon_hits_ksg",
+        "value": 2212
+    },
+    {
+        "name": "weapon_hits_judge",
+        "value": 13184
+    },
+    {
+        "name": "weapon_hits_gre_m79",
+        "value": 882
+    },
+    {
+        "name": "weapon_hits_scorpion",
+        "value": 177
+    },
+    {
+        "name": "weapon_hits_tec9",
+        "value": 278
+    },
+    {
+        "name": "weapon_hits_uzi",
+        "value": 270
+    },
+    {
+        "name": "weapon_hits_jowi",
+        "value": 73
+    },
+    {
+        "name": "weapon_hits_x_b92fs",
+        "value": 562
+    },
+    {
+        "name": "weapon_hits_x_deagle",
+        "value": 22
+    },
+    {
+        "name": "weapon_hits_spas12",
+        "value": 59
+    },
+    {
+        "name": "weapon_hits_c96",
+        "value": 59
+    },
+    {
+        "name": "weapon_hits_sterling",
+        "value": 167
+    },
+    {
+        "name": "weapon_hits_mosin",
+        "value": 359
+    },
+    {
+        "name": "weapon_hits_m1928",
+        "value": 1175
+    },
+    {
+        "name": "weapon_hits_l85a2",
+        "value": 102
+    },
+    {
+        "name": "weapon_hits_m134",
+        "value": 49
+    },
+    {
+        "name": "weapon_hits_rpg7",
+        "value": 110
+    },
+    {
+        "name": "weapon_hits_b682",
+        "value": 325
+    },
+    {
+        "name": "weapon_hits_flamethrower_mk2",
+        "value": 1777
+    },
+    {
+        "name": "weapon_hits_peacemaker",
+        "value": 50
+    },
+    {
+        "name": "weapon_hits_winchester1874",
+        "value": 325
+    },
+    {
+        "name": "weapon_hits_plainsrider",
+        "value": 321
+    },
+    {
+        "name": "weapon_hits_asval",
+        "value": 1670
+    },
+    {
+        "name": "weapon_hits_sub2000",
+        "value": 6
+    },
+    {
+        "name": "weapon_hits_hunter",
+        "value": 166
+    },
+    {
+        "name": "weapon_hits_arblast",
+        "value": 29
+    },
+    {
+        "name": "weapon_hits_long",
+        "value": 25
+    },
+    {
+        "name": "weapon_hits_frankish",
+        "value": 1064
+    },
+    {
+        "name": "weapon_hits_baka",
+        "value": 2007
+    },
+    {
+        "name": "enemy_kills_hostage_rescue",
+        "value": 449
+    },
+    {
+        "name": "enemy_kills_murkywater",
+        "value": 1404
+    },
+    {
+        "name": "enemy_kills_phalanx_minion",
+        "value": 603
+    },
+    {
+        "name": "mission_labrat",
+        "value": 47
+    },
+    {
+        "name": "specialization_used_13",
+        "value": 37
+    },
+    {
+        "name": "player_specialization_13",
+        "value": 9
+    },
+    {
+        "name": "level_jolly",
+        "value": 15
+    },
+    {
+        "name": "level_red2",
+        "value": 37
+    },
+    {
+        "name": "level_dinner",
+        "value": 10
+    },
+    {
+        "name": "level_nail",
+        "value": 15
+    },
+    {
+        "name": "level_pbr",
+        "value": 1
+    },
+    {
+        "name": "level_pbr2",
+        "value": 7
+    },
+    {
+        "name": "job_jolly",
+        "value": 17
+    },
+    {
+        "name": "job_nail",
+        "value": 21
+    },
+    {
+        "name": "job_red2",
+        "value": 95
+    },
+    {
+        "name": "job_dinner",
+        "value": 14
+    },
+    {
+        "name": "job_pbr",
+        "value": 4
+    },
+    {
+        "name": "job_pbr2",
+        "value": 8
+    },
+    {
+        "name": "contract_jolly_win",
+        "value": 6
+    },
+    {
+        "name": "contract_jolly_fail",
+        "value": 7
+    },
+    {
+        "name": "contract_nail_win",
+        "value": 6
+    },
+    {
+        "name": "contract_nail_fail",
+        "value": 9
+    },
+    {
+        "name": "contract_red2_win",
+        "value": 31
+    },
+    {
+        "name": "contract_red2_fail",
+        "value": 6
+    },
+    {
+        "name": "contract_dinner_win",
+        "value": 7
+    },
+    {
+        "name": "contract_dinner_fail",
+        "value": 3
+    },
+    {
+        "name": "contract_pbr_win",
+        "value": 1
+    },
+    {
+        "name": "contract_pbr2_win",
+        "value": 2
+    },
+    {
+        "name": "contract_pbr2_fail",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_par",
+        "value": 13
+    },
+    {
+        "name": "weapon_used_model70",
+        "value": 7
+    },
+    {
+        "name": "melee_used_pugio",
+        "value": 1
+    },
+    {
+        "name": "melee_used_selfie",
+        "value": 2
+    },
+    {
+        "name": "melee_used_boxcutter",
+        "value": 17
+    },
+    {
+        "name": "melee_used_iceaxe",
+        "value": 35
+    },
+    {
+        "name": "mask_used_mason_knight_veteran",
+        "value": 3
+    },
+    {
+        "name": "mask_used_vlad_armor",
+        "value": 8
+    },
+    {
+        "name": "mask_used_tiara",
+        "value": 30
+    },
+    {
+        "name": "mask_used_pirate_skull",
+        "value": 9
+    },
+    {
+        "name": "mask_used_glasses_tinted_love",
+        "value": 1
+    },
+    {
+        "name": "mask_used_groucho_glasses",
+        "value": 12
+    },
+    {
+        "name": "mask_used_satan",
+        "value": 23
+    },
+    {
+        "name": "mask_used_invader",
+        "value": 8
+    },
+    {
+        "name": "character_used_bodhi",
+        "value": 23
+    },
+    {
+        "name": "weapon_kills_par",
+        "value": 116
+    },
+    {
+        "name": "weapon_kills_model70",
+        "value": 228
+    },
+    {
+        "name": "melee_kills_boxcutter",
+        "value": 3
+    },
+    {
+        "name": "melee_kills_iceaxe",
+        "value": 2
+    },
+    {
+        "name": "enemy_kills_biker",
+        "value": 22
+    },
+    {
+        "name": "enemy_kills_bank_manager",
+        "value": 22
+    },
+    {
+        "name": "weapon_shots_par",
+        "value": 3624
+    },
+    {
+        "name": "weapon_shots_model70",
+        "value": 433
+    },
+    {
+        "name": "weapon_hits_par",
+        "value": 778
+    },
+    {
+        "name": "weapon_hits_model70",
+        "value": 288
+    },
+    {
+        "name": "level_cane",
+        "value": 8
+    },
+    {
+        "name": "job_cane",
+        "value": 9
+    },
+    {
+        "name": "contract_cane_win",
+        "value": 5
+    },
+    {
+        "name": "contract_cane_fail",
+        "value": 2
+    },
+    {
+        "name": "melee_used_pitchfork",
+        "value": 2
+    },
+    {
+        "name": "melee_used_scoutknife",
+        "value": 1
+    },
+    {
+        "name": "melee_used_shawn",
+        "value": 3
+    },
+    {
+        "name": "mask_used_rudeolph",
+        "value": 2
+    },
+    {
+        "name": "mask_used_wet_goat",
+        "value": 2
+    },
+    {
+        "name": "level_pal",
+        "value": 14
+    },
+    {
+        "name": "level_man",
+        "value": 7
+    },
+    {
+        "name": "job_pal",
+        "value": 19
+    },
+    {
+        "name": "job_man",
+        "value": 7
+    },
+    {
+        "name": "contract_pal_win",
+        "value": 11
+    },
+    {
+        "name": "contract_pal_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_man_win",
+        "value": 6
+    },
+    {
+        "name": "weapon_used_china",
+        "value": 227
+    },
+    {
+        "name": "melee_used_nin",
+        "value": 14
+    },
+    {
+        "name": "mask_used_horned_king",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_china",
+        "value": 7515
+    },
+    {
+        "name": "weapon_shots_china",
+        "value": 7313
+    },
+    {
+        "name": "weapon_hits_china",
+        "value": 11709
+    },
+    {
+        "name": "player_specialization_14",
+        "value": 9
+    },
+    {
+        "name": "character_used_jimmy",
+        "value": 7
+    },
+    {
+        "name": "level_dark",
+        "value": 14
+    },
+    {
+        "name": "level_mad",
+        "value": 8
+    },
+    {
+        "name": "job_dark",
+        "value": 69
+    },
+    {
+        "name": "job_mad",
+        "value": 8
+    },
+    {
+        "name": "contract_dark_win",
+        "value": 9
+    },
+    {
+        "name": "contract_dark_fail",
+        "value": 5
+    },
+    {
+        "name": "contract_mad_win",
+        "value": 4
+    },
+    {
+        "name": "contract_mad_fail",
+        "value": 4
+    },
+    {
+        "name": "weapon_used_pl14",
+        "value": 31
+    },
+    {
+        "name": "melee_used_zeus",
+        "value": 290
+    },
+    {
+        "name": "mask_used_half_mask",
+        "value": 1
+    },
+    {
+        "name": "mask_used_mad_goggles",
+        "value": 16
+    },
+    {
+        "name": "weapon_kills_pl14",
+        "value": 812
+    },
+    {
+        "name": "weapon_shots_pl14",
+        "value": 3138
+    },
+    {
+        "name": "weapon_hits_pl14",
+        "value": 1260
+    },
+    {
+        "name": "specialization_used_15",
+        "value": 204
+    },
+    {
+        "name": "player_specialization_15",
+        "value": 9
+    },
+    {
+        "name": "weapon_used_tecci",
+        "value": 9
+    },
+    {
+        "name": "melee_used_wing",
+        "value": 32
+    },
+    {
+        "name": "character_used_sydney",
+        "value": 423
+    },
+    {
+        "name": "weapon_kills_tecci",
+        "value": 94
+    },
+    {
+        "name": "weapon_shots_tecci",
+        "value": 2412
+    },
+    {
+        "name": "weapon_hits_tecci",
+        "value": 679
+    },
+    {
+        "name": "info_playing_pc",
+        "value": 1
+    },
+    {
+        "name": "grenade_used_frag_com",
+        "value": 25
+    },
+    {
+        "name": "grenade_kills_frag_com",
+        "value": 37
+    },
+    {
+        "name": "skill_mastermind_tea_time",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_tea_time_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_tea_cookies",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_tea_cookies_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_stable_shot",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_stable_shot_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_rifleman",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_rifleman_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_sharpshooter",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_sharpshooter_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_spotter_teamwork",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_spotter_teamwork_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_speedy_reload",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_speedy_reload_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_single_shot_ammo_return",
+        "value": 0
+    },
+    {
+        "name": "skill_mastermind_single_shot_ammo_return_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_far_away",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_far_away_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_close_by",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_close_by_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_iron_man",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_iron_man_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_prison_wife",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_prison_wife_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_scavenging",
+        "value": 0
+    },
+    {
+        "name": "skill_enforcer_scavenging_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_defense_up",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_defense_up_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_eco_sentry",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_eco_sentry_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_jack_of_all_trades",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_jack_of_all_trades_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_more_fire_power",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_more_fire_power_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_kick_starter",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_kick_starter_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_technician_fire_trap",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_steady_grip",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_steady_grip_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_heavy_impact",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_heavy_impact_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_fire_control",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_fire_control_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_shock_and_awe",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_shock_and_awe_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_fast_fire",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_fast_fire_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_body_expertise",
+        "value": 0
+    },
+    {
+        "name": "skill_technician_body_expertise_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_jail_workout",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_jail_workout_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_second_chances",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_second_chances_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_awareness",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_awareness_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_thick_skin",
+        "value": 1
+    },
+    {
+        "name": "skill_ghost_thick_skin_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_dire_need",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_dire_need_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_insulation",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_insulation_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_jail_diet",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_jail_diet_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_optic_illusions",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_optic_illusions_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_backstab",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_backstab_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_unseen_strike",
+        "value": 0
+    },
+    {
+        "name": "skill_ghost_unseen_strike_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_equilibrium",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_equilibrium_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_dance_instructor",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_dance_instructor_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_gun_fighter",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_gun_fighter_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_expert_handling",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_expert_handling_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_nine_lives",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_nine_lives_ace",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_running_from_death",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_running_from_death_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_up_you_go",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_up_you_go_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_feign_death",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_feign_death_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_messiah",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_messiah_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_martial_arts",
+        "value": 1
+    },
+    {
+        "name": "skill_hoxton_martial_arts_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_bloodthirst",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_bloodthirst_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_steroids",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_steroids_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_wolverine",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_wolverine_ace",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_frenzy",
+        "value": 0
+    },
+    {
+        "name": "skill_hoxton_frenzy_ace",
+        "value": 0
+    },
+    {
+        "name": "info_playing_tutorial_yes",
+        "value": 1
+    },
+    {
+        "name": "info_playing_tutorial_no",
+        "value": 1
+    },
+    {
+        "name": "player_specialization_16",
+        "value": 9
+    },
+    {
+        "name": "level_born",
+        "value": 18
+    },
+    {
+        "name": "level_chew",
+        "value": 8
+    },
+    {
+        "name": "job_born",
+        "value": 34
+    },
+    {
+        "name": "contract_born_win",
+        "value": 5
+    },
+    {
+        "name": "contract_born_fail",
+        "value": 12
+    },
+    {
+        "name": "weapon_used_hajk",
+        "value": 8
+    },
+    {
+        "name": "weapon_used_boot",
+        "value": 5
+    },
+    {
+        "name": "melee_used_road",
+        "value": 16
+    },
+    {
+        "name": "grenade_used_wpn_prj_hur",
+        "value": 146
+    },
+    {
+        "name": "mask_used_born_biker_02",
+        "value": 1
+    },
+    {
+        "name": "mask_used_born_biker_03",
+        "value": 2
+    },
+    {
+        "name": "character_used_wild",
+        "value": 37
+    },
+    {
+        "name": "weapon_kills_hajk",
+        "value": 291
+    },
+    {
+        "name": "weapon_kills_boot",
+        "value": 337
+    },
+    {
+        "name": "grenade_kills_wpn_prj_hur",
+        "value": 609
+    },
+    {
+        "name": "enemy_kills_biker_boss",
+        "value": 3
+    },
+    {
+        "name": "enemy_kills_cop_female",
+        "value": 77
+    },
+    {
+        "name": "weapon_shots_hajk",
+        "value": 2705
+    },
+    {
+        "name": "weapon_shots_boot",
+        "value": 475
+    },
+    {
+        "name": "weapon_hits_hajk",
+        "value": 903
+    },
+    {
+        "name": "weapon_hits_boot",
+        "value": 459
+    },
+    {
+        "name": "difficulty_easy_wish",
+        "value": 65
+    },
+    {
+        "name": "difficulty_sm_wish",
+        "value": 360
+    },
+    {
+        "name": "mask_used_nyck_pickle",
+        "value": 8
+    },
+    {
+        "name": "mask_used_urf_seal",
+        "value": 1
+    },
+    {
+        "name": "level_chill_combat",
+        "value": 15
+    },
+    {
+        "name": "level_flat",
+        "value": 6
+    },
+    {
+        "name": "job_chill",
+        "value": 5
+    },
+    {
+        "name": "job_chill_combat",
+        "value": 17
+    },
+    {
+        "name": "job_flat",
+        "value": 4
+    },
+    {
+        "name": "contract_chill_combat_win",
+        "value": 7
+    },
+    {
+        "name": "contract_chill_combat_win_dropin",
+        "value": 3
+    },
+    {
+        "name": "contract_chill_combat_fail",
+        "value": 5
+    },
+    {
+        "name": "contract_flat_win",
+        "value": 4
+    },
+    {
+        "name": "weapon_used_rota",
+        "value": 1
+    },
+    {
+        "name": "grenade_used_concussion",
+        "value": 132
+    },
+    {
+        "name": "enemy_kills_medic",
+        "value": 3228
+    },
+    {
+        "name": "grenade_used_wpn_prj_target",
+        "value": 96
+    },
+    {
+        "name": "mask_used_gitgud_sm_wish",
+        "value": 196
+    },
+    {
+        "name": "grenade_kills_wpn_prj_target",
+        "value": 8
+    },
+    {
+        "name": "enemy_kills_chavez_boss",
+        "value": 4
+    },
+    {
+        "name": "pim_1_stats",
+        "value": 32
+    },
+    {
+        "name": "pim_3_stats",
+        "value": 45
+    },
+    {
+        "name": "pim_2_stats",
+        "value": 8
+    },
+    {
+        "name": "level_help",
+        "value": 1
+    },
+    {
+        "name": "job_help",
+        "value": 3
+    },
+    {
+        "name": "contract_help_win",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_packrat",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_desertfox",
+        "value": 11
+    },
+    {
+        "name": "weapon_kills_packrat",
+        "value": 91
+    },
+    {
+        "name": "weapon_kills_desertfox",
+        "value": 371
+    },
+    {
+        "name": "weapon_shots_packrat",
+        "value": 527
+    },
+    {
+        "name": "weapon_shots_desertfox",
+        "value": 491
+    },
+    {
+        "name": "weapon_hits_packrat",
+        "value": 214
+    },
+    {
+        "name": "weapon_hits_desertfox",
+        "value": 377
+    },
+    {
+        "name": "tango_2_stats",
+        "value": 1
+    },
+    {
+        "name": "mask_used_tng_cap",
+        "value": 6
+    },
+    {
+        "name": "mask_used_tng_bandana",
+        "value": 5
+    },
+    {
+        "name": "mask_used_win_donald",
+        "value": 1
+    },
+    {
+        "name": "weapon_used_arbiter",
+        "value": 2
+    },
+    {
+        "name": "weapon_kills_arbiter",
+        "value": 90
+    },
+    {
+        "name": "weapon_shots_arbiter",
+        "value": 122
+    },
+    {
+        "name": "weapon_hits_arbiter",
+        "value": 355
+    },
+    {
+        "name": "level_moon",
+        "value": 5
+    },
+    {
+        "name": "job_moon",
+        "value": 10
+    },
+    {
+        "name": "contract_moon_win",
+        "value": 4
+    },
+    {
+        "name": "contract_moon_fail",
+        "value": 1
+    },
+    {
+        "name": "mask_used_moon_paycheck_chains",
+        "value": 4
+    },
+    {
+        "name": "mask_used_moon_paycheck_dallas",
+        "value": 4
+    },
+    {
+        "name": "player_coins",
+        "value": 231
+    },
+    {
+        "name": "player_coins_0",
+        "value": 0
+    },
+    {
+        "name": "player_coins_24",
+        "value": 0
+    },
+    {
+        "name": "player_coins_48",
+        "value": 0
+    },
+    {
+        "name": "player_coins_72",
+        "value": 0
+    },
+    {
+        "name": "player_coins_96",
+        "value": 0
+    },
+    {
+        "name": "player_coins_120",
+        "value": 0
+    },
+    {
+        "name": "player_coins_168",
+        "value": 0
+    },
+    {
+        "name": "player_coins_192",
+        "value": 0
+    },
+    {
+        "name": "player_coins_216",
+        "value": 1
+    },
+    {
+        "name": "player_coins_408",
+        "value": 0
+    },
+    {
+        "name": "player_coins_432",
+        "value": 0
+    },
+    {
+        "name": "player_coins_456",
+        "value": 0
+    },
+    {
+        "name": "player_coins_480",
+        "value": 0
+    },
+    {
+        "name": "character_used_chico",
+        "value": 11
+    },
+    {
+        "name": "contract_friend_win",
+        "value": 6
+    },
+    {
+        "name": "enemy_kills_bolivian",
+        "value": 410
+    },
+    {
+        "name": "enemy_kills_drug_lord_boss",
+        "value": 1
+    },
+    {
+        "name": "enemy_kills_drug_lord_boss_stealth",
+        "value": 4
+    },
+    {
+        "name": "job_friend",
+        "value": 47
+    },
+    {
+        "name": "level_friend",
+        "value": 6
+    },
+    {
+        "name": "melee_used_brick",
+        "value": 1
+    },
+    {
+        "name": "melee_used_cs",
+        "value": 4
+    },
+    {
+        "name": "weapon_hits_contraband",
+        "value": 1241
+    },
+    {
+        "name": "weapon_hits_ray",
+        "value": 288
+    },
+    {
+        "name": "weapon_kills_contraband",
+        "value": 890
+    },
+    {
+        "name": "weapon_kills_ray",
+        "value": 231
+    },
+    {
+        "name": "weapon_shots_contraband",
+        "value": 2378
+    },
+    {
+        "name": "weapon_shots_ray",
+        "value": 111
+    },
+    {
+        "name": "weapon_used_contraband",
+        "value": 6
+    },
+    {
+        "name": "weapon_used_ray",
+        "value": 5
+    },
+    {
+        "name": "mask_used_sfm_03",
+        "value": 15
+    },
+    {
+        "name": "melee_used_ostry",
+        "value": 1
+    },
+    {
+        "name": "weapon_kills_contraband_m203",
+        "value": 58
+    },
+    {
+        "name": "job_spa",
+        "value": 10
+    },
+    {
+        "name": "level_spa",
+        "value": 6
+    },
+    {
+        "name": "job_fish",
+        "value": 32
+    },
+    {
+        "name": "level_fish",
+        "value": 8
+    },
+    {
+        "name": "weapon_used_tti",
+        "value": 1
+    },
+    {
+        "name": "weapon_shots_tti",
+        "value": 26
+    },
+    {
+        "name": "weapon_kills_tti",
+        "value": 3
+    },
+    {
+        "name": "melee_used_catch",
+        "value": 3
+    },
+    {
+        "name": "contract_spa_win",
+        "value": 2
+    },
+    {
+        "name": "contract_spa_fail",
+        "value": 3
+    },
+    {
+        "name": "contract_fish_win",
+        "value": 7
+    },
+    {
+        "name": "contract_fish_fail",
+        "value": 1
+    },
+    {
+        "name": "weapon_hits_tti",
+        "value": 11
+    },
+    {
+        "name": "grv_3_stats",
+        "value": 355
+    },
+    {
+        "name": "weapon_used_siltstone",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_flint",
+        "value": 3
+    },
+    {
+        "name": "weapon_used_coal",
+        "value": 5
+    },
+    {
+        "name": "melee_used_oxide",
+        "value": 7
+    },
+    {
+        "name": "mask_used_grv_01",
+        "value": 13
+    },
+    {
+        "name": "weapon_kills_siltstone",
+        "value": 8
+    },
+    {
+        "name": "weapon_kills_flint",
+        "value": 145
+    },
+    {
+        "name": "weapon_kills_coal",
+        "value": 245
+    },
+    {
+        "name": "weapon_shots_siltstone",
+        "value": 14
+    },
+    {
+        "name": "weapon_shots_flint",
+        "value": 1007
+    },
+    {
+        "name": "weapon_hits_siltstone",
+        "value": 13
+    },
+    {
+        "name": "weapon_hits_flint",
+        "value": 266
+    },
+    {
+        "name": "weapon_hits_coal",
+        "value": 323
+    },
+    {
+        "name": "weapon_shots_coal",
+        "value": 1530
+    },
+    {
+        "name": "level_run",
+        "value": 2
+    },
+    {
+        "name": "job_run",
+        "value": 2
+    },
+    {
+        "name": "contract_run_win",
+        "value": 2
+    },
+    {
+        "name": "weapon_used_lemming",
+        "value": 52
+    },
+    {
+        "name": "mask_used_bny_04",
+        "value": 90
+    },
+    {
+        "name": "weapon_kills_lemming",
+        "value": 1143
+    },
+    {
+        "name": "weapon_shots_lemming",
+        "value": 1638
+    },
+    {
+        "name": "weapon_hits_lemming",
+        "value": 556
+    },
+    {
+        "name": "contract_glace_fail",
+        "value": 4
+    },
+    {
+        "name": "player_specialization_17",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_18",
+        "value": 9
+    },
+    {
+        "name": "level_glace",
+        "value": 8
+    },
+    {
+        "name": "job_glace",
+        "value": 7
+    },
+    {
+        "name": "character_used_max",
+        "value": 2
+    },
+    {
+        "name": "mask_used_dgm",
+        "value": 4
+    },
+    {
+        "name": "grenade_used_dada_com",
+        "value": 1
+    },
+    {
+        "name": "grenade_kills_dada_com",
+        "value": 1
+    },
+    {
+        "name": "eng_1_stats",
+        "value": 11
+    },
+    {
+        "name": "eng_3_stats",
+        "value": 7
+    },
+    {
+        "name": "eng_4_stats",
+        "value": 5
+    },
+    {
+        "name": "eng_2_stats",
+        "value": 13
+    },
+    {
+        "name": "melee_used_push",
+        "value": 4
+    },
+    {
+        "name": "mask_used_cmo_01",
+        "value": 11
+    },
+    {
+        "name": "mask_used_cmo_02",
+        "value": 2
+    },
+    {
+        "name": "mask_used_kwm",
+        "value": 3
+    },
+    {
+        "name": "melee_kills_sap",
+        "value": 1
+    },
+    {
+        "name": "contract_hvh_win",
+        "value": 2
+    },
+    {
+        "name": "contract_dah_win",
+        "value": 4
+    },
+    {
+        "name": "job_hvh",
+        "value": 2
+    },
+    {
+        "name": "job_dah",
+        "value": 40
+    },
+    {
+        "name": "level_dah",
+        "value": 4
+    },
+    {
+        "name": "level_hvh",
+        "value": 2
+    },
+    {
+        "name": "character_used_myh",
+        "value": 1
+    },
+    {
+        "name": "melee_used_sap",
+        "value": 2
+    },
+    {
+        "name": "player_specialization_19",
+        "value": 9
+    },
+    {
+        "name": "player_specialization_20",
+        "value": 9
+    },
+    {
+        "name": "character_used_ecp_male",
+        "value": 6
+    },
+    {
+        "name": "rvd_12_stats",
+        "value": 1
+    },
+    {
+        "name": "contract_rvd_win",
+        "value": 1
+    },
+    {
+        "name": "job_rvd",
+        "value": 6
+    },
+    {
+        "name": "level_rvd1",
+        "value": 1
+    },
+    {
+        "name": "level_rvd2",
+        "value": 2
+    },
+    {
+        "name": "melee_used_clean",
+        "value": 3
+    },
+    {
+        "name": "job_brb",
+        "value": 1
+    },
+    {
+        "name": "level_brb",
+        "value": 2
+    },
+    {
+        "name": "contract_brb_win",
+        "value": 1
+    },
+    {
+        "name": "cac_3_stats",
+        "value": 30
+    },
+    {
+        "name": "cac_7_stats",
+        "value": 440300000
+    },
+    {
+        "name": "cac_34_stats",
+        "value": 147
+    },
+    {
+        "name": "job_des",
+        "value": 6
+    },
+    {
+        "name": "job_tag",
+        "value": 49
+    },
+    {
+        "name": "level_des",
+        "value": 3
+    },
+    {
+        "name": "level_tag",
+        "value": 14
+    },
+    {
+        "name": "contract_des_win",
+        "value": 1
+    },
+    {
+        "name": "contract_des_fail",
+        "value": 2
+    },
+    {
+        "name": "contract_tag_win",
+        "value": 3
+    },
+    {
+        "name": "contract_tag_fail",
+        "value": 11
+    },
+    {
+        "name": "mask_used_ami_06",
+        "value": 6
+    },
+    {
+        "name": "mask_used_ggac_od_t2",
+        "value": 4
+    },
+    {
+        "name": "mask_used_toon_03",
+        "value": 2
+    },
+    {
+        "name": "melee_used_aziz",
+        "value": 7
+    },
+    {
+        "name": "enemy_kills_mute_security_undominatable",
+        "value": 6
+    },
+    {
+        "name": "pdth",
+        "value": 1
+    },
+    {
+        "name": "bph_9_stat",
+        "value": 1
+    },
+    {
+        "name": "player_specialization_21",
+        "value": 9
+    },
+    {
+        "name": "level_nmh",
+        "value": 1
+    },
+    {
+        "name": "level_sah",
+        "value": 3
+    },
+    {
+        "name": "level_skm_red2",
+        "value": 1
+    },
+    {
+        "name": "level_vit",
+        "value": 4
+    },
+    {
+        "name": "job_nmh",
+        "value": 7
+    },
+    {
+        "name": "job_sah",
+        "value": 25
+    },
+    {
+        "name": "job_skm_red2",
+        "value": 1
+    },
+    {
+        "name": "job_vit",
+        "value": 43
+    },
+    {
+        "name": "contract_nmh_win",
+        "value": 1
+    },
+    {
+        "name": "contract_sah_win",
+        "value": 2
+    },
+    {
+        "name": "contract_sah_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_skm_red2_win",
+        "value": 1
+    },
+    {
+        "name": "contract_vit_win",
+        "value": 4
+    },
+    {
+        "name": "weapon_used_elastic",
+        "value": 7
+    },
+    {
+        "name": "melee_used_fear",
+        "value": 4
+    },
+    {
+        "name": "mask_used_gwm",
+        "value": 7
+    },
+    {
+        "name": "character_used_joy",
+        "value": 5
+    },
+    {
+        "name": "weapon_kills_elastic",
+        "value": 9
+    },
+    {
+        "name": "weapon_shots_elastic",
+        "value": 39
+    },
+    {
+        "name": "weapon_hits_elastic",
+        "value": 3
+    },
+    {
+        "name": "enemy_kills_heavy_swat_sniper",
+        "value": 2
+    },
+    {
+        "name": "suit_used_miami_default",
+        "value": 1
+    },
+    {
+        "name": "suit_used_peacoat_default",
+        "value": 1
+    },
+    {
+        "name": "suit_used_peacoat_black",
+        "value": 30
+    },
+    {
+        "name": "suit_used_clown_default",
+        "value": 7
+    },
+    {
+        "name": "equipped_suit",
+        "value": 127
+    },
+    {
+        "name": "suit_used_none",
+        "value": 85
+    },
+    {
+        "name": "suit_used_miami_pink",
+        "value": 21
+    },
+    {
+        "name": "level_skm_bex",
+        "value": 1
+    },
+    {
+        "name": "job_skm_bex",
+        "value": 1
+    },
+    {
+        "name": "contract_skm_arena_fail",
+        "value": 1
+    },
+    {
+        "name": "contract_skm_bex_fail",
+        "value": 1
+    },
+    {
+        "name": "gloves_used_heist_clown",
+        "value": 29
+    },
+    {
+        "name": "gloves_used_sneak",
+        "value": 14
+    },
+    {
+        "name": "level_skm_arena",
+        "value": 1
+    },
+    {
+        "name": "gloves_used_saints",
+        "value": 15
+    },
+    {
+        "name": "equipped_glove_id",
+        "value": 11
+    },
+    {
+        "name": "job_skm_arena",
+        "value": 1
+    },
+    {
+        "name": "gloves_used_default",
+        "value": 14
+    },
+    {
+        "name": "gloves_used_esport",
+        "value": 19
+    },
+    {
+        "name": "join_stinger_used_1",
+        "value": 91
+    },
+    {
+        "name": "equipped_join_stinger",
+        "value": 1
+    },
+    {
+        "name": "setting_roman_rank_on",
+        "value": 1
+    },
+    {
+        "name": "setting_roman_card_on",
+        "value": 1
+    },
+    {
+        "name": "suit_used_candycane",
+        "value": 1
+    },
+    {
+        "name": "gsu_stat",
+        "value": 147
+    },
+    {
+        "name": "melee_used_spoon",
+        "value": 9
+    },
+    {
+        "name": "melee_used_spoon_gold",
+        "value": 1
+    },
+    {
+        "name": "melee_kills_spoon",
+        "value": 147
+    },
+    {
+        "name": "melee_kills_spoon_gold",
+        "value": 2
+    },
+    {
+        "name": "suit_used_baron_default",
+        "value": 1
+    },
+    {
+        "name": "player_rank",
+        "value": 20
+    },
+    {
+        "name": "suit_used_clown_2_default",
+        "value": 1
+    },
+    {
+        "name": "suit_used_classyske_default",
+        "value": 4
+    },
+    {
+        "name": "suit_used_classyske_red",
+        "value": 4
+    },
+    {
+        "name": "player_specialization_22",
+        "value": 9
+    },
+    {
+        "name": "dec21_02_stat",
+        "value": 1
+    },
+    {
+        "name": "suit_used_bunny",
+        "value": 2
+    },
+    {
+        "name": "enemy_kills_marshal_marksman",
+        "value": 94
+    }
+]

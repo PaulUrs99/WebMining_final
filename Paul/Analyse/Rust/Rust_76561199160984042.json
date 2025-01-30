@@ -1,0 +1,122 @@
+{
+    "playerstats": {
+        "steamID": "76561199160984042",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 820
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 42
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 312
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 66
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 2
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 254
+            },
+            {
+                "name": "TREE_HIT",
+                "value": 172
+            },
+            {
+                "name": "comfort_duration",
+                "value": 1683.77001953125
+            },
+            {
+                "name": "calories_consumed",
+                "value": 3253.70654296875
+            },
+            {
+                "name": "water_consumed",
+                "value": 1364.7880859375
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 94.507080078125
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 924.1077880859375
+            },
+            {
+                "name": "hot_exposure_duration",
+                "value": 113.093994140625
+            },
+            {
+                "name": "melee_strikes",
+                "value": 1572
+            },
+            {
+                "name": "melee_thrown",
+                "value": 53
+            },
+            {
+                "name": "arrows_shot",
+                "value": 10
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 493.1993103027344
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 111
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 12040
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 172
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 180
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 48
+            },
+            {
+                "name": "grenades_thrown",
+                "value": 3
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_65_SCRAP",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,806 @@
+{
+    "playerstats": {
+        "steamID": "76561199202523485",
+        "gameName": "ValveTestApp260",
+        "stats": [
+            {
+                "name": "total_kills",
+                "value": 27506
+            },
+            {
+                "name": "total_deaths",
+                "value": 31123
+            },
+            {
+                "name": "total_time_played",
+                "value": 1631683
+            },
+            {
+                "name": "total_planted_bombs",
+                "value": 1093
+            },
+            {
+                "name": "total_defused_bombs",
+                "value": 226
+            },
+            {
+                "name": "total_wins",
+                "value": 15156
+            },
+            {
+                "name": "total_damage_done",
+                "value": 4212675
+            },
+            {
+                "name": "total_money_earned",
+                "value": 58867350
+            },
+            {
+                "name": "total_rescued_hostages",
+                "value": 1
+            },
+            {
+                "name": "total_kills_knife",
+                "value": 931
+            },
+            {
+                "name": "total_kills_hegrenade",
+                "value": 20
+            },
+            {
+                "name": "total_kills_glock",
+                "value": 854
+            },
+            {
+                "name": "total_kills_deagle",
+                "value": 1328
+            },
+            {
+                "name": "total_kills_elite",
+                "value": 203
+            },
+            {
+                "name": "total_kills_fiveseven",
+                "value": 121
+            },
+            {
+                "name": "total_kills_xm1014",
+                "value": 149
+            },
+            {
+                "name": "total_kills_mac10",
+                "value": 516
+            },
+            {
+                "name": "total_kills_ump45",
+                "value": 69
+            },
+            {
+                "name": "total_kills_p90",
+                "value": 147
+            },
+            {
+                "name": "total_kills_awp",
+                "value": 8378
+            },
+            {
+                "name": "total_kills_ak47",
+                "value": 5170
+            },
+            {
+                "name": "total_kills_aug",
+                "value": 203
+            },
+            {
+                "name": "total_kills_famas",
+                "value": 417
+            },
+            {
+                "name": "total_kills_g3sg1",
+                "value": 95
+            },
+            {
+                "name": "total_kills_m249",
+                "value": 44
+            },
+            {
+                "name": "total_kills_headshot",
+                "value": 9727
+            },
+            {
+                "name": "total_kills_enemy_weapon",
+                "value": 2145
+            },
+            {
+                "name": "total_wins_pistolround",
+                "value": 1192
+            },
+            {
+                "name": "total_wins_map_cs_assault",
+                "value": 3
+            },
+            {
+                "name": "total_wins_map_cs_italy",
+                "value": 2
+            },
+            {
+                "name": "total_wins_map_cs_office",
+                "value": 3
+            },
+            {
+                "name": "total_wins_map_de_aztec",
+                "value": 9
+            },
+            {
+                "name": "total_wins_map_de_cbble",
+                "value": 26
+            },
+            {
+                "name": "total_wins_map_de_dust2",
+                "value": 903
+            },
+            {
+                "name": "total_wins_map_de_inferno",
+                "value": 3486
+            },
+            {
+                "name": "total_wins_map_de_nuke",
+                "value": 547
+            },
+            {
+                "name": "total_wins_map_de_train",
+                "value": 59
+            },
+            {
+                "name": "total_weapons_donated",
+                "value": 1023
+            },
+            {
+                "name": "total_kills_enemy_blinded",
+                "value": 376
+            },
+            {
+                "name": "total_kills_knife_fight",
+                "value": 264
+            },
+            {
+                "name": "total_kills_against_zoomed_sniper",
+                "value": 2958
+            },
+            {
+                "name": "total_dominations",
+                "value": 102
+            },
+            {
+                "name": "total_domination_overkills",
+                "value": 83
+            },
+            {
+                "name": "total_revenges",
+                "value": 42
+            },
+            {
+                "name": "total_shots_hit",
+                "value": 63169
+            },
+            {
+                "name": "total_shots_fired",
+                "value": 380834
+            },
+            {
+                "name": "total_rounds_played",
+                "value": 31506
+            },
+            {
+                "name": "total_shots_deagle",
+                "value": 10620
+            },
+            {
+                "name": "total_shots_glock",
+                "value": 18028
+            },
+            {
+                "name": "total_shots_elite",
+                "value": 4145
+            },
+            {
+                "name": "total_shots_fiveseven",
+                "value": 2428
+            },
+            {
+                "name": "total_shots_awp",
+                "value": 22104
+            },
+            {
+                "name": "total_shots_ak47",
+                "value": 96368
+            },
+            {
+                "name": "total_shots_aug",
+                "value": 3554
+            },
+            {
+                "name": "total_shots_famas",
+                "value": 8386
+            },
+            {
+                "name": "total_shots_g3sg1",
+                "value": 824
+            },
+            {
+                "name": "total_shots_p90",
+                "value": 5540
+            },
+            {
+                "name": "total_shots_mac10",
+                "value": 18588
+            },
+            {
+                "name": "total_shots_ump45",
+                "value": 2570
+            },
+            {
+                "name": "total_shots_xm1014",
+                "value": 7113
+            },
+            {
+                "name": "total_shots_m249",
+                "value": 2056
+            },
+            {
+                "name": "total_hits_deagle",
+                "value": 3165
+            },
+            {
+                "name": "total_hits_glock",
+                "value": 3462
+            },
+            {
+                "name": "total_hits_elite",
+                "value": 783
+            },
+            {
+                "name": "total_hits_fiveseven",
+                "value": 485
+            },
+            {
+                "name": "total_hits_awp",
+                "value": 9502
+            },
+            {
+                "name": "total_hits_ak47",
+                "value": 19165
+            },
+            {
+                "name": "total_hits_aug",
+                "value": 827
+            },
+            {
+                "name": "total_hits_famas",
+                "value": 1817
+            },
+            {
+                "name": "total_hits_g3sg1",
+                "value": 233
+            },
+            {
+                "name": "total_hits_p90",
+                "value": 1025
+            },
+            {
+                "name": "total_hits_mac10",
+                "value": 3458
+            },
+            {
+                "name": "total_hits_ump45",
+                "value": 498
+            },
+            {
+                "name": "total_hits_xm1014",
+                "value": 1368
+            },
+            {
+                "name": "total_hits_m249",
+                "value": 178
+            },
+            {
+                "name": "total_rounds_map_cs_assault",
+                "value": 4
+            },
+            {
+                "name": "total_rounds_map_cs_italy",
+                "value": 2
+            },
+            {
+                "name": "total_rounds_map_cs_office",
+                "value": 14
+            },
+            {
+                "name": "total_rounds_map_de_aztec",
+                "value": 14
+            },
+            {
+                "name": "total_rounds_map_de_cbble",
+                "value": 56
+            },
+            {
+                "name": "total_rounds_map_de_dust2",
+                "value": 1743
+            },
+            {
+                "name": "total_rounds_map_de_inferno",
+                "value": 6614
+            },
+            {
+                "name": "total_rounds_map_de_nuke",
+                "value": 1136
+            },
+            {
+                "name": "total_rounds_map_de_train",
+                "value": 141
+            },
+            {
+                "name": "last_match_t_wins",
+                "value": 19
+            },
+            {
+                "name": "last_match_ct_wins",
+                "value": 26
+            },
+            {
+                "name": "last_match_wins",
+                "value": 21
+            },
+            {
+                "name": "last_match_max_players",
+                "value": 20
+            },
+            {
+                "name": "last_match_kills",
+                "value": 26
+            },
+            {
+                "name": "last_match_deaths",
+                "value": 43
+            },
+            {
+                "name": "last_match_mvps",
+                "value": 1
+            },
+            {
+                "name": "last_match_favweapon_id",
+                "value": 7
+            },
+            {
+                "name": "last_match_favweapon_shots",
+                "value": 217
+            },
+            {
+                "name": "last_match_favweapon_hits",
+                "value": 36
+            },
+            {
+                "name": "last_match_favweapon_kills",
+                "value": 10
+            },
+            {
+                "name": "last_match_damage",
+                "value": 3602
+            },
+            {
+                "name": "last_match_money_spent",
+                "value": 122750
+            },
+            {
+                "name": "last_match_dominations",
+                "value": 0
+            },
+            {
+                "name": "last_match_revenges",
+                "value": 0
+            },
+            {
+                "name": "total_mvps",
+                "value": 5190
+            },
+            {
+                "name": "total_rounds_map_de_lake",
+                "value": 1005
+            },
+            {
+                "name": "total_rounds_map_de_safehouse",
+                "value": 77
+            },
+            {
+                "name": "total_rounds_map_de_bank",
+                "value": 9
+            },
+            {
+                "name": "total_gun_game_rounds_won",
+                "value": 157
+            },
+            {
+                "name": "total_gun_game_rounds_played",
+                "value": 316
+            },
+            {
+                "name": "total_wins_map_de_house",
+                "value": 5
+            },
+            {
+                "name": "total_wins_map_de_bank",
+                "value": 2
+            },
+            {
+                "name": "total_wins_map_de_vertigo",
+                "value": 497
+            },
+            {
+                "name": "total_rounds_map_ar_shoots",
+                "value": 89
+            },
+            {
+                "name": "total_rounds_map_ar_baggage",
+                "value": 5
+            },
+            {
+                "name": "total_wins_map_ar_shoots",
+                "value": 41
+            },
+            {
+                "name": "total_wins_map_ar_baggage",
+                "value": 3
+            },
+            {
+                "name": "total_wins_map_de_lake",
+                "value": 486
+            },
+            {
+                "name": "total_wins_map_de_safehouse",
+                "value": 37
+            },
+            {
+                "name": "total_matches_won",
+                "value": 739
+            },
+            {
+                "name": "total_matches_played",
+                "value": 1790
+            },
+            {
+                "name": "total_gg_matches_won",
+                "value": 1
+            },
+            {
+                "name": "total_gg_matches_played",
+                "value": 316
+            },
+            {
+                "name": "total_progressive_matches_won",
+                "value": 3
+            },
+            {
+                "name": "total_trbomb_matches_won",
+                "value": 1
+            },
+            {
+                "name": "total_contribution_score",
+                "value": 88934
+            },
+            {
+                "name": "last_match_contribution_score",
+                "value": 68
+            },
+            {
+                "name": "last_match_rounds",
+                "value": 45
+            },
+            {
+                "name": "total_kills_hkp2000",
+                "value": 1136
+            },
+            {
+                "name": "total_shots_hkp2000",
+                "value": 19401
+            },
+            {
+                "name": "total_hits_hkp2000",
+                "value": 3721
+            },
+            {
+                "name": "total_hits_p250",
+                "value": 779
+            },
+            {
+                "name": "total_kills_p250",
+                "value": 227
+            },
+            {
+                "name": "total_shots_p250",
+                "value": 3492
+            },
+            {
+                "name": "total_kills_sg556",
+                "value": 368
+            },
+            {
+                "name": "total_shots_sg556",
+                "value": 5721
+            },
+            {
+                "name": "total_hits_sg556",
+                "value": 1266
+            },
+            {
+                "name": "total_hits_scar20",
+                "value": 363
+            },
+            {
+                "name": "total_kills_scar20",
+                "value": 173
+            },
+            {
+                "name": "total_shots_scar20",
+                "value": 1208
+            },
+            {
+                "name": "total_shots_ssg08",
+                "value": 5261
+            },
+            {
+                "name": "total_hits_ssg08",
+                "value": 1644
+            },
+            {
+                "name": "total_kills_ssg08",
+                "value": 853
+            },
+            {
+                "name": "total_shots_mp7",
+                "value": 19881
+            },
+            {
+                "name": "total_hits_mp7",
+                "value": 4515
+            },
+            {
+                "name": "total_kills_mp7",
+                "value": 699
+            },
+            {
+                "name": "total_kills_mp9",
+                "value": 698
+            },
+            {
+                "name": "total_shots_mp9",
+                "value": 19565
+            },
+            {
+                "name": "total_hits_mp9",
+                "value": 4405
+            },
+            {
+                "name": "total_hits_nova",
+                "value": 629
+            },
+            {
+                "name": "total_kills_nova",
+                "value": 53
+            },
+            {
+                "name": "total_shots_nova",
+                "value": 2523
+            },
+            {
+                "name": "total_hits_negev",
+                "value": 418
+            },
+            {
+                "name": "total_kills_negev",
+                "value": 87
+            },
+            {
+                "name": "total_shots_negev",
+                "value": 9554
+            },
+            {
+                "name": "total_shots_sawedoff",
+                "value": 1114
+            },
+            {
+                "name": "total_hits_sawedoff",
+                "value": 270
+            },
+            {
+                "name": "total_kills_sawedoff",
+                "value": 26
+            },
+            {
+                "name": "total_shots_bizon",
+                "value": 2911
+            },
+            {
+                "name": "total_hits_bizon",
+                "value": 505
+            },
+            {
+                "name": "total_kills_bizon",
+                "value": 70
+            },
+            {
+                "name": "total_kills_tec9",
+                "value": 142
+            },
+            {
+                "name": "total_shots_tec9",
+                "value": 2653
+            },
+            {
+                "name": "total_hits_tec9",
+                "value": 604
+            },
+            {
+                "name": "total_shots_mag7",
+                "value": 3471
+            },
+            {
+                "name": "total_hits_mag7",
+                "value": 881
+            },
+            {
+                "name": "total_kills_mag7",
+                "value": 111
+            },
+            {
+                "name": "total_gun_game_contribution_score",
+                "value": 201
+            },
+            {
+                "name": "last_match_gg_contribution_score",
+                "value": 0
+            },
+            {
+                "name": "total_kills_m4a1",
+                "value": 3761
+            },
+            {
+                "name": "total_kills_galilar",
+                "value": 371
+            },
+            {
+                "name": "total_kills_molotov",
+                "value": 40
+            },
+            {
+                "name": "total_kills_taser",
+                "value": 34
+            },
+            {
+                "name": "total_shots_m4a1",
+                "value": 73458
+            },
+            {
+                "name": "total_shots_galilar",
+                "value": 8204
+            },
+            {
+                "name": "total_shots_taser",
+                "value": 128
+            },
+            {
+                "name": "total_hits_m4a1",
+                "value": 15803
+            },
+            {
+                "name": "total_hits_galilar",
+                "value": 1489
+            },
+            {
+                "name": "total_rounds_map_ar_monastery",
+                "value": 2
+            },
+            {
+                "name": "total_matches_won_train",
+                "value": 5
+            },
+            {
+                "name": "total_rounds_map_de_vertigo",
+                "value": 1070
+            },
+            {
+                "name": "total_matches_won_shoots",
+                "value": 4
+            },
+            {
+                "name": "total_matches_won_lake",
+                "value": 35
+            },
+            {
+                "name": "total_matches_won_safehouse",
+                "value": 8
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_buymenu",
+                "value": 16
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_buyarmor",
+                "value": 16
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_plant_bomb",
+                "value": 16
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_bomb_carrier",
+                "value": 1
+            },
+            {
+                "name": "GI.lesson.bomb_sites_A",
+                "value": 1
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_follow_bomber",
+                "value": 1
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_pickup_bomb",
+                "value": 1
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_prevent_bomb_pickup",
+                "value": 1
+            },
+            {
+                "name": "GI.lesson.Csgo_cycle_weapons_kb",
+                "value": 16
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_zoom",
+                "value": 16
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_reload",
+                "value": 17
+            },
+            {
+                "name": "GI.lesson.tr_explain_plant_bomb",
+                "value": 16
+            },
+            {
+                "name": "GI.lesson.bomb_sites_B",
+                "value": 1
+            },
+            {
+                "name": "GI.lesson.version_number",
+                "value": 16
+            },
+            {
+                "name": "GI.lesson.csgo_hostage_lead_to_hrz",
+                "value": 1
+            },
+            {
+                "name": "GI.lesson.csgo_instr_rescue_zone",
+                "value": 1
+            },
+            {
+                "name": "total_wins_map_cs_militia",
+                "value": 8
+            },
+            {
+                "name": "total_rounds_map_cs_militia",
+                "value": 11
+            },
+            {
+                "name": "GI.lesson.csgo_instr_explain_inspect",
+                "value": 32
+            }
+        ],
+        "achievements": [
+            {
+                "name": "PLAY_CS2",
+                "achieved": 1
+            }
+        ]
+    }
+}

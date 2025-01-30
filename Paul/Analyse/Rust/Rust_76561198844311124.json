@@ -1,0 +1,154 @@
+{
+    "playerstats": {
+        "steamID": "76561198844311124",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 10
+            },
+            {
+                "name": "bullet_fired",
+                "value": 15
+            },
+            {
+                "name": "item_drop",
+                "value": 14
+            },
+            {
+                "name": "death_suicide",
+                "value": 2
+            },
+            {
+                "name": "kill_player",
+                "value": 3
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 10
+            },
+            {
+                "name": "headshot",
+                "value": 2
+            },
+            {
+                "name": "bullet_hit_building",
+                "value": 1
+            },
+            {
+                "name": "wounded",
+                "value": 9
+            },
+            {
+                "name": "wounded_healed",
+                "value": 1
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 509
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 39
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 340
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 38
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 12
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 641
+            },
+            {
+                "name": "TREE_HIT",
+                "value": 1096
+            },
+            {
+                "name": "comfort_duration",
+                "value": 304.1424560546875
+            },
+            {
+                "name": "calories_consumed",
+                "value": 999.4921264648438
+            },
+            {
+                "name": "water_consumed",
+                "value": 196.93536376953125
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 729.2677001953125
+            },
+            {
+                "name": "melee_strikes",
+                "value": 2353
+            },
+            {
+                "name": "melee_thrown",
+                "value": 21
+            },
+            {
+                "name": "arrows_shot",
+                "value": 11
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 189.11813354492188
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 9
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 1739
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 54
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 635
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 33
+            },
+            {
+                "name": "InstrumentNotesPlayed",
+                "value": 242
+            },
+            {
+                "name": "gesture_wave_count",
+                "value": 8
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            },
+            {
+                "name": "PLAY_INSTRUMENT",
+                "achieved": 1
+            }
+        ]
+    }
+}

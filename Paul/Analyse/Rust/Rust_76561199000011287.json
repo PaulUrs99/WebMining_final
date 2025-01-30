@@ -1,0 +1,110 @@
+{
+    "playerstats": {
+        "steamID": "76561199000011287",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 5
+            },
+            {
+                "name": "death_fall",
+                "value": 1
+            },
+            {
+                "name": "kill_player",
+                "value": 1
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 2
+            },
+            {
+                "name": "bullet_hit_entity",
+                "value": 1
+            },
+            {
+                "name": "kill_chicken",
+                "value": 1
+            },
+            {
+                "name": "death_bear",
+                "value": 2
+            },
+            {
+                "name": "wounded",
+                "value": 3
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 30
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 16
+            },
+            {
+                "name": "harvested_wood",
+                "value": 1001
+            },
+            {
+                "name": "harvested_stones",
+                "value": 375
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 48
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 39
+            },
+            {
+                "name": "TREE_HIT",
+                "value": 97
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 343.0172119140625
+            },
+            {
+                "name": "melee_strikes",
+                "value": 198
+            },
+            {
+                "name": "melee_thrown",
+                "value": 4
+            },
+            {
+                "name": "placed_blocks",
+                "value": 17
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 1.442291021347046
+            },
+            {
+                "name": "missions_completed",
+                "value": 4
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_100_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_200_STONE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_700_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "CONSTRUCT_BASE",
+                "achieved": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "playerstats": {
+        "steamID": "76561198099355275",
+        "gameName": "Raft",
+        "achievements": [
+            {
+                "name": "ach_playwithfriend",
+                "achieved": 1
+            },
+            {
+                "name": "ach_sailor",
+                "achieved": 1
+            },
+            {
+                "name": "ach_allNotes_RadioTower",
+                "achieved": 1
+            },
+            {
+                "name": "ach_ratKiller_1",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "stat_build_foundationCount",
+                "value": 3
+            },
+            {
+                "name": "stat_player_hookCount",
+                "value": 24
+            },
+            {
+                "name": "stat_player_ratKills",
+                "value": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "playerstats": {
+        "steamID": "76561198418483698",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_GENERAL_KILL_COOP_100",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_GENERAL_KILL_COOP_250",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_GENERAL_KILL_COOP_500",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_10",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_TRAINING_COMPLETE",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKillsCoop",
+                "value": 570
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 42
+            },
+            {
+                "name": "TotalMVPsCoop",
+                "value": 74
+            },
+            {
+                "name": "TotalHeroCapturesCoop",
+                "value": 5
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 570
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 42
+            },
+            {
+                "name": "TotalMVPsAll",
+                "value": 74
+            },
+            {
+                "name": "TotalHeroCapturesAll",
+                "value": 5
+            }
+        ]
+    }
+}

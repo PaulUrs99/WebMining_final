@@ -1,0 +1,626 @@
+{
+    "playerstats": {
+        "steamID": "76561198273655895",
+        "gameName": "PAYDAY 2",
+        "achievements": [
+            {
+                "name": "how_do_you_like_me_now",
+                "achieved": 1
+            },
+            {
+                "name": "armed_to_the_teeth",
+                "achieved": 1
+            },
+            {
+                "name": "would_you_like_your_receipt",
+                "achieved": 1
+            },
+            {
+                "name": "no_one_cared_who_i_was",
+                "achieved": 1
+            },
+            {
+                "name": "no_turning_back",
+                "achieved": 1
+            },
+            {
+                "name": "you_gotta_start_somewhere",
+                "achieved": 1
+            },
+            {
+                "name": "guilty_of_crime",
+                "achieved": 1
+            },
+            {
+                "name": "gone_in_30_seconds",
+                "achieved": 1
+            },
+            {
+                "name": "gage2_8",
+                "achieved": 1
+            },
+            {
+                "name": "ameno_8",
+                "achieved": 1
+            },
+            {
+                "name": "fort_2",
+                "achieved": 1
+            },
+            {
+                "name": "sinus_1",
+                "achieved": 1
+            },
+            {
+                "name": "brooklyn_1",
+                "achieved": 1
+            },
+            {
+                "name": "trk_sf_0",
+                "achieved": 1
+            },
+            {
+                "name": "trk_sf_1",
+                "achieved": 1
+            },
+            {
+                "name": "trk_pr_0",
+                "achieved": 1
+            },
+            {
+                "name": "cac_28",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "player_time_0h",
+                "value": 1
+            },
+            {
+                "name": "player_level",
+                "value": 26
+            },
+            {
+                "name": "player_level_0",
+                "value": 0
+            },
+            {
+                "name": "player_level_10",
+                "value": 0
+            },
+            {
+                "name": "player_level_20",
+                "value": 1
+            },
+            {
+                "name": "player_cash_0k",
+                "value": 0
+            },
+            {
+                "name": "player_cash_100k",
+                "value": 0
+            },
+            {
+                "name": "player_cash_1000k",
+                "value": 1
+            },
+            {
+                "name": "heist_failed",
+                "value": 4
+            },
+            {
+                "name": "heist_success",
+                "value": 2
+            },
+            {
+                "name": "skill_mastermind_0",
+                "value": 1
+            },
+            {
+                "name": "skill_enforcer_0",
+                "value": 1
+            },
+            {
+                "name": "skill_technician_0",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_0",
+                "value": 1
+            },
+            {
+                "name": "skill_enforcer_underdog",
+                "value": 0
+            },
+            {
+                "name": "skill_enforcer_underdog_ace",
+                "value": 0
+            },
+            {
+                "name": "skill_enforcer_shotgun_impact",
+                "value": 0
+            },
+            {
+                "name": "skill_ghost_chameleon",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_cleaner",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_ecm_2x",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_ecm_booster",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_ecm_booster_ace",
+                "value": 1
+            },
+            {
+                "name": "weapon_used_amcar",
+                "value": 3
+            },
+            {
+                "name": "weapon_used_saiga",
+                "value": 1
+            },
+            {
+                "name": "weapon_used_glock_17",
+                "value": 6
+            },
+            {
+                "name": "gadget_used_ammo_bag",
+                "value": 2
+            },
+            {
+                "name": "gadget_used_trip_mine",
+                "value": 7
+            },
+            {
+                "name": "gadget_used_sentry_gun",
+                "value": 10
+            },
+            {
+                "name": "gadget_used_ecm_jammer",
+                "value": 2
+            },
+            {
+                "name": "mask_used_character_locked",
+                "value": 3
+            },
+            {
+                "name": "difficulty_normal",
+                "value": 1
+            },
+            {
+                "name": "difficulty_hard",
+                "value": 2
+            },
+            {
+                "name": "difficulty_overkill",
+                "value": 3
+            },
+            {
+                "name": "level_framing_frame_3",
+                "value": 2
+            },
+            {
+                "name": "job_framing_frame",
+                "value": 5
+            },
+            {
+                "name": "gage_9_stats",
+                "value": 36
+            },
+            {
+                "name": "player_rank_0",
+                "value": 1
+            },
+            {
+                "name": "mask_used_optimist_prime",
+                "value": 1
+            },
+            {
+                "name": "melee_used_weapon",
+                "value": 1
+            },
+            {
+                "name": "armor_used_level_1",
+                "value": 4
+            },
+            {
+                "name": "armor_used_level_5",
+                "value": 2
+            },
+            {
+                "name": "weapon_kills_amcar",
+                "value": 138
+            },
+            {
+                "name": "weapon_kills_glock_17",
+                "value": 137
+            },
+            {
+                "name": "weapon_kills_saiga",
+                "value": 44
+            },
+            {
+                "name": "weapon_kills_saw",
+                "value": 1
+            },
+            {
+                "name": "enemy_kills_cop",
+                "value": 4
+            },
+            {
+                "name": "enemy_kills_fbi_swat",
+                "value": 67
+            },
+            {
+                "name": "enemy_kills_fbi_heavy_swat",
+                "value": 17
+            },
+            {
+                "name": "enemy_kills_swat",
+                "value": 139
+            },
+            {
+                "name": "enemy_kills_heavy_swat",
+                "value": 71
+            },
+            {
+                "name": "enemy_kills_city_swat",
+                "value": 1
+            },
+            {
+                "name": "enemy_kills_security",
+                "value": 26
+            },
+            {
+                "name": "enemy_kills_gangster",
+                "value": 19
+            },
+            {
+                "name": "enemy_kills_sniper",
+                "value": 2
+            },
+            {
+                "name": "enemy_kills_shield",
+                "value": 26
+            },
+            {
+                "name": "enemy_kills_spooc",
+                "value": 1
+            },
+            {
+                "name": "enemy_kills_taser",
+                "value": 9
+            },
+            {
+                "name": "contract_framing_frame_fail",
+                "value": 2
+            },
+            {
+                "name": "stat_version",
+                "value": 2
+            },
+            {
+                "name": "melee_used_kabartanto",
+                "value": 3
+            },
+            {
+                "name": "melee_kills_kabartanto",
+                "value": 1
+            },
+            {
+                "name": "weapon_used_spas12",
+                "value": 1
+            },
+            {
+                "name": "weapon_kills_spas12",
+                "value": 60
+            },
+            {
+                "name": "enemy_kills_civilian",
+                "value": 9
+            },
+            {
+                "name": "enemy_kills_civilian_female",
+                "value": 2
+            },
+            {
+                "name": "skill_hoxton_0",
+                "value": 1
+            },
+            {
+                "name": "gadget_used_first_aid",
+                "value": 4
+            },
+            {
+                "name": "info_playing_win_client",
+                "value": 2
+            },
+            {
+                "name": "info_playing_fail_client",
+                "value": 4
+            },
+            {
+                "name": "ameno_08_stats",
+                "value": 159
+            },
+            {
+                "name": "player_specialization_6",
+                "value": 1
+            },
+            {
+                "name": "specialization_used_1",
+                "value": 4
+            },
+            {
+                "name": "specialization_used_6",
+                "value": 2
+            },
+            {
+                "name": "player_specialization_active",
+                "value": 6
+            },
+            {
+                "name": "grenade_used_frag",
+                "value": 3
+            },
+            {
+                "name": "character_used_dragon",
+                "value": 2
+            },
+            {
+                "name": "option_resolution_1920x1080",
+                "value": 1
+            },
+            {
+                "name": "option_resolution_1280x720",
+                "value": 0
+            },
+            {
+                "name": "equipped_mask",
+                "value": 25
+            },
+            {
+                "name": "equipped_primary",
+                "value": 7
+            },
+            {
+                "name": "equipped_secondary",
+                "value": 48
+            },
+            {
+                "name": "equipped_melee",
+                "value": 80
+            },
+            {
+                "name": "equipped_grenade",
+                "value": 7
+            },
+            {
+                "name": "equipped_armor",
+                "value": 5
+            },
+            {
+                "name": "equipped_character",
+                "value": 20
+            },
+            {
+                "name": "equipped_deployable",
+                "value": 3
+            },
+            {
+                "name": "enemy_kills_tank_green",
+                "value": 5
+            },
+            {
+                "name": "weapon_shots_amcar",
+                "value": 1563
+            },
+            {
+                "name": "weapon_shots_glock_17",
+                "value": 737
+            },
+            {
+                "name": "weapon_shots_saiga",
+                "value": 91
+            },
+            {
+                "name": "weapon_shots_spas12",
+                "value": 187
+            },
+            {
+                "name": "weapon_hits_amcar",
+                "value": 327
+            },
+            {
+                "name": "weapon_hits_glock_17",
+                "value": 224
+            },
+            {
+                "name": "weapon_hits_saiga",
+                "value": 52
+            },
+            {
+                "name": "weapon_hits_spas12",
+                "value": 158
+            },
+            {
+                "name": "level_jolly",
+                "value": 1
+            },
+            {
+                "name": "job_jolly",
+                "value": 10
+            },
+            {
+                "name": "contract_jolly_fail",
+                "value": 1
+            },
+            {
+                "name": "character_used_bodhi",
+                "value": 1
+            },
+            {
+                "name": "enemy_kills_bank_manager",
+                "value": 1
+            },
+            {
+                "name": "info_playing_pc",
+                "value": 1
+            },
+            {
+                "name": "grenade_used_frag_com",
+                "value": 3
+            },
+            {
+                "name": "skill_enforcer_far_away",
+                "value": 0
+            },
+            {
+                "name": "skill_enforcer_close_by",
+                "value": 0
+            },
+            {
+                "name": "skill_ghost_jail_workout",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_jail_workout_ace",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_second_chances",
+                "value": 1
+            },
+            {
+                "name": "skill_ghost_second_chances_ace",
+                "value": 1
+            },
+            {
+                "name": "level_flat",
+                "value": 1
+            },
+            {
+                "name": "job_flat",
+                "value": 1
+            },
+            {
+                "name": "contract_flat_win",
+                "value": 1
+            },
+            {
+                "name": "job_moon",
+                "value": 1
+            },
+            {
+                "name": "player_coins",
+                "value": 18
+            },
+            {
+                "name": "player_coins_0",
+                "value": 1
+            },
+            {
+                "name": "contract_friend_win",
+                "value": 1
+            },
+            {
+                "name": "enemy_kills_bolivian",
+                "value": 11
+            },
+            {
+                "name": "job_friend",
+                "value": 1
+            },
+            {
+                "name": "level_friend",
+                "value": 1
+            },
+            {
+                "name": "melee_kills_ostry",
+                "value": 2
+            },
+            {
+                "name": "melee_used_ostry",
+                "value": 1
+            },
+            {
+                "name": "mask_used_ant_07",
+                "value": 1
+            },
+            {
+                "name": "contract_dah_fail",
+                "value": 1
+            },
+            {
+                "name": "job_dah",
+                "value": 1
+            },
+            {
+                "name": "level_dah",
+                "value": 1
+            },
+            {
+                "name": "character_used_myh",
+                "value": 3
+            },
+            {
+                "name": "mask_used_rvd_01",
+                "value": 1
+            },
+            {
+                "name": "cac_3_stats",
+                "value": 1
+            },
+            {
+                "name": "job_sah",
+                "value": 28
+            },
+            {
+                "name": "equipped_suit",
+                "value": 109
+            },
+            {
+                "name": "suit_used_none",
+                "value": 3
+            },
+            {
+                "name": "equipped_glove_id",
+                "value": 1
+            },
+            {
+                "name": "suit_used_continental",
+                "value": 2
+            },
+            {
+                "name": "gloves_used_default",
+                "value": 6
+            },
+            {
+                "name": "setting_roman_rank_on",
+                "value": 1
+            },
+            {
+                "name": "setting_roman_card_on",
+                "value": 1
+            },
+            {
+                "name": "melee_used_spoon",
+                "value": 1
+            },
+            {
+                "name": "suit_used_clown_2_default",
+                "value": 1
+            }
+        ]
+    }
+}

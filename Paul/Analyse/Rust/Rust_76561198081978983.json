@@ -1,0 +1,42 @@
+{
+    "playerstats": {
+        "steamID": "76561198081978983",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "PLACE_CAMPFIRE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_CAMPFIRE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_100_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_STONE_HATCHET",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_200_STONE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_STONE_PICKAXE",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "harvested_wood",
+                "value": 100
+            },
+            {
+                "name": "harvested_stones",
+                "value": 100
+            }
+        ]
+    }
+}

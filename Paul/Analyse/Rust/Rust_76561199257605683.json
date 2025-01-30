@@ -1,0 +1,182 @@
+{
+    "playerstats": {
+        "steamID": "76561199257605683",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 3
+            },
+            {
+                "name": "bullet_fired",
+                "value": 2528
+            },
+            {
+                "name": "item_drop",
+                "value": 4
+            },
+            {
+                "name": "death_suicide",
+                "value": 1
+            },
+            {
+                "name": "kill_player",
+                "value": 1
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 536
+            },
+            {
+                "name": "bullet_hit_entity",
+                "value": 287
+            },
+            {
+                "name": "headshot",
+                "value": 32
+            },
+            {
+                "name": "wounded",
+                "value": 1
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 28145
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 337
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 3519
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 997
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 3
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 4049
+            },
+            {
+                "name": "TREE_HIT",
+                "value": 1080
+            },
+            {
+                "name": "comfort_duration",
+                "value": 67130.7265625
+            },
+            {
+                "name": "calories_consumed",
+                "value": 43655.953125
+            },
+            {
+                "name": "water_consumed",
+                "value": 11438.546875
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 462.6976318359375
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 41435.7109375
+            },
+            {
+                "name": "hot_exposure_duration",
+                "value": 1775.9400634765625
+            },
+            {
+                "name": "melee_strikes",
+                "value": 3181
+            },
+            {
+                "name": "melee_thrown",
+                "value": 12
+            },
+            {
+                "name": "placed_blocks",
+                "value": 549
+            },
+            {
+                "name": "upgraded_blocks",
+                "value": 597
+            },
+            {
+                "name": "arrows_shot",
+                "value": 134
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 674.5993041992188
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 5283
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 90172
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 1991
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 2820
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 158
+            },
+            {
+                "name": "grenades_thrown",
+                "value": 71
+            },
+            {
+                "name": "gesture_wave_count",
+                "value": 5
+            },
+            {
+                "name": "wires_connected",
+                "value": 68
+            }
+        ],
+        "achievements": [
+            {
+                "name": "CONSTRUCT_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "UPGRADE_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_65_SCRAP",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            }
+        ]
+    }
+}

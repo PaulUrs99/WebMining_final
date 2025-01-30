@@ -1,0 +1,314 @@
+{
+    "playerstats": {
+        "steamID": "76561199006647210",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 280
+            },
+            {
+                "name": "bullet_fired",
+                "value": 16314
+            },
+            {
+                "name": "arrow_fired",
+                "value": 1462
+            },
+            {
+                "name": "item_drop",
+                "value": 1678
+            },
+            {
+                "name": "blueprint_studied",
+                "value": 45
+            },
+            {
+                "name": "death_suicide",
+                "value": 66
+            },
+            {
+                "name": "death_selfinflicted",
+                "value": 2
+            },
+            {
+                "name": "kill_player",
+                "value": 66
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 2936
+            },
+            {
+                "name": "arrow_hit_entity",
+                "value": 70
+            },
+            {
+                "name": "bullet_hit_entity",
+                "value": 2190
+            },
+            {
+                "name": "arrow_hit_building",
+                "value": 49
+            },
+            {
+                "name": "kill_bear",
+                "value": 8
+            },
+            {
+                "name": "kill_boar",
+                "value": 18
+            },
+            {
+                "name": "kill_stag",
+                "value": 2
+            },
+            {
+                "name": "kill_chicken",
+                "value": 9
+            },
+            {
+                "name": "kill_wolf",
+                "value": 6
+            },
+            {
+                "name": "headshot",
+                "value": 482
+            },
+            {
+                "name": "arrow_hit_boar",
+                "value": 53
+            },
+            {
+                "name": "arrow_hit_bear",
+                "value": 53
+            },
+            {
+                "name": "arrow_hit_wolf",
+                "value": 18
+            },
+            {
+                "name": "arrow_hit_stag",
+                "value": 8
+            },
+            {
+                "name": "arrow_hit_chicken",
+                "value": 5
+            },
+            {
+                "name": "bullet_hit_building",
+                "value": 282
+            },
+            {
+                "name": "arrow_hit_player",
+                "value": 305
+            },
+            {
+                "name": "death_entity",
+                "value": 18
+            },
+            {
+                "name": "death_bear",
+                "value": 1
+            },
+            {
+                "name": "shotgun_fired",
+                "value": 349
+            },
+            {
+                "name": "shotgun_hit_player",
+                "value": 59
+            },
+            {
+                "name": "bullet_hit_bear",
+                "value": 28
+            },
+            {
+                "name": "shotgun_hit_entity",
+                "value": 9
+            },
+            {
+                "name": "bullet_hit_boar",
+                "value": 14
+            },
+            {
+                "name": "wounded",
+                "value": 551
+            },
+            {
+                "name": "wounded_assisted",
+                "value": 15
+            },
+            {
+                "name": "wounded_healed",
+                "value": 18
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 27773
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 2487
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 3883
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 1361
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 180
+            },
+            {
+                "name": "comfort_duration",
+                "value": 34802.0546875
+            },
+            {
+                "name": "calories_consumed",
+                "value": 64200.37109375
+            },
+            {
+                "name": "water_consumed",
+                "value": 22441.49609375
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 879.1315307617188
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 68491.0078125
+            },
+            {
+                "name": "hot_exposure_duration",
+                "value": 14247.564453125
+            },
+            {
+                "name": "melee_strikes",
+                "value": 25703
+            },
+            {
+                "name": "melee_thrown",
+                "value": 209
+            },
+            {
+                "name": "placed_blocks",
+                "value": 1497
+            },
+            {
+                "name": "upgraded_blocks",
+                "value": 1261
+            },
+            {
+                "name": "arrows_shot",
+                "value": 1535
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 845.467041015625
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 70022
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 886549
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 89987
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 6655
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 1143
+            },
+            {
+                "name": "horse_distance_ridden",
+                "value": 8009
+            },
+            {
+                "name": "helipad_landings",
+                "value": 1
+            },
+            {
+                "name": "recycled_cans",
+                "value": 1
+            },
+            {
+                "name": "kill_scientist",
+                "value": 7
+            },
+            {
+                "name": "horse_distance_ridden_km",
+                "value": 6
+            },
+            {
+                "name": "InstrumentNotesPlayed",
+                "value": 1445
+            },
+            {
+                "name": "InstrumentFullKeyboardMode",
+                "value": 1
+            },
+            {
+                "name": "grenades_thrown",
+                "value": 12
+            }
+        ],
+        "achievements": [
+            {
+                "name": "CONSTRUCT_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "UPGRADE_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_65_SCRAP",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            },
+            {
+                "name": "ON_THE_DECK",
+                "achieved": 1
+            },
+            {
+                "name": "GIDDY_UP",
+                "achieved": 1
+            },
+            {
+                "name": "KILL_SCIENTIST",
+                "achieved": 1
+            },
+            {
+                "name": "PLAY_INSTRUMENT",
+                "achieved": 1
+            }
+        ]
+    }
+}

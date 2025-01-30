@@ -1,0 +1,106 @@
+{
+    "playerstats": {
+        "steamID": "76561198081820301",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 4
+            },
+            {
+                "name": "death_fall",
+                "value": 1
+            },
+            {
+                "name": "kill_player",
+                "value": 1
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 1
+            },
+            {
+                "name": "headshot",
+                "value": 1
+            },
+            {
+                "name": "wounded",
+                "value": 4
+            },
+            {
+                "name": "wounded_healed",
+                "value": 1
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 20
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 4
+            },
+            {
+                "name": "harvested_wood",
+                "value": 200
+            },
+            {
+                "name": "harvested_stones",
+                "value": 370
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 4
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 1
+            },
+            {
+                "name": "comfort_duration",
+                "value": 0.89453125
+            },
+            {
+                "name": "calories_consumed",
+                "value": 229.99998474121094
+            },
+            {
+                "name": "water_consumed",
+                "value": 70
+            },
+            {
+                "name": "pickup_category_food",
+                "value": 1
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 158.44140625
+            },
+            {
+                "name": "melee_strikes",
+                "value": 156
+            },
+            {
+                "name": "melee_thrown",
+                "value": 3
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 4
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 2
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_100_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_200_STONE",
+                "achieved": 1
+            }
+        ]
+    }
+}

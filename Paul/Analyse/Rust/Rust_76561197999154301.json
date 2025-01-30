@@ -1,0 +1,70 @@
+{
+    "playerstats": {
+        "steamID": "76561197999154301",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 2
+            },
+            {
+                "name": "wounded",
+                "value": 2
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 13
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 4
+            },
+            {
+                "name": "harvested_wood",
+                "value": 250
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 3
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 4.3172607421875
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 4.278106689453125
+            },
+            {
+                "name": "melee_strikes",
+                "value": 62
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 1.5528205633163452
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 6
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 20
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 3
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_100_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            }
+        ]
+    }
+}

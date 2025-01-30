@@ -1,0 +1,110 @@
+{
+    "playerstats": {
+        "steamID": "76561198180157567",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 4
+            },
+            {
+                "name": "item_drop",
+                "value": 3
+            },
+            {
+                "name": "harvest.stones",
+                "value": 752
+            },
+            {
+                "name": "harvest.cloth",
+                "value": 60
+            },
+            {
+                "name": "harvest.wood",
+                "value": 1196
+            },
+            {
+                "name": "wounded",
+                "value": 2
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 37
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 4
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 44
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 2
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 1
+            },
+            {
+                "name": "calories_consumed",
+                "value": 290
+            },
+            {
+                "name": "water_consumed",
+                "value": 22
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 33.7900390625
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 264.215087890625
+            },
+            {
+                "name": "melee_strikes",
+                "value": 527
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 2.0904362201690674
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 14
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 300
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 46
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 55
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 14
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            }
+        ]
+    }
+}

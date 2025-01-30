@@ -1,0 +1,62 @@
+{
+    "playerstats": {
+        "steamID": "76561198065898682",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_FIRST_BLOOD",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_GENERAL_KILL_COOP_100",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_10",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CHK_DISTRICT",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CHK_MINISTRY",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKills",
+                "value": 17
+            },
+            {
+                "name": "TotalKillsCoop",
+                "value": 202
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 14
+            },
+            {
+                "name": "TotalMVPsCoop",
+                "value": 3
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 219
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 14
+            },
+            {
+                "name": "TotalMVPsAll",
+                "value": 3
+            }
+        ]
+    }
+}

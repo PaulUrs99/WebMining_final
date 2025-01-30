@@ -1,0 +1,276 @@
+{
+    "steamID": "76561199234241585",
+    "gameName": "",
+    "stats": [
+        {
+            "name": "deaths",
+            "value": 12
+        },
+        {
+            "name": "bullet_fired",
+            "value": 4017
+        },
+        {
+            "name": "item_drop",
+            "value": 59
+        },
+        {
+            "name": "blueprint_studied",
+            "value": 1
+        },
+        {
+            "name": "death_suicide",
+            "value": 3
+        },
+        {
+            "name": "bullet_hit_player",
+            "value": 1465
+        },
+        {
+            "name": "bullet_hit_entity",
+            "value": 2
+        },
+        {
+            "name": "kill_bear",
+            "value": 1
+        },
+        {
+            "name": "headshot",
+            "value": 268
+        },
+        {
+            "name": "bullet_hit_building",
+            "value": 14
+        },
+        {
+            "name": "death_entity",
+            "value": 2
+        },
+        {
+            "name": "shotgun_fired",
+            "value": 1512
+        },
+        {
+            "name": "shotgun_hit_player",
+            "value": 507
+        },
+        {
+            "name": "shotgun_hit_entity",
+            "value": 11
+        },
+        {
+            "name": "wounded",
+            "value": 8
+        },
+        {
+            "name": "wounded_assisted",
+            "value": 1
+        },
+        {
+            "name": "wounded_healed",
+            "value": 1
+        },
+        {
+            "name": "INVENTORY_OPENED",
+            "value": 2302
+        },
+        {
+            "name": "CRAFTING_OPENED",
+            "value": 76
+        },
+        {
+            "name": "harvested_wood",
+            "value": 95271
+        },
+        {
+            "name": "harvested_stones",
+            "value": 19309
+        },
+        {
+            "name": "MAP_OPENED",
+            "value": 351
+        },
+        {
+            "name": "CUPBOARD_OPENED",
+            "value": 82
+        },
+        {
+            "name": "ITEM_EXAMINED",
+            "value": 2
+        },
+        {
+            "name": "ORE_HIT",
+            "value": 1332
+        },
+        {
+            "name": "TREE_HIT",
+            "value": 2546
+        },
+        {
+            "name": "comfort_duration",
+            "value": 14362.974609375
+        },
+        {
+            "name": "calories_consumed",
+            "value": 7108.51708984375
+        },
+        {
+            "name": "water_consumed",
+            "value": 853.2245483398438
+        },
+        {
+            "name": "pickup_category_food",
+            "value": 13
+        },
+        {
+            "name": "radiation_exposure_duration",
+            "value": 28.2840576171875
+        },
+        {
+            "name": "cold_exposure_duration",
+            "value": 38117.43359375
+        },
+        {
+            "name": "hot_exposure_duration",
+            "value": 213.53515625
+        },
+        {
+            "name": "melee_strikes",
+            "value": 3544
+        },
+        {
+            "name": "melee_thrown",
+            "value": 29
+        },
+        {
+            "name": "placed_blocks",
+            "value": 19
+        },
+        {
+            "name": "harvested_cloth",
+            "value": 35
+        },
+        {
+            "name": "harvested_leather",
+            "value": 62
+        },
+        {
+            "name": "acquired_lowgradefuel",
+            "value": 406
+        },
+        {
+            "name": "acquired_metal.ore",
+            "value": 19850
+        },
+        {
+            "name": "acquired_scrap",
+            "value": 1964
+        },
+        {
+            "name": "topology_road_duration",
+            "value": 385
+        },
+        {
+            "name": "destroyed_barrels",
+            "value": 86
+        },
+        {
+            "name": "InstrumentNotesPlayed",
+            "value": 1419
+        },
+        {
+            "name": "InstrumentFullKeyboardMode",
+            "value": 6
+        }
+    ],
+    "achievements": [
+        {
+            "name": "PLACE_CAMPFIRE",
+            "achieved": 1
+        },
+        {
+            "name": "CRAFT_CAMPFIRE",
+            "achieved": 1
+        },
+        {
+            "name": "COLLECT_100_WOOD",
+            "achieved": 1
+        },
+        {
+            "name": "CRAFT_STONE_HATCHET",
+            "achieved": 1
+        },
+        {
+            "name": "COLLECT_200_STONE",
+            "achieved": 1
+        },
+        {
+            "name": "CRAFT_STONE_PICKAXE",
+            "achieved": 1
+        },
+        {
+            "name": "COLLECT_700_WOOD",
+            "achieved": 1
+        },
+        {
+            "name": "CRAFT_SLEEPINGBAG",
+            "achieved": 1
+        },
+        {
+            "name": "COLLECT_30_CLOTH",
+            "achieved": 1
+        },
+        {
+            "name": "CRAFT_HAMMER",
+            "achieved": 1
+        },
+        {
+            "name": "CONSTRUCT_BASE",
+            "achieved": 1
+        },
+        {
+            "name": "KILL_ANIMAL",
+            "achieved": 1
+        },
+        {
+            "name": "SKIN_ANIMAL",
+            "achieved": 1
+        },
+        {
+            "name": "EQUIP_CLOTHING",
+            "achieved": 1
+        },
+        {
+            "name": "COLLECT_50_LGF",
+            "achieved": 1
+        },
+        {
+            "name": "COLLECT_300_METAL_ORE",
+            "achieved": 1
+        },
+        {
+            "name": "VISIT_ROAD",
+            "achieved": 1
+        },
+        {
+            "name": "COLLECT_65_SCRAP",
+            "achieved": 1
+        },
+        {
+            "name": "DESTROY_10_BARRELS",
+            "achieved": 1
+        },
+        {
+            "name": "RESEARCH_ITEM",
+            "achieved": 1
+        },
+        {
+            "name": "GLUTTON",
+            "achieved": 1
+        },
+        {
+            "name": "PLAY_INSTRUMENT",
+            "achieved": 1
+        }
+    ]
+}

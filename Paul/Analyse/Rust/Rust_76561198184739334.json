@@ -1,0 +1,190 @@
+{
+    "playerstats": {
+        "steamID": "76561198184739334",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 4
+            },
+            {
+                "name": "bullet_fired",
+                "value": 248
+            },
+            {
+                "name": "item_drop",
+                "value": 7
+            },
+            {
+                "name": "kill_player",
+                "value": 14
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 50
+            },
+            {
+                "name": "bullet_hit_entity",
+                "value": 35
+            },
+            {
+                "name": "kill_boar",
+                "value": 3
+            },
+            {
+                "name": "kill_chicken",
+                "value": 1
+            },
+            {
+                "name": "headshot",
+                "value": 28
+            },
+            {
+                "name": "bullet_hit_wolf",
+                "value": 19
+            },
+            {
+                "name": "bullet_hit_boar",
+                "value": 20
+            },
+            {
+                "name": "wounded",
+                "value": 3
+            },
+            {
+                "name": "wounded_healed",
+                "value": 1
+            },
+            {
+                "name": "bullet_hit_playercorpse",
+                "value": 6
+            },
+            {
+                "name": "bullet_hit_corpse",
+                "value": 10
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 161
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 33
+            },
+            {
+                "name": "harvested_wood",
+                "value": 376
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 37
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 10
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 45
+            },
+            {
+                "name": "TREE_HIT",
+                "value": 30
+            },
+            {
+                "name": "comfort_duration",
+                "value": 312.64544677734375
+            },
+            {
+                "name": "calories_consumed",
+                "value": 685.6091918945312
+            },
+            {
+                "name": "water_consumed",
+                "value": 107.69894409179688
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 471.7928466796875
+            },
+            {
+                "name": "hot_exposure_duration",
+                "value": 51.60302734375
+            },
+            {
+                "name": "melee_strikes",
+                "value": 367
+            },
+            {
+                "name": "melee_thrown",
+                "value": 3
+            },
+            {
+                "name": "placed_blocks",
+                "value": 14
+            },
+            {
+                "name": "upgraded_blocks",
+                "value": 21
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 22.723474502563477
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 218
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 3600
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 30
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 185
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 8
+            },
+            {
+                "name": "kill_scientist",
+                "value": 6
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_100_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "CONSTRUCT_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "UPGRADE_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "KILL_SCIENTIST",
+                "achieved": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "playerstats": {
+        "steamID": "76561198129609136",
+        "gameName": "DayZ",
+        "stats": [
+            {
+                "name": "STAT_ACTION_EAT",
+                "value": 32
+            },
+            {
+                "name": "STAT_ACTION_DRINK",
+                "value": 10
+            },
+            {
+                "name": "STAT_ACTION_EQUIP_GEAR",
+                "value": 605
+            },
+            {
+                "name": "STAT_INFECTED_KILL_COUNT",
+                "value": 46
+            },
+            {
+                "name": "STAT_INFECTED_SOLDIER_KILL_COUNT",
+                "value": 16
+            },
+            {
+                "name": "STAT_SURVIVOR_MELEE_KILL_COUNT",
+                "value": 2
+            },
+            {
+                "name": "STAT_INFECTED_HEADSHOT_COUNT",
+                "value": 12
+            },
+            {
+                "name": "STAT_HEADSHOT_COUNT",
+                "value": 12
+            }
+        ],
+        "achievements": [
+            {
+                "name": "ACH_BodilyNeeds",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_Geared",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_ActOfMercy",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_Pacify",
+                "achieved": 1
+            }
+        ]
+    }
+}

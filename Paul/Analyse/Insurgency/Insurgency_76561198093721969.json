@@ -1,0 +1,62 @@
+{
+    "playerstats": {
+        "steamID": "76561198093721969",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_FIRST_BLOOD_COOP",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_ALL_IN_COOP",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_GENERAL_KILL_COOP_100",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_10",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKillsCoop",
+                "value": 239
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 27
+            },
+            {
+                "name": "TotalMVPsCoop",
+                "value": 4
+            },
+            {
+                "name": "TotalHeroCapturesCoop",
+                "value": 6
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 239
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 27
+            },
+            {
+                "name": "TotalMVPsAll",
+                "value": 4
+            },
+            {
+                "name": "TotalHeroCapturesAll",
+                "value": 6
+            }
+        ]
+    }
+}

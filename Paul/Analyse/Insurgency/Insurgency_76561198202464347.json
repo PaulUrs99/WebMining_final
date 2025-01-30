@@ -1,0 +1,78 @@
+{
+    "playerstats": {
+        "steamID": "76561198202464347",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_FIRST_BLOOD",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_10",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_WAR_HERO_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_HERO_CAP_1",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKills",
+                "value": 15
+            },
+            {
+                "name": "TotalCaptures",
+                "value": 11
+            },
+            {
+                "name": "TotalKillsCoop",
+                "value": 21
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 2
+            },
+            {
+                "name": "TotalMVPs",
+                "value": 2
+            },
+            {
+                "name": "TotalHeroCaptures",
+                "value": 1
+            },
+            {
+                "name": "TotalMVPsCoop",
+                "value": 2
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 36
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 13
+            },
+            {
+                "name": "TotalMVPsAll",
+                "value": 4
+            },
+            {
+                "name": "TotalHeroCapturesAll",
+                "value": 1
+            }
+        ]
+    }
+}

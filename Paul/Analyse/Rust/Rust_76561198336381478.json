@@ -1,0 +1,50 @@
+{
+    "playerstats": {
+        "steamID": "76561198336381478",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 5
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 4
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 5
+            },
+            {
+                "name": "calories_consumed",
+                "value": 30
+            },
+            {
+                "name": "water_consumed",
+                "value": 10
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 62.29296875
+            },
+            {
+                "name": "melee_strikes",
+                "value": 92
+            },
+            {
+                "name": "melee_thrown",
+                "value": 5
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 10
+            }
+        ],
+        "achievements": [
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            }
+        ]
+    }
+}

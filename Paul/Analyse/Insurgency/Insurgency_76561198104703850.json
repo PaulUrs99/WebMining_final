@@ -1,0 +1,54 @@
+{
+    "playerstats": {
+        "steamID": "76561198104703850",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_FIRST_BLOOD_COOP",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CHK_REVOLT",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_HNT_MINISTRY",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_HNT_DRYCANAL",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKillsCoop",
+                "value": 59
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 8
+            },
+            {
+                "name": "TotalHeroCapturesCoop",
+                "value": 1
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 59
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 8
+            },
+            {
+                "name": "TotalHeroCapturesAll",
+                "value": 1
+            }
+        ]
+    }
+}

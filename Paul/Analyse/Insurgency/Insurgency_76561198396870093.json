@@ -1,0 +1,54 @@
+{
+    "playerstats": {
+        "steamID": "76561198396870093",
+        "gameName": "",
+        "achievements": [
+            {
+                "name": "ACH_HURT_LOCKER",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_GENERAL_KILL_100",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_CAPTURE_POINT_COOP_1",
+                "achieved": 1
+            },
+            {
+                "name": "ACH_TRAINING_COMPLETE",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "TotalKills",
+                "value": 208
+            },
+            {
+                "name": "TotalCaptures",
+                "value": 7
+            },
+            {
+                "name": "TotalKillsCoop",
+                "value": 41
+            },
+            {
+                "name": "TotalCapturesCoop",
+                "value": 2
+            },
+            {
+                "name": "TotalKillsAll",
+                "value": 249
+            },
+            {
+                "name": "TotalCapturesAll",
+                "value": 9
+            }
+        ]
+    }
+}

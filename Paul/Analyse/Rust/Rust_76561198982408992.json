@@ -1,0 +1,378 @@
+[
+    {
+        "name": "deaths",
+        "value": 1718
+    },
+    {
+        "name": "bullet_fired",
+        "value": 35517
+    },
+    {
+        "name": "arrow_fired",
+        "value": 1543
+    },
+    {
+        "name": "rocket_fired",
+        "value": 18
+    },
+    {
+        "name": "item_drop",
+        "value": 7982
+    },
+    {
+        "name": "blueprint_studied",
+        "value": 562
+    },
+    {
+        "name": "death_suicide",
+        "value": 284
+    },
+    {
+        "name": "death_fall",
+        "value": 25
+    },
+    {
+        "name": "death_selfinflicted",
+        "value": 8
+    },
+    {
+        "name": "kill_player",
+        "value": 1478
+    },
+    {
+        "name": "bullet_hit_player",
+        "value": 8064
+    },
+    {
+        "name": "arrow_hit_entity",
+        "value": 591
+    },
+    {
+        "name": "bullet_hit_entity",
+        "value": 8711
+    },
+    {
+        "name": "arrow_hit_building",
+        "value": 41
+    },
+    {
+        "name": "kill_bear",
+        "value": 23
+    },
+    {
+        "name": "kill_boar",
+        "value": 56
+    },
+    {
+        "name": "kill_stag",
+        "value": 7
+    },
+    {
+        "name": "kill_chicken",
+        "value": 6
+    },
+    {
+        "name": "kill_wolf",
+        "value": 20
+    },
+    {
+        "name": "headshot",
+        "value": 2777
+    },
+    {
+        "name": "arrow_hit_boar",
+        "value": 62
+    },
+    {
+        "name": "arrow_hit_bear",
+        "value": 18
+    },
+    {
+        "name": "arrow_hit_wolf",
+        "value": 18
+    },
+    {
+        "name": "arrow_hit_stag",
+        "value": 9
+    },
+    {
+        "name": "bullet_hit_building",
+        "value": 3514
+    },
+    {
+        "name": "arrow_hit_player",
+        "value": 357
+    },
+    {
+        "name": "death_entity",
+        "value": 101
+    },
+    {
+        "name": "death_wolf",
+        "value": 16
+    },
+    {
+        "name": "death_bear",
+        "value": 13
+    },
+    {
+        "name": "shotgun_fired",
+        "value": 2321
+    },
+    {
+        "name": "shotgun_hit_building",
+        "value": 212
+    },
+    {
+        "name": "shotgun_hit_player",
+        "value": 888
+    },
+    {
+        "name": "bullet_hit_bear",
+        "value": 152
+    },
+    {
+        "name": "shotgun_hit_entity",
+        "value": 154
+    },
+    {
+        "name": "bullet_hit_stag",
+        "value": 13
+    },
+    {
+        "name": "bullet_hit_wolf",
+        "value": 92
+    },
+    {
+        "name": "bullet_hit_boar",
+        "value": 201
+    },
+    {
+        "name": "bullet_hit_sign",
+        "value": 8
+    },
+    {
+        "name": "wounded",
+        "value": 1029
+    },
+    {
+        "name": "wounded_assisted",
+        "value": 94
+    },
+    {
+        "name": "wounded_healed",
+        "value": 83
+    },
+    {
+        "name": "bullet_hit_playercorpse",
+        "value": 493
+    },
+    {
+        "name": "bullet_hit_corpse",
+        "value": 61
+    },
+    {
+        "name": "INVENTORY_OPENED",
+        "value": 182050
+    },
+    {
+        "name": "CRAFTING_OPENED",
+        "value": 10589
+    },
+    {
+        "name": "harvested_wood",
+        "value": 382382
+    },
+    {
+        "name": "harvested_stones",
+        "value": 354427
+    },
+    {
+        "name": "MAP_OPENED",
+        "value": 57666
+    },
+    {
+        "name": "CUPBOARD_OPENED",
+        "value": 20519
+    },
+    {
+        "name": "ITEM_EXAMINED",
+        "value": 315
+    },
+    {
+        "name": "ORE_HIT",
+        "value": 6441
+    },
+    {
+        "name": "TREE_HIT",
+        "value": 10843
+    },
+    {
+        "name": "comfort_duration",
+        "value": 237706.390625
+    },
+    {
+        "name": "calories_consumed",
+        "value": 260629.125
+    },
+    {
+        "name": "water_consumed",
+        "value": 69143.53125
+    },
+    {
+        "name": "pickup_category_food",
+        "value": 445
+    },
+    {
+        "name": "radiation_exposure_duration",
+        "value": 1612.8486328125
+    },
+    {
+        "name": "cold_exposure_duration",
+        "value": 194024.640625
+    },
+    {
+        "name": "hot_exposure_duration",
+        "value": 55871.99609375
+    },
+    {
+        "name": "melee_strikes",
+        "value": 93119
+    },
+    {
+        "name": "melee_thrown",
+        "value": 413
+    },
+    {
+        "name": "placed_blocks",
+        "value": 9920
+    },
+    {
+        "name": "upgraded_blocks",
+        "value": 6555
+    },
+    {
+        "name": "arrows_shot",
+        "value": 1769
+    },
+    {
+        "name": "seconds_speaking",
+        "value": 11991.078125
+    },
+    {
+        "name": "harvested_cloth",
+        "value": 4208
+    },
+    {
+        "name": "harvested_leather",
+        "value": 1604
+    },
+    {
+        "name": "acquired_lowgradefuel",
+        "value": 39162
+    },
+    {
+        "name": "acquired_metal.ore",
+        "value": 763382
+    },
+    {
+        "name": "acquired_scrap",
+        "value": 53796
+    },
+    {
+        "name": "topology_road_duration",
+        "value": 41540
+    },
+    {
+        "name": "destroyed_barrels",
+        "value": 6997
+    },
+    {
+        "name": "horse_distance_ridden",
+        "value": 92778
+    },
+    {
+        "name": "helipad_landings",
+        "value": 3
+    },
+    {
+        "name": "cargoship_bridge_visits",
+        "value": 7
+    },
+    {
+        "name": "recycled_cans",
+        "value": 11
+    },
+    {
+        "name": "kill_scientist",
+        "value": 473
+    },
+    {
+        "name": "horse_distance_ridden_km",
+        "value": 82
+    },
+    {
+        "name": "InstrumentNotesPlayed",
+        "value": 3608
+    },
+    {
+        "name": "InstrumentFullKeyboardMode",
+        "value": 2
+    },
+    {
+        "name": "grenades_thrown",
+        "value": 175
+    },
+    {
+        "name": "gesture_wave_count",
+        "value": 133
+    },
+    {
+        "name": "caught_anchovy",
+        "value": 6
+    },
+    {
+        "name": "caught_herring",
+        "value": 2
+    },
+    {
+        "name": "caught_sardine",
+        "value": 5
+    },
+    {
+        "name": "caught_small_trout",
+        "value": 2
+    },
+    {
+        "name": "caught_small_shark",
+        "value": 1
+    },
+    {
+        "name": "waved_at_players",
+        "value": 20
+    },
+    {
+        "name": "missions_completed",
+        "value": 2
+    },
+    {
+        "name": "dweller_kills_while_moving",
+        "value": 1
+    },
+    {
+        "name": "excavator_activated",
+        "value": 2
+    },
+    {
+        "name": "cars_shredded",
+        "value": 8
+    },
+    {
+        "name": "wires_connected",
+        "value": 52
+    },
+    {
+        "name": "pipes_connected",
+        "value": 1
+    }
+]

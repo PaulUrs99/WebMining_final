@@ -1,0 +1,306 @@
+{
+    "playerstats": {
+        "steamID": "76561199068563133",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 42
+            },
+            {
+                "name": "bullet_fired",
+                "value": 40
+            },
+            {
+                "name": "arrow_fired",
+                "value": 28
+            },
+            {
+                "name": "item_drop",
+                "value": 114
+            },
+            {
+                "name": "death_suicide",
+                "value": 1
+            },
+            {
+                "name": "death_fall",
+                "value": 1
+            },
+            {
+                "name": "kill_player",
+                "value": 3
+            },
+            {
+                "name": "arrow_hit_entity",
+                "value": 9
+            },
+            {
+                "name": "bullet_hit_entity",
+                "value": 3
+            },
+            {
+                "name": "kill_boar",
+                "value": 1
+            },
+            {
+                "name": "headshot",
+                "value": 10
+            },
+            {
+                "name": "arrow_hit_boar",
+                "value": 3
+            },
+            {
+                "name": "arrow_hit_player",
+                "value": 4
+            },
+            {
+                "name": "death_entity",
+                "value": 4
+            },
+            {
+                "name": "death_wolf",
+                "value": 2
+            },
+            {
+                "name": "death_bear",
+                "value": 3
+            },
+            {
+                "name": "wounded",
+                "value": 27
+            },
+            {
+                "name": "wounded_healed",
+                "value": 1
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 979
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 391
+            },
+            {
+                "name": "harvested_wood",
+                "value": 3758
+            },
+            {
+                "name": "harvested_stones",
+                "value": 1389
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 400
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 3
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 1
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 339
+            },
+            {
+                "name": "TREE_HIT",
+                "value": 532
+            },
+            {
+                "name": "comfort_duration",
+                "value": 430.803955078125
+            },
+            {
+                "name": "calories_consumed",
+                "value": 3552.34423828125
+            },
+            {
+                "name": "water_consumed",
+                "value": 2701.72216796875
+            },
+            {
+                "name": "pickup_category_food",
+                "value": 7
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 80.09307861328125
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 1170.9039306640625
+            },
+            {
+                "name": "hot_exposure_duration",
+                "value": 235.42361450195312
+            },
+            {
+                "name": "melee_strikes",
+                "value": 4189
+            },
+            {
+                "name": "melee_thrown",
+                "value": 2
+            },
+            {
+                "name": "placed_blocks",
+                "value": 30
+            },
+            {
+                "name": "arrows_shot",
+                "value": 28
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 0.5438597798347473
+            },
+            {
+                "name": "harvested_cloth",
+                "value": 10
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 161
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 3561
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 479
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 1195
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 263
+            },
+            {
+                "name": "horse_distance_ridden",
+                "value": 1769
+            },
+            {
+                "name": "recycled_cans",
+                "value": 1
+            },
+            {
+                "name": "horse_distance_ridden_km",
+                "value": 1
+            },
+            {
+                "name": "InstrumentNotesPlayed",
+                "value": 79
+            },
+            {
+                "name": "InstrumentFullKeyboardMode",
+                "value": 1
+            }
+        ],
+        "achievements": [
+            {
+                "name": "PLACE_CAMPFIRE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_CAMPFIRE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_100_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_STONE_HATCHET",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_200_STONE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_STONE_PICKAXE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_700_WOOD",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_HAMMER",
+                "achieved": 1
+            },
+            {
+                "name": "CONSTRUCT_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_HUNTING_BOW",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_ARROWS",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_BURLAP_HEADWRAP",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_BURLAP_SHIRT",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_BURLAP_PANTS",
+                "achieved": 1
+            },
+            {
+                "name": "EQUIP_CLOTHING",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "CRAFT_MACHETE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_65_SCRAP",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            },
+            {
+                "name": "SEALBREAKER",
+                "achieved": 1
+            },
+            {
+                "name": "GIDDY_UP",
+                "achieved": 1
+            },
+            {
+                "name": "PLAY_INSTRUMENT",
+                "achieved": 1
+            }
+        ]
+    }
+}

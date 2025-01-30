@@ -1,0 +1,58 @@
+{
+    "playerstats": {
+        "steamID": "76561198058629276",
+        "gameName": "Raft",
+        "achievements": [
+            {
+                "name": "ach_build_foundation_10",
+                "achieved": 1
+            },
+            {
+                "name": "ach_playwithfriend",
+                "achieved": 1
+            },
+            {
+                "name": "ach_sharkKiller_1",
+                "achieved": 1
+            },
+            {
+                "name": "ach_gatherer_100",
+                "achieved": 1
+            },
+            {
+                "name": "ach_birdKiller_1",
+                "achieved": 1
+            },
+            {
+                "name": "ach_survivor_day",
+                "achieved": 1
+            },
+            {
+                "name": "ach_reach_bigIsland",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "stat_build_foundationCount",
+                "value": 40
+            },
+            {
+                "name": "stat_player_sharkKills",
+                "value": 2
+            },
+            {
+                "name": "stat_player_hookCount",
+                "value": 135
+            },
+            {
+                "name": "stat_player_birdKills",
+                "value": 1
+            },
+            {
+                "name": "stat_build_removeCount",
+                "value": 1
+            }
+        ]
+    }
+}

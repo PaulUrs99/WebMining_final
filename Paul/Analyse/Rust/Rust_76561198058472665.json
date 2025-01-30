@@ -1,0 +1,330 @@
+{
+    "playerstats": {
+        "steamID": "76561198058472665",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 25
+            },
+            {
+                "name": "bullet_fired",
+                "value": 4600
+            },
+            {
+                "name": "arrow_fired",
+                "value": 82
+            },
+            {
+                "name": "rocket_fired",
+                "value": 180
+            },
+            {
+                "name": "item_drop",
+                "value": 1409
+            },
+            {
+                "name": "blueprint_studied",
+                "value": 418
+            },
+            {
+                "name": "death_suicide",
+                "value": 7
+            },
+            {
+                "name": "death_selfinflicted",
+                "value": 1
+            },
+            {
+                "name": "kill_player",
+                "value": 142
+            },
+            {
+                "name": "bullet_hit_player",
+                "value": 195
+            },
+            {
+                "name": "arrow_hit_entity",
+                "value": 4
+            },
+            {
+                "name": "bullet_hit_entity",
+                "value": 1674
+            },
+            {
+                "name": "arrow_hit_building",
+                "value": 5
+            },
+            {
+                "name": "kill_bear",
+                "value": 13
+            },
+            {
+                "name": "kill_boar",
+                "value": 11
+            },
+            {
+                "name": "kill_stag",
+                "value": 3
+            },
+            {
+                "name": "kill_chicken",
+                "value": 10
+            },
+            {
+                "name": "kill_wolf",
+                "value": 4
+            },
+            {
+                "name": "headshot",
+                "value": 237
+            },
+            {
+                "name": "arrow_hit_boar",
+                "value": 8
+            },
+            {
+                "name": "arrow_hit_bear",
+                "value": 20
+            },
+            {
+                "name": "bullet_hit_building",
+                "value": 891
+            },
+            {
+                "name": "arrow_hit_player",
+                "value": 4
+            },
+            {
+                "name": "death_entity",
+                "value": 6
+            },
+            {
+                "name": "shotgun_fired",
+                "value": 2807
+            },
+            {
+                "name": "shotgun_hit_building",
+                "value": 161
+            },
+            {
+                "name": "shotgun_hit_player",
+                "value": 4
+            },
+            {
+                "name": "bullet_hit_bear",
+                "value": 96
+            },
+            {
+                "name": "shotgun_hit_entity",
+                "value": 702
+            },
+            {
+                "name": "bullet_hit_horse",
+                "value": 11
+            },
+            {
+                "name": "bullet_hit_stag",
+                "value": 10
+            },
+            {
+                "name": "bullet_hit_wolf",
+                "value": 5
+            },
+            {
+                "name": "bullet_hit_boar",
+                "value": 43
+            },
+            {
+                "name": "wounded",
+                "value": 6
+            },
+            {
+                "name": "wounded_assisted",
+                "value": 7
+            },
+            {
+                "name": "bullet_hit_playercorpse",
+                "value": 78
+            },
+            {
+                "name": "bullet_hit_corpse",
+                "value": 10
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 8984
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 392
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 2372
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 304
+            },
+            {
+                "name": "ITEM_EXAMINED",
+                "value": 12
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 7
+            },
+            {
+                "name": "comfort_duration",
+                "value": 10302.328125
+            },
+            {
+                "name": "calories_consumed",
+                "value": 14749.599609375
+            },
+            {
+                "name": "water_consumed",
+                "value": 5058.95263671875
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 168.9007568359375
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 5678.05419921875
+            },
+            {
+                "name": "hot_exposure_duration",
+                "value": 559.754638671875
+            },
+            {
+                "name": "melee_strikes",
+                "value": 5775
+            },
+            {
+                "name": "melee_thrown",
+                "value": 35
+            },
+            {
+                "name": "placed_blocks",
+                "value": 1679
+            },
+            {
+                "name": "upgraded_blocks",
+                "value": 829
+            },
+            {
+                "name": "arrows_shot",
+                "value": 56
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 166.96900939941406
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 1930
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 24038
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 16970
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 6090
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 634
+            },
+            {
+                "name": "horse_distance_ridden",
+                "value": 3577
+            },
+            {
+                "name": "cargoship_bridge_visits",
+                "value": 1
+            },
+            {
+                "name": "kill_scientist",
+                "value": 133
+            },
+            {
+                "name": "horse_distance_ridden_km",
+                "value": 3
+            },
+            {
+                "name": "InstrumentNotesPlayed",
+                "value": 2510
+            },
+            {
+                "name": "InstrumentFullKeyboardMode",
+                "value": 6
+            },
+            {
+                "name": "InstrumentNotesPlayedBinds",
+                "value": 97
+            },
+            {
+                "name": "grenades_thrown",
+                "value": 54
+            },
+            {
+                "name": "gesture_wave_count",
+                "value": 1
+            }
+        ],
+        "achievements": [
+            {
+                "name": "CONSTRUCT_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "UPGRADE_BASE",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_65_SCRAP",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            },
+            {
+                "name": "IM_THE_CAPTAIN_NOW",
+                "achieved": 1
+            },
+            {
+                "name": "GIDDY_UP",
+                "achieved": 1
+            },
+            {
+                "name": "KILL_SCIENTIST",
+                "achieved": 1
+            },
+            {
+                "name": "PLAY_INSTRUMENT",
+                "achieved": 1
+            }
+        ]
+    }
+}

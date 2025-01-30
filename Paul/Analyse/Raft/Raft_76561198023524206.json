@@ -1,0 +1,50 @@
+{
+    "playerstats": {
+        "steamID": "76561198023524206",
+        "gameName": "Raft",
+        "achievements": [
+            {
+                "name": "ach_playwithfriend",
+                "achieved": 1
+            },
+            {
+                "name": "ach_sharkKiller_1",
+                "achieved": 1
+            },
+            {
+                "name": "ach_birdKiller_1",
+                "achieved": 1
+            },
+            {
+                "name": "ach_survivor_day",
+                "achieved": 1
+            },
+            {
+                "name": "ach_survivor_week",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "stat_player_sharkKills",
+                "value": 2
+            },
+            {
+                "name": "stat_player_hookCount",
+                "value": 59
+            },
+            {
+                "name": "stat_player_birdKills",
+                "value": 1
+            },
+            {
+                "name": "stat_build_removeCount",
+                "value": 1
+            },
+            {
+                "name": "stat_shark_bitePlayer",
+                "value": 3
+            }
+        ]
+    }
+}

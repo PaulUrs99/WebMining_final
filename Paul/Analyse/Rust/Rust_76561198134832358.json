@@ -1,0 +1,154 @@
+{
+    "playerstats": {
+        "steamID": "76561198134832358",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 7
+            },
+            {
+                "name": "arrow_fired",
+                "value": 16
+            },
+            {
+                "name": "item_drop",
+                "value": 41
+            },
+            {
+                "name": "death_suicide",
+                "value": 3
+            },
+            {
+                "name": "kill_player",
+                "value": 1
+            },
+            {
+                "name": "arrow_hit_entity",
+                "value": 2
+            },
+            {
+                "name": "arrow_hit_building",
+                "value": 3
+            },
+            {
+                "name": "kill_chicken",
+                "value": 2
+            },
+            {
+                "name": "arrow_hit_chicken",
+                "value": 2
+            },
+            {
+                "name": "arrow_hit_player",
+                "value": 1
+            },
+            {
+                "name": "wounded",
+                "value": 2
+            },
+            {
+                "name": "wounded_healed",
+                "value": 1
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 477
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 46
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 196
+            },
+            {
+                "name": "CUPBOARD_OPENED",
+                "value": 2
+            },
+            {
+                "name": "comfort_duration",
+                "value": 879.0487060546875
+            },
+            {
+                "name": "calories_consumed",
+                "value": 1083.46826171875
+            },
+            {
+                "name": "water_consumed",
+                "value": 453.880615234375
+            },
+            {
+                "name": "radiation_exposure_duration",
+                "value": 50.2451171875
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 1406.826904296875
+            },
+            {
+                "name": "melee_strikes",
+                "value": 753
+            },
+            {
+                "name": "melee_thrown",
+                "value": 2
+            },
+            {
+                "name": "arrows_shot",
+                "value": 16
+            },
+            {
+                "name": "seconds_speaking",
+                "value": 2.3033628463745117
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 51
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 963
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 86
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 190
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 63
+            },
+            {
+                "name": "horse_distance_ridden",
+                "value": 815
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_65_SCRAP",
+                "achieved": 1
+            },
+            {
+                "name": "DESTROY_10_BARRELS",
+                "achieved": 1
+            }
+        ]
+    }
+}

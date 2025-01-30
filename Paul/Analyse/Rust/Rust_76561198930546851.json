@@ -1,0 +1,86 @@
+{
+    "playerstats": {
+        "steamID": "76561198930546851",
+        "gameName": "",
+        "stats": [
+            {
+                "name": "deaths",
+                "value": 5
+            },
+            {
+                "name": "item_drop",
+                "value": 1
+            },
+            {
+                "name": "wounded",
+                "value": 3
+            },
+            {
+                "name": "INVENTORY_OPENED",
+                "value": 8
+            },
+            {
+                "name": "CRAFTING_OPENED",
+                "value": 1
+            },
+            {
+                "name": "MAP_OPENED",
+                "value": 2
+            },
+            {
+                "name": "ORE_HIT",
+                "value": 6
+            },
+            {
+                "name": "calories_consumed",
+                "value": 1.7879867553710938
+            },
+            {
+                "name": "water_consumed",
+                "value": 2.1364212036132812
+            },
+            {
+                "name": "cold_exposure_duration",
+                "value": 32.5439453125
+            },
+            {
+                "name": "melee_strikes",
+                "value": 35
+            },
+            {
+                "name": "acquired_lowgradefuel",
+                "value": 52
+            },
+            {
+                "name": "acquired_metal.ore",
+                "value": 3000
+            },
+            {
+                "name": "acquired_scrap",
+                "value": 2
+            },
+            {
+                "name": "topology_road_duration",
+                "value": 50
+            },
+            {
+                "name": "destroyed_barrels",
+                "value": 1
+            }
+        ],
+        "achievements": [
+            {
+                "name": "COLLECT_50_LGF",
+                "achieved": 1
+            },
+            {
+                "name": "COLLECT_300_METAL_ORE",
+                "achieved": 1
+            },
+            {
+                "name": "VISIT_ROAD",
+                "achieved": 1
+            }
+        ]
+    }
+}

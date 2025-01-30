@@ -1,0 +1,42 @@
+{
+    "playerstats": {
+        "steamID": "76561198065186919",
+        "gameName": "Raft",
+        "achievements": [
+            {
+                "name": "ach_build_foundation_10",
+                "achieved": 1
+            },
+            {
+                "name": "ach_playwithfriend",
+                "achieved": 1
+            },
+            {
+                "name": "ach_build_cookingstandOne",
+                "achieved": 1
+            },
+            {
+                "name": "ach_build_purifierOne",
+                "achieved": 1
+            },
+            {
+                "name": "ach_survivor_day",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "stat_build_foundationCount",
+                "value": 33
+            },
+            {
+                "name": "stat_player_hookCount",
+                "value": 83
+            },
+            {
+                "name": "stat_player_deaths",
+                "value": 3
+            }
+        ]
+    }
+}

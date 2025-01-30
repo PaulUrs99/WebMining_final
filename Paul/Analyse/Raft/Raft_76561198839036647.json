@@ -1,0 +1,38 @@
+{
+    "playerstats": {
+        "steamID": "76561198839036647",
+        "gameName": "Raft",
+        "achievements": [
+            {
+                "name": "ach_playwithfriend",
+                "achieved": 1
+            },
+            {
+                "name": "ach_birdKiller_1",
+                "achieved": 1
+            },
+            {
+                "name": "ach_diveDeep",
+                "achieved": 1
+            }
+        ],
+        "stats": [
+            {
+                "name": "stat_build_foundationCount",
+                "value": 5
+            },
+            {
+                "name": "stat_player_hookCount",
+                "value": 4
+            },
+            {
+                "name": "stat_player_birdKills",
+                "value": 2
+            },
+            {
+                "name": "stat_build_removeCount",
+                "value": 2
+            }
+        ]
+    }
+}
