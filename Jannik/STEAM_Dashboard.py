@@ -846,37 +846,37 @@ with tabs[1]:
                             with col8:
                                 custom_metric("Anzahl der ausgeweideten Hirsche", f"{deer:,}".replace(",", "."))
 
-                            with st.expander("Überlebens-Statistiken"):
-                                meds = stats_dict.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0)
-                                distance = stats_dict.get("STAT_SURVIVOR_KILL_MAX_DIST", 0)
-                                ikill = stats_dict.get("STAT_INFECTED_KILL_COUNT", 0)
-                                skill = stats_dict.get("STAT_INFECTED_SOLDIER_KILL_COUNT", 0)
-                                mkill = stats_dict.get("STAT_SURVIVOR_MELEE_KILL_COUNT", 0)
-                                ihead = stats_dict.get("STAT_INFECTED_HEADSHOT_COUNT", 0)
-                                shead = stats_dict.get("STAT_SURVIVOR_HEADSHOT_COUNT", 0)
-                                heads = stats_dict.get("STAT_HEADSHOT_COUNT", 0)
+                        with st.expander("Überlebens-Statistiken"):
+                            meds = stats_dict.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0)
+                            distance = stats_dict.get("STAT_SURVIVOR_KILL_MAX_DIST", 0)
+                            ikill = stats_dict.get("STAT_INFECTED_KILL_COUNT", 0)
+                            skill = stats_dict.get("STAT_INFECTED_SOLDIER_KILL_COUNT", 0)
+                            mkill = stats_dict.get("STAT_SURVIVOR_MELEE_KILL_COUNT", 0)
+                            ihead = stats_dict.get("STAT_INFECTED_HEADSHOT_COUNT", 0)
+                            shead = stats_dict.get("STAT_SURVIVOR_HEADSHOT_COUNT", 0)
+                            heads = stats_dict.get("STAT_HEADSHOT_COUNT", 0)
 
-                                col9, col10 = st.columns(2)
-                                with col9:
-                                    custom_metric("Anzahl der Anwendungen von Medikamenten auf andere Überlebende", f"{meds:,}".replace(",", "."))
-                                with col10:
-                                    custom_metric("Maximale Distanz, aus der ein Überlebender getötet wurde", f"{distance:,}".replace(",", "."))
+                            col9, col10 = st.columns(2)
+                            with col9:
+                                custom_metric("Anzahl der Anwendungen von Medikamenten auf andere Überlebende", f"{meds:,}".replace(",", "."))
+                            with col10:
+                                custom_metric("Maximale Distanz, aus der ein Überlebender getötet wurde", f"{distance:,}".replace(",", "."))
 
-                                col11, col12, col13 = st.columns(3)
-                                with col11:
-                                    custom_metric("Anzahl der getöteten Infizierten", f"{ikill:,}".replace(",", "."))
-                                with col12:
-                                    custom_metric("Anzahl der getöteten infizierten Soldaten", f"{skill:,}".replace(",", "."))
-                                with col13:
-                                    custom_metric("Anzahl der getöteten Überlebenden mit Nahkampfwaffen", f"{mkill:,}".replace(",", "."))
-                                
-                                col14, col15, col16 = st.columns(3)
-                                with col14:
-                                    custom_metric("Anzahl der Kopfschüsse auf Infizierte", f"{ihead:,}".replace(",", "."))
-                                with col15:
-                                    custom_metric("Anzahl der Kopfschüsse auf Überlebende", f"{shead:,}".replace(",", "."))
-                                with col16:
-                                    custom_metric("Gesamtanzahl aller Kopfschüsse", f"{heads:,}".replace(",", "."))
+                            col11, col12, col13 = st.columns(3)
+                            with col11:
+                                custom_metric("Anzahl der getöteten Infizierten", f"{ikill:,}".replace(",", "."))
+                            with col12:
+                                custom_metric("Anzahl der getöteten infizierten Soldaten", f"{skill:,}".replace(",", "."))
+                            with col13:
+                                custom_metric("Anzahl der getöteten Überlebenden mit Nahkampfwaffen", f"{mkill:,}".replace(",", "."))
+                            
+                            col14, col15, col16 = st.columns(3)
+                            with col14:
+                                custom_metric("Anzahl der Kopfschüsse auf Infizierte", f"{ihead:,}".replace(",", "."))
+                            with col15:
+                                custom_metric("Anzahl der Kopfschüsse auf Überlebende", f"{shead:,}".replace(",", "."))
+                            with col16:
+                                custom_metric("Gesamtanzahl aller Kopfschüsse", f"{heads:,}".replace(",", "."))
                             
                             # Zusätzlicher Platz durch eine Leerzeile und Padding
                             st.markdown(
