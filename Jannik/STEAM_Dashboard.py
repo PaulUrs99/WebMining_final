@@ -137,6 +137,7 @@ STAT_LABELS = {
     "total_matches_played": "Gespielte Matches",
     "total_gg_matches_won": "GunGame-Siege",
     "total_gg_matches_played": "GunGame-Spiele",
+    # ---
     "stat_player_deaths": "Anzahl der Tode",
     "stat_player_sharkKills": "Anzahl der getöteten Haie",
     "stat_player_birdKills": "Anzahl der getöteten Vögel",
@@ -159,6 +160,7 @@ STAT_LABELS = {
     "stat_player_zipline_distance": "Zurückgelegte Distanz mit der Seilrutsche (gesamt)",
     "stat_player_zipline_distanceOneGo": "Maximale Distanz mit der Seilrutsche in einem Durchgang",
     "stat_player_token_spend_tangaroa": "Ausgegebene Tokens auf Tangaroa",
+    # ---
     "STAT_ACTION_EAT": "Anzahl der Aktionen, bei denen Nahrung gegessen wurde",
     "STAT_ACTION_DRINK": "Anzahl der Aktionen, bei denen Wasser oder andere Flüssigkeiten getrunken wurden",
     "STAT_ACTION_COOK_STEAK": "Anzahl der gekochten Steaks",
@@ -175,6 +177,7 @@ STAT_LABELS = {
     "STAT_SURVIVOR_MELEE_KILL_COUNT": "Anzahl der getöteten Überlebenden mit Nahkampfwaffen",
     "STAT_SURVIVOR_HEADSHOT_COUNT": "Anzahl der Kopfschüsse auf Überlebende",
     "STAT_HEADSHOT_COUNT": "Gesamtanzahl aller Kopfschüsse",
+    # ---
     "TotalKills": "Gesamtanzahl der Kills im kompetitiven Modus",
     "TotalCaptures": "Gesamtanzahl der eroberten Ziele im kompetitiven Modus",
     "TotalMVPs": "Gesamtanzahl der MVP-Auszeichnungen im kompetitiven Modus",
@@ -778,7 +781,115 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 # -----
+                    elif len(filtered_stats) > 0 and chosen_app_id == 221100:
+                        
+                        # Dictionary aus den gefilterten Statistiken, um besser darauf zugreifen zu können 
+                        stats_dict = {stat["name"]: stat["value"] for stat in filtered_stats}
 
+                        # Key-Value-Format ausgeben
+                        st.write("**Statistiken**")
+
+                        def custom_metric(label, value):
+                            st.markdown(
+                                f"""
+                                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                    <div style="text-align: left; width: 100%; font-size: 16px; font-weight: normal; color: #6c757d;">{label}</div>
+                                    <div style="font-size: 28px; font-weight: bold; color: white;">{value}</div>
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+
+                        with st.expander("Nahrungs-Statistiken"):
+                            eat = stats_dict.get("STAT_ACTION_EAT", 0)
+                            drink = stats_dict.get("STAT_ACTION_DRINK", 0)
+                            steak = stats_dict.get("STAT_ACTION_COOK_STEAK", 0)
+
+                            col1, col2, col3 = st.columns(3)
+                            with col1:
+                                custom_metric("Aktionen, bei denen Nahrung gegessen wurde", f"{eat:,}".replace(",", "."))
+                            with col2:
+                                custom_metric("Aktionen, bei denen Wasser oder andere Flüssigkeiten getrunken wurden", f"{drink:,}".replace(",", "."))
+                            with col3:
+                                custom_metric("Anzahl der gekochten Steaks", f"{steak:,}".replace(",", "."))
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+                        
+                        with st.expander("Praktische-Statistiken"):
+                            fire = stats_dict.get("STAT_ACTION_IGNITE_FIRE_MATCHBOX", 0)
+                            drill = stats_dict.get("STAT_ACTION_IGNITE_FIRE_HAND_DRILL", 0)
+                            gear = stats_dict.get("STAT_ACTION_EQUIP_GEAR", 0)
+                            shave = stats_dict.get("STAT_ACTION_SHAVE", 0)
+                            deer = stats_dict.get("STAT_ACTION_GUT_DEER", 0)
+
+                            col4, col5 = st.columns(2)
+                            with col4:
+                                custom_metric("Anzahl der entzündeten Feuer mit Streichhölzern", f"{fire:,}".replace(",", "."))
+                            with col5:
+                                custom_metric("Anzahl der entzündeten Feuer mit einem Handbohrer", f"{drill:,}".replace(",", "."))
+
+                            col6, col7, col8 = st.columns(3)
+                            with col6:
+                                custom_metric("Anzahl der Aktionen, bei denen Ausrüstung angelegt wurde", f"{gear:,}".replace(",", "."))
+                            with col7:
+                                custom_metric("Anzahl der durchgeführten Rasuren", f"{shave:,}".replace(",", "."))
+                            with col8:
+                                custom_metric("Anzahl der ausgeweideten Hirsche", f"{deer:,}".replace(",", "."))
+
+                            with st.expander("Überlebens-Statistiken"):
+                                meds = stats_dict.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0)
+                                distance = stats_dict.get("STAT_SURVIVOR_KILL_MAX_DIST", 0)
+                                ikill = stats_dict.get("STAT_INFECTED_KILL_COUNT", 0)
+                                skill = stats_dict.get("STAT_INFECTED_SOLDIER_KILL_COUNT", 0)
+                                mkill = stats_dict.get("STAT_SURVIVOR_MELEE_KILL_COUNT", 0)
+                                ihead = stats_dict.get("STAT_INFECTED_HEADSHOT_COUNT", 0)
+                                shead = stats_dict.get("STAT_SURVIVOR_HEADSHOT_COUNT", 0)
+                                heads = stats_dict.get("STAT_HEADSHOT_COUNT", 0)
+
+                                col9, col10 = st.columns(2)
+                                with col9:
+                                    custom_metric("Anzahl der Anwendungen von Medikamenten auf andere Überlebende", f"{meds:,}".replace(",", "."))
+                                with col10:
+                                    custom_metric("Maximale Distanz, aus der ein Überlebender getötet wurde", f"{distance:,}".replace(",", "."))
+
+                                col11, col12, col13 = st.columns(3)
+                                with col11:
+                                    custom_metric("Anzahl der getöteten Infizierten", f"{ikill:,}".replace(",", "."))
+                                with col12:
+                                    custom_metric("Anzahl der getöteten infizierten Soldaten", f"{skill:,}".replace(",", "."))
+                                with col13:
+                                    custom_metric("Anzahl der getöteten Überlebenden mit Nahkampfwaffen", f"{mkill:,}".replace(",", "."))
+                                
+                                col14, col15, col16 = st.columns(3)
+                                with col14:
+                                    custom_metric("Anzahl der Kopfschüsse auf Infizierte", f"{ihead:,}".replace(",", "."))
+                                with col15:
+                                    custom_metric("Anzahl der Kopfschüsse auf Überlebende", f"{shead:,}".replace(",", "."))
+                                with col16:
+                                    custom_metric("Gesamtanzahl aller Kopfschüsse", f"{heads:,}".replace(",", "."))
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+# -----
                     else:
                         st.warning("Für diese App-ID sind entweder keine relevanten Statistiken definiert oder es liegen keine Daten vor.")
                     
@@ -899,6 +1010,7 @@ with tabs[4]:
     #76561198364896644 - Yoink (Nathan)
     #76561198059410849 - jdvmb (viki)
     #76561198286398265 - theo_o (Daniel)
+    #76561198128740874 - lennyte
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
