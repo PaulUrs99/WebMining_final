@@ -27,9 +27,10 @@ st.title("Steam Dashboard")
 tabs = st.tabs(["Profilstatistiken", "In-Game-Statistiken", "Community-Vergleich", "Freunde-Vergleich", "Spiel-Empfehlungen"])
 
 # API Key (du kannst eine sichere Methode verwenden, um den Schlüssel zu speichern)
-API_KEY = "DB15759E609C1E342536A6973593A57F"  # Ersetze mit deinem Steam Web API Key
+API_KEY = "3DD952ECA5D79C777FD0377B118779A0"  # Ersetze mit deinem Steam Web API Key
 # Key Paul: DB15759E609C1E342536A6973593A57F
 # Key Lucian: F06E65C071B7ABDE4CE3B531A06123E2
+# Key Viki: 3DD952ECA5D79C777FD0377B118779A0
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
@@ -798,104 +799,115 @@ with tabs[1]:
 
 # ------------------------------------------------------------------------------------------------------------
 
-# Tab "Freunde Vergleich"
+# Tab "Vergleich mit Spielstatistiken"
 with tabs[2]:
-    st.header("Community-Vergleich")
+    st.header("Vergleich mit Spielstatistiken")
 
-    # **Fehlerhandling: Falls kein Spiel übrig ist oder 'Name' fehlt**
+    # Fehlerhandling: Falls keine Spielstatistik verfügbar ist
     if array_games_updated.empty or "Name" not in array_games_updated.columns:
         st.warning("Es wurde keine Übereinstimmung zwischen den Spielen des/der User/in und unseren Dashboard-Anzeigen gefunden.")
     else:
-        # Dropdown-Menü mit dem aktualisierten Array
-        st.subheader("Wähle ein Spiel aus der Liste für weitere Statistiken:")
-        
-        # 💡 Sicherstellen, dass "Name" existiert und als Liste übergeben wird
+        # Auswahl eines Spiels (Dropdown, falls Nutzer mehrere Spiele besitzt)
+        st.subheader("Wähle ein Spiel für den Vergleich:")
         selected_game = st.selectbox(
             "",
-            array_games_updated["Name"].tolist(),  # Nutzt `.tolist()`, um Fehler zu vermeiden
+            array_games_updated["Name"].tolist(),
             key="selectbox2"
         )
 
-        # App-ID ermitteln (nur falls `selected_game` existiert)
+        # Die entsprechende App-ID finden
         chosen_app_id = array_games_updated.loc[
             array_games_updated["Name"] == selected_game, "App-ID"
         ].values[0]
 
-    # if steam_id != "":
-    #     # Weiter im Code
-    if steam_id != "":
-        if st.button("Statistiken abrufen und vergleichen"):
-            # 1️⃣ Passende Statistik-Datei laden
-            stats_csv = f"{chosen_app_id}_percentile.csv"
+        if steam_id != "":
+            if st.button("Statistiken abrufen und vergleichen"):
+                # Lade die Statistikdatei für das gewählte Spiel
+                stats_csv = f"{chosen_app_id}_statistische_auswertung.csv"
 
-            try:
-                stats_df = pd.read_csv(stats_csv)
-            except FileNotFoundError:
-                st.warning(f"Keine gespeicherten Statistikdaten für Spiel-ID {chosen_app_id} gefunden.")
-                stats_df = None
+                try:
+                    stats_df = pd.read_csv(stats_csv)
+                except FileNotFoundError:
+                    st.warning(f"Keine gespeicherten Statistikdaten für Spiel-ID {chosen_app_id} gefunden.")
+                    stats_df = None
 
-            if stats_df is not None:
-                # 2️⃣ Live-Spielerstatistiken abrufen
-                st.write(f"**Vergleiche Werte mit Statistik für App-ID {chosen_app_id}...**")
-                user_game_data = user_game.fetch_in_game_data(API_KEY, steam_id, chosen_app_id)
+                if stats_df is not None:
+                    # Debugging: Überprüfe, ob Daten aus der API kommen
+                    user_game_data = user_game.fetch_in_game_data(API_KEY, steam_id, chosen_app_id)
 
-                if user_game_data.get("status") == "success":
-                    stats_list = user_game_data.get("stats", [])
-                    stats_dict = {stat["name"]: stat["value"] for stat in stats_list}
+                    if user_game_data.get("status") == "success":
+                        stats_list = user_game_data.get("stats", [])
+                        stats_dict = {stat["name"]: stat["value"] for stat in stats_list}
 
-                    # Berechne K/D-Ratio für den Spieler
-                    kills = stats_dict.get("total_kills", 0)
-                    deaths = stats_dict.get("total_deaths", 0)
-                    kd_ratio = kills / deaths if deaths > 0 else np.nan
+                        # Debug: Daten checken
+                        #st.write("Stats Dict Debug:", stats_dict)
 
-                    # 3️⃣ K/D-Ratio aus der Statistik abrufen
-                    kd_stats = stats_df[stats_df["stat"] == "KD_ratio"]
-                    if not kd_stats.empty:
-                        median_kd = kd_stats["50%"].values[0]  # Median-Wert
-                        percentiles = {
-                            "0%": kd_stats["0%"].values[0],
-                            "25%": kd_stats["25%"].values[0],
-                            "50%": kd_stats["50%"].values[0],  # Median
-                            "75%": kd_stats["75%"].values[0],
-                            "90%": kd_stats["90%"].values[0],
-                            "95%": kd_stats["95%"].values[0],
-                            "99%": kd_stats["99%"].values[0],
+                        # Korrekte Berechnung der Vergleichswerte
+                        kills = stats_dict.get("total_kills", 0)
+                        deaths = stats_dict.get("total_deaths", 0)
+                        shots_fired = stats_dict.get("total_shots_fired", 0)
+                        shots_hit = stats_dict.get("total_shots_hit", 0)
+                        headshots = stats_dict.get("total_kills_headshot", 0)
+                        matches_played = stats_dict.get("total_matches_played", 0)
+                        matches_won = stats_dict.get("total_matches_won", 0)
+
+                        comparison_metrics = {
+                            "KD_ratio": kills / deaths if deaths > 0 else np.nan,
+                            "accuracy": (shots_hit / shots_fired) * 100 if shots_fired > 0 else np.nan,
+                            "headshot_ratio": (headshots / shots_hit) * 100 if shots_hit > 0 else np.nan,
+                            "win_ratio": (matches_won / matches_played) * 100 if matches_played > 0 else np.nan
                         }
 
-                        # 4️⃣ Spieler-K/D mit den Perzentilen vergleichen
-                        player_position = None
-                        for p_label, p_value in percentiles.items():
-                            if kd_ratio <= p_value:
-                                player_position = p_label
-                                break
+                        # Funktion zum Abrufen der Statistikwerte aus der CSV
+                        def get_stat_values(stat_name):
+                            stat_row = stats_df[stats_df["stat"] == stat_name]
+                            if not stat_row.empty:
+                                return {col: stat_row[col].values[0] for col in stats_df.columns if "%" in col}
+                            return None
 
-                        # 5️⃣ Anzeige der Werte
-                        st.subheader("Vergleich der K/D-Ratio mit den Statistikwerten")
-                        col1, col2, col3 = st.columns(3)
-                        with col1:
-                            st.metric("Spieler K/D-Ratio", f"{kd_ratio:.2f}")
-                        with col2:
-                            st.metric("Median (50%)", f"{median_kd:.2f}")
-                        with col3:
-                            st.metric("Perzentil", f"{player_position}")
+                        # Vergleichsanzeige mit st.expander
+                        def display_comparison(stat_name, display_name, unit="%"):
+                            stat_values = get_stat_values(stat_name)
+                            if stat_values:
+                                median_value = stat_values["50%"]
+                                player_value = comparison_metrics[stat_name]
 
-                        # 6️⃣ Kommentar zur Bewertung
-                        if player_position:
-                            st.write(f"🔹 Deine K/D-Ratio liegt im **{player_position}-Perzentil** der Spieler.")
-                        else:
-                            st.write("⚠️ Deine K/D-Ratio liegt über dem höchsten gespeicherten Perzentil.")
+                                # Bestimmen, in welchem Perzentil der Spieler liegt
+                                player_percentile = None
+                                for p_label, p_value in stat_values.items():
+                                    if player_value <= p_value:
+                                        player_percentile = int(p_label.strip("%"))  # Entfernt das % und wandelt es in eine Zahl um
+                                        break
 
-                        # Boxplot mit externer Funktion erzeugen
-                        fig = create_boxplot(percentiles, kd_ratio, ylabel="K/D-Ratio")
+                                # Berechnung der intuitiven Einordnung
+                                if player_percentile is not None:
+                                    top_x_percent = 100 - player_percentile
+                                    player_position_text = f"Du bist unter den besten {top_x_percent}% der Spieler"
+                                else:
+                                    player_position_text = "Wert außerhalb der bekannten Perzentile"
 
-                        # Boxplot anzeigen
-                        st.pyplot(plt)
+                                with st.expander(f"{display_name} Vergleich"):
+                                    col1, col2, col3 = st.columns(3)
+                                    with col1:
+                                        st.metric(f"Spieler {display_name}", f"{player_value:.2f}{unit}")
+                                    with col2:
+                                        st.metric(f"Median (50%)", f"{median_value:.2f}{unit}")
+                                    with col3:
+                                        st.markdown(f'<p style="font-size:25px; color:white;">Einordnung:<br> {player_position_text}</p>', unsafe_allow_html=True)
+
+
+                                    # Boxplot mit Spielerwert markieren
+                                    fig = create_boxplot(stat_values, player_value, xlabel=display_name)
+                                    st.pyplot(fig)
+
+                        # Anzeige der Vergleiche
+                        display_comparison("KD_ratio", "K/D-Ratio")
+                        display_comparison("accuracy", "Trefferquote")
+                        display_comparison("headshot_ratio", "Headshot-Quote")
+                        display_comparison("win_ratio", "Siegesquote")
 
                     else:
-                        st.warning("Keine gespeicherten K/D-Statistiken gefunden.")
-                else:
-                    st.warning("Fehler beim Abrufen der Spielstatistiken.")
-
+                        st.warning("Fehler beim Abrufen der Spielstatistiken.")
 
 # ------------------------------------------------------------------------------------------------------------
 

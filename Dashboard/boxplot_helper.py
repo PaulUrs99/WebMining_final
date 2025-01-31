@@ -1,49 +1,49 @@
 import matplotlib.pyplot as plt
 
-def create_boxplot(percentiles, player_value, title="Boxplot", ylabel="Wert"):
+def create_boxplot(percentiles, player_value, title="Boxplot", xlabel="Wert"):
     """
-    Erstellt einen Boxplot mit einem markierten Spielerwert.
+    Erstellt einen sehr kompakten horizontalen Boxplot mit kleinem Text und kleiner Legende.
     
-    :param percentiles: Dictionary mit Perzentilwerten (z. B. {"1%": 0.5, "50%": 1.5, "99%": 4.0})
+    :param percentiles: Dictionary mit Perzentilwerten (z. B. {"1%": 0.5, "50%": 1.5, "99%": 4.0})
     :param player_value: Der individuelle Spielerwert, der hervorgehoben wird
     :param title: Titel der Grafik
-    :param ylabel: Beschriftung der y-Achse
+    :param xlabel: Beschriftung der x-Achse
     :return: Matplotlib-Figur für Streamlit
     """
 
-    # Setze den dunklen Hintergrund
+    # Dunkles Theme setzen
     plt.style.use("dark_background")
 
-    # Erstelle das Diagramm
-    fig, ax = plt.subplots(figsize=(4, 5), dpi=100)
+    # Erstelle das Diagramm in kompakter Größe
+    fig, ax = plt.subplots(figsize=(4, 1.5), dpi=100)  # Sehr kleine Grafik
     fig.patch.set_facecolor("#0E1117")  # Hintergrund schwarz
     ax.set_facecolor("#0E1117")  # Diagrammhintergrund schwarz
 
     # Boxplot-Stil anpassen
-    boxprops = dict(facecolor="#3498db", color="white")  # Blaue Box, weiße Umrandung
-    medianprops = dict(color="#e74c3c", linewidth=2)  # Rote Median-Linie
-    whiskerprops = dict(color="white")  # Weiße Whiskers
-    capprops = dict(color="white")  # Weiße Enden der Whiskers
-    flierprops = dict(marker="o", color="white", markersize=5)  # Weiße Punkte für Ausreißer
+    boxprops = dict(facecolor="#3498db", color="white", linewidth=0.8)  # Dünnere Linien
+    medianprops = dict(color="#e74c3c", linewidth=1)  # Dünnere Median-Linie
+    whiskerprops = dict(color="white", linewidth=0.8)  # Dünnere Whiskers
+    capprops = dict(color="white", linewidth=0.8)  # Dünnere Enden
+    flierprops = dict(marker="o", color="white", markersize=1)  # Kleinere Ausreißerpunkte
 
-    # Erstelle den Boxplot basierend auf den Perzentilen
-    ax.boxplot(list(percentiles.values()), vert=True, patch_artist=True,
+    # Erstelle den horizontalen Boxplot
+    ax.boxplot(list(percentiles.values()), vert=False, patch_artist=True,
                boxprops=boxprops, medianprops=medianprops,
                whiskerprops=whiskerprops, capprops=capprops, flierprops=flierprops)
 
     # Spielerwert als roten Punkt hinzufügen
-    ax.scatter(1, player_value, color='red', zorder=3, label="Spielerwert", s=60)
+    ax.axvline(player_value, color="red", linestyle="dashed", linewidth=0.5, label="Spielerwert") 
 
     # Achsen & Titel formatieren
-    ax.set_xticks([1])
-    ax.set_xticklabels([ylabel], color="white")
-    ax.set_ylabel(ylabel, color="white")
-    ax.set_title(title, color="white")
+    ax.set_yticks([1])
+    ax.set_yticklabels([""], color="white", fontsize=6)  # Kleiner Text
+    ax.set_xlabel(xlabel, color="white", fontsize=6)
+    ax.set_title(title, color="white", fontsize=7)
 
     # Tick-Labels anpassen
-    ax.tick_params(axis="y", colors="white")
+    ax.tick_params(axis="x", colors="white", labelsize=6)
 
-    # Legende anzeigen
-    ax.legend(facecolor="#0E1117", edgecolor="white")
+    # Kleine Legende anzeigen
+    ax.legend(facecolor="#0E1117", edgecolor="white", fontsize=4, loc="upper right")
 
     return fig  # Gibt das Matplotlib-Objekt zurück
