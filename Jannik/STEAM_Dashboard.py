@@ -845,6 +845,18 @@ with tabs[1]:
                                 custom_metric("Anzahl der durchgeführten Rasuren", f"{shave:,}".replace(",", "."))
                             with col8:
                                 custom_metric("Anzahl der ausgeweideten Hirsche", f"{deer:,}".replace(",", "."))
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
 
                         with st.expander("Überlebens-Statistiken"):
                             meds = stats_dict.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0)
@@ -877,6 +889,109 @@ with tabs[1]:
                                 custom_metric("Anzahl der Kopfschüsse auf Überlebende", f"{shead:,}".replace(",", "."))
                             with col16:
                                 custom_metric("Gesamtanzahl aller Kopfschüsse", f"{heads:,}".replace(",", "."))
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+# -----
+                    elif len(filtered_stats) > 0 and chosen_app_id == 222880:
+                        
+                        # Dictionary aus den gefilterten Statistiken, um besser darauf zugreifen zu können 
+                        stats_dict = {stat["name"]: stat["value"] for stat in filtered_stats}
+
+                        # Key-Value-Format ausgeben
+                        st.write("**Statistiken**")
+
+                        def custom_metric(label, value):
+                            st.markdown(
+                                f"""
+                                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                    <div style="text-align: left; width: 100%; font-size: 16px; font-weight: normal; color: #6c757d;">{label}</div>
+                                    <div style="font-size: 28px; font-weight: bold; color: white;">{value}</div>
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+
+                        with st.expander("Kompetitiver Modus - Statistiken"):
+                            totalKills = stats_dict.get("TotalKills", 0)
+                            totalCaptures = stats_dict.get("TotalCaptures", 0)
+                            totalMVP = stats_dict.get("TotalMVPs", 0)
+                            totalHeroCaptures = stats_dict.get("TotalHeroCaptures", 0)
+
+                            col1, col2, col3, col4 = st.columns(4)
+                            with col1:
+                                custom_metric("Gesamtanzahl der Kills im kompetitiven Modus", f"{totalKills:,}".replace(",", "."))
+                            with col2:
+                                custom_metric("Gesamtanzahl der eroberten Ziele im kompetitiven Modus", f"{totalCaptures:,}".replace(",", "."))
+                            with col3:
+                                custom_metric("Gesamtanzahl der MVP-Auszeichnungen im kompetitiven Modus", f"{totalMVP:,}".replace(",", "."))
+                            with col4:
+                                custom_metric("Gesamtanzahl der entscheidenden/heldenhaften Eroberungen im kompetitiven Modus", f"{totalHeroCaptures:,}".replace(",", "."))
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+                        
+                        with st.expander("Koop-Modus - Statistiken"):
+                            totalKillsCoop = stats_dict.get("TotalKillsCoop", 0)
+                            totalCapturesCoop = stats_dict.get("TotalCapturesCoop", 0)
+                            totalMVPCoop = stats_dict.get("TotalMVPsCoop", 0)
+                            totalHeroCapturesCoop = stats_dict.get("TotalHeroCapturesCoop", 0)
+
+                            col5, col6, col7, col8 = st.columns(4)
+                            with col5:
+                                custom_metric("Gesamtanzahl der Kills im Koop-Modus", f"{totalKillsCoop:,}".replace(",", "."))
+                            with col6:
+                                custom_metric("Gesamtanzahl der eroberten Ziele im Koop-Modus", f"{totalCapturesCoop:,}".replace(",", "."))
+                            with col7:
+                                custom_metric("Gesamtanzahl der MVP-Auszeichnungen im Koop-Modus", f"{totalMVPCoop:,}".replace(",", "."))
+                            with col8:
+                                custom_metric("Gesamtanzahl der heldenhaften Eroberungen im Koop-Modus", f"{totalHeroCapturesCoop:,}".replace(",", "."))
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+                        
+                        with st.expander("Gesamt - Statistiken"):
+                            totalKillsAll = stats_dict.get("TotalKillsAll", 0)
+                            totalCapturesAll = stats_dict.get("TotalCapturesAll", 0)
+                            totalMVPAll = stats_dict.get("TotalMVPsAll", 0)
+                            totalHeroCapturesAll = stats_dict.get("TotalHeroCapturesAll", 0)
+
+                            col9, col10, col11, col12 = st.columns(4)
+                            with col9:
+                                custom_metric("Gesamtanzahl der Kills im Koop-Modus", f"{totalKillsAll:,}".replace(",", "."))
+                            with col10:
+                                custom_metric("Gesamtanzahl der eroberten Ziele im Koop-Modus", f"{totalCapturesAll:,}".replace(",", "."))
+                            with col11:
+                                custom_metric("Gesamtanzahl der MVP-Auszeichnungen im Koop-Modus", f"{totalMVPAll:,}".replace(",", "."))
+                            with col12:
+                                custom_metric("Gesamtanzahl der heldenhaften Eroberungen im Koop-Modus", f"{totalHeroCapturesAll:,}".replace(",", "."))
                             
                             # Zusätzlicher Platz durch eine Leerzeile und Padding
                             st.markdown(
