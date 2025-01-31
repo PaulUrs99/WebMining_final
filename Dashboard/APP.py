@@ -909,7 +909,6 @@ with tabs[2]:
                                 ("stat_player_excevations_treasure", "Gehobene Schätze", ""),
                                 ("stat_player_zipline_distance", "Seilrutschen-Distanz (m)", " m")
                             ]
-
                             # Erste Zeile
                             col1, col2 = st.columns(2)
                             with col1:
@@ -931,6 +930,41 @@ with tabs[2]:
                                     display_comparison(*metrics[4])
                                 with col6:
                                     display_comparison(*metrics[5])
+
+                        elif chosen_app_id == 222880: # Insurgency
+                            metrics = [
+                                ("TotalKills", "Kills im kompetitiven Modus", ""),
+                                ("TotalKillsCoop", "Kills im Koop-Modus", ""),
+                                ("TotalMVPs", "MVP-Auszeichnungen im kompetitiven Modus", ""),
+                                ("TotalMVPsCoop", "MVP-Auszeichnungen im Koop-Modus", ""),
+                                ("TotalCaptures", "Eroberten Ziele im kompetitiven Modus", ""),
+                                #("TotalHeroCaptures", "Gesamtanzahl der heldenhaften Eroberungen (entscheidende Eroberungen) im kompetitiven Modus", ""),
+                                ("TotalCapturesCoop", "Eroberten Ziele im Koop-Modus", ""),
+                                #("TotalHeroCapturesCoop", "Gesamtanzahl der heldenhaften Eroberungen im Koop-Modus", ""),
+                                #("TotalKillsAll", "Gesamtanzahl der Kills in allen Modi", ""),
+                                #("TotalCapturesAll", "Gesamtanzahl der eroberten Ziele in allen Modi", ""),
+                                #("TotalMVPsAll", "Gesamtanzahl der MVP-Auszeichnungen in allen Modi", ""),
+                                #("TotalHeroCapturesAll", "Gesamtanzahl der heldenhaften Eroberungen in allen Modi", "")
+                            ]
+                            # Erste Zeile
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                display_comparison(*metrics[0])
+                            with col2:
+                                display_comparison(*metrics[1])
+
+                            # Zweite Zeile
+                            col3, col4 = st.columns(2)
+                            with col3:
+                                display_comparison(*metrics[2])
+                            with col4:
+                                display_comparison(*metrics[3])
+                            # Dritte Zeile
+                            col5, col6 = st.columns(2)
+                            with col5:
+                                display_comparison(*metrics[4])
+                            with col6:
+                                display_comparison(*metrics[5])
 
                     # -------------------------------
                     # Haupt-Logik zum Abrufen und Anzeigen der Daten
@@ -976,15 +1010,30 @@ with tabs[2]:
                                 "stat_player_excevations_treasure": round(excevations_treasure),
                                 "stat_player_zipline_distance": round(zipline_distance)
                             }
+                        
+                        elif chosen_app_id == 222880:  # Insurgency
+                            total_kills = stats_dict.get("TotalKills", 0)
+                            total_captures = stats_dict.get("TotalCaptures", 0)
+                            total_mvps = stats_dict.get("TotalMVPs", 0)
+                            total_kills_coop = stats_dict.get("TotalKillsCoop", 0)
+                            total_captures_coop = stats_dict.get("TotalCapturesCoop", 0)
+                            total_mvps_coop = stats_dict.get("TotalMVPsCoop", 0)
 
+                            # Vergleichswerte für Insurgency
+                            comparison_metrics = {
+                                "TotalKills": round(total_kills),
+                                "TotalCaptures": round(total_captures),
+                                "TotalMVPs": round(total_mvps),
+                                "TotalKillsCoop": round(total_kills_coop),
+                                "TotalCapturesCoop": round(total_captures_coop),
+                                "TotalMVPsCoop": round(total_mvps_coop)
+                            }
+                        
                         # Aufruf der Matrix-Anzeige
                         display_comparison_grid()
 
                     else:
                         st.warning("Fehler beim Abrufen der Spielstatistiken.")
-
-
-
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
