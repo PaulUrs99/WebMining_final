@@ -1,0 +1,10 @@
+Der rohe owned_games_detailed Datensatz enthielt ursprünglich 						 10.245.880 Einträge
+
+Gelöschte Duplikate und "No Games" Einträge:  						 4.445.248  -->   5.800.632 Einträge
+Gelöschte Duplikate für  gleiche Spieler-Spielkombi: 					    64.759  -->   5.735.873 Einträge
+Gelöschte Spieler-Spielkombis mit Spielzeit < 240min: 					 4.174.423  -->   1.561.450 Einträge
+-----------------------------------------------------------------------------------------------------------------------------
+Löschen aller Spieler, die weniger als 10.000min und mehr als 1.500.000min gespielt haben: 159.404  -->   1.402.046 Einträge
+
+Anzahl der Spieler: 41.623
+Anzahl der Spiele:  19.528
