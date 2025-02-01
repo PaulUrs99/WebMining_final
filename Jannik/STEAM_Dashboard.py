@@ -701,6 +701,55 @@ with tabs[1]:
                                 """,
                                 unsafe_allow_html=True,
                             )
+                        
+                        with st.expander("Zeige Match-Statistiken"):
+                            # Matchdaten
+                            matches_played = stats_dict.get("total_matches_played", 0)
+                            matches_won    = stats_dict.get("total_matches_won", 0)
+                            if matches_played > 0:
+                                win_ratio = matches_won / matches_played * 100
+                            else:
+                                win_ratio = "∞"  # Vermeidung Division durch Null (String-Wert-Rückgabe -> deswegen if-Bedinung in Ausgabe!)
+                            
+                            win_ratio_value = float(win_ratio) if isinstance(win_ratio, (float, int)) else 0
+
+                            col12, col13, col14 = st.columns(3)
+                            with col12:
+                                custom_metric("Gespielte Matches", f"{matches_played:,}".replace(",", "."))
+                            with col13:
+                                custom_metric("Gewonnene Matches", f"{matches_won:,}".replace(",", "."))
+                            with col14:
+                                custom_metric("Siegesquote", f"{win_ratio_value:.1f}".replace(".", ",") + " %")
+
+                            # GG-Daten
+                            gg_played = stats_dict.get("total_gg_matches_played", 0)
+                            gg_won    = stats_dict.get("total_gg_matches_won", 0)
+                            if gg_played > 0:
+                                gg_ratio = gg_won / gg_played * 100
+                            else:
+                                gg_ratio = "∞"  # Vermeidung Division durch Null (String-Wert-Rückgabe -> deswegen if-Bedinung in Ausgabe!)
+                            
+                            gg_ratio_value = float(gg_ratio) if isinstance(gg_ratio, (float, int)) else 0
+
+                            col15, col16, col17 = st.columns(3)
+                            with col15:
+                                custom_metric("Gespielte GG-Matches", f"{gg_played:,}".replace(",", "."))
+                            with col16:
+                                custom_metric("Gewonnene GG-Matches", f"{gg_won:,}".replace(",", "."))
+                            with col17:
+                                custom_metric("GG-Siegesquote", f"{gg_ratio_value:.1f}".replace(".", ",") + " %")
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
 
                         with st.expander("Zeige Treffer- und Headshot-Statistiken"):
                             # Schussdaten
@@ -769,55 +818,6 @@ with tabs[1]:
                                 )
                                 ax2.axis("equal")
                                 st.pyplot(fig2)
-
-                        with st.expander("Zeige Match-Statistiken"):
-                            # Matchdaten
-                            matches_played = stats_dict.get("total_matches_played", 0)
-                            matches_won    = stats_dict.get("total_matches_won", 0)
-                            if matches_played > 0:
-                                win_ratio = matches_won / matches_played * 100
-                            else:
-                                win_ratio = "∞"  # Vermeidung Division durch Null (String-Wert-Rückgabe -> deswegen if-Bedinung in Ausgabe!)
-                            
-                            win_ratio_value = float(win_ratio) if isinstance(win_ratio, (float, int)) else 0
-
-                            col12, col13, col14 = st.columns(3)
-                            with col12:
-                                custom_metric("Gespielte Matches", f"{matches_played:,}".replace(",", "."))
-                            with col13:
-                                custom_metric("Gewonnene Matches", f"{matches_won:,}".replace(",", "."))
-                            with col14:
-                                custom_metric("Siegesquote", f"{win_ratio_value:.1f}".replace(".", ",") + " %")
-
-                            # GG-Daten
-                            gg_played = stats_dict.get("total_gg_matches_played", 0)
-                            gg_won    = stats_dict.get("total_gg_matches_won", 0)
-                            if gg_played > 0:
-                                gg_ratio = gg_won / gg_played * 100
-                            else:
-                                gg_ratio = "∞"  # Vermeidung Division durch Null (String-Wert-Rückgabe -> deswegen if-Bedinung in Ausgabe!)
-                            
-                            gg_ratio_value = float(gg_ratio) if isinstance(gg_ratio, (float, int)) else 0
-
-                            col15, col16, col17 = st.columns(3)
-                            with col15:
-                                custom_metric("Gespielte GG-Matches", f"{gg_played:,}".replace(",", "."))
-                            with col16:
-                                custom_metric("Gewonnene GG-Matches", f"{gg_won:,}".replace(",", "."))
-                            with col17:
-                                custom_metric("GG-Siegesquote", f"{gg_ratio_value:.1f}".replace(".", ",") + " %")
-                            
-                            # Zusätzlicher Platz durch eine Leerzeile und Padding
-                            st.markdown(
-                                """
-                                <style>
-                                .st-expander .stContainer {
-                                    padding-bottom: 20px; /* Abstand am unteren Rand */
-                                }
-                                </style>
-                                """,
-                                unsafe_allow_html=True,
-                            )
 
                         with st.expander("Waffen-Statistiken"):
                             # Waffendaten
@@ -950,6 +950,114 @@ with tabs[1]:
                                 """,
                                 unsafe_allow_html=True,
                             )
+                        
+                        with st.expander("Sonstige-Statistiken"):
+                            # Sonstiges
+                            dbombs = stats_dict.get("total_defused_bombs", 0)
+                            pbombs = stats_dict.get("total_planted_bombs", 0)
+                            hostages = stats_dict.get("total_rescued_hostages", 0)
+
+                            col25, col26, col27 = st.columns(3)
+                            with col25:
+                                custom_metric("Entschärfte Bomben", f"{dbombs:,}".replace(",", "."))
+                            with col26:
+                                custom_metric("Platzierte Bomben", f"{pbombs:,}".replace(",", "."))
+                            with col27:
+                                custom_metric("Anzahl geretteter Geiseln", f"{hostages:,}".replace(",", "."))
+
+                        # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+                        
+                        with st.expander("Map-Statistik"):
+                            # Map-Statistik
+                            # Dictionary mit den richtigen Keys für jede Map
+                            map_keys = {
+                                "baggage": "total_rounds_map_ar_baggage",
+                                "monastery": "total_rounds_map_ar_monastery",
+                                "shoots": "total_rounds_map_ar_shoots",
+                                "assault": "total_rounds_map_cs_assault",
+                                "italy": "total_rounds_map_cs_italy",
+                                "militia": "total_rounds_map_cs_militia",
+                                "office": "total_rounds_map_cs_office",
+                                "aztec": "total_rounds_map_de_aztec",
+                                "cbble": "total_rounds_map_de_cbble",
+                                "dust": "total_rounds_map_de_dust",
+                                "dust2": "total_rounds_map_de_dust2",
+                                "inferno": "total_rounds_map_de_inferno",
+                                "lake": "total_rounds_map_de_lake",
+                                "nuke": "total_rounds_map_de_nuke",
+                                "safehouse": "total_rounds_map_de_safehouse",
+                                "stmarc": "total_rounds_map_de_stmarc",
+                                "sugarcane": "total_rounds_map_de_sugarcane",
+                                "train": "total_rounds_map_de_train",
+                                "vertigo": "total_rounds_map_de_vertigo"
+                            }
+
+                            # Liste für die Ergebnisse
+                            map_stats = []
+
+                            for map_name, key in map_keys.items():
+                                numMap = stats_dict.get(key, 0)
+                                map_stats.append([map_name, numMap])
+
+                            # Nach Anzahl der Runden sortieren (hohe Werte zuerst)
+                            sorted_map_stats = sorted(map_stats, key=lambda x: x[1], reverse=True)
+
+                            # Listen für Diagramm-Daten
+                            map_names = [x[0] for x in sorted_map_stats]
+                            rounds_played = [x[1] for x in sorted_map_stats]
+
+                            # Matplotlib Diagramm erstellen
+                            fig, ax = plt.subplots(figsize=(10, 5))
+                            # Hintergrund auf Schwarz setzen
+                            fig.patch.set_facecolor("#0E1117")  # Außenbereich schwarz
+                            ax.set_facecolor("#0E1117")  # Innenbereich schwarz
+                            # Balkendiagramm mit weißer Schrift
+                            bars = ax.barh(map_names, rounds_played, color="skyblue")
+                            # X-Achse um 15% erweitern, damit die Zahlen weiter rechts stehen
+                            max_value = max(rounds_played) if rounds_played else 1  # Falls alle Werte 0 sind, Standardwert setzen
+                            ax.set_xlim(0, max_value * 1.10)  # 10% extra Platz auf der X-Achse
+                            # Absolute Werte auf die Balken schreiben
+                            for bar, value in zip(bars, rounds_played):
+                                ax.text(
+                                    bar.get_width() + (max_value * 0.02),  # Position direkt neben dem Balken
+                                    bar.get_y() + bar.get_height() / 2,  # Zentrieren in der Mitte des Balkens
+                                    str(value),  # Wert als String
+                                    va="center",
+                                    ha="left",
+                                    color="white",
+                                    fontsize=8,
+                                )
+                            # Achsenbeschriftung, Titel und Werte in Weiß setzen
+                            ax.set_xlabel("Anzahl der gespielten Runden", color="white")
+                            ax.set_ylabel("Maps", color="white")
+                            ax.set_title("Rundenanzahl pro Map", color="white")
+                            # Achsenwerte in Weiß setzen
+                            ax.tick_params(axis="x", colors="white")
+                            ax.tick_params(axis="y", colors="white")
+                            # Achsen invertieren für bessere Lesbarkeit
+                            ax.invert_yaxis()  
+                            # Rahmen um das Diagramm entfernen
+                            ax.spines["top"].set_visible(False)
+                            ax.spines["right"].set_visible(False)
+                            ax.spines["left"].set_visible(False)
+                            ax.spines["bottom"].set_visible(False)
+
+                            # Diagramm in Streamlit anzeigen
+                            st.pyplot(fig)
+
+                            # # Ausgabe der sortierten Statistik
+                            # for map_name, num_rounds in sorted_map_stats:
+                            #     st.write(f"{map_name}: {num_rounds} Runden")
 # -----
                     elif len(filtered_stats) > 0 and chosen_app_id == 648800:
                         
