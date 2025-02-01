@@ -12,6 +12,7 @@ import user_game
 import user_dataframe as df
 import numpy as np
 from boxplot_helper import create_boxplot
+from density_helper import create_density_plot
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
@@ -124,6 +125,7 @@ STAT_MAPPING = {
     ],
     # Weitere App-IDs
     # '440': [...],
+
 }
 
 # Dictionary zur Umbenennung von Keys in lesbare Namen
@@ -801,7 +803,7 @@ with tabs[1]:
 
 # Tab "Vergleich mit Spielstatistiken"
 with tabs[2]:
-    st.header("Vergleich mit Spielstatistiken")
+    st.header("Vergleich mit der Community")
 
     # Fehlerhandling: Falls keine Spielstatistik verfügbar ist
     if array_games_updated.empty or "Name" not in array_games_updated.columns:
@@ -878,6 +880,7 @@ with tabs[2]:
 
                     # Anzeige der Vergleiche in 2x2-Matrix
                     def display_comparison_grid():
+                        # Definition der Metriken je nach Spiel
                         if chosen_app_id == 730:  # Counter-Strike 2
                             metrics = [
                                 ("KD_ratio", "K/D-Ratio", ""),
@@ -885,21 +888,6 @@ with tabs[2]:
                                 ("headshot_ratio", "Headshot-Quote", "%"),
                                 ("win_ratio", "Siegesquote", "%")
                             ]
-
-                            # Erste Zeile
-                            col1, col2 = st.columns(2)
-                            with col1:
-                                display_comparison(*metrics[0])
-                            with col2:
-                                display_comparison(*metrics[1])
-
-                            # Zweite Zeile
-                            col3, col4 = st.columns(2)
-                            with col3:
-                                display_comparison(*metrics[2])
-                            with col4:
-                                display_comparison(*metrics[3])
-
                         elif chosen_app_id == 648800:  # Raft
                             metrics = [
                                 ("stat_player_deaths", "Tode", ""),
@@ -909,62 +897,49 @@ with tabs[2]:
                                 ("stat_player_excevations_treasure", "Gehobene Schätze", ""),
                                 ("stat_player_zipline_distance", "Seilrutschen-Distanz (m)", " m")
                             ]
-                            # Erste Zeile
-                            col1, col2 = st.columns(2)
-                            with col1:
-                                display_comparison(*metrics[0])
-                            with col2:
-                                display_comparison(*metrics[1])
-
-                            # Zweite Zeile
-                            col3, col4 = st.columns(2)
-                            with col3:
-                                display_comparison(*metrics[2])
-                            with col4:
-                                display_comparison(*metrics[3])
-
-                            # Falls Raft mehr als vier Metriken hat, eine dritte Zeile oder mehr hinzufügen
-                            if chosen_app_id == 648800:
-                                col5, col6 = st.columns(2)
-                                with col5:
-                                    display_comparison(*metrics[4])
-                                with col6:
-                                    display_comparison(*metrics[5])
-
-                        elif chosen_app_id == 222880: # Insurgency
+                        elif chosen_app_id == 222880:  # Insurgency
                             metrics = [
                                 ("TotalKills", "Kills im kompetitiven Modus", ""),
                                 ("TotalKillsCoop", "Kills im Koop-Modus", ""),
                                 ("TotalMVPs", "MVP-Auszeichnungen im kompetitiven Modus", ""),
                                 ("TotalMVPsCoop", "MVP-Auszeichnungen im Koop-Modus", ""),
                                 ("TotalCaptures", "Eroberten Ziele im kompetitiven Modus", ""),
-                                #("TotalHeroCaptures", "Gesamtanzahl der heldenhaften Eroberungen (entscheidende Eroberungen) im kompetitiven Modus", ""),
-                                ("TotalCapturesCoop", "Eroberten Ziele im Koop-Modus", ""),
-                                #("TotalHeroCapturesCoop", "Gesamtanzahl der heldenhaften Eroberungen im Koop-Modus", ""),
-                                #("TotalKillsAll", "Gesamtanzahl der Kills in allen Modi", ""),
-                                #("TotalCapturesAll", "Gesamtanzahl der eroberten Ziele in allen Modi", ""),
-                                #("TotalMVPsAll", "Gesamtanzahl der MVP-Auszeichnungen in allen Modi", ""),
-                                #("TotalHeroCapturesAll", "Gesamtanzahl der heldenhaften Eroberungen in allen Modi", "")
+                                ("TotalCapturesCoop", "Eroberten Ziele im Koop-Modus", "")
                             ]
-                            # Erste Zeile
-                            col1, col2 = st.columns(2)
-                            with col1:
-                                display_comparison(*metrics[0])
-                            with col2:
-                                display_comparison(*metrics[1])
+                        elif chosen_app_id == 221100:  # DayZ
+                            metrics = [
+                                ("STAT_ACTION_EAT", "Anzahl Essaktionen", ""),
+                                ("STAT_ACTION_DRINK", "Anzahl Trinkaktionen", ""),
+                                ("STAT_ACTION_COOK_STEAK", "Gekochte Steaks", ""),
+                                ("STAT_ACTION_IGNITE_FIRE_MATCHBOX", "Feuer mit Streichhölzern entzündet", ""),
+                                ("STAT_ACTION_IGNITE_FIRE_HAND_DRILL", "Feuer mit Handbohrer entzündet", ""),
+                                ("STAT_ACTION_EQUIP_GEAR", "Ausrüstung angelegt", ""),
+                                ("STAT_ACTION_SHAVE", "Durchgeführte Rasuren", ""),
+                                ("STAT_ACTION_GUT_DEER", "Hirsche ausgeweidet", ""),
+                                ("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", "Medikamente bei Überlebenden angewendet", ""),
+                                ("STAT_INFECTED_KILL_COUNT", "Infizierte getötet", ""),
+                                ("STAT_INFECTED_SOLDIER_KILL_COUNT", "Infizierte Soldaten getötet", ""),
+                                ("STAT_INFECTED_HEADSHOT_COUNT", "Infizierte per Kopfschuss getötet", ""),
+                                ("STAT_SURVIVOR_KILL_MAX_DIST", "Max. Killdistanz (Überlebende)", ""),
+                                ("STAT_SURVIVOR_MELEE_KILL_COUNT", "Nahkampf-Kills (Überlebende)", ""),
+                                ("STAT_SURVIVOR_HEADSHOT_COUNT", "Kopfschüsse an Überlebenden", ""),
+                                ("STAT_HEADSHOT_COUNT", "Gesamte Kopfschüsse", "")
+                            ]
+                        else:
+                            metrics = []  # Falls kein passendes Spiel gefunden wird
 
-                            # Zweite Zeile
-                            col3, col4 = st.columns(2)
-                            with col3:
-                                display_comparison(*metrics[2])
-                            with col4:
-                                display_comparison(*metrics[3])
-                            # Dritte Zeile
-                            col5, col6 = st.columns(2)
-                            with col5:
-                                display_comparison(*metrics[4])
-                            with col6:
-                                display_comparison(*metrics[5])
+                        # Anzahl der Spalten pro Zeile (hier: 2 pro Zeile)
+                        cols_per_row = 2
+
+                        # Iteration über die Metriken in Schritten von cols_per_row
+                        for i in range(0, len(metrics), cols_per_row):
+                            # Ermitteln des aktuellen Zeilen-Segments und Erstellen nötiger Spaltenzahl
+                            row_metrics = metrics[i:i + cols_per_row]
+                            columns = st.columns(len(row_metrics))
+                            for col, metric in zip(columns, row_metrics):
+                                with col:
+                                    display_comparison(*metric)
+
 
                     # -------------------------------
                     # Haupt-Logik zum Abrufen und Anzeigen der Daten
@@ -972,7 +947,9 @@ with tabs[2]:
                     if user_game_data.get("status") == "success":
                         stats_list = user_game_data.get("stats", [])
                         stats_dict = {stat["name"]: stat["value"] for stat in stats_list}
-
+                        
+                        #nur positive Werte, egal welche Daten
+                        stats_dict = {key: max(0, value) for key, value in stats_dict.items()}
                         # Debug: Daten checken
                         # st.write("Stats Dict Debug:", stats_dict)
 
@@ -1003,12 +980,12 @@ with tabs[2]:
 
                             # Vergleichswerte für Raft
                             comparison_metrics = {
-                                "stat_player_deaths": round(deaths),
-                                "stat_player_sharkKills": round(shark_kills),
-                                "stat_player_capturedAnimals": round(captured_animals),
-                                "stat_player_hookCount": round(hook_count),
-                                "stat_player_excevations_treasure": round(excevations_treasure),
-                                "stat_player_zipline_distance": round(zipline_distance)
+                                "stat_player_deaths": deaths,
+                                "stat_player_sharkKills": shark_kills,
+                                "stat_player_capturedAnimals": captured_animals,
+                                "stat_player_hookCount": hook_count,
+                                "stat_player_excevations_treasure": excevations_treasure,
+                                "stat_player_zipline_distance": zipline_distance
                             }
                         
                         elif chosen_app_id == 222880:  # Insurgency
@@ -1029,6 +1006,44 @@ with tabs[2]:
                                 "TotalMVPsCoop": round(total_mvps_coop)
                             }
                         
+                        elif chosen_app_id == 221100:  # DayZ
+                            stat_action_eat = stats_dict.get("STAT_ACTION_EAT", 0)
+                            stat_action_drink = stats_dict.get("STAT_ACTION_DRINK", 0)
+                            stat_action_cook_steak = stats_dict.get("STAT_ACTION_COOK_STEAK", 0)
+                            stat_action_ignite_fire_matchbox = stats_dict.get("STAT_ACTION_IGNITE_FIRE_MATCHBOX", 0)
+                            stat_action_ignite_fire_hand_drill = stats_dict.get("STAT_ACTION_IGNITE_FIRE_HAND_DRILL", 0)
+                            stat_action_equip_gear = stats_dict.get("STAT_ACTION_EQUIP_GEAR", 0)
+                            stat_action_shave = stats_dict.get("STAT_ACTION_SHAVE", 0)
+                            stat_action_gut_deer = stats_dict.get("STAT_ACTION_GUT_DEER", 0)
+                            stat_action_apply_meds_on_survivor = stats_dict.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0)
+                            stat_infected_kill_count = stats_dict.get("STAT_INFECTED_KILL_COUNT", 0)
+                            stat_infected_soldier_kill_count = stats_dict.get("STAT_INFECTED_SOLDIER_KILL_COUNT", 0)
+                            stat_infected_headshot_count = stats_dict.get("STAT_INFECTED_HEADSHOT_COUNT", 0)
+                            stat_survivor_kill_max_dist = stats_dict.get("STAT_SURVIVOR_KILL_MAX_DIST", 0)
+                            stat_survivor_melee_kill_count = stats_dict.get("STAT_SURVIVOR_MELEE_KILL_COUNT", 0)
+                            stat_survivor_headshot_count = stats_dict.get("STAT_SURVIVOR_HEADSHOT_COUNT", 0)
+                            stat_headshot_count = stats_dict.get("STAT_HEADSHOT_COUNT", 0)
+
+                            
+                            comparison_metrics = {
+                                "STAT_ACTION_EAT": round(stat_action_eat),
+                                "STAT_ACTION_DRINK": round(stat_action_drink),
+                                "STAT_ACTION_COOK_STEAK": round(stat_action_cook_steak),
+                                "STAT_ACTION_IGNITE_FIRE_MATCHBOX": round(stat_action_ignite_fire_matchbox),
+                                "STAT_ACTION_IGNITE_FIRE_HAND_DRILL": round(stat_action_ignite_fire_hand_drill),
+                                "STAT_ACTION_EQUIP_GEAR": round(stat_action_equip_gear),
+                                "STAT_ACTION_SHAVE": round(stat_action_shave),
+                                "STAT_ACTION_GUT_DEER": round(stat_action_gut_deer),
+                                "STAT_ACTION_APPLY_MEDS_ON_SURVIVOR": round(stat_action_apply_meds_on_survivor),
+                                "STAT_INFECTED_KILL_COUNT": round(stat_infected_kill_count),
+                                "STAT_INFECTED_SOLDIER_KILL_COUNT": round(stat_infected_soldier_kill_count),
+                                "STAT_INFECTED_HEADSHOT_COUNT": round(stat_infected_headshot_count),
+                                "STAT_SURVIVOR_KILL_MAX_DIST": round(stat_survivor_kill_max_dist, 2),
+                                "STAT_SURVIVOR_MELEE_KILL_COUNT": round(stat_survivor_melee_kill_count),
+                                "STAT_SURVIVOR_HEADSHOT_COUNT": round(stat_survivor_headshot_count),
+                                "STAT_HEADSHOT_COUNT": round(stat_headshot_count)
+                            }
+
                         # Aufruf der Matrix-Anzeige
                         display_comparison_grid()
 
@@ -1049,64 +1064,159 @@ with tabs[2]:
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
+    
+# Funktion zum Umwandeln von Listen in ein Dictionary
+def convert_list_to_dict(stats_list):
+    if isinstance(stats_list, list):  # Falls API eine Liste zurückgibt
+        return {stat["name"]: stat["value"] for stat in stats_list if "name" in stat and "value" in stat}
+    return stats_list  # Falls es schon ein Dictionary ist
 
-# ------------------------------------------------------------------------------------------------------------
-# Tab "Freunde Vergleich"
+#Freunde-Vergleich
 with tabs[3]:
-    st.header("Freunde-Vergleich")
+    st.header("👥 Freunde-Vergleich")
 
     steam_id_1 = st.text_input(label="STEAM-ID", placeholder="--- Gib hier die erste SteamID64 ein ---", label_visibility="hidden")
     steam_id_2 = st.text_input(label="STEAM-ID", placeholder="--- Gib hier die zweite SteamID64 ein ---", label_visibility="hidden")
     button_compare = st.button("Vergleichen")
 
     if steam_id_1 and steam_id_2:
-        st.write(f"Vergleich von Steam-IDs: {steam_id_1} und {steam_id_2}")
-        st.write("Spiele werden geladen...")
+        st.write(f"📊 **Vergleich von Steam-IDs:** `{steam_id_1}` & `{steam_id_2}`")
+        st.write("🔄 **Lade Benutzer- und Spiele-Daten...**")
 
-        result_1 = user_owned_games.get_owned_games(API_KEY, steam_id_1)
-        result_2 = user_owned_games.get_owned_games(API_KEY, steam_id_2)
+        with st.spinner("Daten werden geladen..."):
+            result_1 = user_owned_games.get_owned_games(API_KEY, steam_id_1)
+            info_result_1 = user_info.get_user_info(API_KEY, steam_id_1)
+            result_2 = user_owned_games.get_owned_games(API_KEY, steam_id_2)
+            info_result_2 = user_info.get_user_info(API_KEY, steam_id_2)
 
-        if "error" in result_1:
-            st.error(f"Fehler bei der ersten SteamID: {result_1['error']}")
-        elif "error" in result_2:
-            st.error(f"Fehler bei der zweiten SteamID: {result_2['error']}")
+        # Fehlerprüfung für Benutzerinfos
+        if "error" in info_result_1:
+            st.error(f"❌ Fehler bei der ersten SteamID: {info_result_1['error']}")
+        elif "error" in info_result_2:
+            st.error(f"❌ Fehler bei der zweiten SteamID: {info_result_2['error']}")
         else:
-            games_1 = result_1.get("response", {}).get("games", [])
-            games_2 = result_2.get("response", {}).get("games", [])
+            st.subheader("🔍 **Benutzerinformationen im Vergleich**")
+            col1, col2 = st.columns(2)  # Zwei Spalten für die Benutzer
 
-            if not games_1:
-                st.warning("Keine Spiele für die erste SteamID gefunden.")
-            elif not games_2:
-                st.warning("Keine Spiele für die zweite SteamID gefunden.")
+            for col, info_result, steam_id in zip([col1, col2], [info_result_1, info_result_2], [steam_id_1, steam_id_2]):
+                with col:
+                    st.write(f"**Benutzername:** {info_result['personaname']}")
+                    st.write(f"**Letzter Logoff:** {info_result['lastlogoff']}")
+                    st.write(f"**Konto erstellt am:** {info_result['timecreated']}")
+                    st.write(f"**Tage seit Kontoerstellung:** {info_result['days_since_creation']}")
+
+                    st.markdown(
+                        f"""
+                        <div style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: -10px;">
+                            <img src="{info_result['avatarfull']}" alt="Avatar" style="width: 100px; border-radius: 0%;">
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
+
+            # Fehlerprüfung für Spielelisten
+            if "error" in result_1:
+                st.error(f"❌ Fehler bei der ersten SteamID: {result_1['error']}")
+            elif "error" in result_2:
+                st.error(f"❌ Fehler bei der zweiten SteamID: {result_2['error']}")
             else:
-                df_1 = df.convert_to_dataframe(games_1)[["Name", "Playtime (Hours)"]]
-                df_2 = df.convert_to_dataframe(games_2)[["Name", "Playtime (Hours)"]]
+                games_1 = result_1.get("response", {}).get("games", [])
+                games_2 = result_2.get("response", {}).get("games", [])
 
-                # Store app ids and names in a separate list
-                app_ids_1 = {game.get("name", f"Unbekannt_{game.get('appid', 'N/A')}"): game.get("appid") for game in games_1}
-                app_ids_2 = {game.get("name", f"Unbekannt_{game.get('appid', 'N/A')}"): game.get("appid") for game in games_2}
-
-                common_games = pd.merge(df_1, df_2, on="Name", suffixes=('_Player1', '_Player2'))
-
-                st.subheader("Gemeinsame Spiele")
-                if not common_games.empty:
-                    st.dataframe(common_games)
-
-                    selected_game = st.selectbox("Wähle ein Spiel für weitere Statistiken:", common_games["Name"])
-
-                    if selected_game:
-                        app_id = app_ids_1[selected_game]
-
-                        stats_player1 = user_stats.get_user_stats_for_game(API_KEY, steam_id_1, app_id)
-                        stats_player2 = user_stats.get_user_stats_for_game(API_KEY, steam_id_2, app_id)
-
-                        st.subheader(f"Statistiken für {selected_game} - Spieler 1")
-                        st.json(stats_player1 if isinstance(stats_player1, list) else stats_player1.get("error", "Keine Daten gefunden."))
-
-                        st.subheader(f"Statistiken für {selected_game} - Spieler 2")
-                        st.json(stats_player2 if isinstance(stats_player2, list) else stats_player2.get("error", "Keine Daten gefunden."))
+                if not games_1:
+                    st.warning("⚠️ Keine Spiele für die erste SteamID gefunden.")
+                elif not games_2:
+                    st.warning("⚠️ Keine Spiele für die zweite SteamID gefunden.")
                 else:
-                    st.write("Keine gemeinsamen Spiele gefunden.")
+                    # DataFrames erstellen und sortieren
+                    df_1 = pd.DataFrame(games_1)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Playtime (Hours)"})
+                    df_2 = pd.DataFrame(games_2)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Playtime (Hours)"})
+
+                    # Minuten in Stunden umwandeln
+                    df_1["Playtime (Hours)"] = df_1["Playtime (Hours)"] / 60
+                    df_2["Playtime (Hours)"] = df_2["Playtime (Hours)"] / 60
+
+                    # Spiele aus der definierten Liste filtern
+                    valid_games = {game["appid"]: game["name"] for game in games}
+                    df_1 = df_1[df_1["appid"].isin(valid_games.keys())]
+                    df_2 = df_2[df_2["appid"].isin(valid_games.keys())]
+
+                    # Gemeinsame Spiele ermitteln
+                    common_games = pd.merge(df_1, df_2, on=["appid", "Name"], suffixes=("_Player1", "_Player2"))
+
+                    st.subheader("🎮 **Gemeinsame Spiele**")
+                    if not common_games.empty:
+                        # ➜ Spalten für Tabelle (links) und Grafik (rechts)
+                        col1, col2 = st.columns([1.5, 1])  # Verhältnis: 1.5 : 1
+
+                        with col1:  # **Tabelle links**
+                            st.dataframe(common_games[["Name", "Playtime (Hours)_Player1", "Playtime (Hours)_Player2"]].sort_values(by="Playtime (Hours)_Player1", ascending=False))
+
+                        with col2:  # **Graphik rechts**
+                            # Balkendiagramm mit den Top 5 gemeinsamen Spielen nach Spielzeit von Spieler 1
+                            top_5_games = common_games.sort_values(by="Playtime (Hours)_Player1", ascending=False).head(5)
+
+                            fig, ax = plt.subplots(figsize=(6, 4))  # Kleinere Grafik für Spaltenlayout
+                            bar_width = 0.4
+                            indices = range(len(top_5_games))
+
+                            ax.bar([i - bar_width/2 for i in indices], top_5_games["Playtime (Hours)_Player1"], width=bar_width, label="Spieler 1", alpha=0.7)
+                            ax.bar([i + bar_width/2 for i in indices], top_5_games["Playtime (Hours)_Player2"], width=bar_width, label="Spieler 2", alpha=0.7)
+
+                            ax.set_xticks(indices)
+                            ax.set_xticklabels(top_5_games["Name"], rotation=45, ha="right")
+                            ax.set_xlabel("Spiel")
+                            ax.set_ylabel("Spielzeit (Stunden)")
+                            ax.set_title("Top 5 gemeinsame Spiele nach Spielzeit (Spieler 1)")
+                            ax.legend()
+
+                            st.pyplot(fig)
+
+                        # Auswahlbox mit den gefilterten Spielen
+                        selected_game = st.selectbox(
+                            "🎯 Wähle ein Spiel für weitere Statistiken:",
+                            common_games["Name"].tolist()
+                        )
+
+                        if selected_game:
+                            app_id = str(common_games[common_games["Name"] == selected_game]["appid"].values[0])
+
+                            if app_id in STAT_MAPPING:
+                                # Abrufen der Statistiken für beide Spieler
+                                stats_player1 = user_stats.get_user_stats_for_game(API_KEY, steam_id_1, app_id)
+                                stats_player2 = user_stats.get_user_stats_for_game(API_KEY, steam_id_2, app_id)
+
+                                # Sicherstellen, dass wir keine Listen haben
+                                stats_player1 = convert_list_to_dict(stats_player1)
+                                stats_player2 = convert_list_to_dict(stats_player2)
+
+                                if isinstance(stats_player1, dict) and isinstance(stats_player2, dict):
+                                    st.subheader(f"📊 **Vergleich für {selected_game}**")
+
+                                    # Nur die relevanten Statistiken aus STAT_MAPPING anzeigen
+                                    relevant_stats = STAT_MAPPING[app_id]
+                                    filtered_stats = [stat for stat in relevant_stats if stat in stats_player1 and stat in stats_player2]
+
+                                    if filtered_stats:
+                                        comparison_data = {
+                                            "Statistik": [STAT_LABELS.get(stat, stat) for stat in filtered_stats],  # Labels umbenennen
+                                            "Spieler 1": [stats_player1.get(stat, "N/A") for stat in filtered_stats],
+                                            "Spieler 2": [stats_player2.get(stat, "N/A") for stat in filtered_stats]
+                                        }
+                                        df_comparison = pd.DataFrame(comparison_data)
+
+                                        st.dataframe(df_comparison.style.format({"Spieler 1": "{:.1f}", "Spieler 2": "{:.1f}"}))
+
+                                    else:
+                                        st.warning("📉 Keine passenden Statistikwerte gefunden.")
+                                else:
+                                    st.warning("⚠️ Keine gültigen Statistikdaten verfügbar.")
+                            else:
+                                st.warning("⚠️ Keine Statistik-Daten für dieses Spiel im Mapping hinterlegt.")
+                    else:
+                        st.write("⚠️ **Keine gemeinsamen Spiele aus der definierten Liste gefunden.**")
+
+
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
