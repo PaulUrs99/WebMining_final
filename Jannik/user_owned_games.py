@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 
-def get_owned_games(api_key, steam_id, include_appinfo=True, include_played_free_games=False):
+def get_owned_games(api_key, steam_id, include_appinfo=True, include_played_free_games=True):
     base_url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/"
     params = {
         "key": api_key,
