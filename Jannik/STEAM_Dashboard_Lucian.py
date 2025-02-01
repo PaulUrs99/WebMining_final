@@ -12,7 +12,7 @@ import user_info
 import user_game
 import user_dataframe as df
 # ------------------------------------------------------------------------------------------------------------
-
+bool_id = False #change Lucian
 # ------------------------------------------------------------------------------------------------------------
 # Wide Mode
 st.set_page_config(layout="wide") # Aktiviert den Wide Mode
@@ -504,7 +504,8 @@ with tabs[0]:
                 st.subheader("Spielinformationen")
 
                 df_games = df.convert_to_dataframe(games)[["Name", "Playtime (Hours)"]]
-                df_games_cluster = df.convert_to_dataframe(games)[["AppID", "Name", "Playtime (Minutes)"]]
+                df_games_cluster = df.convert_to_dataframe(games)[["AppID", "Name", "Playtime (Minutes)"]] #change Lucian
+                bool_id = True # change Lucian
 
                 # Tabelle sortieren
                 df_games = df_games.sort_values(by="Playtime (Hours)", ascending=False).reset_index(drop=True)
@@ -1600,6 +1601,59 @@ with tabs[3]:
 # Tab "Spiel Empfehlungen"
 with tabs[4]:
     st.header("Spiel-Empfehlungen")
+
+    # Cluster CSV-Dateien
+    df_clustered_players = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\clustered_players.csv")
+    df_final_cluster = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\final_cluster.csv")
+
+    # Genre Datei
+    df_genres = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\steam_game_genres_normalized.csv")
+
+    # IDF Datei
+    genre_idf = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\genre_idf.csv")
+    
+    # user_data
+    # steam_id ist oben definiert
+    if bool_id:
+        user_data = df_games_cluster.rename(
+        columns={"AppID": "appid", "Name": "name", "Playtime (Minutes)": "playtime_forever"}
+        )
+
+        # Nur Daten verwenden, für die es auch Genres gibt
+        genres_clean = df_genres.dropna(subset=['genres'])
+        valid_appids = genres_clean['appid'].unique()
+        ud_clean = user_data[user_data['appid'].isin(valid_appids)]
+
+        # genres mergen
+        ud_genres = ud_clean.merge(genres_clean, on="appid")
+        ud_genres["genres"] = ud_genres["genres"].str.split(",")  # Split Genres
+        ud_genres = ud_genres.explode("genres")  # Explode Genres
+        ud_genres["genres"] = ud_genres["genres"].str.strip()  # Strip Whitespaces
+
+        # Spielzeit pro Genre
+        ud_tf = ud_genres.groupby(["genres"])["playtime_forever"].sum().reset_index()
+
+        # Gesamtspielzeit
+        total_playtime = ud_clean["playtime_forever"].sum()
+
+        # Relative TF berechnen (Spielzeit für ein Genre relativ zur gesamten Spielzeit des Spielers)
+        ud_tf["TF_relative"] = ud_tf["playtime_forever"] / total_playtime
+
+        # Mit IDF-Werten verknüpfen
+        ud_tf = ud_tf.merge(genre_idf, left_on="genres", right_on="Genre", how="left")
+
+        # TF-IDF berechnen
+        ud_tf["TF-IDF"] = ud_tf["TF_relative"] * ud_tf["IDF_Playtime"]
+
+        # Unnötige Spalten entfernen
+        ud_tf.drop(columns=["playtime_forever", "IDF_Playtime", "Genre"], inplace=True)
+
+
+
+
+        
+
+
 
 # ------------------------------------------------------------------------------------------------------------
 
