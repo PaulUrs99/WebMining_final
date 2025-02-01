@@ -2,6 +2,8 @@
 # Import benötigter Bibliotheken
 import requests
 import pandas as pd
+import numpy as np #change Lucian
+from scipy.spatial.distance import euclidean #change Lucian
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import streamlit as st
@@ -1615,6 +1617,9 @@ with tabs[4]:
     # user_data
     # steam_id ist oben definiert
     if bool_id:
+
+        # Spielerdaten für Clusterzuordnung vorbereiten
+
         user_data = df_games_cluster.rename(
         columns={"AppID": "appid", "Name": "name", "Playtime (Minutes)": "playtime_forever"}
         )
@@ -1648,6 +1653,75 @@ with tabs[4]:
         # Unnötige Spalten entfernen
         ud_tf.drop(columns=["playtime_forever", "IDF_Playtime", "Genre"], inplace=True)
 
+        # Cluster zuordnen
+        # Relevante Spalten (Genres + Cluster-ID)
+        genre_columns = df_final_cluster.columns[1:-1]  # Alle Spalten außer steam_64_id und Cluster
+        df_cluster_means = df_final_cluster.groupby("Cluster")[genre_columns].mean()  # Mittelwerte pro Cluster
+
+        # Nutzer-Genre-Daten (aus ud_tf) -> nur "genres" & "TF-IDF"
+        user_genre_data = ud_tf.set_index("genres")["TF-IDF"]
+
+        # Ähnlichkeit über euklidische Distanz berechnen
+        cluster_distances = {}
+
+        for cluster_id, cluster_row in df_cluster_means.iterrows():
+            cluster_vector = cluster_row[genre_columns]  # Cluster-Genres
+            user_vector = user_genre_data.reindex(cluster_vector.index).fillna(0)  # Nutzer-Werte, fehlende mit 0
+
+            # Berechne die euklidische Distanz (kleiner = besser)
+            distance = euclidean(user_vector, cluster_vector)
+            cluster_distances[cluster_id] = distance
+
+        # Bestes Cluster auswählen (nächstgelegenes Cluster)
+        best_cluster = min(cluster_distances, key=cluster_distances.get)
+
+        # Ausgabe des zugewiesenen Clusters
+        st.write(f"Spieler wurde Cluster **{best_cluster}** zugeordnet.")
+
+        # ähnlichste Mitspieler finden
+        # Spieler aus dem gleichen Cluster filtern
+        cluster_players = df_clustered_players[df_clustered_players["Cluster"] == best_cluster]
+        st.write(f"Spieler im Cluster {best_cluster}: {len(cluster_players)}")
+        
+
+
+
+        player_distances = []
+
+        # Berechne euklidische Distanz für jeden Spieler im Cluster
+        for _, row in cluster_players.iterrows():
+            player_id = row["steam_64_id"]  # Steam-ID des Spielers
+            player_vector = df_final_cluster[df_final_cluster["steam_64_id"] == player_id][genre_columns].values.flatten()
+
+            #st.write(f"Spieler {player_id}: Größe {player_vector.size}")
+            
+            # Falls kein Genre-Vektor für diesen Spieler existiert, überspringen
+            if player_vector.size == 0:
+                continue
+
+            # Euklidische Distanz berechnen
+            distance = euclidean(user_vector, player_vector)
+            player_distances.append((player_id, distance))
+
+        st.write("Gesammelte Distanzen:", player_distances)
+
+
+        # Nach Distanz sortieren (niedrigste zuerst) und die Top 10 auswählen
+        top_10_players = sorted(player_distances, key=lambda x: x[1])[:10]
+
+        if top_10_players:  # Falls es mindestens einen Spieler gibt
+            st.write(f"**Die 10 ähnlichsten Spieler im Cluster {best_cluster}:**")
+            for rank, (player_id, distance) in enumerate(top_10_players, start=1):
+                st.write(f"{rank}. Spieler-ID: {player_id} | Distanz: {distance:.4f}")
+        else:
+            st.write("⚠️ Keine ähnlichen Spieler gefunden.")
+
+
+
+
+
+
+        
 
 
 
