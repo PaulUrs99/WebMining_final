@@ -3,6 +3,7 @@
 import requests
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
 import user_owned_games
@@ -61,7 +62,129 @@ STAT_MAPPING = {
         "total_matches_won",
         "total_matches_played",
         "total_gg_matches_won",
-        "total_gg_matches_played"
+        "total_gg_matches_played",
+        #---
+        "total_hits_ak47",
+        "total_hits_aug",
+        "total_hits_awp",
+        "total_hits_bizon",
+        "total_hits_deagle",
+        "total_hits_elite",
+        "total_hits_famas",
+        "total_hits_fiveseven",
+        "total_hits_g3sg1",
+        "total_hits_galilar",
+        "total_hits_glock",
+        "total_hits_hkp2000",
+        "total_hits_m249",
+        "total_hits_m4a1",
+        "total_hits_mac10",
+        "total_hits_mag7",
+        "total_hits_mp7",
+        "total_hits_mp9",
+        "total_hits_negev",
+        "total_hits_nova",
+        "total_hits_p250",
+        "total_hits_p90",
+        "total_hits_sawedoff",
+        "total_hits_scar20",
+        "total_hits_sg556",
+        "total_hits_ssg08",
+        "total_hits_tec9",
+        "total_hits_ump45",
+        "total_hits_xm1014",
+        #---
+        "total_kills_ak47",
+        "total_kills_aug",
+        "total_kills_awp",
+        "total_kills_bizon",
+        "total_kills_deagle",
+        "total_kills_elite",
+        "total_kills_famas",
+        "total_kills_fiveseven",
+        "total_kills_g3sg1",
+        "total_kills_galilar",
+        "total_kills_glock",
+        "total_kills_hkp2000",
+        "total_kills_m249",
+        "total_kills_m4a1",
+        "total_kills_mac10",
+        "total_kills_mag7",
+        "total_kills_mp7",
+        "total_kills_mp9",
+        "total_kills_negev",
+        "total_kills_nova",
+        "total_kills_p250",
+        "total_kills_p90",
+        "total_kills_sawedoff",
+        "total_kills_scar20",
+        "total_kills_sg556",
+        "total_kills_ssg08",
+        "total_kills_tec9",
+        "total_kills_ump45",
+        "total_kills_xm1014",
+        #---
+        "total_shots_ak47",
+        "total_shots_aug",
+        "total_shots_awp",
+        "total_shots_bizon",
+        "total_shots_deagle",
+        "total_shots_elite",
+        "total_shots_famas",
+        "total_shots_fiveseven",
+        "total_shots_g3sg1",
+        "total_shots_galilar",
+        "total_shots_glock",
+        "total_shots_hkp2000",
+        "total_shots_m249",
+        "total_shots_m4a1",
+        "total_shots_mac10",
+        "total_shots_mag7",
+        "total_shots_mp7",
+        "total_shots_mp9",
+        "total_shots_negev",
+        "total_shots_nova",
+        "total_shots_p250",
+        "total_shots_p90",
+        "total_shots_sawedoff",
+        "total_shots_scar20",
+        "total_shots_sg556",
+        "total_shots_ssg08",
+        "total_shots_tec9",
+        "total_shots_ump45",
+        "total_shots_xm1014",
+        #---
+        "total_kills_hegrenade",
+        "total_kills_knife_fight",
+        "total_kills_knife",
+        "total_kills_molotov",
+        "total_kills_decoy",
+        "total_kills_taser",
+        #---
+        "total_defused_bombs",
+        "total_planted_bombs",
+        "total_rescued_hostages",
+        "total_shots_taser",
+        #---
+        "total_rounds_map_ar_baggage",
+        "total_rounds_map_ar_monastery",
+        "total_rounds_map_ar_shoots",
+        "total_rounds_map_cs_assault",
+        "total_rounds_map_cs_italy",
+        "total_rounds_map_cs_militia",
+        "total_rounds_map_cs_office",
+        "total_rounds_map_de_aztec",
+        "total_rounds_map_de_cbble",
+        "total_rounds_map_de_dust",
+        "total_rounds_map_de_dust2",
+        "total_rounds_map_de_inferno",
+        "total_rounds_map_de_lake",
+        "total_rounds_map_de_nuke",
+        "total_rounds_map_de_safehouse",
+        "total_rounds_map_de_stmarc",
+        "total_rounds_map_de_sugarcane",
+        "total_rounds_map_de_train",
+        "total_rounds_map_de_vertigo"
     ],
     '648800': [  # Raft - 10-20 Mio // 76561198989615860, 76561199519041475 // Lucian: 76561199125748500, 76561198840295700, 76561198094944200, 76561198038187200, 76561198384517700
         "stat_player_deaths",
@@ -137,6 +260,128 @@ STAT_LABELS = {
     "total_matches_played": "Gespielte Matches",
     "total_gg_matches_won": "GunGame-Siege",
     "total_gg_matches_played": "GunGame-Spiele",
+    #-
+    "total_hits_ak47": "Treffer ak47",
+    "total_hits_aug": "Treffer aug",
+    "total_hits_awp": "Treffer awp",
+    "total_hits_bizon": "Treffer bizon",
+    "total_hits_deagle": "Treffer deagle",
+    "total_hits_elite": "Treffer elite",
+    "total_hits_famas": "Treffer famas",
+    "total_hits_fiveseven": "Treffer fiveseven",
+    "total_hits_g3sg1": "Treffer g3sg1",
+    "total_hits_galilar": "Treffer galilar",
+    "total_hits_glock": "Treffer glock",
+    "total_hits_hkp2000": "Treffer hkp2000",
+    "total_hits_m249": "Treffer m249",
+    "total_hits_m4a1": "Treffer m4a1",
+    "total_hits_mac10": "Treffer mac10",
+    "total_hits_mag7": "Treffer mag7",
+    "total_hits_mp7": "Treffer mp7",
+    "total_hits_mp9": "Treffer mp9",
+    "total_hits_negev": "Treffer negev",
+    "total_hits_nova": "Treffer nova",
+    "total_hits_p250": "Treffer p250",
+    "total_hits_p90": "Treffer p90",
+    "total_hits_sawedoff": "Treffer sawedoff",
+    "total_hits_scar20": "Treffer scar20",
+    "total_hits_sg556": "Treffer sg445",
+    "total_hits_ssg08": "Treffer ssg08",
+    "total_hits_tec9": "Treffer tec9",
+    "total_hits_ump45": "Treffer ump45",
+    "total_hits_xm1014": "Treffer xm1014",
+    #-
+    "total_kills_ak47": "Kills ak47",
+    "total_kills_aug": "Kills aug",
+    "total_kills_awp": "Kills awp",
+    "total_kills_bizon": "Kills bozon",
+    "total_kills_deagle": "Kills deagle",
+    "total_kills_elite": "Kills elite",
+    "total_kills_famas": "Kills famas",
+    "total_kills_fiveseven": "Kills fiveseven",
+    "total_kills_g3sg1": "Kills g3sg1",
+    "total_kills_galilar": "Kills galilar",
+    "total_kills_glock": "Kills glock",
+    "total_kills_hkp2000": "Kills hkp2000",
+    "total_kills_m249": "Kills m249",
+    "total_kills_m4a1": "Kills m4a1",
+    "total_kills_mac10": "Kills mac10",
+    "total_kills_mag7": "Kills mag7",
+    "total_kills_mp7": "Kills mp7",
+    "total_kills_mp9": "Kills mp9",
+    "total_kills_negev": "Kills negev",
+    "total_kills_nova": "Kills nova",
+    "total_kills_p250": "Kills p250",
+    "total_kills_p90": "Kills p90",
+    "total_kills_sawedoff": "Kills sawedoff",
+    "total_kills_scar20": "Kills scar20",
+    "total_kills_sg556": "Kills sg556",
+    "total_kills_ssg08": "Kills ssg08",
+    "total_kills_tec9": "Kills tec9",
+    "total_kills_ump45": "Kills ump45",
+    "total_kills_xm1014": "Kills xm1014",
+    #-
+    "total_shots_ak47": "Schüsse ak47",
+    "total_shots_aug": "Schüsse aug",
+    "total_shots_awp": "Schüsse awp",
+    "total_shots_bizon": "Schüsse bozon",
+    "total_shots_deagle": "Schüsse deagle",
+    "total_shots_elite": "Schüsse elite",
+    "total_shots_famas": "Schüsse famas",
+    "total_shots_fiveseven": "Schüsse fiveseven",
+    "total_shots_g3sg1": "Schüsse g3sg1",
+    "total_shots_galilar": "Schüsse galilar",
+    "total_shots_glock": "Schüsse glock",
+    "total_shots_hkp2000": "Schüsse hkp2000",
+    "total_shots_m249": "Schüsse m249",
+    "total_shots_m4a1": "Schüsse m4a1",
+    "total_shots_mac10": "Schüsse mac10",
+    "total_shots_mag7": "Schüsse mag7",
+    "total_shots_mp7": "Schüsse mp7",
+    "total_shots_mp9": "Schüsse mp9",
+    "total_shots_negev": "Schüsse negev",
+    "total_shots_nova": "Schüsse nova",
+    "total_shots_p250": "Schüsse p250",
+    "total_shots_p90": "Schüsse p90",
+    "total_shots_sawedoff": "Schüsse sawedoff",
+    "total_shots_scar20": "Schüsse scar20",
+    "total_shots_sg556": "Schüsse sg556",
+    "total_shots_ssg08": "Schüsse ssg08",
+    "total_shots_tec9": "Schüsse tec9",
+    "total_shots_ump45": "Schüsse ump45",
+    "total_shots_xm1014": "Schüsse xm1014",
+    #-
+    "total_kills_hegrenade": "Kills Handgranate",
+    "total_kills_knife_fight": "Kills Messerkampf",
+    "total_kills_knife": "Kills Messer",
+    "total_kills_molotov": "Kills Molotov",
+    "total_kills_decoy": "Kills Köder/Fale",
+    "total_kills_taser": "Kills Taser",
+    #-
+    "total_defused_bombs": "Anzahl entschäfter Bomben",
+    "total_planted_bombs": "Anzahl platzierter Bomben",
+    "total_rescued_hostages": "Anzahl geretteter Geiseln",
+    "total_shots_taser": "Schüsse Taser",
+    #-
+    "total_rounds_map_ar_baggage": "Runden auf der Map baggage",
+    "total_rounds_map_ar_monastery": "Runden auf der Map monastery",
+    "total_rounds_map_ar_shoots": "Runden auf der Map shoots",
+    "total_rounds_map_cs_assault": "Runden auf der Map assault",
+    "total_rounds_map_cs_italy": "Runden auf der Map italy",
+    "total_rounds_map_cs_militia": "Runden auf der Map militia",
+    "total_rounds_map_cs_office": "Runden auf der Map office",
+    "total_rounds_map_de_aztec": "Runden auf der Map aztec",
+    "total_rounds_map_de_cbble": "Runden auf der Map cbble",
+    "total_rounds_map_de_dust": "Runden auf der Map dust",
+    "total_rounds_map_de_dust2": "Runden auf der Map dust2",
+    "total_rounds_map_de_inferno": "Runden auf der Map inferno",
+    "total_rounds_map_de_lake": "Runden auf der Map lake",
+    "total_rounds_map_de_nuke": "Runden auf der Map nuke",
+    "total_rounds_map_de_safehouse": "Runden auf der Map safehouse",
+    "total_rounds_map_de_stmarc": "Runden auf der Map stmarc",
+    "total_rounds_map_de_sugarcane": "Runden auf der Map sugarcane",
+    "total_rounds_map_de_train": "Runden auf der Map train",
+    "total_rounds_map_de_vertigo": "Runden auf der Map vertigo",
     # ---
     "stat_player_deaths": "Anzahl der Tode",
     "stat_player_sharkKills": "Anzahl der getöteten Haie",
@@ -573,6 +818,80 @@ with tabs[1]:
                                 """,
                                 unsafe_allow_html=True,
                             )
+
+                        with st.expander("Waffen-Statistiken"):
+                            # Waffendaten
+                            # Liste aller Waffen
+                            weapons = [
+                                "ak47", "aug", "awp", "bizon", "deagle", "elite", "famas", "fiveseven", "g3sg1", "galilar",
+                                "glock", "hkp2000", "m249", "m4a1", "mac10", "mag7", "mp7", "mp9", "negev", "nova",
+                                "p250", "p90", "sawedoff", "scar20", "sg556", "ssg08", "tec9", "ump45", "xm1014"
+                            ]
+
+                            # Liste für die Ergebnisse
+                            weapon_stats = []
+
+                            for weapon in weapons:
+                                hits = stats_dict.get(f"total_hits_{weapon}", 0)
+                                kills = stats_dict.get(f"total_kills_{weapon}", 0)
+                                shots = stats_dict.get(f"total_shots_{weapon}", 1)  # Division durch 0 vermeiden
+
+                                accuracy = hits / shots  # Trefferquote
+                                efficiency = kills / shots  # Effektivität
+
+                                weapon_stats.append([weapon, hits, kills, shots, accuracy, efficiency])
+                            
+                            # Nach Accuracy und Efficiency sortieren (hohe Werte zuerst)
+                            sorted_weapon_stats = sorted(weapon_stats, key=lambda x: (x[5], x[4]), reverse=True)
+                            
+                            # Daten für das Netzdiagramm vorbereiten
+                            labels = [w[0] for w in sorted_weapon_stats]  
+                            accuracy_values = [w[4] for w in sorted_weapon_stats]  
+                            efficiency_values = [w[5] for w in sorted_weapon_stats]
+
+                            col18, col19 = st.columns(2)
+
+                            with col18:
+                                # Top 5 Waffen ausgeben
+                                top_5_weapons = sorted_weapon_stats[:5]
+
+                                # In DataFrame umwandeln
+                                df_top5 = pd.DataFrame(top_5_weapons, columns=["Weapon", "Hits", "Kills", "Shots", "Accuracy", "Efficiency"])
+
+                                # Ausgabe der Top 5 Waffen
+                                st.write("### Top 5 bestgespielten Waffen")
+                                st.dataframe(df_top5)
+                            with col19:
+                                # Erstellen des Netzdiagramms (Radar Chart)
+                                fig = go.Figure()
+
+                                fig.add_trace(go.Scatterpolar(
+                                    r=accuracy_values + [accuracy_values[0]],  # Kreis schließen
+                                    theta=labels + [labels[0]],
+                                    fill='toself',
+                                    name='Accuracy'
+                                ))
+
+                                fig.add_trace(go.Scatterpolar(
+                                    r=efficiency_values + [efficiency_values[0]],  # Kreis schließen
+                                    theta=labels + [labels[0]],
+                                    fill='toself',
+                                    name='Efficiency'
+                                ))
+
+                                fig.update_layout(
+                                    polar=dict(
+                                        radialaxis=dict(
+                                            visible=True, 
+                                            range=[0, max(max(accuracy_values), max(efficiency_values))],
+                                            tickfont=dict(color="black")
+                                        ),
+                                    ),
+                                    showlegend=True,
+                                    title="Accuracy vs Efficiency für Waffen"
+                                )
+
+                                st.plotly_chart(fig)
 # -----
                     elif len(filtered_stats) > 0 and chosen_app_id == 648800:
                         
