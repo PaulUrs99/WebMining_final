@@ -1678,6 +1678,10 @@ with tabs[4]:
         # Ausgabe des zugewiesenen Clusters
         st.write(f"Spieler wurde Cluster **{best_cluster}** zugeordnet.")
 
+
+
+
+
         # ähnlichste Mitspieler finden
         # Spieler aus dem gleichen Cluster filtern
         cluster_players = df_clustered_players[df_clustered_players["Cluster"] == best_cluster]
