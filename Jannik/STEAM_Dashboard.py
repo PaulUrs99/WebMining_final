@@ -160,11 +160,11 @@ STAT_MAPPING = {
         "total_kills_molotov",
         "total_kills_decoy",
         "total_kills_taser",
+        "total_shots_taser",
         #---
         "total_defused_bombs",
         "total_planted_bombs",
         "total_rescued_hostages",
-        "total_shots_taser",
         #---
         "total_rounds_map_ar_baggage",
         "total_rounds_map_ar_monastery",
@@ -357,11 +357,11 @@ STAT_LABELS = {
     "total_kills_molotov": "Kills Molotov",
     "total_kills_decoy": "Kills Köder/Fale",
     "total_kills_taser": "Kills Taser",
+    "total_shots_taser": "Schüsse Taser",
     #-
     "total_defused_bombs": "Anzahl entschäfter Bomben",
     "total_planted_bombs": "Anzahl platzierter Bomben",
     "total_rescued_hostages": "Anzahl geretteter Geiseln",
-    "total_shots_taser": "Schüsse Taser",
     #-
     "total_rounds_map_ar_baggage": "Runden auf der Map baggage",
     "total_rounds_map_ar_monastery": "Runden auf der Map monastery",
@@ -912,6 +912,44 @@ with tabs[1]:
                                     )
 
                                     st.plotly_chart(fig, use_container_width=True)
+                            
+                            hegrenade = stats_dict.get("total_kills_hegrenade", 0)
+                            kfight = stats_dict.get("total_kills_knife_fight", 0)
+                            knife = stats_dict.get("total_kills_knife", 0)
+                            molotov = stats_dict.get("total_kills_molotov", 0)
+                            decoy = stats_dict.get("total_kills_decoy", 0)
+                            ttaser = stats_dict.get("total_shots_taser", 0)
+                            taser = stats_dict.get("total_kills_taser", 0)
+                            efftaser = taser / ttaser
+
+                            col20, col21, col22 = st.columns(3)
+                            with col20:
+                                custom_metric("Kills mit der Handgranate", f"{hegrenade:,}".replace(",", "."))
+                                custom_metric("Schüsse mit dem Taser", f"{ttaser:,}".replace(",", "."))
+                            with col21:
+                                custom_metric("Kills mit einem Molotov-Cocktail", f"{molotov:,}".replace(",", "."))
+                                custom_metric("Kills mit der Taser", f"{taser:,}".replace(",", "."))
+                            with col22:
+                                custom_metric("Kills mit einem Köder/Falle", f"{decoy:,}".replace(",", "."))
+                                custom_metric("Effizienz mit dem Taser", f"{efftaser:,}".replace(",", "."))
+                            
+                            col23, col24 = st.columns(2)
+                            with col23:
+                                custom_metric("Kills mit dem Messer", f"{knife:,}".replace(",", "."))
+                            with col24:
+                                custom_metric("Kills Messerkampf", f"{kfight:,}".replace(",", "."))
+                            
+                            # Zusätzlicher Platz durch eine Leerzeile und Padding
+                            st.markdown(
+                                """
+                                <style>
+                                .st-expander .stContainer {
+                                    padding-bottom: 20px; /* Abstand am unteren Rand */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
 # -----
                     elif len(filtered_stats) > 0 and chosen_app_id == 648800:
                         
