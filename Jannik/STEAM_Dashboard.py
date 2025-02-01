@@ -1022,7 +1022,7 @@ with tabs[1]:
                             fig.patch.set_facecolor("#0E1117")  # Außenbereich schwarz
                             ax.set_facecolor("#0E1117")  # Innenbereich schwarz
                             # Balkendiagramm mit weißer Schrift
-                            bars = ax.barh(map_names, rounds_played, color="skyblue")
+                            bars = ax.barh(map_names, rounds_played, color="#8d2c91")
                             # X-Achse um 15% erweitern, damit die Zahlen weiter rechts stehen
                             max_value = max(rounds_played) if rounds_played else 1  # Falls alle Werte 0 sind, Standardwert setzen
                             ax.set_xlim(0, max_value * 1.10)  # 10% extra Platz auf der X-Achse
