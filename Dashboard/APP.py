@@ -805,7 +805,7 @@ with tabs[2]:
 
     # Fehlerhandling: Falls keine Spielstatistik verfügbar ist
     if array_games_updated.empty or "Name" not in array_games_updated.columns:
-        st.warning("Es wurde keine Übereinstimmung zwischen den Spielen des/der User/in und unseren Dashboard-Anzeigen gefunden.")
+         st.warning("Es wurde keine Übereinstimmung zwischen den Spielen des/der User/in und unseren Dashboard-Anzeigen gefunden.")
     else:
         # Auswahl eines Spiels (Dropdown, falls Nutzer mehrere Spiele besitzt)
         st.subheader("Wähle ein Spiel für den Vergleich:")
@@ -835,80 +835,205 @@ with tabs[2]:
                     # Debugging: Überprüfe, ob Daten aus der API kommen
                     user_game_data = user_game.fetch_in_game_data(API_KEY, steam_id, chosen_app_id)
 
+                    # Funktion zum Abrufen der Statistikwerte aus der CSV
+                    def get_stat_values(stat_name):
+                        stat_row = stats_df[stats_df["stat"] == stat_name]
+                        if not stat_row.empty:
+                            return {col: stat_row[col].values[0] for col in stats_df.columns if "%" in col}
+                        return None
+
+                    # Vergleichsanzeige mit st.expander
+                    def display_comparison(stat_name, display_name, unit="%"):
+                        stat_values = get_stat_values(stat_name)
+                        if stat_values:
+                            median_value = stat_values["50%"]
+                            player_value = comparison_metrics[stat_name]
+
+                            # Bestimmen, in welchem Perzentil der Spieler liegt
+                            player_percentile = None
+                            for p_label, p_value in stat_values.items():
+                                if player_value <= p_value:
+                                    player_percentile = int(p_label.strip("%"))  # Entfernt das % und wandelt es in eine Zahl um
+                                    break
+
+                            # Berechnung der intuitiven Einordnung
+                            if player_percentile is not None:
+                                top_x_percent = 100 - player_percentile
+                                player_position_text = f"Du bist unter den besten {top_x_percent}% der Spieler"
+                            else:
+                                player_position_text = "Wert außerhalb der bekannten Perzentile"
+
+                            with st.expander(f"{display_name} Vergleich"):
+                                col1, col2, col3 = st.columns(3)
+                                with col1:
+                                    st.metric(f"Spieler {display_name}", f"{player_value:.2f}".replace(".", ","))
+                                with col2:
+                                    st.metric(f"Median (50%)", f"{median_value:.2f}".replace(".", ","))
+                                with col3:
+                                    st.markdown(f'<p style="font-size:25px; color:white;">Einordnung:<br> {player_position_text}</p>', unsafe_allow_html=True)
+
+                                # Boxplot mit Spielerwert markieren
+                                fig = create_boxplot(stat_values, player_value, xlabel=display_name)
+                                st.pyplot(fig)
+
+                    # Anzeige der Vergleiche in 2x2-Matrix
+                    def display_comparison_grid():
+                        if chosen_app_id == 730:  # Counter-Strike 2
+                            metrics = [
+                                ("KD_ratio", "K/D-Ratio", ""),
+                                ("accuracy", "Trefferquote", "%"),
+                                ("headshot_ratio", "Headshot-Quote", "%"),
+                                ("win_ratio", "Siegesquote", "%")
+                            ]
+
+                            # Erste Zeile
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                display_comparison(*metrics[0])
+                            with col2:
+                                display_comparison(*metrics[1])
+
+                            # Zweite Zeile
+                            col3, col4 = st.columns(2)
+                            with col3:
+                                display_comparison(*metrics[2])
+                            with col4:
+                                display_comparison(*metrics[3])
+
+                        elif chosen_app_id == 648800:  # Raft
+                            metrics = [
+                                ("stat_player_deaths", "Tode", ""),
+                                ("stat_player_sharkKills", "Getötete Haie", ""),
+                                ("stat_player_capturedAnimals", "Eingefangene Tiere", ""),
+                                ("stat_player_hookCount", "Hakenwürfe", ""),
+                                ("stat_player_excevations_treasure", "Gehobene Schätze", ""),
+                                ("stat_player_zipline_distance", "Seilrutschen-Distanz (m)", " m")
+                            ]
+                            # Erste Zeile
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                display_comparison(*metrics[0])
+                            with col2:
+                                display_comparison(*metrics[1])
+
+                            # Zweite Zeile
+                            col3, col4 = st.columns(2)
+                            with col3:
+                                display_comparison(*metrics[2])
+                            with col4:
+                                display_comparison(*metrics[3])
+
+                            # Falls Raft mehr als vier Metriken hat, eine dritte Zeile oder mehr hinzufügen
+                            if chosen_app_id == 648800:
+                                col5, col6 = st.columns(2)
+                                with col5:
+                                    display_comparison(*metrics[4])
+                                with col6:
+                                    display_comparison(*metrics[5])
+
+                        elif chosen_app_id == 222880: # Insurgency
+                            metrics = [
+                                ("TotalKills", "Kills im kompetitiven Modus", ""),
+                                ("TotalKillsCoop", "Kills im Koop-Modus", ""),
+                                ("TotalMVPs", "MVP-Auszeichnungen im kompetitiven Modus", ""),
+                                ("TotalMVPsCoop", "MVP-Auszeichnungen im Koop-Modus", ""),
+                                ("TotalCaptures", "Eroberten Ziele im kompetitiven Modus", ""),
+                                #("TotalHeroCaptures", "Gesamtanzahl der heldenhaften Eroberungen (entscheidende Eroberungen) im kompetitiven Modus", ""),
+                                ("TotalCapturesCoop", "Eroberten Ziele im Koop-Modus", ""),
+                                #("TotalHeroCapturesCoop", "Gesamtanzahl der heldenhaften Eroberungen im Koop-Modus", ""),
+                                #("TotalKillsAll", "Gesamtanzahl der Kills in allen Modi", ""),
+                                #("TotalCapturesAll", "Gesamtanzahl der eroberten Ziele in allen Modi", ""),
+                                #("TotalMVPsAll", "Gesamtanzahl der MVP-Auszeichnungen in allen Modi", ""),
+                                #("TotalHeroCapturesAll", "Gesamtanzahl der heldenhaften Eroberungen in allen Modi", "")
+                            ]
+                            # Erste Zeile
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                display_comparison(*metrics[0])
+                            with col2:
+                                display_comparison(*metrics[1])
+
+                            # Zweite Zeile
+                            col3, col4 = st.columns(2)
+                            with col3:
+                                display_comparison(*metrics[2])
+                            with col4:
+                                display_comparison(*metrics[3])
+                            # Dritte Zeile
+                            col5, col6 = st.columns(2)
+                            with col5:
+                                display_comparison(*metrics[4])
+                            with col6:
+                                display_comparison(*metrics[5])
+
+                    # -------------------------------
+                    # Haupt-Logik zum Abrufen und Anzeigen der Daten
+                    # -------------------------------
                     if user_game_data.get("status") == "success":
                         stats_list = user_game_data.get("stats", [])
                         stats_dict = {stat["name"]: stat["value"] for stat in stats_list}
 
                         # Debug: Daten checken
-                        #st.write("Stats Dict Debug:", stats_dict)
+                        # st.write("Stats Dict Debug:", stats_dict)
 
-                        # Korrekte Berechnung der Vergleichswerte
-                        kills = stats_dict.get("total_kills", 0)
-                        deaths = stats_dict.get("total_deaths", 0)
-                        shots_fired = stats_dict.get("total_shots_fired", 0)
-                        shots_hit = stats_dict.get("total_shots_hit", 0)
-                        headshots = stats_dict.get("total_kills_headshot", 0)
-                        matches_played = stats_dict.get("total_matches_played", 0)
-                        matches_won = stats_dict.get("total_matches_won", 0)
+                        if chosen_app_id == 730:  # Counter-Strike 2
+                            kills = stats_dict.get("total_kills", 0)
+                            deaths = stats_dict.get("total_deaths", 0)
+                            shots_fired = stats_dict.get("total_shots_fired", 0)
+                            shots_hit = stats_dict.get("total_shots_hit", 0)
+                            headshots = stats_dict.get("total_kills_headshot", 0)
+                            matches_played = stats_dict.get("total_matches_played", 0)
+                            matches_won = stats_dict.get("total_matches_won", 0)
 
-                        comparison_metrics = {
-                            "KD_ratio": kills / deaths if deaths > 0 else np.nan,
-                            "accuracy": (shots_hit / shots_fired) * 100 if shots_fired > 0 else np.nan,
-                            "headshot_ratio": (headshots / shots_hit) * 100 if shots_hit > 0 else np.nan,
-                            "win_ratio": (matches_won / matches_played) * 100 if matches_played > 0 else np.nan
-                        }
+                            # Vergleichswerte für CS2
+                            comparison_metrics = {
+                                "KD_ratio": kills / deaths if deaths > 0 else np.nan,
+                                "accuracy": (shots_hit / shots_fired) * 100 if shots_fired > 0 else np.nan,
+                                "headshot_ratio": (headshots / shots_hit) * 100 if shots_hit > 0 else np.nan,
+                                "win_ratio": (matches_won / matches_played) * 100 if matches_played > 0 else np.nan
+                            }
 
-                        # Funktion zum Abrufen der Statistikwerte aus der CSV
-                        def get_stat_values(stat_name):
-                            stat_row = stats_df[stats_df["stat"] == stat_name]
-                            if not stat_row.empty:
-                                return {col: stat_row[col].values[0] for col in stats_df.columns if "%" in col}
-                            return None
+                        elif chosen_app_id == 648800:  # Raft
+                            deaths = stats_dict.get("stat_player_deaths", 0)
+                            shark_kills = stats_dict.get("stat_player_sharkKills", 0)
+                            captured_animals = stats_dict.get("stat_player_capturedAnimals", 0)
+                            hook_count = stats_dict.get("stat_player_hookCount", 0)
+                            excevations_treasure = stats_dict.get("stat_player_excevations_treasure", 0)
+                            zipline_distance = stats_dict.get("stat_player_zipline_distance", 0)
 
-                        # Vergleichsanzeige mit st.expander
-                        def display_comparison(stat_name, display_name, unit="%"):
-                            stat_values = get_stat_values(stat_name)
-                            if stat_values:
-                                median_value = stat_values["50%"]
-                                player_value = comparison_metrics[stat_name]
+                            # Vergleichswerte für Raft
+                            comparison_metrics = {
+                                "stat_player_deaths": round(deaths),
+                                "stat_player_sharkKills": round(shark_kills),
+                                "stat_player_capturedAnimals": round(captured_animals),
+                                "stat_player_hookCount": round(hook_count),
+                                "stat_player_excevations_treasure": round(excevations_treasure),
+                                "stat_player_zipline_distance": round(zipline_distance)
+                            }
+                        
+                        elif chosen_app_id == 222880:  # Insurgency
+                            total_kills = stats_dict.get("TotalKills", 0)
+                            total_captures = stats_dict.get("TotalCaptures", 0)
+                            total_mvps = stats_dict.get("TotalMVPs", 0)
+                            total_kills_coop = stats_dict.get("TotalKillsCoop", 0)
+                            total_captures_coop = stats_dict.get("TotalCapturesCoop", 0)
+                            total_mvps_coop = stats_dict.get("TotalMVPsCoop", 0)
 
-                                # Bestimmen, in welchem Perzentil der Spieler liegt
-                                player_percentile = None
-                                for p_label, p_value in stat_values.items():
-                                    if player_value <= p_value:
-                                        player_percentile = int(p_label.strip("%"))  # Entfernt das % und wandelt es in eine Zahl um
-                                        break
-
-                                # Berechnung der intuitiven Einordnung
-                                if player_percentile is not None:
-                                    top_x_percent = 100 - player_percentile
-                                    player_position_text = f"Du bist unter den besten {top_x_percent}% der Spieler"
-                                else:
-                                    player_position_text = "Wert außerhalb der bekannten Perzentile"
-
-                                with st.expander(f"{display_name} Vergleich"):
-                                    col1, col2, col3 = st.columns(3)
-                                    with col1:
-                                        st.metric(f"Spieler {display_name}", f"{player_value:.2f}{unit}")
-                                    with col2:
-                                        st.metric(f"Median (50%)", f"{median_value:.2f}{unit}")
-                                    with col3:
-                                        st.markdown(f'<p style="font-size:25px; color:white;">Einordnung:<br> {player_position_text}</p>', unsafe_allow_html=True)
-
-
-                                    # Boxplot mit Spielerwert markieren
-                                    fig = create_boxplot(stat_values, player_value, xlabel=display_name)
-                                    st.pyplot(fig)
-
-                        # Anzeige der Vergleiche
-                        display_comparison("KD_ratio", "K/D-Ratio")
-                        display_comparison("accuracy", "Trefferquote")
-                        display_comparison("headshot_ratio", "Headshot-Quote")
-                        display_comparison("win_ratio", "Siegesquote")
+                            # Vergleichswerte für Insurgency
+                            comparison_metrics = {
+                                "TotalKills": round(total_kills),
+                                "TotalCaptures": round(total_captures),
+                                "TotalMVPs": round(total_mvps),
+                                "TotalKillsCoop": round(total_kills_coop),
+                                "TotalCapturesCoop": round(total_captures_coop),
+                                "TotalMVPsCoop": round(total_mvps_coop)
+                            }
+                        
+                        # Aufruf der Matrix-Anzeige
+                        display_comparison_grid()
 
                     else:
                         st.warning("Fehler beim Abrufen der Spielstatistiken.")
-
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
