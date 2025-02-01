@@ -821,6 +821,20 @@ with tabs[1]:
 
                         with st.expander("Waffen-Statistiken"):
                             # Waffendaten
+                            # Custom CSS für vertikale Zentrierung der Tabelle
+                            st.markdown(
+                                """
+                                <style>
+                                .table-container {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    height: 100%;  /* Volle Höhe für vertikale Zentrierung */
+                                }
+                                </style>
+                                """,
+                                unsafe_allow_html=True,
+                            )
                             # Liste aller Waffen
                             weapons = [
                                 "ak47", "aug", "awp", "bizon", "deagle", "elite", "famas", "fiveseven", "g3sg1", "galilar",
@@ -852,46 +866,52 @@ with tabs[1]:
                             col18, col19 = st.columns(2)
 
                             with col18:
-                                # Top 5 Waffen ausgeben
-                                top_5_weapons = sorted_weapon_stats[:5]
+                                with st.container():
+                                    st.markdown("<div class='table-container'><h3 style='text-align: center;'>Top 5 bestgespielte Waffen</h3>", unsafe_allow_html=True)
 
-                                # In DataFrame umwandeln
-                                df_top5 = pd.DataFrame(top_5_weapons, columns=["Weapon", "Hits", "Kills", "Shots", "Accuracy", "Efficiency"])
+                                    # Top 5 Waffen ausgeben
+                                    top_5_weapons = sorted_weapon_stats[:5]
 
-                                # Ausgabe der Top 5 Waffen
-                                st.write("### Top 5 bestgespielten Waffen")
-                                st.dataframe(df_top5)
+                                    # In DataFrame umwandeln
+                                    df_top5 = pd.DataFrame(top_5_weapons, columns=["Weapon", "Hits", "Kills", "Shots", "Accuracy", "Efficiency"])
+
+                                    # Ausgabe der Top 5 Waffen
+                                    st.dataframe(df_top5, use_container_width=True)
                             with col19:
-                                # Erstellen des Netzdiagramms (Radar Chart)
-                                fig = go.Figure()
+                                with st.container():
+                                    st.markdown("<h3 style='text-align: center;'>Accuracy vs Efficiency</h3>", unsafe_allow_html=True)
 
-                                fig.add_trace(go.Scatterpolar(
-                                    r=accuracy_values + [accuracy_values[0]],  # Kreis schließen
-                                    theta=labels + [labels[0]],
-                                    fill='toself',
-                                    name='Accuracy'
-                                ))
+                                    # Erstellen des Netzdiagramms (Radar Chart)
+                                    fig = go.Figure()
 
-                                fig.add_trace(go.Scatterpolar(
-                                    r=efficiency_values + [efficiency_values[0]],  # Kreis schließen
-                                    theta=labels + [labels[0]],
-                                    fill='toself',
-                                    name='Efficiency'
-                                ))
+                                    fig.add_trace(go.Scatterpolar(
+                                        r=accuracy_values + [accuracy_values[0]],  # Kreis schließen
+                                        theta=labels + [labels[0]],
+                                        fill='toself',
+                                        name='Accuracy'
+                                    ))
 
-                                fig.update_layout(
-                                    polar=dict(
-                                        radialaxis=dict(
-                                            visible=True, 
-                                            range=[0, max(max(accuracy_values), max(efficiency_values))],
-                                            tickfont=dict(color="black")
+                                    fig.add_trace(go.Scatterpolar(
+                                        r=efficiency_values + [efficiency_values[0]],  # Kreis schließen
+                                        theta=labels + [labels[0]],
+                                        fill='toself',
+                                        name='Efficiency'
+                                    ))
+
+                                    fig.update_layout(
+                                        polar=dict(
+                                            radialaxis=dict(
+                                                visible=True, 
+                                                range=[0, max(max(accuracy_values), max(efficiency_values))],
+                                                tickfont=dict(color="black")
+                                            ),
                                         ),
-                                    ),
-                                    showlegend=True,
-                                    title="Accuracy vs Efficiency für Waffen"
-                                )
+                                        showlegend=True,
+                                        title="Accuracy vs Efficiency für Waffen",
+                                        autosize=True  # Automatische Skalierung für bessere Platznutzung
+                                    )
 
-                                st.plotly_chart(fig)
+                                    st.plotly_chart(fig, use_container_width=True)
 # -----
                     elif len(filtered_stats) > 0 and chosen_app_id == 648800:
                         
