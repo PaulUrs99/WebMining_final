@@ -29,7 +29,7 @@ def get_owned_games(api_key, steam_id, app_id):
 if __name__ == "__main__":
     # Replace these placeholders with actual values
     API_KEY = "DB15759E609C1E342536A6973593A57F"
-    STEAM_ID = "76561198346540208"
+    STEAM_ID = "76561198080617859"
     APP_ID = "730"
 
     #76561198990374557 - paul.u1111
