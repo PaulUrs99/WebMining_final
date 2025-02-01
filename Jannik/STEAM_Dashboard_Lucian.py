@@ -504,6 +504,7 @@ with tabs[0]:
                 st.subheader("Spielinformationen")
 
                 df_games = df.convert_to_dataframe(games)[["Name", "Playtime (Hours)"]]
+                df_games_cluster = df.convert_to_dataframe(games)[["AppID", "Name", "Playtime (Minutes)"]]
 
                 # Tabelle sortieren
                 df_games = df_games.sort_values(by="Playtime (Hours)", ascending=False).reset_index(drop=True)
