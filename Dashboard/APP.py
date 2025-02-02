@@ -14,6 +14,8 @@ import numpy as np
 from boxplot_helper import create_boxplot
 from density_helper import create_density_plot
 from curve_helper import create_percentile_curve
+import plotly.graph_objects as go
+import matplotlib.ticker as mticker
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
@@ -29,7 +31,7 @@ st.title("Steam Dashboard")
 tabs = st.tabs(["Profilstatistiken", "In-Game-Statistiken", "Community-Vergleich", "Freunde-Vergleich", "Spiel-Empfehlungen"])
 
 # API Key (du kannst eine sichere Methode verwenden, um den Schlüssel zu speichern)
-API_KEY = "3DD952ECA5D79C777FD0377B118779A0"  # Ersetze mit deinem Steam Web API Key
+API_KEY = "F06E65C071B7ABDE4CE3B531A06123E2"  # Ersetze mit deinem Steam Web API Key
 # Key Paul: DB15759E609C1E342536A6973593A57F
 # Key Lucian: F06E65C071B7ABDE4CE3B531A06123E2
 # Key Viki: 3DD952ECA5D79C777FD0377B118779A0
@@ -66,7 +68,129 @@ STAT_MAPPING = {
         "total_matches_won",
         "total_matches_played",
         "total_gg_matches_won",
-        "total_gg_matches_played"
+        "total_gg_matches_played",
+        #---
+        "total_hits_ak47",
+        "total_hits_aug",
+        "total_hits_awp",
+        "total_hits_bizon",
+        "total_hits_deagle",
+        "total_hits_elite",
+        "total_hits_famas",
+        "total_hits_fiveseven",
+        "total_hits_g3sg1",
+        "total_hits_galilar",
+        "total_hits_glock",
+        "total_hits_hkp2000",
+        "total_hits_m249",
+        "total_hits_m4a1",
+        "total_hits_mac10",
+        "total_hits_mag7",
+        "total_hits_mp7",
+        "total_hits_mp9",
+        "total_hits_negev",
+        "total_hits_nova",
+        "total_hits_p250",
+        "total_hits_p90",
+        "total_hits_sawedoff",
+        "total_hits_scar20",
+        "total_hits_sg556",
+        "total_hits_ssg08",
+        "total_hits_tec9",
+        "total_hits_ump45",
+        "total_hits_xm1014",
+        #---
+        "total_kills_ak47",
+        "total_kills_aug",
+        "total_kills_awp",
+        "total_kills_bizon",
+        "total_kills_deagle",
+        "total_kills_elite",
+        "total_kills_famas",
+        "total_kills_fiveseven",
+        "total_kills_g3sg1",
+        "total_kills_galilar",
+        "total_kills_glock",
+        "total_kills_hkp2000",
+        "total_kills_m249",
+        "total_kills_m4a1",
+        "total_kills_mac10",
+        "total_kills_mag7",
+        "total_kills_mp7",
+        "total_kills_mp9",
+        "total_kills_negev",
+        "total_kills_nova",
+        "total_kills_p250",
+        "total_kills_p90",
+        "total_kills_sawedoff",
+        "total_kills_scar20",
+        "total_kills_sg556",
+        "total_kills_ssg08",
+        "total_kills_tec9",
+        "total_kills_ump45",
+        "total_kills_xm1014",
+        #---
+        "total_shots_ak47",
+        "total_shots_aug",
+        "total_shots_awp",
+        "total_shots_bizon",
+        "total_shots_deagle",
+        "total_shots_elite",
+        "total_shots_famas",
+        "total_shots_fiveseven",
+        "total_shots_g3sg1",
+        "total_shots_galilar",
+        "total_shots_glock",
+        "total_shots_hkp2000",
+        "total_shots_m249",
+        "total_shots_m4a1",
+        "total_shots_mac10",
+        "total_shots_mag7",
+        "total_shots_mp7",
+        "total_shots_mp9",
+        "total_shots_negev",
+        "total_shots_nova",
+        "total_shots_p250",
+        "total_shots_p90",
+        "total_shots_sawedoff",
+        "total_shots_scar20",
+        "total_shots_sg556",
+        "total_shots_ssg08",
+        "total_shots_tec9",
+        "total_shots_ump45",
+        "total_shots_xm1014",
+        #---
+        "total_kills_hegrenade",
+        "total_kills_knife_fight",
+        "total_kills_knife",
+        "total_kills_molotov",
+        "total_kills_decoy",
+        "total_kills_taser",
+        "total_shots_taser",
+        #---
+        "total_defused_bombs",
+        "total_planted_bombs",
+        "total_rescued_hostages",
+        #---
+        "total_rounds_map_ar_baggage",
+        "total_rounds_map_ar_monastery",
+        "total_rounds_map_ar_shoots",
+        "total_rounds_map_cs_assault",
+        "total_rounds_map_cs_italy",
+        "total_rounds_map_cs_militia",
+        "total_rounds_map_cs_office",
+        "total_rounds_map_de_aztec",
+        "total_rounds_map_de_cbble",
+        "total_rounds_map_de_dust",
+        "total_rounds_map_de_dust2",
+        "total_rounds_map_de_inferno",
+        "total_rounds_map_de_lake",
+        "total_rounds_map_de_nuke",
+        "total_rounds_map_de_safehouse",
+        "total_rounds_map_de_stmarc",
+        "total_rounds_map_de_sugarcane",
+        "total_rounds_map_de_train",
+        "total_rounds_map_de_vertigo"
     ],
     '648800': [  # Raft - 10-20 Mio // 76561198989615860, 76561199519041475 // Lucian: 76561199125748500, 76561198840295700, 76561198094944200, 76561198038187200, 76561198384517700
         "stat_player_deaths",
@@ -126,7 +250,6 @@ STAT_MAPPING = {
     ],
     # Weitere App-IDs
     # '440': [...],
-
 }
 
 # Dictionary zur Umbenennung von Keys in lesbare Namen
@@ -143,6 +266,129 @@ STAT_LABELS = {
     "total_matches_played": "Gespielte Matches",
     "total_gg_matches_won": "GunGame-Siege",
     "total_gg_matches_played": "GunGame-Spiele",
+    #-
+    "total_hits_ak47": "Treffer ak47",
+    "total_hits_aug": "Treffer aug",
+    "total_hits_awp": "Treffer awp",
+    "total_hits_bizon": "Treffer bizon",
+    "total_hits_deagle": "Treffer deagle",
+    "total_hits_elite": "Treffer elite",
+    "total_hits_famas": "Treffer famas",
+    "total_hits_fiveseven": "Treffer fiveseven",
+    "total_hits_g3sg1": "Treffer g3sg1",
+    "total_hits_galilar": "Treffer galilar",
+    "total_hits_glock": "Treffer glock",
+    "total_hits_hkp2000": "Treffer hkp2000",
+    "total_hits_m249": "Treffer m249",
+    "total_hits_m4a1": "Treffer m4a1",
+    "total_hits_mac10": "Treffer mac10",
+    "total_hits_mag7": "Treffer mag7",
+    "total_hits_mp7": "Treffer mp7",
+    "total_hits_mp9": "Treffer mp9",
+    "total_hits_negev": "Treffer negev",
+    "total_hits_nova": "Treffer nova",
+    "total_hits_p250": "Treffer p250",
+    "total_hits_p90": "Treffer p90",
+    "total_hits_sawedoff": "Treffer sawedoff",
+    "total_hits_scar20": "Treffer scar20",
+    "total_hits_sg556": "Treffer sg445",
+    "total_hits_ssg08": "Treffer ssg08",
+    "total_hits_tec9": "Treffer tec9",
+    "total_hits_ump45": "Treffer ump45",
+    "total_hits_xm1014": "Treffer xm1014",
+    #-
+    "total_kills_ak47": "Kills ak47",
+    "total_kills_aug": "Kills aug",
+    "total_kills_awp": "Kills awp",
+    "total_kills_bizon": "Kills bozon",
+    "total_kills_deagle": "Kills deagle",
+    "total_kills_elite": "Kills elite",
+    "total_kills_famas": "Kills famas",
+    "total_kills_fiveseven": "Kills fiveseven",
+    "total_kills_g3sg1": "Kills g3sg1",
+    "total_kills_galilar": "Kills galilar",
+    "total_kills_glock": "Kills glock",
+    "total_kills_hkp2000": "Kills hkp2000",
+    "total_kills_m249": "Kills m249",
+    "total_kills_m4a1": "Kills m4a1",
+    "total_kills_mac10": "Kills mac10",
+    "total_kills_mag7": "Kills mag7",
+    "total_kills_mp7": "Kills mp7",
+    "total_kills_mp9": "Kills mp9",
+    "total_kills_negev": "Kills negev",
+    "total_kills_nova": "Kills nova",
+    "total_kills_p250": "Kills p250",
+    "total_kills_p90": "Kills p90",
+    "total_kills_sawedoff": "Kills sawedoff",
+    "total_kills_scar20": "Kills scar20",
+    "total_kills_sg556": "Kills sg556",
+    "total_kills_ssg08": "Kills ssg08",
+    "total_kills_tec9": "Kills tec9",
+    "total_kills_ump45": "Kills ump45",
+    "total_kills_xm1014": "Kills xm1014",
+    #-
+    "total_shots_ak47": "Schüsse ak47",
+    "total_shots_aug": "Schüsse aug",
+    "total_shots_awp": "Schüsse awp",
+    "total_shots_bizon": "Schüsse bozon",
+    "total_shots_deagle": "Schüsse deagle",
+    "total_shots_elite": "Schüsse elite",
+    "total_shots_famas": "Schüsse famas",
+    "total_shots_fiveseven": "Schüsse fiveseven",
+    "total_shots_g3sg1": "Schüsse g3sg1",
+    "total_shots_galilar": "Schüsse galilar",
+    "total_shots_glock": "Schüsse glock",
+    "total_shots_hkp2000": "Schüsse hkp2000",
+    "total_shots_m249": "Schüsse m249",
+    "total_shots_m4a1": "Schüsse m4a1",
+    "total_shots_mac10": "Schüsse mac10",
+    "total_shots_mag7": "Schüsse mag7",
+    "total_shots_mp7": "Schüsse mp7",
+    "total_shots_mp9": "Schüsse mp9",
+    "total_shots_negev": "Schüsse negev",
+    "total_shots_nova": "Schüsse nova",
+    "total_shots_p250": "Schüsse p250",
+    "total_shots_p90": "Schüsse p90",
+    "total_shots_sawedoff": "Schüsse sawedoff",
+    "total_shots_scar20": "Schüsse scar20",
+    "total_shots_sg556": "Schüsse sg556",
+    "total_shots_ssg08": "Schüsse ssg08",
+    "total_shots_tec9": "Schüsse tec9",
+    "total_shots_ump45": "Schüsse ump45",
+    "total_shots_xm1014": "Schüsse xm1014",
+    #-
+    "total_kills_hegrenade": "Kills Handgranate",
+    "total_kills_knife_fight": "Kills Messerkampf",
+    "total_kills_knife": "Kills Messer",
+    "total_kills_molotov": "Kills Molotov",
+    "total_kills_decoy": "Kills Köder/Fale",
+    "total_kills_taser": "Kills Taser",
+    "total_shots_taser": "Schüsse Taser",
+    #-
+    "total_defused_bombs": "Anzahl entschäfter Bomben",
+    "total_planted_bombs": "Anzahl platzierter Bomben",
+    "total_rescued_hostages": "Anzahl geretteter Geiseln",
+    #-
+    "total_rounds_map_ar_baggage": "Runden auf der Map baggage",
+    "total_rounds_map_ar_monastery": "Runden auf der Map monastery",
+    "total_rounds_map_ar_shoots": "Runden auf der Map shoots",
+    "total_rounds_map_cs_assault": "Runden auf der Map assault",
+    "total_rounds_map_cs_italy": "Runden auf der Map italy",
+    "total_rounds_map_cs_militia": "Runden auf der Map militia",
+    "total_rounds_map_cs_office": "Runden auf der Map office",
+    "total_rounds_map_de_aztec": "Runden auf der Map aztec",
+    "total_rounds_map_de_cbble": "Runden auf der Map cbble",
+    "total_rounds_map_de_dust": "Runden auf der Map dust",
+    "total_rounds_map_de_dust2": "Runden auf der Map dust2",
+    "total_rounds_map_de_inferno": "Runden auf der Map inferno",
+    "total_rounds_map_de_lake": "Runden auf der Map lake",
+    "total_rounds_map_de_nuke": "Runden auf der Map nuke",
+    "total_rounds_map_de_safehouse": "Runden auf der Map safehouse",
+    "total_rounds_map_de_stmarc": "Runden auf der Map stmarc",
+    "total_rounds_map_de_sugarcane": "Runden auf der Map sugarcane",
+    "total_rounds_map_de_train": "Runden auf der Map train",
+    "total_rounds_map_de_vertigo": "Runden auf der Map vertigo",
+    # ---
     "stat_player_deaths": "Anzahl der Tode",
     "stat_player_sharkKills": "Anzahl der getöteten Haie",
     "stat_player_birdKills": "Anzahl der getöteten Vögel",
@@ -165,6 +411,7 @@ STAT_LABELS = {
     "stat_player_zipline_distance": "Zurückgelegte Distanz mit der Seilrutsche (gesamt)",
     "stat_player_zipline_distanceOneGo": "Maximale Distanz mit der Seilrutsche in einem Durchgang",
     "stat_player_token_spend_tangaroa": "Ausgegebene Tokens auf Tangaroa",
+    # ---
     "STAT_ACTION_EAT": "Anzahl der Aktionen, bei denen Nahrung gegessen wurde",
     "STAT_ACTION_DRINK": "Anzahl der Aktionen, bei denen Wasser oder andere Flüssigkeiten getrunken wurden",
     "STAT_ACTION_COOK_STEAK": "Anzahl der gekochten Steaks",
@@ -181,6 +428,7 @@ STAT_LABELS = {
     "STAT_SURVIVOR_MELEE_KILL_COUNT": "Anzahl der getöteten Überlebenden mit Nahkampfwaffen",
     "STAT_SURVIVOR_HEADSHOT_COUNT": "Anzahl der Kopfschüsse auf Überlebende",
     "STAT_HEADSHOT_COUNT": "Gesamtanzahl aller Kopfschüsse",
+    # ---
     "TotalKills": "Gesamtanzahl der Kills im kompetitiven Modus",
     "TotalCaptures": "Gesamtanzahl der eroberten Ziele im kompetitiven Modus",
     "TotalMVPs": "Gesamtanzahl der MVP-Auszeichnungen im kompetitiven Modus",
@@ -1115,33 +1363,33 @@ with tabs[3]:
                 else:
                     st.subheader("🎮 **Gemeinsame Spiele mit Spielzeit**")
                     selected_game = st.selectbox("Wähle ein Spiel für weitere Statistiken:", array_games_updated["Name"].tolist())
-                    chosen_app_id = array_games_updated.loc[
-                        array_games_updated["Name"] == selected_game, "App-ID"
-                    ].values[0]
+                    
+                    chosen_app_id_comp = array_games_updated.loc[array_games_updated["Name"] == selected_game, "App-ID"].values[0]
 
                     # Gemeinsame Spiele ermitteln
                     df_1 = pd.DataFrame(games_1)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Spielzeit in Stunden"})
                     df_2 = pd.DataFrame(games_2)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Spielzeit in Stunden"})
                     
                     # Minuten in Stunden umwandeln
-                    df_1["Spielzeit in Stunden"] = df_1["Spielzeit in Stunden"] / 60
-                    df_2["Spielzeit in Stunden"] = df_2["Spielzeit in Stunden"] / 60
+                    df_1["Spielzeit in Stunden"] = (df_1["Spielzeit in Stunden"] / 60).round(2)
+                    df_2["Spielzeit in Stunden"] = (df_2["Spielzeit in Stunden"] / 60).round(2)
                     
                     # Gemeinsame Spiele filtern
-                    common_games = pd.merge(df_1, df_2, on=["appid", "Name"], suffixes=("_Player1", "_Player2"))
-                    common_games_withplaytime = common_games[(common_games["Spielzeit in Stunden_Player1"] > 0) & (common_games["Spielzeit in Stunden_Player2"] > 0)]
+                    common_games = pd.merge(df_1, df_2, on=["appid", "Name"], suffixes=(" Spieler 1", " Spieler 2"))
+                    common_games_withplaytime = common_games[(common_games["Spielzeit in Stunden Spieler 1"] > 0) & (common_games["Spielzeit in Stunden Spieler 2"] > 0)]
+                    common_games_withplaytime.reset_index(drop=True, inplace=True)
                     if not common_games.empty:
                      # Spalten für Tabelle (links) und Grafik (rechts)
                         col1, col2 = st.columns([1.3, 1.7])  # Verhältnis: 1.5 : 1
 
                         with col1:  # **Tabelle links**
-                            st.dataframe(common_games_withplaytime[["Name", "Spielzeit in Stunden_Player1", "Spielzeit in Stunden_Player2"]].sort_values(by="Spielzeit in Stunden_Player1", ascending=False))
+                            st.dataframe(common_games_withplaytime[["Name", "Spielzeit in Stunden Spieler 1", "Spielzeit in Stunden Spieler 2"]].sort_values(by="Spielzeit in Stunden Spieler 1", ascending=False), hide_index=True, use_container_width=True)
 
                         with col2:  # **Graphik rechts**
                             # Balkendiagramm mit den Top 5 gemeinsamen Spielen nach Spielzeit, wenn beide Spieler gespielt haben
-                            top_5_games = common_games_withplaytime.sort_values(by="Spielzeit in Stunden_Player1", ascending=False).head(5)
+                            top_5_games = common_games_withplaytime.sort_values(by="Spielzeit in Stunden Spieler 1", ascending=False).head(5)
 
-                            fig, ax = plt.subplots(figsize=(5, 1.5))  # Kleinere Grafik für Spaltenlayout
+                            fig, ax = plt.subplots(figsize=(5, 2))  # Kleinere Grafik für Spaltenlayout
                             # Hintergrund entfernen
                             fig.patch.set_visible(False)  # Entfernt gesamten Hintergrund
                             ax.set_facecolor("none")  # Entfernt Achsen-Hintergrund
@@ -1152,16 +1400,16 @@ with tabs[3]:
                                                 
                             bar_width = 0.3
                             indices = range(len(top_5_games))
-                            ax.bar([i - bar_width/2 for i in indices], top_5_games["Spielzeit in Stunden_Player1"], width=bar_width, label="Spieler 1", alpha=0.7)
-                            ax.bar([i + bar_width/2 for i in indices], top_5_games["Spielzeit in Stunden_Player2"], width=bar_width, label="Spieler 2", alpha=0.7)
+                            ax.bar([i - bar_width/2 for i in indices], top_5_games["Spielzeit in Stunden Spieler 1"], width=bar_width, label="Spieler 1", alpha=0.7)
+                            ax.bar([i + bar_width/2 for i in indices], top_5_games["Spielzeit in Stunden Spieler 2"], width=bar_width, label="Spieler 2", alpha=0.7)
                             # Spielnamen mit Zeilenumbruch
                             wrapped_labels = wrap_labels(top_5_games["Name"], width=15)  # Breite des Umbruchs anpassen
                            
                             ax.set_xticks(indices)
                             ax.set_xticklabels(wrapped_labels, rotation=0, ha="center", fontsize=6)
                             ax.set_ylabel("Spielzeit (Stunden)", fontsize=6)
-                            ax.tick_params(axis='both', labelsize=5)
-                            ax.set_title("Top 5 gemeinsame Spiele nach Spielzeit (Spieler 1)", fontsize=8)
+                            ax.tick_params(axis='both',colors="white", labelsize=5)
+                            ax.set_title("Top 5 gemeinsame Spiele nach Spielzeit (Spieler 1)", color="white", fontsize=8)
                             ax.legend(fontsize=6)
 
                             st.pyplot(fig)
@@ -1172,41 +1420,963 @@ with tabs[3]:
         #Abfrage gemeinsamer Spieldaten und Vergleich
         # Fehlerprüfung für Benutzerinfos
         st.subheader("🔍 **In-Game-Statistiken**")
-
-        user_game_data_1 = user_game.fetch_in_game_data(API_KEY, steam_id_1, chosen_app_id)
-        user_game_data_2 = user_game.fetch_in_game_data(API_KEY, steam_id_2, chosen_app_id)
         
-        if user_game_data_1.get("status") and user_game_data_2.get("status")  == "success":
-            # Liste mit Statistik-Dict kommt zurück
+        def custom_metric(label, value):
+                            st.markdown(
+                                f"""
+                                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                    <div style="text-align: left; width: 100%; font-size: 16px; font-weight: normal; color: #6c757d;">{label}</div>
+                                    <div style="font-size: 28px; font-weight: bold; color: white;">{value}</div>
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
+                            )
+
+        user_game_data_1 = user_game.fetch_in_game_data(API_KEY, steam_id_1,  chosen_app_id_comp)
+        user_game_data_2 = user_game.fetch_in_game_data(API_KEY, steam_id_2,  chosen_app_id_comp)
+        
+         # Prüfen, ob beide Spieler gültige Daten haben
+        if user_game_data_1.get("status") == "success" and user_game_data_2.get("status") == "success":
             stats_list_1 = user_game_data_1.get("stats", [])
             stats_list_2 = user_game_data_2.get("stats", [])
 
-            # Ermitteln, ob wir für die gewählte App-ID bestimmte Statistiken darstellen wollen
-            relevant_stats = STAT_MAPPING.get(str(chosen_app_id), [])
+            # Relevante Statistiken für die gewählte App-ID aus STAT_MAPPING holen
+            relevant_stats = set(STAT_MAPPING.get(str( chosen_app_id_comp), []))
 
-            # Nur die Einträge aus stats_list filtern, die in 'relevant_stats' vorkommen
-            filtered_stats_1 = {stat["name"]: stat for stat in stats_list_1 if stat["name"] in relevant_stats}
-            filtered_stats_2 = {stat["name"]: stat for stat in stats_list_2 if stat["name"] in relevant_stats}
+            # Statistiken für beide Spieler filtern
+            filtered_stats_1 = {stat["name"]: stat["value"] for stat in stats_list_1 if stat["name"] in relevant_stats}
+            filtered_stats_2 = {stat["name"]: stat["value"] for stat in stats_list_2 if stat["name"] in relevant_stats}
 
-            # Gemeinsame Statistiken finden
+            # Nur gemeinsame Statistiken behalten
             common_stat_names = set(filtered_stats_1.keys()) & set(filtered_stats_2.keys())
 
-            # Nur die gemeinsamen Statistiken behalten
-            final_stats_1 = [filtered_stats_1[name] for name in common_stat_names]
-            final_stats_2 = [filtered_stats_2[name] for name in common_stat_names]
+            if common_stat_names:
+                if  chosen_app_id_comp == 730:            
+                    with st.expander("Zeige allgemeine Spielstatistiken"):
+                        # DataFrame für übersichtliche Anzeige in einer Tabelle erstellen
+                        df_stats = pd.DataFrame(
+                            {
+                                "Statistik": list(common_stat_names),
+                                "Spieler 1": [filtered_stats_1[name] for name in common_stat_names],
+                                "Spieler 2": [filtered_stats_2[name] for name in common_stat_names],
+                            }
+                        )
+                        #st.write("### Zeige allgemeine Spielstatistiken")
+                        #st.dataframe(df_stats)
+                        # KD-Ratio berechnen und anzeigen
+                        deaths_1 = filtered_stats_1.get("total_deaths", 0)
+                        kills_1 = filtered_stats_1.get("total_kills", 0)
+                        kd_ratio_1 = kills_1 / deaths_1 if deaths_1 > 0 else float("inf")
 
-            if len(filtered_stats) > 0 and chosen_app_id == 730:
-                # Dictionary aus den gefilterten Statistiken, um besser darauf zugreifen zu können 
-                stats_dict = {stat["name"]: stat["value"] for stat in filtered_stats}
+                        deaths_2 = filtered_stats_2.get("total_deaths", 0)
+                        kills_2 = filtered_stats_2.get("total_kills", 0)
+                        kd_ratio_2 = kills_2 / deaths_2 if deaths_2 > 0 else float("inf")
 
-                # Key-Value-Format ausgeben
-                st.write("**Statistiken**")
+                        # Spielzeit in Stunden umrechnen
+                        time_played_hours_1 = filtered_stats_1.get("total_time_played", 0) / 3600
+                        time_played_hours_2 = filtered_stats_2.get("total_time_played", 0) / 3600
 
+                        # Weitere relevante Statistiken abrufen
+                        total_wins_1 = filtered_stats_1.get("total_wins", 0)
+                        total_wins_2 = filtered_stats_2.get("total_wins", 0)
 
+                        total_rounds_1 = filtered_stats_1.get("total_rounds_played", 0)
+                        total_rounds_2 = filtered_stats_2.get("total_rounds_played", 0)
 
+                        # Metriken für Spieler 1 und 2 nebeneinander anzeigen
+                        col1, col2, col3 = st.columns(3)
+                        with col1:
+                            st.metric("Abschüsse (Spieler 1)", f"{kills_1:,}".replace(",", "."))
+                            st.metric("Tode (Spieler 1)", f"{deaths_1:,}".replace(",", "."))
+                            st.metric("KD-Ratio (Spieler 1)", f"{kd_ratio_1:.2f}".replace(".", ","))
+                            st.metric("Spielzeit [h] (Spieler 1)", f"{time_played_hours_1:,.0f}".replace(",", "."))
+                            st.metric("Siege gesamt (Spieler 1)", f"{total_wins_1:,}".replace(",", "."))
+                            st.metric("Gespielte Runden (Spieler 1)", f"{total_rounds_1:,}".replace(",", "."))
 
+                        with col2:
+                            st.write("")  # Platzhalter für Abstand
+                        
+                        with col3:
+                            st.metric("Abschüsse (Spieler 2)", f"{kills_2:,}".replace(",", "."))
+                            st.metric("Tode (Spieler 2)", f"{deaths_2:,}".replace(",", "."))
+                            st.metric("KD-Ratio (Spieler 2)", f"{kd_ratio_2:.2f}".replace(".", ","))
+                            st.metric("Spielzeit [h] (Spieler 2)", f"{time_played_hours_2:,.0f}".replace(",", "."))
+                            st.metric("Siege gesamt (Spieler 2)", f"{total_wins_2:,}".replace(",", "."))
+                            st.metric("Gespielte Runden (Spieler 2)", f"{total_rounds_2:,}".replace(",", "."))
+                    
+                    with st.expander("Zeige Match-Statistiken"):
+                        # Matchdaten für Spieler 1
+                        matches_played_1 = filtered_stats_1.get("total_matches_played", 0)
+                        matches_won_1 = filtered_stats_1.get("total_matches_won", 0)
+                        win_ratio_1 = (matches_won_1 / matches_played_1 * 100) if matches_played_1 > 0 else float("inf")
 
+                        # Matchdaten für Spieler 2
+                        matches_played_2 = filtered_stats_2.get("total_matches_played", 0)
+                        matches_won_2 = filtered_stats_2.get("total_matches_won", 0)
+                        win_ratio_2 = (matches_won_2 / matches_played_2 * 100) if matches_played_2 > 0 else float("inf")
 
+                        # GG-Daten für Spieler 1
+                        gg_played_1 = filtered_stats_1.get("total_gg_matches_played", 0)
+                        gg_won_1 = filtered_stats_1.get("total_gg_matches_won", 0)
+                        gg_ratio_1 = (gg_won_1 / gg_played_1 * 100) if gg_played_1 > 0 else float("inf")
+
+                        # GG-Daten für Spieler 2
+                        gg_played_2 = filtered_stats_2.get("total_gg_matches_played", 0)
+                        gg_won_2 = filtered_stats_2.get("total_gg_matches_won", 0)
+                        gg_ratio_2 = (gg_won_2 / gg_played_2 * 100) if gg_played_2 > 0 else float("inf")
+
+                        # Match-Statistiken für beide Spieler nebeneinander anzeigen
+                        st.write("### Vergleich der Match-Statistiken")
+
+                        col1, col2, col3 = st.columns(3)
+                        with col1:
+                            st.subheader("Spieler 1")
+                            custom_metric("Gespielte Matches", f"{matches_played_1:,}".replace(",", "."))
+                            custom_metric("Gewonnene Matches", f"{matches_won_1:,}".replace(",", "."))
+                            custom_metric("Siegesquote", f"{win_ratio_1:.1f}".replace(".", ",") + " %")
+
+                            custom_metric("Gespielte GG-Matches", f"{gg_played_1:,}".replace(",", "."))
+                            custom_metric("Gewonnene GG-Matches", f"{gg_won_1:,}".replace(",", "."))
+                            custom_metric("GG-Siegesquote", f"{gg_ratio_1:.1f}".replace(".", ",") + " %")
+
+                        with col2:
+                            st.write("")  # Platzhalter für Abstand
+
+                        with col3:
+                            st.subheader("Spieler 2")
+                            custom_metric("Gespielte Matches", f"{matches_played_2:,}".replace(",", "."))
+                            custom_metric("Gewonnene Matches", f"{matches_won_2:,}".replace(",", "."))
+                            custom_metric("Siegesquote", f"{win_ratio_2:.1f}".replace(".", ",") + " %")
+
+                            custom_metric("Gespielte GG-Matches", f"{gg_played_2:,}".replace(",", "."))
+                            custom_metric("Gewonnene GG-Matches", f"{gg_won_2:,}".replace(",", "."))
+                            custom_metric("GG-Siegesquote", f"{gg_ratio_2:.1f}".replace(".", ",") + " %")
+
+                        # Zusätzlicher Platz durch eine Leerzeile und Padding für bessere Darstellung
+                        st.markdown(
+                            """
+                            <style>
+                            .st-expander .stContainer {
+                                padding-bottom: 20px; /* Abstand am unteren Rand */
+                            }
+                            </style>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+                    with st.expander("Zeige Treffer- und Headshot-Statistiken"):
+                        # Schussdaten für Spieler 1
+                        shots_fired_1 = filtered_stats_1.get("total_shots_fired", 0)
+                        shots_hit_1 = filtered_stats_1.get("total_shots_hit", 0)
+                        headshots_1 = filtered_stats_1.get("total_kills_headshot", 0)
+                        shots_missed_1 = shots_fired_1 - shots_hit_1  
+
+                        accuracy_1 = (shots_hit_1 / shots_fired_1 * 100) if shots_fired_1 > 0 else 0
+                        headshot_ratio_1 = (headshots_1 / shots_hit_1 * 100) if shots_hit_1 > 0 else 0
+
+                        # Schussdaten für Spieler 2
+                        shots_fired_2 = filtered_stats_2.get("total_shots_fired", 0)
+                        shots_hit_2 = filtered_stats_2.get("total_shots_hit", 0)
+                        headshots_2 = filtered_stats_2.get("total_kills_headshot", 0)
+                        shots_missed_2 = shots_fired_2 - shots_hit_2  
+
+                        accuracy_2 = (shots_hit_2 / shots_fired_2 * 100) if shots_fired_2 > 0 else 0
+                        headshot_ratio_2 = (headshots_2 / shots_hit_2 * 100) if shots_hit_2 > 0 else 0
+
+                        # Anzeige der wichtigsten Schussstatistiken für beide Spieler
+                        st.write("### Vergleich der Treffer- und Headshot-Statistiken")
+
+                        col1, col2, col3, col4, col5, col6 = st.columns(6)
+                        with col1:
+                            st.subheader("Spieler 1")
+                            custom_metric("Abgefeuerte Schüsse", f"{shots_fired_1:,}".replace(",", "."))
+                            #custom_metric("Treffer", f"{shots_hit_1:,}".replace(",", "."))
+                            #custom_metric("Headshots", f"{headshots_1:,}".replace(",", "."))
+                            #custom_metric("Treffgenauigkeit", f"{accuracy_1:.1f}".replace(".", ",") + " %")
+                            #custom_metric("Headshot-Rate", f"{headshot_ratio_1:.1f}".replace(".", ",") + " %")
+
+                        with col4:
+                            st.subheader("Spieler 2")
+                            custom_metric("Abgefeuerte Schüsse", f"{shots_fired_2:,}".replace(",", "."))
+                            #custom_metric("Treffer", f"{shots_hit_2:,}".replace(",", "."))
+                            #custom_metric("Headshots", f"{headshots_2:,}".replace(",", "."))
+                            #custom_metric("Treffgenauigkeit", f"{accuracy_2:.1f}".replace(".", ",") + " %")
+                            #custom_metric("Headshot-Rate", f"{headshot_ratio_2:.1f}".replace(".", ",") + " %")
+
+                        # Grafiken für beide Spieler nebeneinander
+                        col7, col8 = st.columns(2)
+                        
+                        figsize = (2, 2)  # Einheitliche Diagrammgröße
+                        dpi = 20
+                        plt.rcParams['figure.facecolor'] = '#0E1117'  # Hintergrundfarbe Schwarz
+
+                        # Spieler 1 - Treffer vs. Verfehlt Diagramm
+                        with col7:
+                            #st.subheader("Spieler 1 - Trefferverhältnis")
+                            labels = ["Treffer", "Verfehlt"]
+                            sizes = [shots_hit_1, shots_missed_1]
+                            colors = ["#8d2c91", "#68D2FA"]
+                            explode = (0.1, 0)
+
+                            fig, ax = plt.subplots(figsize=figsize, dpi=dpi)
+                            ax.set_facecolor("#0E1117")
+                            ax.pie(
+                                sizes,
+                                explode=explode,
+                                labels=labels,
+                                colors=colors,
+                                autopct=lambda p: f'{p:.1f}%\n{int(sizes[int(p > 50)]):,.0f}'.replace(',', '.'),
+                                startangle=140,
+                                textprops={'color': "white", 'fontsize': 6},
+                            )
+                            ax.axis("equal")  
+                            st.pyplot(fig)
+
+                        with col8:
+                            #st.subheader("Spieler 2 - Trefferverhältnis")
+                            labels_2 = ["Treffer", "Verfehlt"]
+                            sizes_2 = [shots_hit_2, shots_missed_2]
+                            colors_2 = ["#8d2c91", "#68D2FA"]
+                            explode_2 = (0.1, 0)
+
+                            fig2, ax2 = plt.subplots(figsize=figsize, dpi=dpi)
+                            ax2.set_facecolor("#0E1117")
+                            ax2.pie(
+                                sizes_2,
+                                explode=explode_2,
+                                labels=labels_2,
+                                colors=colors_2,
+                                autopct=lambda p: f'{p:.1f}%\n{int(sizes_2[int(p > 50)]):,.0f}'.replace(',', '.'),
+                                startangle=140,
+                                textprops={'color': "white", 'fontsize': 6},
+                            )
+                            ax2.axis("equal")
+                            st.pyplot(fig2)
+
+                        # Headshot-Verteilung für beide Spieler nebeneinander
+                        col9, col10 = st.columns(2)
+
+                        with col9:
+                            st.subheader("Spieler 1 - Headshot-Rate")
+                            headshot_labels = ["Headshots", "Andere Treffer"]
+                            headshot_sizes = [headshots_1, shots_hit_1 - headshots_1]
+                            headshot_colors = ["#b66bb2", "#d4a3d9"]
+                            explode_headshots = (0.1, 0)
+
+                            fig3, ax3 = plt.subplots(figsize=figsize, dpi=dpi)
+                            ax3.set_facecolor("#0E1117")
+                            ax3.pie(
+                                headshot_sizes,
+                                explode=explode_headshots,
+                                labels=headshot_labels,
+                                colors=headshot_colors,
+                                autopct=lambda p: f'{p:.1f}%\n{int(headshot_sizes[int(p > 50)]):,.0f}'.replace(',', '.'),
+                                startangle=140,
+                                textprops={'color': "white", 'fontsize': 6},
+                            )
+                            ax3.axis("equal")
+                            st.pyplot(fig3)
+
+                        with col10:
+                            st.subheader("Spieler 2 - Headshot-Rate")
+                            headshot_labels_2 = ["Headshots", "Andere Treffer"]
+                            headshot_sizes_2 = [headshots_2, shots_hit_2 - headshots_2]
+                            headshot_colors_2 = ["#b66bb2", "#d4a3d9"]
+                            explode_headshots_2 = (0.1, 0)
+
+                            fig4, ax4 = plt.subplots(figsize=figsize, dpi=dpi)
+                            ax4.set_facecolor("#0E1117")
+                            ax4.pie(
+                                headshot_sizes_2,
+                                explode=explode_headshots_2,
+                                labels=headshot_labels_2,
+                                colors=headshot_colors_2,
+                                autopct=lambda p: f'{p:.1f}%\n{int(headshot_sizes_2[int(p > 50)]):,.0f}'.replace(',', '.'),
+                                startangle=140,
+                                textprops={'color': "white", 'fontsize': 6},
+                            )
+                            ax4.axis("equal")
+                            st.pyplot(fig4)
+
+                        # Abstand zur nächsten Sektion
+                        st.markdown(
+                            """
+                            <style>
+                            .st-expander .stContainer {
+                                padding-bottom: 20px; 
+                            }
+                            </style>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+
+                    with st.expander("Waffen-Statistiken"):
+
+                        # Liste aller Waffen
+                        weapons = [
+                            "ak47", "aug", "awp", "bizon", "deagle", "elite", "famas", "fiveseven", "g3sg1", "galilar",
+                            "glock", "hkp2000", "m249", "m4a1", "mac10", "mag7", "mp7", "mp9", "negev", "nova",
+                            "p250", "p90", "sawedoff", "scar20", "sg556", "ssg08", "tec9", "ump45", "xm1014"
+                        ]
+
+                        # Listen für die Ergebnisse der Spieler
+                        weapon_stats_1, weapon_stats_2 = [], []
+
+                        # Daten für beide Spieler berechnen
+                        for weapon in weapons:
+                            # Spieler 1
+                            hits_1 = filtered_stats_1.get(f"total_hits_{weapon}", 0)
+                            kills_1 = filtered_stats_1.get(f"total_kills_{weapon}", 0)
+                            shots_1 = filtered_stats_1.get(f"total_shots_{weapon}", 1)  # Division durch 0 vermeiden
+                            accuracy_1 = hits_1 / shots_1  
+                            efficiency_1 = kills_1 / shots_1
+                            weapon_stats_1.append([weapon, hits_1, kills_1, shots_1, accuracy_1, efficiency_1])
+
+                            # Spieler 2
+                            hits_2 = filtered_stats_2.get(f"total_hits_{weapon}", 0)
+                            kills_2 = filtered_stats_2.get(f"total_kills_{weapon}", 0)
+                            shots_2 = filtered_stats_2.get(f"total_shots_{weapon}", 1)  # Division durch 0 vermeiden
+                            accuracy_2 = hits_2 / shots_2  
+                            efficiency_2 = kills_2 / shots_2
+                            weapon_stats_2.append([weapon, hits_2, kills_2, shots_2, accuracy_2, efficiency_2])
+
+                        # Nach Efficiency und Accuracy sortieren (hohe Werte zuerst)
+                        sorted_weapon_stats_1 = sorted(weapon_stats_1, key=lambda x: (x[5], x[4]), reverse=True)
+                        sorted_weapon_stats_2 = sorted(weapon_stats_2, key=lambda x: (x[5], x[4]), reverse=True)
+
+                        # Top 5 Waffen für beide Spieler
+                        top_5_weapons_1 = sorted_weapon_stats_1[:5]
+                        top_5_weapons_2 = sorted_weapon_stats_2[:5]
+
+                        # In DataFrame umwandeln
+                        df_top5_1 = pd.DataFrame(top_5_weapons_1, columns=["Weapon", "Hits", "Kills", "Shots", "Accuracy", "Efficiency"])
+                        df_top5_2 = pd.DataFrame(top_5_weapons_2, columns=["Weapon", "Hits", "Kills", "Shots", "Accuracy", "Efficiency"])
+
+                        # Werte formatieren
+                        for df in [df_top5_1, df_top5_2]:
+                            df["Hits"] = df["Hits"].apply(lambda x: f"{x:,}".replace(",", "."))
+                            df["Kills"] = df["Kills"].apply(lambda x: f"{x:,}".replace(",", "."))
+                            df["Shots"] = df["Shots"].apply(lambda x: f"{x:,}".replace(",", "."))
+                            df["Accuracy"] = df["Accuracy"].apply(lambda x: f"{x * 100:.1f}%")
+                            df["Efficiency"] = df["Efficiency"].apply(lambda x: f"{x * 100:.1f}%")
+
+                        # Waffen-Statistiken für beide Spieler nebeneinander anzeigen
+                        col1, col2 = st.columns(2)
+                        
+                        with col1:
+                            st.subheader("Spieler 1 - Top 5 Waffen")
+                            st.dataframe(df_top5_1, use_container_width=True)
+
+                        with col2:
+                            st.subheader("Spieler 2 - Top 5 Waffen")
+                            st.dataframe(df_top5_2, use_container_width=True)
+
+                        # Radar Chart (Accuracy & Efficiency) für beide Spieler
+                        labels_1 = [w[0] for w in sorted_weapon_stats_1[:10]]  # Top 10 Waffen für Radar Chart
+                        accuracy_values_1 = [w[4] for w in sorted_weapon_stats_1[:10]]
+                        efficiency_values_1 = [w[5] for w in sorted_weapon_stats_1[:10]]
+
+                        labels_2 = [w[0] for w in sorted_weapon_stats_2[:10]]  
+                        accuracy_values_2 = [w[4] for w in sorted_weapon_stats_2[:10]]
+                        efficiency_values_2 = [w[5] for w in sorted_weapon_stats_2[:10]]
+
+                        st.write("Accuracy = Hits / Shots")
+                        st.write("Efficiency = Kills / Shots")
+
+                        col3, col4 = st.columns(2)
+                        with col3:
+                            st.subheader("Spieler 1 - Accuracy vs Efficiency")
+                            fig1 = go.Figure()
+                            fig1.add_trace(go.Scatterpolar(
+                                r=accuracy_values_1 + [accuracy_values_1[0]],  
+                                theta=labels_1 + [labels_1[0]],
+                                fill='toself',
+                                name='Accuracy'
+                            ))
+                            fig1.add_trace(go.Scatterpolar(
+                                r=efficiency_values_1 + [efficiency_values_1[0]],  
+                                theta=labels_1 + [labels_1[0]],
+                                fill='toself',
+                                name='Efficiency'
+                            ))
+                            fig1.update_layout(
+                                polar=dict(
+                                    radialaxis=dict(visible=True, range=[0, max(max(accuracy_values_1), max(efficiency_values_1))]),
+                                ),
+                                showlegend=True,
+                                autosize=True
+                            )
+                            st.plotly_chart(fig1, use_container_width=True, key="radar_chart_1")
+
+                        with col4:
+                            st.subheader("Spieler 2 - Accuracy vs Efficiency")
+                            fig2 = go.Figure()
+                            fig2.add_trace(go.Scatterpolar(
+                                r=accuracy_values_2 + [accuracy_values_2[0]],  
+                                theta=labels_2 + [labels_2[0]],
+                                fill='toself',
+                                name='Accuracy'
+                            ))
+                            fig2.add_trace(go.Scatterpolar(
+                                r=efficiency_values_2 + [efficiency_values_2[0]],  
+                                theta=labels_2 + [labels_2[0]],
+                                fill='toself',
+                                name='Efficiency'
+                            ))
+                            fig2.update_layout(
+                                polar=dict(
+                                    radialaxis=dict(visible=True, range=[0, max(max(accuracy_values_2), max(efficiency_values_2))]),
+                                ),
+                                showlegend=True,
+                                autosize=True
+                            )
+                            st.plotly_chart(fig2, use_container_width=True, key="radar_chart_2")
+
+                    with st.expander("Sonstige-Statistiken"):
+                        # Statistiken für Spieler 1
+                        dbombs_1 = filtered_stats_1.get("total_defused_bombs", 0)
+                        pbombs_1 = filtered_stats_1.get("total_planted_bombs", 0)
+                        hostages_1 = filtered_stats_1.get("total_rescued_hostages", 0)
+
+                        # Statistiken für Spieler 2
+                        dbombs_2 = filtered_stats_2.get("total_defused_bombs", 0)
+                        pbombs_2 = filtered_stats_2.get("total_planted_bombs", 0)
+                        hostages_2 = filtered_stats_2.get("total_rescued_hostages", 0)
+
+                        # Vergleichsanzeige in zwei Spalten
+                        col1, col2 = st.columns(2)
+
+                        with col1:
+                            st.subheader("Spieler 1")
+                            custom_metric("Entschärfte Bomben", f"{dbombs_1:,}".replace(",", "."))
+                            custom_metric("Platzierte Bomben", f"{pbombs_1:,}".replace(",", "."))
+                            custom_metric("Gerettete Geiseln", f"{hostages_1:,}".replace(",", "."))
+
+                        with col2:
+                            st.subheader("Spieler 2")
+                            custom_metric("Entschärfte Bomben", f"{dbombs_2:,}".replace(",", "."))
+                            custom_metric("Platzierte Bomben", f"{pbombs_2:,}".replace(",", "."))
+                            custom_metric("Gerettete Geiseln", f"{hostages_2:,}".replace(",", "."))
+
+                        # Abstand zur nächsten Sektion für bessere Darstellung
+                        st.markdown(
+                            """
+                            <style>
+                            .st-expander .stContainer {
+                                padding-bottom: 20px; 
+                            }
+                            </style>
+                            """,
+                            unsafe_allow_html=True,
+                        )
+
+                    with st.expander("Map-Statistik"):
+
+                        # Dictionary mit den richtigen Keys für jede Map
+                        map_keys = {
+                            "baggage": "total_rounds_map_ar_baggage",
+                            "monastery": "total_rounds_map_ar_monastery",
+                            "shoots": "total_rounds_map_ar_shoots",
+                            "assault": "total_rounds_map_cs_assault",
+                            "italy": "total_rounds_map_cs_italy",
+                            "militia": "total_rounds_map_cs_militia",
+                            "office": "total_rounds_map_cs_office",
+                            "aztec": "total_rounds_map_de_aztec",
+                            "cbble": "total_rounds_map_de_cbble",
+                            "dust": "total_rounds_map_de_dust",
+                            "dust2": "total_rounds_map_de_dust2",
+                            "inferno": "total_rounds_map_de_inferno",
+                            "lake": "total_rounds_map_de_lake",
+                            "nuke": "total_rounds_map_de_nuke",
+                            "safehouse": "total_rounds_map_de_safehouse",
+                            "stmarc": "total_rounds_map_de_stmarc",
+                            "sugarcane": "total_rounds_map_de_sugarcane",
+                            "train": "total_rounds_map_de_train",
+                            "vertigo": "total_rounds_map_de_vertigo"
+                        }
+
+                        # Listen für die Ergebnisse beider Spieler
+                        map_stats_1, map_stats_2 = [], []
+
+                        for map_name, key in map_keys.items():
+                            # Spieler 1
+                            rounds_1 = filtered_stats_1.get(key, 0)
+                            map_stats_1.append([map_name, rounds_1])
+
+                            # Spieler 2
+                            rounds_2 = filtered_stats_2.get(key, 0)
+                            map_stats_2.append([map_name, rounds_2])
+
+                        # Sortierung nach gespielten Runden (Spieler 1)
+                        sorted_map_stats_1 = sorted(map_stats_1, key=lambda x: x[1], reverse=True)[:10]
+                        sorted_map_stats_2 = {m[0]: m[1] for m in map_stats_2}  # Zu Dict für schnelleren Zugriff
+
+                        # Listen für Diagramm-Daten
+                        map_names = [x[0] for x in sorted_map_stats_1]
+                        rounds_played_1 = [x[1] for x in sorted_map_stats_1]
+                        rounds_played_2 = [sorted_map_stats_2.get(map_name, 0) for map_name in map_names]  # Entsprechende Werte für Spieler 2 holen
+
+                        # Matplotlib Diagramm erstellen
+                        fig, ax = plt.subplots(figsize=(3, 2))
+
+                        # Hintergrundfarbe setzen
+                        fig.patch.set_facecolor("#0E1117")
+                        ax.set_facecolor("#0E1117")
+
+                        # Breite der Balken
+                        bar_width = 0.4
+                        fontsize = 4
+                        indices = np.arange(len(map_names))  # Positionen auf der Y-Achse
+
+                        # Balkendiagramm für beide Spieler erstellen
+                        bars1 = ax.barh(indices - bar_width/2, rounds_played_1, bar_width, label="Spieler 1", color="#8d2c91")
+                        bars2 = ax.barh(indices + bar_width/2, rounds_played_2, bar_width, label="Spieler 2", color="#68D2FA")
+
+                        # X-Achse erweitern, damit die Zahlen weiter rechts stehen
+                        max_value = max(max(rounds_played_1), max(rounds_played_2)) if rounds_played_1 or rounds_played_2 else 1
+                        ax.set_xlim(0, max_value * 1.10)  # 10% extra Platz auf der X-Achse
+
+                        # Werte auf die Balken schreiben
+                        for bar, value in zip(bars1, rounds_played_1):
+                            ax.text(bar.get_width() + (max_value * 0.02), bar.get_y() + bar.get_height() / 2,
+                                    f"{value:,}".replace(",", "."), va="center", ha="left", color="white", fontsize=fontsize)
+
+                        for bar, value in zip(bars2, rounds_played_2):
+                            ax.text(bar.get_width() + (max_value * 0.02), bar.get_y() + bar.get_height() / 2,
+                                    f"{value:,}".replace(",", "."), va="center", ha="left", color="white", fontsize=fontsize)
+
+                        # Achsenbeschriftungen und Titel
+                        ax.set_xlabel("Anzahl der gespielten Runden", color="white", fontsize=6)
+                        ax.set_title("Top 10 Maps nach Anzahl der gespielten Runden", color="white", fontsize=6)
+                        # Y-Achse mit Map-Namen setzen
+                        ax.set_yticks(indices)
+                        ax.set_yticklabels(map_names, color="white", fontsize=6)
+                        # Achsenwerte in Weiß setzen
+                        ax.tick_params(axis="x", colors="white", labelsize=fontsize)
+                        ax.tick_params(axis="y", colors="white", labelsize=fontsize)
+                        # Achsen invertieren für bessere Lesbarkeit
+                        ax.invert_yaxis()
+                        # X-Achse formatieren
+                        ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}".replace(",", ".")))
+                        # Rahmen um das Diagramm entfernen
+                        ax.spines["top"].set_visible(False)
+                        ax.spines["right"].set_visible(False)
+                        ax.spines["left"].set_visible(False)
+                        ax.spines["bottom"].set_visible(False)
+                        # Legende in der oberen rechten Ecke
+                        ax.legend(loc="center right", facecolor="#0E1117", edgecolor="white", fontsize=fontsize)
+                        st.pyplot(fig)
+
+                elif  chosen_app_id_comp == 648800: #Raft
+                                        
+                    fontsize = 6
+                    with st.expander("Dunkle Statistik"):
+
+                        # Todeszahlen für beide Spieler abrufen
+                        deaths_1 = filtered_stats_1.get("stat_player_deaths", 0)
+                        deaths_2 = filtered_stats_2.get("stat_player_deaths", 0)
+
+                        col1, col2 = st.columns(2)
+
+                        with col1:
+                            st.subheader("Spieler 1")
+                            custom_metric("Tode", f"{deaths_1:,}".replace(",", "."))
+
+                        with col2:
+                            st.subheader("Spieler 2")
+                            custom_metric("Tode", f"{deaths_2:,}".replace(",", "."))
+
+                    # =======================
+                    # Tier-Statistiken für beide Spieler
+                    # =======================
+
+                    with st.expander("Statistiken Getötete Tiere"):
+
+                        # Tier-Statistiken für Spieler 1
+                        animal_kills_1 = {
+                            "Haie": filtered_stats_1.get("stat_player_sharkKills", 0),
+                            "Vögel": filtered_stats_1.get("stat_player_birdKills", 0),
+                            "Kugelfische": filtered_stats_1.get("stat_player_pufferKills", 0),
+                            "Steinwurf-Vögel": filtered_stats_1.get("stat_player_stoneBirdKills", 0),
+                            "Ratten": filtered_stats_1.get("stat_player_ratKills", 0),
+                            "Bären": filtered_stats_1.get("stat_player_bearKills", 0),
+                            "Roboter": filtered_stats_1.get("stat_player_botKills", 0),
+                            "Anglerfische": filtered_stats_1.get("stat_player_anglerFishKills", 0),
+                            "Wildschweine": filtered_stats_1.get("stat_player_boarKills", 0),
+                        }
+
+                        # Tier-Statistiken für Spieler 2
+                        animal_kills_2 = {
+                            "Haie": filtered_stats_2.get("stat_player_sharkKills", 0),
+                            "Vögel": filtered_stats_2.get("stat_player_birdKills", 0),
+                            "Kugelfische": filtered_stats_2.get("stat_player_pufferKills", 0),
+                            "Steinwurf-Vögel": filtered_stats_2.get("stat_player_stoneBirdKills", 0),
+                            "Ratten": filtered_stats_2.get("stat_player_ratKills", 0),
+                            "Bären": filtered_stats_2.get("stat_player_bearKills", 0),
+                            "Roboter": filtered_stats_2.get("stat_player_botKills", 0),
+                            "Anglerfische": filtered_stats_2.get("stat_player_anglerFishKills", 0),
+                            "Wildschweine": filtered_stats_2.get("stat_player_boarKills", 0),
+                        }
+
+                        # Daten sortieren (nach den höchsten Kills für Spieler 1)
+                        sorted_animals = sorted(animal_kills_1.keys(), key=lambda x: animal_kills_1[x], reverse=True)
+
+                        # DataFrame erstellen
+                        df_animals = pd.DataFrame({
+                            "Tierart": sorted_animals,
+                            "Spieler 1": [f"{animal_kills_1[animal]:,}".replace(",", ".") for animal in sorted_animals],
+                            "Spieler 2": [f"{animal_kills_2[animal]:,}".replace(",", ".") for animal in sorted_animals]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_animals, hide_index=True, use_container_width=True)
+
+                        # Balkendiagramm für Vergleich der Tier-Statistiken
+                        col5, col6 = st.columns([3, 2])  # Größere linke Spalte für Diagramm
+                        with col5:
+                            st.subheader("Tier-Statistik Vergleich")
+
+                            # Diagrammdaten vorbereiten
+                            animal_labels = sorted_animals
+                            kills_1 = [animal_kills_1[animal] for animal in sorted_animals]
+                            kills_2 = [animal_kills_2[animal] for animal in sorted_animals]
+
+                            # Matplotlib Diagramm erstellen
+                            fig, ax = plt.subplots(figsize=(3, 4))
+
+                            # Hintergrundfarben setzen
+                            fig.patch.set_facecolor("#0E1117")
+                            ax.set_facecolor("#0E1117")
+
+                            # Balkendiagramm mit zwei Balken pro Tierart (Spieler 1 & 2)
+                            bar_width = 0.3
+                            indices = np.arange(len(animal_labels))
+
+                            bars1 = ax.barh(indices - bar_width/2, kills_1, bar_width, label="Spieler 1", color="#8d2c91")
+                            bars2 = ax.barh(indices + bar_width/2, kills_2, bar_width, label="Spieler 2", color="#68D2FA")
+
+                            # Achsen & Titel anpassen
+                            ax.set_xlabel("Anzahl Kills", color="white", fontsize=fontsize)
+                            #ax.set_ylabel("Tierart", color="white", fontsize=fontsize)
+                            ax.set_title("Getötete Tiere (Spieler 1 vs. Spieler 2)", color="white", fontsize=fontsize)
+
+                            # Achsenbeschriftungen kleiner setzen
+                            ax.set_yticks(indices)
+                            ax.set_yticklabels(animal_labels, color="white", fontsize=fontsize)
+                            ax.tick_params(axis="x", colors="white", labelsize=fontsize)
+                            ax.tick_params(axis="y", colors="white", labelsize=fontsize)
+
+                            # Werte auf Balken schreiben
+                            for bar, value in zip(bars1, kills_1):
+                                ax.text(bar.get_width() + 1, bar.get_y() + bar.get_height() / 2,
+                                        f"{value:,}".replace(",", "."), va="center", ha="left", color="white", fontsize=fontsize)
+
+                            for bar, value in zip(bars2, kills_2):
+                                ax.text(bar.get_width() + 1, bar.get_y() + bar.get_height() / 2,
+                                        f"{value:,}".replace(",", "."), va="center", ha="left", color="white", fontsize=fontsize)
+
+                            # Y-Achse invertieren für bessere Lesbarkeit
+                            ax.invert_yaxis()
+
+                            # Legende mit kleinerer Schrift verschieben
+                            ax.legend(loc="center right", bbox_to_anchor=(1, 0.5), facecolor="#0E1117", edgecolor="white", fontsize=fontsize, labelcolor="white")
+
+                            # Diagramm in Streamlit anzeigen
+                            st.pyplot(fig)
+
+                        # Weitere Tier-Statistiken (Bienen & gefangene Tiere)
+                        with col6:
+                            st.subheader("Sonstige Statistiken")
+
+                            # Daten abrufen
+                            bees_1 = filtered_stats_1.get("stat_player_captures_bee", 0)
+                            bees_2 = filtered_stats_2.get("stat_player_captures_bee", 0)
+
+                            animals_1 = filtered_stats_1.get("stat_player_capturedAnimals", 0)
+                            animals_2 = filtered_stats_2.get("stat_player_capturedAnimals", 0)
+
+                            # Falls `animals` ein Tuple ist, nur den ersten Wert nehmen
+                            if isinstance(animals_1, tuple):
+                                animals_1 = animals_1[0]
+                            if isinstance(animals_2, tuple):
+                                animals_2 = animals_2[0]
+
+                            # DataFrame erstellen (ohne Index-Spalte)
+                            df_stats = pd.DataFrame({
+                                "Statistik": ["Bienenschwärme", "Gefangene Tiere"],
+                                "Spieler 1": [f"{bees_1:,}".replace(",", "."), f"{animals_1:,}".replace(",", ".")],
+                                "Spieler 2": [f"{bees_2:,}".replace(",", "."), f"{animals_2:,}".replace(",", ".")]
+                            })
+
+                            # DataFrame anzeigen (ohne Index)
+                            st.dataframe(df_stats, hide_index=True, use_container_width=True)
+
+                        # Abstand für saubere Darstellung
+                        st.markdown("<br>", unsafe_allow_html=True)
+
+                    with st.expander("Diverse Statistiken"):
+                        # Daten für Spieler 1
+                        stats_1 = {
+                            "Gespielte Noten mit Musikinstrumenten": filtered_stats_1.get("stat_player_instrumentNotes_played", 0),
+                            "Abgefeuerte Feuerwerke": filtered_stats_1.get("stat_player_fireworks_launched", 0),
+                            "Ausgegrabene Schätze": filtered_stats_1.get("stat_player_excevations_treasure", 0),
+                            "Ausgegebene Tokens auf Tangaroa": filtered_stats_1.get("stat_player_token_spend_tangaroa", 0),
+                            "Bemalte Objekte": filtered_stats_1.get("stat_build_paintCount", 0),
+                            "Entfernte Strukturen": filtered_stats_1.get("stat_build_removeCount", 0),
+                            "Verwendung des Hakens": filtered_stats_1.get("stat_player_hookCount", 0),
+                            "Gebaute Fundamente": filtered_stats_1.get("stat_build_foundationCount", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        stats_2 = {
+                            "Gespielte Noten mit Musikinstrumenten": filtered_stats_2.get("stat_player_instrumentNotes_played", 0),
+                            "Abgefeuerte Feuerwerke": filtered_stats_2.get("stat_player_fireworks_launched", 0),
+                            "Ausgegrabene Schätze": filtered_stats_2.get("stat_player_excevations_treasure", 0),
+                            "Ausgegebene Tokens auf Tangaroa": filtered_stats_2.get("stat_player_token_spend_tangaroa", 0),
+                            "Bemalte Objekte": filtered_stats_2.get("stat_build_paintCount", 0),
+                            "Entfernte Strukturen": filtered_stats_2.get("stat_build_removeCount", 0),
+                            "Verwendung des Hakens": filtered_stats_2.get("stat_player_hookCount", 0),
+                            "Gebaute Fundamente": filtered_stats_2.get("stat_build_foundationCount", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_diverse = pd.DataFrame({
+                            "Statistik": stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_diverse, hide_index=True, use_container_width=True)
+
+                    # ==========================
+                    # Seilrutschen-Statistiken
+                    # ==========================
+
+                    with st.expander("Seilrutschen-Statistiken"):
+                        # Daten für Spieler 1
+                        zipline_stats_1 = {
+                            "Zurückgelegte Distanz Seilrutsche [m]": filtered_stats_1.get("stat_player_zipline_distance", 0),
+                            "Maximale Distanz Seilrutsche [m]": filtered_stats_1.get("stat_player_zipline_distanceOneGo", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        zipline_stats_2 = {
+                            "Zurückgelegte Distanz Seilrutsche [m]": filtered_stats_2.get("stat_player_zipline_distance", 0),
+                            "Maximale Distanz Seilrutsche [m]": filtered_stats_2.get("stat_player_zipline_distanceOneGo", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_zipline = pd.DataFrame({
+                            "Statistik": zipline_stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in zipline_stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in zipline_stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_zipline, hide_index=True, use_container_width=True)
+
+                elif chosen_app_id_comp == 221100: #DayZ
+
+                    # ==========================
+                    # Nahrungs-Statistiken
+                    # ==========================
+
+                    with st.expander("Nahrungs-Statistiken"):
+                        # Daten für Spieler 1
+                        food_stats_1 = {
+                            "Aktionen, bei denen Nahrung gegessen wurde": filtered_stats_1.get("STAT_ACTION_EAT", 0),
+                            "Aktionen, bei denen Wasser oder andere Flüssigkeiten getrunken wurden": filtered_stats_1.get("STAT_ACTION_DRINK", 0),
+                            "Anzahl der gekochten Steaks": filtered_stats_1.get("STAT_ACTION_COOK_STEAK", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        food_stats_2 = {
+                            "Aktionen, bei denen Nahrung gegessen wurde": filtered_stats_2.get("STAT_ACTION_EAT", 0),
+                            "Aktionen, bei denen Wasser oder andere Flüssigkeiten getrunken wurden": filtered_stats_2.get("STAT_ACTION_DRINK", 0),
+                            "Anzahl der gekochten Steaks": filtered_stats_2.get("STAT_ACTION_COOK_STEAK", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_food = pd.DataFrame({
+                            "Statistik": food_stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in food_stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in food_stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_food, hide_index=True, use_container_width=True)
+
+                    # ==========================
+                    # Praktische-Statistiken
+                    # ==========================
+
+                    with st.expander("Praktische-Statistiken"):
+                        # Daten für Spieler 1
+                        practical_stats_1 = {
+                            "Anzahl der entzündeten Feuer mit Streichhölzern": filtered_stats_1.get("STAT_ACTION_IGNITE_FIRE_MATCHBOX", 0),
+                            "Anzahl der entzündeten Feuer mit einem Handbohrer": filtered_stats_1.get("STAT_ACTION_IGNITE_FIRE_HAND_DRILL", 0),
+                            "Anzahl der Aktionen, bei denen Ausrüstung angelegt wurde": filtered_stats_1.get("STAT_ACTION_EQUIP_GEAR", 0),
+                            "Anzahl der durchgeführten Rasuren": filtered_stats_1.get("STAT_ACTION_SHAVE", 0),
+                            "Anzahl der ausgeweideten Hirsche": filtered_stats_1.get("STAT_ACTION_GUT_DEER", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        practical_stats_2 = {
+                            "Anzahl der entzündeten Feuer mit Streichhölzern": filtered_stats_2.get("STAT_ACTION_IGNITE_FIRE_MATCHBOX", 0),
+                            "Anzahl der entzündeten Feuer mit einem Handbohrer": filtered_stats_2.get("STAT_ACTION_IGNITE_FIRE_HAND_DRILL", 0),
+                            "Anzahl der Aktionen, bei denen Ausrüstung angelegt wurde": filtered_stats_2.get("STAT_ACTION_EQUIP_GEAR", 0),
+                            "Anzahl der durchgeführten Rasuren": filtered_stats_2.get("STAT_ACTION_SHAVE", 0),
+                            "Anzahl der ausgeweideten Hirsche": filtered_stats_2.get("STAT_ACTION_GUT_DEER", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_practical = pd.DataFrame({
+                            "Statistik": practical_stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in practical_stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in practical_stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_practical, hide_index=True, use_container_width=True)
+
+                    # ==========================
+                    # Überlebens-Statistiken
+                    # ==========================
+
+                    with st.expander("Überlebens-Statistiken"):
+                        # Daten für Spieler 1
+                        survival_stats_1 = {
+                            "Anzahl der Anwendungen von Medikamenten auf andere Überlebende": filtered_stats_1.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0),
+                            "Maximale Distanz, aus der ein Überlebender getötet wurde": filtered_stats_1.get("STAT_SURVIVOR_KILL_MAX_DIST", 0),
+                            "Anzahl der getöteten Infizierten": filtered_stats_1.get("STAT_INFECTED_KILL_COUNT", 0),
+                            "Anzahl der getöteten infizierten Soldaten": filtered_stats_1.get("STAT_INFECTED_SOLDIER_KILL_COUNT", 0),
+                            "Anzahl der getöteten Überlebenden mit Nahkampfwaffen": filtered_stats_1.get("STAT_SURVIVOR_MELEE_KILL_COUNT", 0),
+                            "Anzahl der Kopfschüsse auf Infizierte": filtered_stats_1.get("STAT_INFECTED_HEADSHOT_COUNT", 0),
+                            "Anzahl der Kopfschüsse auf Überlebende": filtered_stats_1.get("STAT_SURVIVOR_HEADSHOT_COUNT", 0),
+                            "Gesamtanzahl aller Kopfschüsse": filtered_stats_1.get("STAT_HEADSHOT_COUNT", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        survival_stats_2 = {
+                            "Anzahl der Anwendungen von Medikamenten auf andere Überlebende": filtered_stats_2.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0),
+                            "Maximale Distanz, aus der ein Überlebender getötet wurde": filtered_stats_2.get("STAT_SURVIVOR_KILL_MAX_DIST", 0),
+                            "Anzahl der getöteten Infizierten": filtered_stats_2.get("STAT_INFECTED_KILL_COUNT", 0),
+                            "Anzahl der getöteten infizierten Soldaten": filtered_stats_2.get("STAT_INFECTED_SOLDIER_KILL_COUNT", 0),
+                            "Anzahl der getöteten Überlebenden mit Nahkampfwaffen": filtered_stats_2.get("STAT_SURVIVOR_MELEE_KILL_COUNT", 0),
+                            "Anzahl der Kopfschüsse auf Infizierte": filtered_stats_2.get("STAT_INFECTED_HEADSHOT_COUNT", 0),
+                            "Anzahl der Kopfschüsse auf Überlebende": filtered_stats_2.get("STAT_SURVIVOR_HEADSHOT_COUNT", 0),
+                            "Gesamtanzahl aller Kopfschüsse": filtered_stats_2.get("STAT_HEADSHOT_COUNT", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_survival = pd.DataFrame({
+                            "Statistik": survival_stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in survival_stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in survival_stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_survival, hide_index=True, use_container_width=True)
+     
+                elif chosen_app_id_comp == 222880: #Insurgency
+                    # Key-Value-Format ausgeben
+                    st.write("**Statistiken**")
+                    # ==========================
+                    # Kompetitiver Modus - Statistiken
+
+                    with st.expander("Kompetitiver Modus - Statistiken"):
+                        # Daten für Spieler 1
+                        comp_stats_1 = {
+                            "Gesamtanzahl der Kills": filtered_stats_1.get("TotalKills", 0),
+                            "Gesamtanzahl der eroberten Ziele": filtered_stats_1.get("TotalCaptures", 0),
+                            "Gesamtanzahl der MVP-Auszeichnungen": filtered_stats_1.get("TotalMVPs", 0),
+                            "Gesamtanzahl der heldenhaften Eroberungen": filtered_stats_1.get("TotalHeroCaptures", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        comp_stats_2 = {
+                            "Gesamtanzahl der Kills": filtered_stats_2.get("TotalKills", 0),
+                            "Gesamtanzahl der eroberten Ziele": filtered_stats_2.get("TotalCaptures", 0),
+                            "Gesamtanzahl der MVP-Auszeichnungen": filtered_stats_2.get("TotalMVPs", 0),
+                            "Gesamtanzahl der heldenhaften Eroberungen": filtered_stats_2.get("TotalHeroCaptures", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_comp = pd.DataFrame({
+                            "Statistik": comp_stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in comp_stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in comp_stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_comp, hide_index=True, use_container_width=True)
+
+                    # ==========================
+                    # Koop-Modus - Statistiken
+
+                    with st.expander("Koop-Modus - Statistiken"):
+                        # Daten für Spieler 1
+                        coop_stats_1 = {
+                            "Gesamtanzahl der Kills": filtered_stats_1.get("TotalKillsCoop", 0),
+                            "Gesamtanzahl der eroberten Ziele": filtered_stats_1.get("TotalCapturesCoop", 0),
+                            "Gesamtanzahl der MVP-Auszeichnungen": filtered_stats_1.get("TotalMVPsCoop", 0),
+                            "Gesamtanzahl der heldenhaften Eroberungen": filtered_stats_1.get("TotalHeroCapturesCoop", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        coop_stats_2 = {
+                            "Gesamtanzahl der Kills": filtered_stats_2.get("TotalKillsCoop", 0),
+                            "Gesamtanzahl der eroberten Ziele": filtered_stats_2.get("TotalCapturesCoop", 0),
+                            "Gesamtanzahl der MVP-Auszeichnungen": filtered_stats_2.get("TotalMVPsCoop", 0),
+                            "Gesamtanzahl der heldenhaften Eroberungen": filtered_stats_2.get("TotalHeroCapturesCoop", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_coop = pd.DataFrame({
+                            "Statistik": coop_stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in coop_stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in coop_stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_coop, hide_index=True, use_container_width=True)
+
+                    # ==========================
+                    # Gesamt - Statistiken
+
+                    with st.expander("Gesamt - Statistiken"):
+                        # Daten für Spieler 1
+                        all_stats_1 = {
+                            "Gesamtanzahl der Kills": filtered_stats_1.get("TotalKillsAll", 0),
+                            "Gesamtanzahl der eroberten Ziele": filtered_stats_1.get("TotalCapturesAll", 0),
+                            "Gesamtanzahl der MVP-Auszeichnungen": filtered_stats_1.get("TotalMVPsAll", 0),
+                            "Gesamtanzahl der heldenhaften Eroberungen": filtered_stats_1.get("TotalHeroCapturesAll", 0),
+                        }
+
+                        # Daten für Spieler 2
+                        all_stats_2 = {
+                            "Gesamtanzahl der Kills": filtered_stats_2.get("TotalKillsAll", 0),
+                            "Gesamtanzahl der eroberten Ziele": filtered_stats_2.get("TotalCapturesAll", 0),
+                            "Gesamtanzahl der MVP-Auszeichnungen": filtered_stats_2.get("TotalMVPsAll", 0),
+                            "Gesamtanzahl der heldenhaften Eroberungen": filtered_stats_2.get("TotalHeroCapturesAll", 0),
+                        }
+
+                        # DataFrame erstellen
+                        df_all = pd.DataFrame({
+                            "Statistik": all_stats_1.keys(),
+                            "Spieler 1": [f"{v:,}".replace(",", ".") for v in all_stats_1.values()],
+                            "Spieler 2": [f"{v:,}".replace(",", ".") for v in all_stats_2.values()]
+                        })
+
+                        # DataFrame anzeigen
+                        st.dataframe(df_all, hide_index=True, use_container_width=True)
+                else:
+                    st.warning("Für diese App-ID sind entweder keine relevanten Statistiken definiert oder es liegen keine Daten vor.")
+
+            else:
+                st.warning("Keine gemeinsamen Statistiken gefunden.")
+        else:
+            st.error("Fehler beim Abrufen der Daten für einen oder beide Spieler.")
 
 
     else:
