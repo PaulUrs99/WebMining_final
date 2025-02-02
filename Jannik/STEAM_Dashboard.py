@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
+import matplotlib.ticker as mticker
 import user_owned_games
 import user_stats
 import user_info
@@ -725,7 +726,7 @@ with tabs[1]:
 
                             col4, col5, col6 = st.columns(3)
                             with col4:
-                                custom_metric("Zeit spielend [h]", f"{time_played_hours:.0f}")
+                                custom_metric("Zeit spielend [h]", f"{time_played_hours:,.0f}".replace(",", "."))
                             with col5:
                                 custom_metric("Siege gesamt", f"{total_wins:,}".replace(",", "."))
                             with col6:
@@ -823,7 +824,7 @@ with tabs[1]:
                             with col10:
                                 labels = ["Treffer", "Verfehlt"]
                                 sizes = [shots_hit, shots_missed]
-                                colors = ["#4CAF50", "#FFC107"]
+                                colors = ["#8d2c91", "#68D2FA"]
                                 explode = (0.1, 0)  # Nur das erste Segment hervorheben
 
                                 fig, ax = plt.subplots(figsize=figsize, dpi=90)
@@ -843,7 +844,7 @@ with tabs[1]:
                             with col11:
                                 headshot_labels = ["Headshots", "Andere Treffer"]
                                 headshot_sizes = [headshots, shots_hit - headshots]
-                                headshot_colors = ["#2196F3", "#8BC34A"]
+                                headshot_colors = ["#b66bb2", "#d4a3d9"]
                                 explode_headshots = (0.1, 0)
 
                                 fig2, ax2 = plt.subplots(figsize=figsize, dpi=100)
@@ -916,6 +917,13 @@ with tabs[1]:
                                     # In DataFrame umwandeln
                                     df_top5 = pd.DataFrame(top_5_weapons, columns=["Weapon", "Hits", "Kills", "Shots", "Accuracy", "Efficiency"])
 
+                                    # Werte formatieren
+                                    df_top5["Hits"] = df_top5["Hits"].apply(lambda x: f"{x:,}".replace(",", "."))
+                                    df_top5["Kills"] = df_top5["Kills"].apply(lambda x: f"{x:,}".replace(",", "."))
+                                    df_top5["Shots"] = df_top5["Shots"].apply(lambda x: f"{x:,}".replace(",", "."))
+                                    df_top5["Accuracy"] = df_top5["Accuracy"].apply(lambda x: f"{x * 100:.1f}%")
+                                    df_top5["Efficiency"] = df_top5["Efficiency"].apply(lambda x: f"{x * 100:.1f}%")
+
                                     # Ausgabe der Top 5 Waffen
                                     st.dataframe(df_top5, use_container_width=True)
                                 
@@ -976,7 +984,7 @@ with tabs[1]:
                                 custom_metric("Kills mit der Taser", f"{taser:,}".replace(",", "."))
                             with col22:
                                 custom_metric("Kills mit einem Köder/Falle", f"{decoy:,}".replace(",", "."))
-                                custom_metric("Effizienz mit dem Taser", f"{efftaser:,}".replace(",", "."))
+                                custom_metric("Effizienz mit dem Taser", f"{efftaser:.1%}".replace(",", "."))
                             
                             col23, col24 = st.columns(2)
                             with col23:
@@ -1076,7 +1084,8 @@ with tabs[1]:
                                 ax.text(
                                     bar.get_width() + (max_value * 0.02),  # Position direkt neben dem Balken
                                     bar.get_y() + bar.get_height() / 2,  # Zentrieren in der Mitte des Balkens
-                                    str(value),  # Wert als String
+                                    # str(value),  # Wert als String
+                                    f"{value:,}".replace(",", "."),  # Tausendertrennzeichen anpassen
                                     va="center",
                                     ha="left",
                                     color="white",
@@ -1091,6 +1100,8 @@ with tabs[1]:
                             ax.tick_params(axis="y", colors="white")
                             # Achsen invertieren für bessere Lesbarkeit
                             ax.invert_yaxis()  
+                            # Achsenbeschriftung formatieren
+                            ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}".replace(",", ".")))
                             # Rahmen um das Diagramm entfernen
                             ax.spines["top"].set_visible(False)
                             ax.spines["right"].set_visible(False)
