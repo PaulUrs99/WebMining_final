@@ -1312,7 +1312,6 @@ with tabs[2]:
 
 # ------------------------------------------------------------------------------------------------------------
 # Freunde-Vergleich
-#Abfrage gemeinsamer Spiele
 import textwrap
 
 # Funktion für Umbruch der Spielnamen
