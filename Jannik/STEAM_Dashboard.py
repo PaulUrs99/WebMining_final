@@ -1222,7 +1222,7 @@ with tabs[1]:
                                     fig.patch.set_facecolor(background_color)  # Hintergrundfarbe für die gesamte Figur
                                     ax.set_facecolor(background_color)  # Hintergrundfarbe für das Diagramm
 
-                                    ax.barh(animals, kills, color=bar_color)  # Balkenfarbe
+                                    ax.barh(animals, kills, color="#8d2c91")  # Balkenfarbe
                                     ax.set_xlabel("Anzahl Kills", color=text_color)
                                     ax.set_ylabel("Tierart", color=text_color)
                                     ax.set_title("Getötete Tiere (absteigend)", color=text_color)
@@ -1233,6 +1233,8 @@ with tabs[1]:
                                     ax.spines["left"].set_color(text_color)  # Achsenlinie links anpassen
                                     ax.invert_yaxis()  # Größte Werte oben
 
+                                    # Achsenbeschriftung formatieren
+                                    ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}".replace(",", ".")))
                                     # Diagramm in Streamlit anzeigen
                                     st.pyplot(fig, use_container_width=True)
 
@@ -1306,9 +1308,9 @@ with tabs[1]:
 
                             col12, col13 = st.columns(2)
                             with col12:
-                                custom_metric("Zurückgelegte Distanz Seilrutsche", f"{distance:,}".replace(",", "."))
+                                custom_metric("Zurückgelegte Distanz Seilrutsche [m]", f"{distance:,}".replace(",", "."))
                             with col13:
-                                custom_metric("Maximale Distanz Seilrutsche", f"{distanceOneGo:,}".replace(",", "."))
+                                custom_metric("Maximale Distanz Seilrutsche [m]", f"{distanceOneGo:,}".replace(",", "."))
                             
                             # Zusätzlicher Platz durch eine Leerzeile und Padding
                             st.markdown(
