@@ -25,7 +25,7 @@ st.set_page_config(layout="wide") # Aktiviert den Wide Mode
 st.title("Steam Dashboard")
 
 # Tabs erstellen
-tabs = st.tabs(["Profilstatistiken", "In-Game-Statistiken", "Community-Vergleich", "Freunde-Vergleich", "Spiel-Empfehlungen"])
+tabs = st.tabs(["Profilstatistiken", "In-Game-Statistiken", "Community-Vergleich", "Freunde-Vergleich", "Finde neue Freunde und Games"]) #Change Lucian
 
 # API Key (du kannst eine sichere Methode verwenden, um den Schlüssel zu speichern)
 API_KEY = "F06E65C071B7ABDE4CE3B531A06123E2"  # Ersetze mit deinem Steam Web API Key
@@ -1602,7 +1602,7 @@ with tabs[3]:
 # ------------------------------------------------------------------------------------------------------------
 # Tab "Spiel Empfehlungen"
 with tabs[4]:
-    st.header("Mitspieler-Empfehlungen")
+    st.header("Finde neue Mitspieler und neue Spiele")
 
     # Cluster CSV-Dateien
     df_clustered_players = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\clustered_players.csv")
@@ -1710,7 +1710,7 @@ with tabs[4]:
                 return user_info.get_user_info(API_KEY, player_id)  # Holt die Steam-Infos
 
             # Ausgabe: Ähnliche Spieler anzeigen
-            st.subheader("Diese Spieler sind dir sehr ähnlich, vielleicht möchtest du sie hinzufügen:")
+            st.subheader("Diese Spieler zocken ähnliche Games wie du. Ihr könntet Freunde sein ( ◑‿◑)ɔ┏🍟--🍔┑٩(^◡^ )")
             st.write("")
             st.write("---")
 
@@ -1742,7 +1742,7 @@ with tabs[4]:
             st.write("⚠️ Keine ähnlichen Spieler gefunden.")
 
 
-            
+
 #-----------------------------------------------------------------------------------------------------------------
         # Empfehlung von Spielen
         # Spiele aus dem Cluster
