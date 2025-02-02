@@ -13,6 +13,7 @@ import user_dataframe as df
 import numpy as np
 from boxplot_helper import create_boxplot
 from density_helper import create_density_plot
+from curve_helper import create_percentile_curve
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
@@ -875,7 +876,7 @@ with tabs[2]:
                                     st.markdown(f'<p style="font-size:25px; color:white;">Einordnung:<br> {player_position_text}</p>', unsafe_allow_html=True)
 
                                 # Boxplot mit Spielerwert markieren
-                                fig = create_boxplot(stat_values, player_value, xlabel=display_name)
+                                fig = create_percentile_curve(stat_values, player_value, xlabel=display_name)
                                 st.pyplot(fig)
 
                     # Anzeige der Vergleiche in 2x2-Matrix
@@ -885,7 +886,7 @@ with tabs[2]:
                             metrics = [
                                 ("KD_ratio", "K/D-Ratio", ""),
                                 ("accuracy", "Trefferquote", "%"),
-                                ("headshot_ratio", "Headshot-Quote", "%"),
+                                ("headshot_ratio", "Headshot-Quote", " %"),
                                 ("win_ratio", "Siegesquote", "%")
                             ]
                         elif chosen_app_id == 648800:  # Raft
@@ -1062,163 +1063,154 @@ with tabs[2]:
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
+# Freunde-Vergleich
+#Abfrage gemeinsamer Spiele
+import textwrap
 
-# ------------------------------------------------------------------------------------------------------------
-    
-# Funktion zum Umwandeln von Listen in ein Dictionary
-def convert_list_to_dict(stats_list):
-    if isinstance(stats_list, list):  # Falls API eine Liste zurückgibt
-        return {stat["name"]: stat["value"] for stat in stats_list if "name" in stat and "value" in stat}
-    return stats_list  # Falls es schon ein Dictionary ist
+# Funktion für Umbruch der Spielnamen
+def wrap_labels(labels, width=10):
+    return ['\n'.join(textwrap.wrap(label, width)) for label in labels]
 
-#Freunde-Vergleich
 with tabs[3]:
-    st.header("👥 Freunde-Vergleich")
+    st.header("\U0001F465 Freunde-Vergleich")
 
     steam_id_1 = st.text_input(label="STEAM-ID", placeholder="--- Gib hier die erste SteamID64 ein ---", label_visibility="hidden")
     steam_id_2 = st.text_input(label="STEAM-ID", placeholder="--- Gib hier die zweite SteamID64 ein ---", label_visibility="hidden")
     button_compare = st.button("Vergleichen")
 
     if steam_id_1 and steam_id_2:
-        st.write(f"📊 **Vergleich von Steam-IDs:** `{steam_id_1}` & `{steam_id_2}`")
-        st.write("🔄 **Lade Benutzer- und Spiele-Daten...**")
+        st.write(f"\U0001F4CA **Vergleich von Steam-IDs:** `{steam_id_1}` & `{steam_id_2}`")
+        st.write("\U0001F504 **Lade Benutzer- und Spiele-Daten...**")
 
         with st.spinner("Daten werden geladen..."):
             result_1 = user_owned_games.get_owned_games(API_KEY, steam_id_1)
-            info_result_1 = user_info.get_user_info(API_KEY, steam_id_1)
             result_2 = user_owned_games.get_owned_games(API_KEY, steam_id_2)
+            info_result_1 = user_info.get_user_info(API_KEY, steam_id_1)
             info_result_2 = user_info.get_user_info(API_KEY, steam_id_2)
 
-        # Fehlerprüfung für Benutzerinfos
-        if "error" in info_result_1:
-            st.error(f"❌ Fehler bei der ersten SteamID: {info_result_1['error']}")
-        elif "error" in info_result_2:
-            st.error(f"❌ Fehler bei der zweiten SteamID: {info_result_2['error']}")
+        # Fehlerprüfung für Spielelisten
+        if "error" in result_1:
+            st.error(f"❌ Fehler bei der ersten SteamID: {result_1['error']}")
+        elif "error" in result_2:
+            st.error(f"❌ Fehler bei der zweiten SteamID: {result_2['error']}")
         else:
-            st.subheader("🔍 **Benutzerinformationen im Vergleich**")
-            col1, col2 = st.columns(2)  # Zwei Spalten für die Benutzer
+            games_1 = result_1.get("response", {}).get("games", [])
+            games_2 = result_2.get("response", {}).get("games", [])
 
-            for col, info_result, steam_id in zip([col1, col2], [info_result_1, info_result_2], [steam_id_1, steam_id_2]):
-                with col:
-                    st.write(f"**Benutzername:** {info_result['personaname']}")
-                    st.write(f"**Letzter Logoff:** {info_result['lastlogoff']}")
-                    st.write(f"**Konto erstellt am:** {info_result['timecreated']}")
-                    st.write(f"**Tage seit Kontoerstellung:** {info_result['days_since_creation']}")
-
-                    st.markdown(
-                        f"""
-                        <div style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: -10px;">
-                            <img src="{info_result['avatarfull']}" alt="Avatar" style="width: 100px; border-radius: 0%;">
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
-
-            # Fehlerprüfung für Spielelisten
-            if "error" in result_1:
-                st.error(f"❌ Fehler bei der ersten SteamID: {result_1['error']}")
-            elif "error" in result_2:
-                st.error(f"❌ Fehler bei der zweiten SteamID: {result_2['error']}")
+            if not games_1:
+                st.warning("⚠️ Keine Spiele für die erste SteamID gefunden.")
+            elif not games_2:
+                st.warning("⚠️ Keine Spiele für die zweite SteamID gefunden.")
             else:
-                games_1 = result_1.get("response", {}).get("games", [])
-                games_2 = result_2.get("response", {}).get("games", [])
+                user_game_ids_1 = [game["appid"] for game in games_1]
+                user_game_ids_2 = [game["appid"] for game in games_2]
+                common_game_ids = set(user_game_ids_1) & set(user_game_ids_2)
 
-                if not games_1:
-                    st.warning("⚠️ Keine Spiele für die erste SteamID gefunden.")
-                elif not games_2:
-                    st.warning("⚠️ Keine Spiele für die zweite SteamID gefunden.")
+                array_games_updated = pd.DataFrame(
+                    [row for _, row in array_games.iterrows() if row["App-ID"] in common_game_ids]
+                )
+
+                if array_games_updated.empty or "Name" not in array_games_updated.columns:
+                    st.warning("Es wurden keine gemeinsamen relevanten Spiele gefunden.")
                 else:
-                    # DataFrames erstellen und sortieren
-                    df_1 = pd.DataFrame(games_1)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Playtime (Hours)"})
-                    df_2 = pd.DataFrame(games_2)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Playtime (Hours)"})
-
-                    # Minuten in Stunden umwandeln
-                    df_1["Playtime (Hours)"] = df_1["Playtime (Hours)"] / 60
-                    df_2["Playtime (Hours)"] = df_2["Playtime (Hours)"] / 60
-
-                    # Spiele aus der definierten Liste filtern
-                    valid_games = {game["appid"]: game["name"] for game in games}
-                    df_1 = df_1[df_1["appid"].isin(valid_games.keys())]
-                    df_2 = df_2[df_2["appid"].isin(valid_games.keys())]
+                    st.subheader("🎮 **Gemeinsame Spiele mit Spielzeit**")
+                    selected_game = st.selectbox("Wähle ein Spiel für weitere Statistiken:", array_games_updated["Name"].tolist())
+                    chosen_app_id = array_games_updated.loc[
+                        array_games_updated["Name"] == selected_game, "App-ID"
+                    ].values[0]
 
                     # Gemeinsame Spiele ermitteln
+                    df_1 = pd.DataFrame(games_1)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Spielzeit in Stunden"})
+                    df_2 = pd.DataFrame(games_2)[["appid", "name", "playtime_forever"]].rename(columns={"name": "Name", "playtime_forever": "Spielzeit in Stunden"})
+                    
+                    # Minuten in Stunden umwandeln
+                    df_1["Spielzeit in Stunden"] = df_1["Spielzeit in Stunden"] / 60
+                    df_2["Spielzeit in Stunden"] = df_2["Spielzeit in Stunden"] / 60
+                    
+                    # Gemeinsame Spiele filtern
                     common_games = pd.merge(df_1, df_2, on=["appid", "Name"], suffixes=("_Player1", "_Player2"))
-
-                    st.subheader("🎮 **Gemeinsame Spiele**")
+                    common_games_withplaytime = common_games[(common_games["Spielzeit in Stunden_Player1"] > 0) & (common_games["Spielzeit in Stunden_Player2"] > 0)]
                     if not common_games.empty:
-                        # ➜ Spalten für Tabelle (links) und Grafik (rechts)
-                        col1, col2 = st.columns([1.5, 1])  # Verhältnis: 1.5 : 1
+                     # Spalten für Tabelle (links) und Grafik (rechts)
+                        col1, col2 = st.columns([1.3, 1.7])  # Verhältnis: 1.5 : 1
 
                         with col1:  # **Tabelle links**
-                            st.dataframe(common_games[["Name", "Playtime (Hours)_Player1", "Playtime (Hours)_Player2"]].sort_values(by="Playtime (Hours)_Player1", ascending=False))
+                            st.dataframe(common_games_withplaytime[["Name", "Spielzeit in Stunden_Player1", "Spielzeit in Stunden_Player2"]].sort_values(by="Spielzeit in Stunden_Player1", ascending=False))
 
                         with col2:  # **Graphik rechts**
-                            # Balkendiagramm mit den Top 5 gemeinsamen Spielen nach Spielzeit von Spieler 1
-                            top_5_games = common_games.sort_values(by="Playtime (Hours)_Player1", ascending=False).head(5)
+                            # Balkendiagramm mit den Top 5 gemeinsamen Spielen nach Spielzeit, wenn beide Spieler gespielt haben
+                            top_5_games = common_games_withplaytime.sort_values(by="Spielzeit in Stunden_Player1", ascending=False).head(5)
 
-                            fig, ax = plt.subplots(figsize=(6, 4))  # Kleinere Grafik für Spaltenlayout
-                            bar_width = 0.4
+                            fig, ax = plt.subplots(figsize=(5, 1.5))  # Kleinere Grafik für Spaltenlayout
+                            # Hintergrund entfernen
+                            fig.patch.set_visible(False)  # Entfernt gesamten Hintergrund
+                            ax.set_facecolor("none")  # Entfernt Achsen-Hintergrund
+                            ax.spines["top"].set_visible(False)
+                            ax.spines["right"].set_visible(False)
+                            ax.spines["left"].set_visible(False)
+                            ax.spines["bottom"].set_visible(False)
+                                                
+                            bar_width = 0.3
                             indices = range(len(top_5_games))
-
-                            ax.bar([i - bar_width/2 for i in indices], top_5_games["Playtime (Hours)_Player1"], width=bar_width, label="Spieler 1", alpha=0.7)
-                            ax.bar([i + bar_width/2 for i in indices], top_5_games["Playtime (Hours)_Player2"], width=bar_width, label="Spieler 2", alpha=0.7)
-
+                            ax.bar([i - bar_width/2 for i in indices], top_5_games["Spielzeit in Stunden_Player1"], width=bar_width, label="Spieler 1", alpha=0.7)
+                            ax.bar([i + bar_width/2 for i in indices], top_5_games["Spielzeit in Stunden_Player2"], width=bar_width, label="Spieler 2", alpha=0.7)
+                            # Spielnamen mit Zeilenumbruch
+                            wrapped_labels = wrap_labels(top_5_games["Name"], width=15)  # Breite des Umbruchs anpassen
+                           
                             ax.set_xticks(indices)
-                            ax.set_xticklabels(top_5_games["Name"], rotation=45, ha="right")
-                            ax.set_xlabel("Spiel")
-                            ax.set_ylabel("Spielzeit (Stunden)")
-                            ax.set_title("Top 5 gemeinsame Spiele nach Spielzeit (Spieler 1)")
-                            ax.legend()
+                            ax.set_xticklabels(wrapped_labels, rotation=0, ha="center", fontsize=6)
+                            ax.set_ylabel("Spielzeit (Stunden)", fontsize=6)
+                            ax.tick_params(axis='both', labelsize=5)
+                            ax.set_title("Top 5 gemeinsame Spiele nach Spielzeit (Spieler 1)", fontsize=8)
+                            ax.legend(fontsize=6)
 
                             st.pyplot(fig)
-
-                        # Auswahlbox mit den gefilterten Spielen
-                        selected_game = st.selectbox(
-                            "🎯 Wähle ein Spiel für weitere Statistiken:",
-                            common_games["Name"].tolist()
-                        )
-
-                        if selected_game:
-                            app_id = str(common_games[common_games["Name"] == selected_game]["appid"].values[0])
-
-                            if app_id in STAT_MAPPING:
-                                # Abrufen der Statistiken für beide Spieler
-                                stats_player1 = user_stats.get_user_stats_for_game(API_KEY, steam_id_1, app_id)
-                                stats_player2 = user_stats.get_user_stats_for_game(API_KEY, steam_id_2, app_id)
-
-                                # Sicherstellen, dass wir keine Listen haben
-                                stats_player1 = convert_list_to_dict(stats_player1)
-                                stats_player2 = convert_list_to_dict(stats_player2)
-
-                                if isinstance(stats_player1, dict) and isinstance(stats_player2, dict):
-                                    st.subheader(f"📊 **Vergleich für {selected_game}**")
-
-                                    # Nur die relevanten Statistiken aus STAT_MAPPING anzeigen
-                                    relevant_stats = STAT_MAPPING[app_id]
-                                    filtered_stats = [stat for stat in relevant_stats if stat in stats_player1 and stat in stats_player2]
-
-                                    if filtered_stats:
-                                        comparison_data = {
-                                            "Statistik": [STAT_LABELS.get(stat, stat) for stat in filtered_stats],  # Labels umbenennen
-                                            "Spieler 1": [stats_player1.get(stat, "N/A") for stat in filtered_stats],
-                                            "Spieler 2": [stats_player2.get(stat, "N/A") for stat in filtered_stats]
-                                        }
-                                        df_comparison = pd.DataFrame(comparison_data)
-
-                                        st.dataframe(df_comparison.style.format({"Spieler 1": "{:.1f}", "Spieler 2": "{:.1f}"}))
-
-                                    else:
-                                        st.warning("📉 Keine passenden Statistikwerte gefunden.")
-                                else:
-                                    st.warning("⚠️ Keine gültigen Statistikdaten verfügbar.")
-                            else:
-                                st.warning("⚠️ Keine Statistik-Daten für dieses Spiel im Mapping hinterlegt.")
                     else:
                         st.write("⚠️ **Keine gemeinsamen Spiele aus der definierten Liste gefunden.**")
+    
+    
+        #Abfrage gemeinsamer Spieldaten und Vergleich
+        # Fehlerprüfung für Benutzerinfos
+        st.subheader("🔍 **In-Game-Statistiken**")
+
+        user_game_data_1 = user_game.fetch_in_game_data(API_KEY, steam_id_1, chosen_app_id)
+        user_game_data_2 = user_game.fetch_in_game_data(API_KEY, steam_id_2, chosen_app_id)
+        
+        if user_game_data_1.get("status") and user_game_data_2.get("status")  == "success":
+            # Liste mit Statistik-Dict kommt zurück
+            stats_list_1 = user_game_data_1.get("stats", [])
+            stats_list_2 = user_game_data_2.get("stats", [])
+
+            # Ermitteln, ob wir für die gewählte App-ID bestimmte Statistiken darstellen wollen
+            relevant_stats = STAT_MAPPING.get(str(chosen_app_id), [])
+
+            # Nur die Einträge aus stats_list filtern, die in 'relevant_stats' vorkommen
+            filtered_stats_1 = {stat["name"]: stat for stat in stats_list_1 if stat["name"] in relevant_stats}
+            filtered_stats_2 = {stat["name"]: stat for stat in stats_list_2 if stat["name"] in relevant_stats}
+
+            # Gemeinsame Statistiken finden
+            common_stat_names = set(filtered_stats_1.keys()) & set(filtered_stats_2.keys())
+
+            # Nur die gemeinsamen Statistiken behalten
+            final_stats_1 = [filtered_stats_1[name] for name in common_stat_names]
+            final_stats_2 = [filtered_stats_2[name] for name in common_stat_names]
+
+            if len(filtered_stats) > 0 and chosen_app_id == 730:
+                # Dictionary aus den gefilterten Statistiken, um besser darauf zugreifen zu können 
+                stats_dict = {stat["name"]: stat["value"] for stat in filtered_stats}
+
+                # Key-Value-Format ausgeben
+                st.write("**Statistiken**")
 
 
-# ------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+    else:
+        st.write("⚠️ **Beide STEAM IDs müssen eingetragen sein**")
 # ------------------------------------------------------------------------------------------------------------
 # Tab "Spiel Empfehlungen"
 with tabs[4]:
