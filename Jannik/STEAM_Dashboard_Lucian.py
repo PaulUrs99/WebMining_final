@@ -1619,7 +1619,6 @@ with tabs[4]:
     if bool_id:
 
         # Spielerdaten für Clusterzuordnung vorbereiten
-
         user_data = df_games_cluster.rename(
         columns={"AppID": "appid", "Name": "name", "Playtime (Minutes)": "playtime_forever"}
         )
