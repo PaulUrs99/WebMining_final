@@ -850,7 +850,7 @@ with tabs[1]:
 
                             with col11:
                                 headshot_labels = ["Headshots", "Andere Treffer"]
-                                headshot_sizes = [headshots, shots_hit - headshots]
+                                headshot_sizes = [headshots, max(shots_hit - headshots, 0)]
                                 headshot_colors = ["#b66bb2", "#d4a3d9"]
                                 explode_headshots = (0.1, 0)
 
@@ -2172,7 +2172,7 @@ with tabs[3]:
                         with col9:
                             st.subheader("Spieler 1 - Headshot-Rate")
                             headshot_labels = ["Headshots", "Andere Treffer"]
-                            headshot_sizes = [headshots_1, shots_hit_1 - headshots_1]
+                            headshot_sizes = [headshots_1, max(shots_hit_1 - headshots_1, 0)]
                             headshot_colors = ["#b66bb2", "#d4a3d9"]
                             explode_headshots = (0.1, 0)
 
@@ -2193,7 +2193,7 @@ with tabs[3]:
                         with col10:
                             st.subheader("Spieler 2 - Headshot-Rate")
                             headshot_labels_2 = ["Headshots", "Andere Treffer"]
-                            headshot_sizes_2 = [headshots_2, shots_hit_2 - headshots_2]
+                            headshot_sizes_2 = [headshots_2, max(shots_hit_2 - headshots_2, 0)]
                             headshot_colors_2 = ["#b66bb2", "#d4a3d9"]
                             explode_headshots_2 = (0.1, 0)
 
@@ -2902,14 +2902,14 @@ with tabs[4]:
     st.header("Finde neue Mitspieler und neue Spiele")
 
     # Cluster CSV-Dateien
-    df_clustered_players = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\clustered_players.csv")
-    df_final_cluster = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\final_cluster.csv")
+    df_clustered_players = pd.read_csv("clustered_players.csv")
+    df_final_cluster = pd.read_csv("final_cluster.csv")
 
     # Genre Datei
-    df_genres = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\steam_game_genres_normalized.csv")
+    df_genres = pd.read_csv("steam_game_genres_normalized.csv")
 
     # IDF Datei
-    genre_idf = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\genre_idf.csv")
+    genre_idf = pd.read_csv("genre_idf.csv")
     
     # user_data
     # steam_id ist oben definiert
@@ -3018,7 +3018,7 @@ with tabs[4]:
 
         # Spieler filtern, die NICHT in der Freundesliste sind
         # Sicherstellen, dass alle Steam-IDs Strings sind und bereinigt werden
-        filtered_players = [player for player in top_10_players if str(int(player[0])) not in friend_list]
+        filtered_players = [player for player in top_10_players if str(int(player[0])) not in friend_list and str(int(player[0])) != steam_id]
 
         # Nur die besten 10 Spieler aus der gefilterten Liste auswählen
         filtered_players = filtered_players[:10]
@@ -3035,6 +3035,9 @@ with tabs[4]:
             st.write("---")
 
             for i, (player_id, distance) in enumerate(filtered_players):
+                if player_id == steam_id:
+                    continue
+
                 player_info = get_steam_info(player_id)  # Holt Spielerinfos
 
                 if "personaname" in player_info:
@@ -3055,8 +3058,6 @@ with tabs[4]:
                             unsafe_allow_html=True
                         )
                     st.write("---")
-                else:
-                    st.write(f"⚠️ Keine Info für Spieler {player_id}")
 
         else:
             st.write("⚠️ Keine ähnlichen Spieler gefunden.")
