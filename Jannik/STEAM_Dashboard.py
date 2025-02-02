@@ -454,7 +454,7 @@ STAT_LABELS = {
 # ------------------------------------------------------------------------------------------------------------
 # Tab "Deine Statistiken"
 with tabs[0]:
-    st.header("Profilstatistiken")
+    st.header("👤 Profilstatistiken")
     # st.subheader("Gib deine Steam-ID ein, um deine Profilstatistiken zu sehen und die weiteren Funktionen nutzen zu können:")
 
     # # CSS für die vertikale Ausrichtung und zentrierten Text im Eingabefeld
@@ -538,7 +538,7 @@ with tabs[0]:
             if not games:
                 st.warning("Das Profil scheint 'privat' zu sein.") # Davor: Keine Spiele gefunden.
             else:
-                st.subheader("Spielinformationen")
+                st.subheader("🕹️ Spielinformationen")
 
                 df_games = df.convert_to_dataframe(games)[["Name", "Playtime (Hours)"]]
 
@@ -633,7 +633,7 @@ with tabs[0]:
 # ------------------------------------------------------------------------------------------------------------
 # Tab "In-Game-Daten"
 with tabs[1]:
-    st.header("In-Game-Statistiken")
+    st.header("🎮 In-Game-Statistiken")
 
     # Array aktualisieren
     user_game_ids = [game["appid"] for game in games]  # App-IDs der Nutzer-Spiele
@@ -699,7 +699,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Zeige allgemeine Spielstatistiken"):
+                        with st.expander("♟️ Allgemeine Spielstatistiken"):
                             # Zusammenfassungs-Statistiken
                             # st.header("Zusammenfassung")
                             deaths = stats_dict.get("total_deaths", 0)
@@ -744,7 +744,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
                         
-                        with st.expander("Zeige Match-Statistiken"):
+                        with st.expander("⚔️ Match-Statistiken"):
                             # Matchdaten
                             matches_played = stats_dict.get("total_matches_played", 0)
                             matches_won    = stats_dict.get("total_matches_won", 0)
@@ -793,7 +793,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Zeige Treffer- und Headshot-Statistiken"):
+                        with st.expander("🎯 Treffer- und Headshot-Statistiken"):
                             # Schussdaten
                             shots_fired = stats_dict.get("total_shots_fired", 0)
                             shots_hit = stats_dict.get("total_shots_hit", 0)
@@ -861,7 +861,7 @@ with tabs[1]:
                                 ax2.axis("equal")
                                 st.pyplot(fig2)
 
-                        with st.expander("Waffen-Statistiken"):
+                        with st.expander("🔫 Waffen-Statistiken"):
                             # Waffendaten
                             # Custom CSS für vertikale Zentrierung der Tabelle
                             st.markdown(
@@ -1004,7 +1004,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
                         
-                        with st.expander("Sonstige-Statistiken"):
+                        with st.expander("🎲 Sonstige-Statistiken"):
                             # Sonstiges
                             dbombs = stats_dict.get("total_defused_bombs", 0)
                             pbombs = stats_dict.get("total_planted_bombs", 0)
@@ -1030,7 +1030,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
                         
-                        with st.expander("Map-Statistik"):
+                        with st.expander("🗺️ Map-Statistik"):
                             # Map-Statistik
                             # Dictionary mit den richtigen Keys für jede Map
                             map_keys = {
@@ -1134,7 +1134,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Dunkle Statistik"):
+                        with st.expander("⚰️ Dunkle Statistik"):
                             deaths = stats_dict.get("stat_player_deaths", 0)
                             custom_metric("Tode", f"{deaths:,}".replace(",", "."))
                         
@@ -1150,7 +1150,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
                         
-                        with st.expander("Statistiken Tiere"):
+                        with st.expander("🦈 Statistiken Tiere"):
                             sharks = stats_dict.get("stat_player_sharkKills", 0)
                             birds = stats_dict.get("stat_player_birdKills", 0)
                             puffer = stats_dict.get("stat_player_pufferKills", 0)
@@ -1259,7 +1259,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Diverse Statistiken"):
+                        with st.expander("🎲 Diverse Statistiken"):
                             instruments = stats_dict.get("stat_player_instrumentNotes_played", 0)
                             fireworks = stats_dict.get("stat_player_fireworks_launched", 0)
                             excevations = stats_dict.get("stat_player_excevations_treasure", 0)
@@ -1302,7 +1302,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Seilrutschen-Statistiken"):
+                        with st.expander("🧗‍♂️⛓️ Seilrutschen-Statistiken"):
                             distance = stats_dict.get("stat_player_zipline_distance", 0)
                             distanceOneGo = stats_dict.get("stat_player_zipline_distanceOneGo", 0)
 
@@ -1343,7 +1343,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Nahrungs-Statistiken"):
+                        with st.expander("🍗 Nahrungs-Statistiken"):
                             eat = stats_dict.get("STAT_ACTION_EAT", 0)
                             drink = stats_dict.get("STAT_ACTION_DRINK", 0)
                             steak = stats_dict.get("STAT_ACTION_COOK_STEAK", 0)
@@ -1368,7 +1368,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
                         
-                        with st.expander("Praktische-Statistiken"):
+                        with st.expander("🛠️ Praktische-Statistiken"):
                             fire = stats_dict.get("STAT_ACTION_IGNITE_FIRE_MATCHBOX", 0)
                             drill = stats_dict.get("STAT_ACTION_IGNITE_FIRE_HAND_DRILL", 0)
                             gear = stats_dict.get("STAT_ACTION_EQUIP_GEAR", 0)
@@ -1401,7 +1401,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Überlebens-Statistiken"):
+                        with st.expander("⛑️ Überlebens-Statistiken"):
                             meds = stats_dict.get("STAT_ACTION_APPLY_MEDS_ON_SURVIVOR", 0)
                             distance = stats_dict.get("STAT_SURVIVOR_KILL_MAX_DIST", 0)
                             ikill = stats_dict.get("STAT_INFECTED_KILL_COUNT", 0)
@@ -1464,7 +1464,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
 
-                        with st.expander("Kompetitiver Modus - Statistiken"):
+                        with st.expander("🥊 Kompetitiver Modus - Statistiken"):
                             totalKills = stats_dict.get("TotalKills", 0)
                             totalCaptures = stats_dict.get("TotalCaptures", 0)
                             totalMVP = stats_dict.get("TotalMVPs", 0)
@@ -1492,7 +1492,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
                         
-                        with st.expander("Koop-Modus - Statistiken"):
+                        with st.expander("🤝🎮 Koop-Modus - Statistiken"):
                             totalKillsCoop = stats_dict.get("TotalKillsCoop", 0)
                             totalCapturesCoop = stats_dict.get("TotalCapturesCoop", 0)
                             totalMVPCoop = stats_dict.get("TotalMVPsCoop", 0)
@@ -1520,7 +1520,7 @@ with tabs[1]:
                                 unsafe_allow_html=True,
                             )
                         
-                        with st.expander("Gesamt - Statistiken"):
+                        with st.expander("📊 Gesamt - Statistiken"):
                             totalKillsAll = stats_dict.get("TotalKillsAll", 0)
                             totalCapturesAll = stats_dict.get("TotalCapturesAll", 0)
                             totalMVPAll = stats_dict.get("TotalMVPsAll", 0)
