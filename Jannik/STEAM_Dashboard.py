@@ -477,7 +477,9 @@ with tabs[0]:
                 st.write(f"**Benutzername:** {info_result['personaname']}")
                 st.write(f"**Letzter Logoff:** {info_result['lastlogoff']}")
                 st.write(f"**Konto erstellt am:** {info_result['timecreated']}")
-                st.write(f"**Tage seit Kontoerstellung:** {info_result['days_since_creation']}")
+                # st.write(f"**Tage seit Kontoerstellung:** {info_result['days_since_creation']}")
+                st.write(f"**Tage seit Kontoerstellung:** {info_result['days_since_creation']:,}".replace(",", "."))
+
 
             # Rechte Spalte: Avatar
             with col2:
@@ -528,11 +530,13 @@ with tabs[0]:
                     # avg_playtime_per_week = 0
 
                 # Anzeige der Ergebnisse
-                st.write(f"**Anzahl aller Spiele:** {total_games}")
+                st.write(f"**Anzahl aller Spiele:** {total_games:,}".replace(",", "."))
                 # st.write(f"**Gesamtsumme der Spielzeit [Stunden]:** {total_playtime_hours:.2f}")
-                st.write(f"**Gesamtsumme der Spielzeit:** {int(total_playtime_hours)} Stunden und {int(total_playtime_minutes % 60)} Minuten")
+                # st.write(f"**Gesamtsumme der Spielzeit:** {int(total_playtime_hours)} Stunden und {int(total_playtime_minutes % 60)} Minuten")
+                st.write(f"**Gesamtsumme der Spielzeit:** {int(total_playtime_hours):,}".replace(",", ".") + f" Stunden und {int(total_playtime_minutes % 60)} Minuten")
                 st.write(f"**Durchschnittliche tägliche Spielzeit:** {int(avg_daily_playtime_hours)} Stunden und {int(avg_daily_playtime_minutes % 60)} Minuten")
-                st.write(f"**Gesamtsumme der Spielzeit [Tage]:** {total_playtime_days:.0f}")
+                # st.write(f"**Gesamtsumme der Spielzeit [Tage]:** {total_playtime_days:.0f}")
+                st.write(f"**Gesamtsumme der Spielzeit [Tage]:** {total_playtime_days:,.0f}".replace(",", "."))
                 # st.write(f"**Durchschnittliche Spieltage pro Woche:** {avg_playtime_per_week:.2f}")
                 st.write(f"**Prozentsatz der Lebenszeit mit Spielen:** {percentage_lifetime_playtime:.2f} %")
 
@@ -562,8 +566,10 @@ with tabs[0]:
                     # st.subheader("Deine Spiele (sortiert nach Spielzeit)")
                     # st.dataframe(df_games)
 
+                    df_display = df_games.copy()
                     st.markdown('<div class="centered-table">', unsafe_allow_html=True)
-                    st.dataframe(df_games)
+                    df_display.iloc[:, 1] = df_display.iloc[:, 1].apply(lambda x: f"{int(x):,}".replace(",", "."))
+                    st.dataframe(df_display)
                     st.markdown('</div>', unsafe_allow_html=True)
 
                 # "Top 10 Spiele" in der rechten Spalte
@@ -877,6 +883,10 @@ with tabs[1]:
 
                                     # Ausgabe der Top 5 Waffen
                                     st.dataframe(df_top5, use_container_width=True)
+                                
+                                    st.write("Accuracy = Hits / Shots")
+                                    st.write("Efficiency = Kills / Shots")
+
                             with col19:
                                 with st.container():
                                     st.markdown("<h3 style='text-align: center;'>Accuracy vs Efficiency</h3>", unsafe_allow_html=True)
