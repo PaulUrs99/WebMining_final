@@ -7,7 +7,8 @@ def convert_to_dataframe(games):
     return pd.DataFrame([{
         "AppID": game.get("appid", "N/A"),
         "Name": game.get("name", "N/A"),
-        "Playtime (Hours)": round(game.get("playtime_forever", 0) / 60, 2)
+        "Playtime (Hours)": round(game.get("playtime_forever", 0) / 60, 2),
+        "Playtime (Minutes)": game.get("playtime_forever", 0) #change Lucian
     } for game in games])
 
 def convert_stats_to_dataframe(stats_player1, stats_player2):
