@@ -20,15 +20,27 @@ st.set_page_config(layout="wide") # Aktiviert den Wide Mode
 
 # ------------------------------------------------------------------------------------------------------------
 # Streamlit App
-st.title("Steam Dashboard")
+
+col1, col2 = st.columns ([5, 1])
+with col1:
+    st.title("Steam Dashboard by Gamescope")
+with col2:
+    st.image("Gamescope.png", width=100)
+    # st.markdown(
+    #     "<div style='display: flex; justify-content: flex-end;'>",
+    #     unsafe_allow_html=True
+    # )
+    # st.image("Gamescope.png", width=100)
+    # st.markdown("</div>", unsafe_allow_html=True)
 
 # Tabs erstellen
 tabs = st.tabs(["Profilstatistiken", "In-Game-Statistiken", "Community-Vergleich", "Freunde-Vergleich", "Spiel-Empfehlungen"])
 
 # API Key (du kannst eine sichere Methode verwenden, um den Schlüssel zu speichern)
-API_KEY = "F06E65C071B7ABDE4CE3B531A06123E2"  # Ersetze mit deinem Steam Web API Key
+API_KEY = "F06E65C071B7ABDE4CE3B531A06123E2"
 # Key Paul: DB15759E609C1E342536A6973593A57F
 # Key Lucian: F06E65C071B7ABDE4CE3B531A06123E2
+# Key Viki: 3DD952ECA5D79C777FD0377B118779A0
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
@@ -442,14 +454,36 @@ STAT_LABELS = {
 # Tab "Deine Statistiken"
 with tabs[0]:
     st.header("Profilstatistiken")
-    st.subheader("Gib deine Steam-ID ein, um deine Profilstatistiken zu sehen und die weiteren Funktionen nutzen zu können:")
+    # st.subheader("Gib deine Steam-ID ein, um deine Profilstatistiken zu sehen und die weiteren Funktionen nutzen zu können:")
 
-    # CSS für die vertikale Ausrichtung und zentrierten Text im Eingabefeld
+    # # CSS für die vertikale Ausrichtung und zentrierten Text im Eingabefeld
+    # st.markdown(
+    #     """
+    #     <style>
+    #     input {
+    #         text-align: center; /* Zentriere den Text */
+    #     }
+    #     </style>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
+
+    # Nutze Markdown mit weniger Padding für kleinere Abstände
+    st.markdown(
+        '<p style="margin-bottom: 5px; font-size: 18px;">'
+        'Gib deine Steam-ID ein, um deine Profilstatistiken zu sehen und die weiteren Funktionen nutzen zu können:'
+        '</p>',
+        unsafe_allow_html=True
+    )
+
+    # CSS für die Input-Box, um Padding/Abstand zu reduzieren und Text zu zentrieren
     st.markdown(
         """
         <style>
-        input {
+        div.stTextInput>div>div>input {
             text-align: center; /* Zentriere den Text */
+            padding: 5px; /* Reduziere Innenabstand */
+            margin-top: -10px; /* Abstand zur Überschrift verkleinern */
         }
         </style>
         """,
@@ -582,7 +616,8 @@ with tabs[0]:
                         y="Playtime (Hours)",
                         title="Top 10 Spiele nach Spielzeit",
                         labels={"Name": "Spiel", "Playtime (Hours)": "Spielzeit (Stunden)"},
-                        text_auto=True
+                        text_auto=True,
+                        color_discrete_sequence=["#8d2c91"]
                     )
 
                     # Einbettung der Grafik in ein zentriertes div
