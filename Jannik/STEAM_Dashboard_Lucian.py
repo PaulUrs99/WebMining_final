@@ -1684,7 +1684,21 @@ with tabs[4]:
         cluster_players = player_cluster["steam_64_id"].unique() 
         #st.write(f"Spieler im Cluster {best_cluster}: {len(cluster_players)}")
 
+        import requests
+
+        def get_friends_list(api_key, steam_id):
+            url = f"http://api.steampowered.com/ISteamUser/GetFriendList/v1/?key={api_key}&steamid={steam_id}&relationship=friend"
+            response = requests.get(url)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if "friendslist" in data:
+                    return {friend["steamid"] for friend in data["friendslist"]["friends"]}
+            
+            return set()  # Falls kein Ergebnis oder Fehler, gib leere Menge zurück
+
         player_distances = []
+
 
         # Berechne euklidische Distanz für jeden Spieler im Cluster
         for player_id in cluster_players:  
@@ -1702,7 +1716,17 @@ with tabs[4]:
         # Nach Distanz sortieren (niedrigste zuerst) und die Top 10 auswählen
         top_10_players = sorted(player_distances, key=lambda x: x[1])[:10]
 
-        if top_10_players:  # Falls es mindestens einen Spieler gibt
+        # Freundesliste abrufen
+        friend_list = get_friends_list(API_KEY, steam_id)
+
+        # Spieler filtern, die NICHT in der Freundesliste sind
+        # Sicherstellen, dass alle Steam-IDs Strings sind und bereinigt werden
+        filtered_players = [player for player in top_10_players if str(int(player[0])) not in friend_list]
+
+        # Nur die besten 10 Spieler aus der gefilterten Liste auswählen
+        filtered_players = filtered_players[:10]
+
+        if filtered_players:  # Falls es mindestens einen Spieler gibt
             # Ausgabe Mitspielerempfehlung
             # API-Aufruf für Steam-Infos
             def get_steam_info(player_id):
@@ -1713,7 +1737,7 @@ with tabs[4]:
             st.write("")
             st.write("---")
 
-            for i, (player_id, distance) in enumerate(top_10_players):
+            for i, (player_id, distance) in enumerate(filtered_players):
                 player_info = get_steam_info(player_id)  # Holt Spielerinfos
 
                 if "personaname" in player_info:
@@ -1768,12 +1792,7 @@ with tabs[4]:
         st.subheader("Diese Spiele könnten, dich interessieren:")
         st.write(recommended_games_df)
 
-        # st.write(cluster_favorite_games)
-        # st.write(cluster_favorite_appids)
 
-        # # Spiele, die der Nutzer nicht besitzt
-        # user_games = user_data["appid"].unique()
-        
 
 
 

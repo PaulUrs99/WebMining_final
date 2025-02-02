@@ -2,6 +2,8 @@
 # Import benötigter Bibliotheken
 import requests
 import pandas as pd
+import numpy as np #change Lucian
+from scipy.spatial.distance import euclidean
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import streamlit as st
@@ -13,7 +15,7 @@ import user_info
 import user_game
 import user_dataframe as df
 # ------------------------------------------------------------------------------------------------------------
-
+bool_id = False
 # ------------------------------------------------------------------------------------------------------------
 # Wide Mode
 st.set_page_config(layout="wide") # Aktiviert den Wide Mode
@@ -35,7 +37,7 @@ with col2:
     # st.markdown("</div>", unsafe_allow_html=True)
 
 # Tabs erstellen
-tabs = st.tabs(["Profilstatistiken", "In-Game-Statistiken", "Community-Vergleich", "Freunde-Vergleich", "Spiel-Empfehlungen"])
+tabs = st.tabs(["Profilstatistiken", "In-Game-Statistiken", "Community-Vergleich", "Freunde-Vergleich", "Finde neue Freunde und Games"])
 
 # API Key (du kannst eine sichere Methode verwenden, um den Schlüssel zu speichern)
 API_KEY = "F06E65C071B7ABDE4CE3B531A06123E2"
@@ -541,6 +543,8 @@ with tabs[0]:
                 st.subheader("🕹️ Spielinformationen")
 
                 df_games = df.convert_to_dataframe(games)[["Name", "Playtime (Hours)"]]
+                df_games_cluster = df.convert_to_dataframe(games)[["AppID", "Name", "Playtime (Minutes)"]] #change Lucian
+                bool_id = True # change Lucian
 
                 # Tabelle sortieren
                 df_games = df_games.sort_values(by="Playtime (Hours)", ascending=False).reset_index(drop=True)
@@ -1656,7 +1660,196 @@ with tabs[3]:
 # ------------------------------------------------------------------------------------------------------------
 # Tab "Spiel Empfehlungen"
 with tabs[4]:
-    st.header("Spiel-Empfehlungen")
+    st.header("Finde neue Mitspieler und neue Spiele")
+
+    # Cluster CSV-Dateien
+    df_clustered_players = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\clustered_players.csv")
+    df_final_cluster = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\final_cluster.csv")
+
+    # Genre Datei
+    df_genres = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\steam_game_genres_normalized.csv")
+
+    # IDF Datei
+    genre_idf = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\genre_idf.csv")
+    
+    # user_data
+    # steam_id ist oben definiert
+    if bool_id:
+
+        # Spielerdaten für Clusterzuordnung vorbereiten
+        user_data = df_games_cluster.rename(
+        columns={"AppID": "appid", "Name": "name", "Playtime (Minutes)": "playtime_forever"}
+        )
+
+        # Nur Daten verwenden, für die es auch Genres gibt
+        genres_clean = df_genres.dropna(subset=['genres'])
+        valid_appids = genres_clean['appid'].unique()
+        ud_clean = user_data[user_data['appid'].isin(valid_appids)]
+
+        # genres mergen
+        ud_genres = ud_clean.merge(genres_clean, on="appid")
+        ud_genres["genres"] = ud_genres["genres"].str.split(",")  # Split Genres
+        ud_genres = ud_genres.explode("genres")  # Explode Genres
+        ud_genres["genres"] = ud_genres["genres"].str.strip()  # Strip Whitespaces
+
+        # Spielzeit pro Genre
+        ud_tf = ud_genres.groupby(["genres"])["playtime_forever"].sum().reset_index()
+
+        # Gesamtspielzeit
+        total_playtime = ud_clean["playtime_forever"].sum()
+
+        # Relative TF berechnen (Spielzeit für ein Genre relativ zur gesamten Spielzeit des Spielers)
+        ud_tf["TF_relative"] = ud_tf["playtime_forever"] / total_playtime
+
+        # Mit IDF-Werten verknüpfen
+        ud_tf = ud_tf.merge(genre_idf, left_on="genres", right_on="Genre", how="left")
+
+        # TF-IDF berechnen
+        ud_tf["TF-IDF"] = ud_tf["TF_relative"] * ud_tf["IDF_Playtime"]
+
+        # Unnötige Spalten entfernen
+        ud_tf.drop(columns=["playtime_forever", "IDF_Playtime", "Genre"], inplace=True)
+
+        # Cluster zuordnen
+        # Relevante Spalten (Genres + Cluster-ID)
+        genre_columns = df_final_cluster.columns[1:-1]  # Alle Spalten außer steam_64_id und Cluster
+        df_cluster_means = df_final_cluster.groupby("Cluster")[genre_columns].mean()  # Mittelwerte pro Cluster
+
+        # Nutzer-Genre-Daten (aus ud_tf) -> nur "genres" & "TF-IDF"
+        user_genre_data = ud_tf.set_index("genres")["TF-IDF"]
+
+        # Ähnlichkeit über euklidische Distanz berechnen
+        cluster_distances = {}
+
+        for cluster_id, cluster_row in df_cluster_means.iterrows():
+            cluster_vector = cluster_row[genre_columns]  # Cluster-Genres
+            user_vector = user_genre_data.reindex(cluster_vector.index).fillna(0)  # Nutzer-Werte, fehlende mit 0
+
+            # Berechne die euklidische Distanz (kleiner = besser)
+            distance = euclidean(user_vector, cluster_vector)
+            cluster_distances[cluster_id] = distance
+
+        # Bestes Cluster auswählen (nächstgelegenes Cluster)
+        best_cluster = min(cluster_distances, key=cluster_distances.get)
+
+        # Ausgabe des zugewiesenen Clusters
+        # st.write(f"Spieler wurde Cluster **{best_cluster}** zugeordnet.")
+
+#-----------------------------------------------------------------------------------------------------------------
+        # ähnlichste Mitspieler finden
+        # Spieler aus dem gleichen Cluster filtern
+        player_cluster = df_clustered_players[df_clustered_players["Cluster"] == best_cluster]
+        cluster_players = player_cluster["steam_64_id"].unique() 
+        #st.write(f"Spieler im Cluster {best_cluster}: {len(cluster_players)}")
+
+        import requests
+
+        def get_friends_list(api_key, steam_id):
+            url = f"http://api.steampowered.com/ISteamUser/GetFriendList/v1/?key={api_key}&steamid={steam_id}&relationship=friend"
+            response = requests.get(url)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if "friendslist" in data:
+                    return {friend["steamid"] for friend in data["friendslist"]["friends"]}
+            
+            return set()  # Falls kein Ergebnis oder Fehler, gib leere Menge zurück
+
+        player_distances = []
+
+
+        # Berechne euklidische Distanz für jeden Spieler im Cluster
+        for player_id in cluster_players:  
+            player_vector = df_final_cluster[df_final_cluster["steam_64_id"] == player_id][genre_columns].values.flatten()
+            
+            # Falls kein Genre-Vektor für diesen Spieler existiert, überspringen
+            if player_vector.size == 0:
+                continue
+
+            # Euklidische Distanz berechnen
+            distance = euclidean(user_vector, player_vector)
+            player_distances.append((player_id, distance))
+
+
+        # Nach Distanz sortieren (niedrigste zuerst) und die Top 10 auswählen
+        top_10_players = sorted(player_distances, key=lambda x: x[1])[:10]
+
+        # Freundesliste abrufen
+        friend_list = get_friends_list(API_KEY, steam_id)
+
+        # Spieler filtern, die NICHT in der Freundesliste sind
+        # Sicherstellen, dass alle Steam-IDs Strings sind und bereinigt werden
+        filtered_players = [player for player in top_10_players if str(int(player[0])) not in friend_list]
+
+        # Nur die besten 10 Spieler aus der gefilterten Liste auswählen
+        filtered_players = filtered_players[:10]
+
+        if filtered_players:  # Falls es mindestens einen Spieler gibt
+            # Ausgabe Mitspielerempfehlung
+            # API-Aufruf für Steam-Infos
+            def get_steam_info(player_id):
+                return user_info.get_user_info(API_KEY, player_id)  # Holt die Steam-Infos
+
+            # Ausgabe: Ähnliche Spieler anzeigen
+            st.subheader("Diese Spieler zocken ähnliche Games wie du. Ihr könntet Freunde sein ( ◑‿◑)ɔ┏🍟--🍔┑٩(^◡^ )")
+            st.write("")
+            st.write("---")
+
+            for i, (player_id, distance) in enumerate(filtered_players):
+                player_info = get_steam_info(player_id)  # Holt Spielerinfos
+
+                if "personaname" in player_info:
+                    col1, col2 = st.columns([3, 3])  # Spalte 1 für Text (3x so groß), Spalte 2 für Avatar
+
+                    with col1:
+                        st.write(f"**Ähnlichkeitsrang:** {i + 1}")
+                        st.write(f"**Benutzername:** {player_info['personaname']}")
+                        st.write(f"**Steam-ID:** {player_id}")
+
+                    with col2:
+                        st.markdown(
+                            f"""
+                            <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                                <img src="{player_info['avatarfull']}" alt="Avatar" style="width: 100px; border-radius: 10%;">
+                            </div>
+                            """,
+                            unsafe_allow_html=True
+                        )
+                    st.write("---")
+                else:
+                    st.write(f"⚠️ Keine Info für Spieler {player_id}")
+
+        else:
+            st.write("⚠️ Keine ähnlichen Spieler gefunden.")
+
+
+
+#-----------------------------------------------------------------------------------------------------------------
+        # Empfehlung von Spielen
+        # Spiele aus dem Cluster
+        cluster_games = player_cluster.groupby(["appid", "name"])["playtime_forever"].mean()  
+        cluster_games = cluster_games.sort_values(ascending=False)
+        cluster_favorite_games = cluster_games.head(10)  # Top 10 Spiele
+        
+        # Spiele, die der Nutzer besitzt
+        user_games = set(user_data["appid"].unique())  
+
+        # Spiele aus dem Cluster (Top 10)
+        cluster_favorite_appids = set(cluster_favorite_games.index.get_level_values("appid").tolist())
+
+        # Empfehlung: Nur Spiele aus dem Cluster, die der Spieler NICHT besitzt
+        recommended_games = cluster_favorite_appids - user_games
+
+        # Ausgabe der empfohlenen Spiele
+        recommended_games_df = cluster_favorite_games.loc[cluster_favorite_games.index.get_level_values("appid").isin(recommended_games)]
+        recommended_games_df = recommended_games_df.reset_index()[["appid", "name"]]
+
+        # AppID als String umformatieren, um die Tausendertrennzeichen zu entfernen
+        recommended_games_df["appid"] = recommended_games_df["appid"].astype(str)
+
+        st.subheader("Diese Spiele könnten, dich interessieren:")
+        st.write(recommended_games_df)
+
 
 # ------------------------------------------------------------------------------------------------------------
 
