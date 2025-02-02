@@ -1602,7 +1602,7 @@ with tabs[3]:
 # ------------------------------------------------------------------------------------------------------------
 # Tab "Spiel Empfehlungen"
 with tabs[4]:
-    st.header("Spiel-Empfehlungen")
+    st.header("Mitspieler-Empfehlungen")
 
     # Cluster CSV-Dateien
     df_clustered_players = pd.read_csv(r"C:\Users\Lucian\Desktop\WebMining_final\clustered_players.csv")
@@ -1676,28 +1676,20 @@ with tabs[4]:
         best_cluster = min(cluster_distances, key=cluster_distances.get)
 
         # Ausgabe des zugewiesenen Clusters
-        st.write(f"Spieler wurde Cluster **{best_cluster}** zugeordnet.")
+        # st.write(f"Spieler wurde Cluster **{best_cluster}** zugeordnet.")
 
-
-
-
-
+#-----------------------------------------------------------------------------------------------------------------
         # ähnlichste Mitspieler finden
         # Spieler aus dem gleichen Cluster filtern
-        cluster_players = df_clustered_players[df_clustered_players["Cluster"] == best_cluster]
-        st.write(f"Spieler im Cluster {best_cluster}: {len(cluster_players)}")
-        
-
-
+        player_cluster = df_clustered_players[df_clustered_players["Cluster"] == best_cluster]
+        cluster_players = player_cluster["steam_64_id"].unique() 
+        #st.write(f"Spieler im Cluster {best_cluster}: {len(cluster_players)}")
 
         player_distances = []
 
         # Berechne euklidische Distanz für jeden Spieler im Cluster
-        for _, row in cluster_players.iterrows():
-            player_id = row["steam_64_id"]  # Steam-ID des Spielers
+        for player_id in cluster_players:  
             player_vector = df_final_cluster[df_final_cluster["steam_64_id"] == player_id][genre_columns].values.flatten()
-
-            #st.write(f"Spieler {player_id}: Größe {player_vector.size}")
             
             # Falls kein Genre-Vektor für diesen Spieler existiert, überspringen
             if player_vector.size == 0:
@@ -1707,28 +1699,81 @@ with tabs[4]:
             distance = euclidean(user_vector, player_vector)
             player_distances.append((player_id, distance))
 
-        st.write("Gesammelte Distanzen:", player_distances)
-
 
         # Nach Distanz sortieren (niedrigste zuerst) und die Top 10 auswählen
         top_10_players = sorted(player_distances, key=lambda x: x[1])[:10]
 
         if top_10_players:  # Falls es mindestens einen Spieler gibt
-            st.write(f"**Die 10 ähnlichsten Spieler im Cluster {best_cluster}:**")
-            for rank, (player_id, distance) in enumerate(top_10_players, start=1):
-                st.write(f"{rank}. Spieler-ID: {player_id} | Distanz: {distance:.4f}")
+            # Ausgabe Mitspielerempfehlung
+            # API-Aufruf für Steam-Infos
+            def get_steam_info(player_id):
+                return user_info.get_user_info(API_KEY, player_id)  # Holt die Steam-Infos
+
+            # Ausgabe: Ähnliche Spieler anzeigen
+            st.subheader("Diese Spieler sind dir sehr ähnlich, vielleicht möchtest du sie hinzufügen:")
+            st.write("")
+            st.write("---")
+
+            for i, (player_id, distance) in enumerate(top_10_players):
+                player_info = get_steam_info(player_id)  # Holt Spielerinfos
+
+                if "personaname" in player_info:
+                    col1, col2 = st.columns([3, 3])  # Spalte 1 für Text (3x so groß), Spalte 2 für Avatar
+
+                    with col1:
+                        st.write(f"**Ähnlichkeitsrang:** {i + 1}")
+                        st.write(f"**Benutzername:** {player_info['personaname']}")
+                        st.write(f"**Steam-ID:** {player_id}")
+
+                    with col2:
+                        st.markdown(
+                            f"""
+                            <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                                <img src="{player_info['avatarfull']}" alt="Avatar" style="width: 100px; border-radius: 10%;">
+                            </div>
+                            """,
+                            unsafe_allow_html=True
+                        )
+                    st.write("---")
+                else:
+                    st.write(f"⚠️ Keine Info für Spieler {player_id}")
+
         else:
             st.write("⚠️ Keine ähnlichen Spieler gefunden.")
 
 
-
-
-
-
+            
+#-----------------------------------------------------------------------------------------------------------------
+        # Empfehlung von Spielen
+        # Spiele aus dem Cluster
+        cluster_games = player_cluster.groupby(["appid", "name"])["playtime_forever"].mean()  
+        cluster_games = cluster_games.sort_values(ascending=False)
+        cluster_favorite_games = cluster_games.head(10)  # Top 10 Spiele
         
+        # Spiele, die der Nutzer besitzt
+        user_games = set(user_data["appid"].unique())  
 
+        # Spiele aus dem Cluster (Top 10)
+        cluster_favorite_appids = set(cluster_favorite_games.index.get_level_values("appid").tolist())
 
+        # Empfehlung: Nur Spiele aus dem Cluster, die der Spieler NICHT besitzt
+        recommended_games = cluster_favorite_appids - user_games
 
+        # Ausgabe der empfohlenen Spiele
+        recommended_games_df = cluster_favorite_games.loc[cluster_favorite_games.index.get_level_values("appid").isin(recommended_games)]
+        recommended_games_df = recommended_games_df.reset_index()[["appid", "name"]]
+
+        # AppID als String umformatieren, um die Tausendertrennzeichen zu entfernen
+        recommended_games_df["appid"] = recommended_games_df["appid"].astype(str)
+
+        st.subheader("Diese Spiele könnten, dich interessieren:")
+        st.write(recommended_games_df)
+
+        # st.write(cluster_favorite_games)
+        # st.write(cluster_favorite_appids)
+
+        # # Spiele, die der Nutzer nicht besitzt
+        # user_games = user_data["appid"].unique()
         
 
 
