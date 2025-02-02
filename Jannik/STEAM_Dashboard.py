@@ -1821,7 +1821,7 @@ with tabs[2]:
                     else:
                         st.warning("Fehler beim Abrufen der Spielstatistiken.")
         else:
-            st.warning("STEAM ID eingeben!")                
+            st.warning("STEAM ID eingeben!.")                
 # ------------------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------------------------------
@@ -3058,6 +3058,7 @@ with tabs[4]:
                             unsafe_allow_html=True
                         )
                     st.write("---")
+
 
         else:
             st.write("⚠️ Keine ähnlichen Spieler gefunden.")

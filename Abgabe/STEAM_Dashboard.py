@@ -1659,7 +1659,7 @@ with tabs[2]:
                             ]
                         elif chosen_app_id == 648800:  # Raft
                             metrics = [
-                                ("stat_player_deaths", "Tode", ""),
+                                #("stat_player_deaths", "Tode", ""),
                                 ("stat_player_sharkKills", "Getötete Haie", ""),
                                 ("stat_player_capturedAnimals", "Eingefangene Tiere", ""),
                                 ("stat_player_hookCount", "Hakenwürfe", ""),
@@ -1740,7 +1740,7 @@ with tabs[2]:
                             }
 
                         elif chosen_app_id == 648800:  # Raft
-                            deaths = stats_dict.get("stat_player_deaths", 0)
+                            #deaths = stats_dict.get("stat_player_deaths", 0)
                             shark_kills = stats_dict.get("stat_player_sharkKills", 0)
                             captured_animals = stats_dict.get("stat_player_capturedAnimals", 0)
                             hook_count = stats_dict.get("stat_player_hookCount", 0)
@@ -1749,7 +1749,7 @@ with tabs[2]:
 
                             # Vergleichswerte für Raft
                             comparison_metrics = {
-                                "stat_player_deaths": deaths,
+                                #"stat_player_deaths": deaths,
                                 "stat_player_sharkKills": shark_kills,
                                 "stat_player_capturedAnimals": captured_animals,
                                 "stat_player_hookCount": hook_count,
