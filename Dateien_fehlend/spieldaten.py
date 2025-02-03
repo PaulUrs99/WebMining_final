@@ -40,7 +40,7 @@ def get_owned_games(api_key, steam_id, app_id):
         return {"error": f"Fehler beim Abrufen der Daten. Statuscode: {response.status_code}"}
 
 if __name__ == "__main__":
-    # Setze deinen API-Key hier ein
+    
     API_KEY = "DB15759E609C1E342536A6973593A57F"
 
     # Ordner erstellen, falls nicht vorhanden
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     start_index, last_steam_id = load_progress()
 
    # CSV-Datei einlesen
-    csv_file_path = "C:\\Users\\paulu\\OneDrive\\Dokumente\\GitHub\\WebMining\\Paul\\data_rest.csv"
+    csv_file_path = "C:\\Users\\paulu\\OneDrive\\Dokumente\\GitHub\\WebMining\\fltered_data.csv"
     with open(csv_file_path, "r", newline="", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
         rows = list(reader)
